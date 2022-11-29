@@ -1,0 +1,53 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h3><span class="number">4</span> What rows do you want to include?</h3>
+</div>
+
+<div class="modal-body">
+  <div class="row double-padding">
+    <div class="col-sm-6 col-sm-divider-right">
+      <h4>Choose Rows</h4>
+      <div class="set-height-wrapper">
+        <ul class="dropdown-menu nondropdown set-height available-fields">
+          <li class="checkbox active"><label><input type="checkbox" value="Therapy Area" checked="checked">Therapy Area</label></li>
+          <li class="checkbox active"><label><input type="checkbox" value="Device Series" checked="checked">Device Series</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Segment">Segment</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Brand">Brand</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Catheter">Catheter</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Diameter">Diameter</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Length">Length</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Manufacturer">Manufacturer</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Model">Model</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Module">Module</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="ProductSubtype1">ProductSubtype1</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="ProductSubtype2">ProductSubtype2</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="ProductSubtype3">ProductSubtype3</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="ProductSubtype4">ProductSubtype4</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="SKU">SKU</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Width">Width</label></li>
+        </ul>
+      </div>      
+    </div>
+    <div class="col-sm-6 col-sm-divider-left">
+      <h4>Reorder Rows</h4>
+      <ul class="dropdown-menu nondropdown list-group-sortable selected-fields">
+        <li class="draggable-item" draggable="true" data-field-name="Therapy Area">Therapy Area <span class="fa fa-times-circle"></span></li>
+        <li class="draggable-item" draggable="true" data-field-name="Device Series">Device Series <span class="fa fa-times-circle"></span></li>
+      </ul> 
+    </div>
+    
+  </div>
+      
+</div>
+
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-lg btn-primary pull-left goto-step3"><i class="fa fa-arrow-left" aria-hidden="true"></i> Previous</button>
+  <button type="button" class="btn btn-lg btn-primary pull-right create-table">Finish</button>
+</div>
+
+<script type="text/javascript">
+$(function() {  
+  sortable('.list-group-sortable', {});
+});   
+</script>  

@@ -1,0 +1,68 @@
+/* CONTACT FORM - VALIDATION AND MESSAGES
+================================================== */
+.contact-form .form-group:last-child {
+  margin-bottom: 0;
+}
+.contact-form p,
+.contact-success-message p,
+.contact-success-message h3  {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.contact-success-message {
+  margin: 60px 0;
+}
+.contact-success-message h3 {
+  font-size: 20px;
+}
+.contact-success-message p:last-child {
+  padding-top: 15px;
+}
+.contact-error-message {
+  padding-left: 45px;
+  position: relative;
+}
+.contact-error-message:before {
+  content: '\f06a';
+  width: 40px;
+  line-height: 44px; 
+  left: 0;
+  top: 0;
+  font-family: FontAwesome;
+  color: #f47c6c;
+  position: absolute;
+  font-size: 40px;
+}
+.contact-form .has-error ::-webkit-input-placeholder,
+.has-error .nav-search-box::-webkit-input-placeholder {
+  color: #f47c6c;
+}
+.contact-form .has-error :-moz-placeholder,
+.has-error .nav-search-box:-moz-placeholder { /* Firefox 18- */
+  color: #f47c6c;  
+}
+.contact-form .has-error ::-moz-placeholder,
+.has-error .nav-search-box::-moz-placeholder {  /* Firefox 19+ */
+  color: #f47c6c;  
+}
+.contact-form .has-error :-ms-input-placeholder,
+.has-error .nav-search-box:-ms-input-placeholder {  
+  color: #f47c6c;  
+}
+.modal-body .close {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+}
+.form-group .btn {
+  margin-left: 10px;
+}
+.panel-body.double-padding,
+.modal-body.double-padding {
+  padding: 30px;
+}
+@media (max-width: 767px) {
+  .panel-body.double-padding {
+    padding: 15px;
+  }
+}

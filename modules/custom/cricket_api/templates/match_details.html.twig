@@ -1,0 +1,381 @@
+<div class="match-details">
+  {% if details.matchDetail.status == "UPCOMING" %}
+    <div class="upcoming-match">
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="upcoming-team text-center">
+              <img class="upcoming-team__shield-image image--loaded" src="{{ details.matchDetail.homeTeam.logoUrl }}" alt="{{ details.matchDetail.homeTeam.name }}">
+              <h3 class="upcoming-team__name theme--font-headline hard">{{ details.matchDetail.homeTeam.name }}</h3>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="upcoming-team text-center">
+              <img class="upcoming-team__shield-image image--loaded" src="{{ details.matchDetail.awayTeam.logoUrl }}" alt="{{ details.matchDetail.awayTeam.name }}">
+              <h3 class="upcoming-team__name theme--font-headline hard">{{ details.matchDetail.awayTeam.name }}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="text-center">
+            <div class="upcoming-match__details--desktop">
+              <div>
+                <p>Starts At</p>
+                <p class="upcoming-match__time hard">
+                  {{ details.matchDetail.startDateTime | date("D, d M, h:i a", "Asia/Calcutta") }} IST
+                </p>
+                <small class="upcoming-match__venue-name">{{ details.meta.venueName }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="text-center">
+            <p class="upcoming-match__event-toss">{{ details.matchDetail.matchSummaryText }}</p>
+            <p class="upcoming-match__event-detail">{{ details.matchDetail.series.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="row top-details">
+      <div class="col-md-3 col-xs-4"><span class="details-title">Series:</span></div>
+      <div class="col-md-9 col-xs-8">{{ data.series_name }}</div>
+
+      <div class="col-md-3 col-xs-4"><span class="details-title">Venue:</span></div>
+      <div class="col-md-9 col-xs-8">{{ data.venue_name }}</div>
+
+      <strong class="col-md-3 col-xs-4"><span class="details-title">Date & Time:</span></strong>
+      <div class="col-md-9 col-xs-8">{{ data.matchTime }} IST</div>
+    </div>
+
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#summary">Summary</a></li>
+      <li><a data-toggle="tab" href="#scorecard">Scorecard</a></li>
+      <li><a data-toggle="tab" href="#commentary">Commentry</a></li>
+    </ul>
+    <div class="match-score">
+      <div class="tab-content">
+        <div id="summary" class="tab-pane fade in active pad-top-15">
+          {% if data.hasCompleted is not empty %}
+            <div class="homeScores">
+              <div>
+                <strong class="teams">
+                  <span>{{ data.homeTeamName }}</span>
+                  <span>{{ data.homeTeamScore }}</span>
+                  <span>({{ data.homeTeamOvers }})</span>
+                </strong>
+              </div>
+              <div>
+                <strong class="teams">
+                  <span>{{ data.awayTeamName }}</span>
+                  <span>{{ data.awayTeamScore }}</span>
+                  <span>({{ data.awayTeamOvers }})</span>
+                </strong>
+              </div>
+            </div>
+            <div class="summary-text">{{ data.summary }}</div>
+            <div class="mom">
+              <span class="">PLAYER OF THE MATCH:</span>
+              <span class="player"> {{ data.mom }}</span>
+            </div>
+              <div class="most-runs">
+                <span class="hard">Most Runs:</span>
+                <span class="playername">{{ data.most_runs_player }}-</span>
+                <span class="runs">{{ data.most_runs }}</span>
+                <span class="runs">({{ data.most_runs_balls }})</span>
+              </div>
+              <div class="most-wkt">
+                <span class="hard">Most Wickets:</span>
+                <span class="playername">{{ data.most_wicket_player }} -</span>
+                <span class="runs">{{ data.most_wicket }} wkt</span>
+              </div>
+          {% else %}
+            {% if details.meta.isInProgres is not empty %}
+              <div class="sum-score">
+                <strong>{{ details.matchDetail.innings.shortName }}</strong>
+                <span>{{ details.matchDetail.innings.runs }}</span>-<span>{{ details.matchDetail.innings.wickets }}</span><span>({{ details.matchDetail.innings.overs }})</span>
+                <span class="crr"><strong>CRR:</strong><span>{{ details.matchDetail.innings.runRate }}</span></span>
+              </div>
+            {% endif %}
+            <div class="summary-text">
+              {% if details.meta.matchType == "Domestic Test" %}
+                <span>Day {{ details.matchDetail.currentDay }} - </span>
+              {% endif %}
+              <span>{{ data.summary }}</span>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-8">
+                <table class="table table-condensed table-hover table-responsive">
+                  <thead>
+                  <tr>
+                    <th>Batsman</th>
+                    <th>R</th>
+                    <th>B</th>
+                    <th>4s</th>
+                    <th>6s</th>
+                    <th>SR</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {% for item in summary  %}
+                    <tr>
+                      <td class="name">{{ item.currentBatsmanName }}</td>
+                      <td>{{ item.currentBatsmanRuns }}</td>
+                      <td>{{ item.currentBatsmanBalls }}</td>
+                      <td>{{ item.currentBatsmanFours }}</td>
+                      <td>{{ item.currentBatsmanSix }}</td>
+                      <td>{{ item.currentBatsmanstrikeRate }}</td>
+                    </tr>
+                   {% endfor %}
+                  </tbody>
+                </table>
+                <table class="table table-condensed table-hover table-responsive">
+                  <thead>
+                  <tr>
+                    <th>Bowler</th>
+                    <th>O</th>
+                    <th>M</th>
+                    <th>R</th>
+                    <th>W</th>
+                    <th>ECO</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="name">{{ currentBowler.name }}</td>
+                      <td>{{ currentBowler.bowlerOver }}</td>
+                      <td>{{ currentBowler.maiden }}</td>
+                      <td>{{ currentBowler.runsAgainst }}</td>
+                      <td>{{ currentBowler.wickets }}</td>
+                      <td>{{ currentBowler.economy }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-xs-12 col-sm-4 key-stats">
+                <div class="top-head text-center">Key Stats</div>
+                <div class="key-stats-overs">
+                  <strong>
+                    {% if details.meta.lastOvers.amount is not empty %}
+                      {{ details.meta.lastOvers.amount }}:
+                    {% endif %}
+                  </strong>
+                  <span>
+                    {% if details.meta.lastOvers.score is not empty %}
+                      {{ details.meta.lastOvers.score }}
+                    {% endif %}
+                  </span>
+                </div>
+                <div class="key-stats-overs">
+                  <strong>Last wicket:</strong>
+                  <span>{{ details.matchDetail.lastWicket.name }} {{ details.matchDetail.lastWicket.runs }} ({{ details.matchDetail.lastWicket.ballsFaced }})</span>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+            <div class="match-summ">
+              <div class="top-head margin-top-13">Teams</div>
+              <div class="teams">
+                {% for items in details.teamPlayers %}
+                  <div class="teamname">{{ items.teamShortName }} Squad Playing XI</div>
+                  <div class="players">
+                    {% for players in items.players %}
+                      {{ players.fullName }}
+                      {% if not loop.last %},{% endif %}
+                    {% endfor %}
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="top-head margin-top-13">Match Info</div>
+              <div class="row">
+                <div class="col-xs-3">
+                    <strong>Match:</strong>
+                </div>
+                <div class="col-xs-9">
+                  {{ details.matchDetail.homeTeam.name }} vs {{ details.matchDetail.awayTeam.name }} ,{{ details.meta.matchName }},{{ details.meta.matchType }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3">
+                    <strong>Date:</strong>
+                </div>
+                <div class="col-xs-9">
+                    {{ details.matchDetail.localStartDate }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3">
+                    <strong>Toss:</strong>
+                </div>
+                <div class="col-xs-9">
+                    {{ details.matchDetail.tossMessage }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3">
+                    <strong>Venue:</strong>
+                </div>
+                <div class="col-xs-9">
+                    {{ details.meta.venueName }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3">
+                    <strong>Umpires:</strong>
+                </div>
+                <div class="col-xs-9">
+                    {{ details.matchDetail.umpire.firstUmpire.name }},{{ details.matchDetail.umpire.secondUmpire.name }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3">
+                    <strong>Third Umpire:</strong>
+                </div>
+                <div class="col-xs-9">
+                    {{ details.matchDetail.umpire.thirdUmpire.name }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3">
+                    <strong>Refree:</strong>
+                </div>
+                <div class="col-xs-9">
+                    {{ details.matchDetail.umpire.referee.name }}
+                </div>
+              </div>
+            </div>
+        </div>
+        <div id="scorecard" class="tab-pane fade">
+          <div class="summary-text">{{ data.summary }}</div>
+          {% if data.istobeplayed is not empty %}
+            <div class="">Scorecard coming up as the match starts</div>
+          {% else %}
+            <div class="panel-group wrap" id="accordion" role="tablist" aria-multiselectable="true">
+              {% for innings in details.scoreCard %}
+                <div class="panel">
+                  <div class="panel-heading" role="tab" id="{{ details.meta.seriesId }}">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ innings.id }}" aria-expanded="true" aria-controls="collapseOne">
+                        <span class="team-name">{{ innings.name }}</span>
+                        <span class="score-over">{{ innings.runs }}-{{ innings.wickets }}({{ innings.overs }})</span>
+                      </a>
+                    </h4>
+                  </div>
+                  {% if loop.index == 1 %}
+                    <div id="{{ innings.id }}" class="panel-collapse collapse in loop-{{ loop.index }}" role="tabpanel" aria-labelledby="{{ innings.id }}">
+                  {% else %}
+                    <div id="{{ innings.id }}" class="panel-collapse collapse loop-{{ loop.index }}" role="tabpanel" aria-labelledby="{{ innings.id }}">
+                  {% endif %}
+                    <div class="panel-body">
+                      <table class="table table-condensed table-hover table-responsive">
+                        <thead>
+                        <tr>
+                          <th class="w-25">Batsman</th>
+                          <th class="hidden-xs w-25"></th>
+                          <th class="w-10">R</th>
+                          <th class="w-10">B</th>
+                          <th class="w-10">4s</th>
+                          <th class="w-10">6s</th>
+                          <th class="w-10">SR</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for batsman in innings.batsMen %}
+                          <tr>
+                            <td>
+                              <div class="name"><a href="/players/{{ batsman.id }}/stats">{{ batsman.name }}</a></div>
+                              <div class="visible-xs">{{ batsman.howOut }}</div>
+                            </td>
+                            <td class="hidden-xs howout">{{ batsman.howOut }}</td>
+                            <td>{{ batsman.runs }}</td>
+                            <td>{{ batsman.ballsFaced }}</td>
+                            <td>{{ batsman.fours }}</td>
+                            <td>{{ batsman.sixers }}</td>
+                            <td>{{ batsman.strikeRate }}</td>
+                          </tr>
+                        {% endfor %}
+                        <tr>
+                          <td class="name">Extras</td>
+                          <td colspan="6"><strong>{{ innings.extra }} </strong>(b {{ innings.bye }}, lb {{ innings.legBye }}, wd {{ innings.wide }}, nb {{ innings.noBall }})</td>
+                        </tr>
+                        <tr>
+                          <td class="name">Total</td>
+                          <td colspan="6"><strong>{{ innings.runs }} </strong>({{ innings.wickets }} wkts , {{ innings.overs }} Ov)</td>
+                        </tr>
+                        </tbody>
+                      </table>
+                      <h4 class="fall-of-wickets-title">Fall of Wickets</h4>
+                      <div class="fall-of-wickets-body">
+                        {% for batsman in innings.batsMen %}
+                          {{ batsman.fallOfWicket }}({{ batsman.name }}, {{ batsman.fowOver }})
+                          {% if not loop.last %},{% endif %}
+                        {% endfor %}
+                      </div>
+                      <table class="table table-condensed table-hover table-responsive">
+                        <thead>
+                        <tr>
+                          <th class="w-40">Bowler</th>
+                          <th class="w-12">O</th>
+                          <th class="w-12">M</th>
+                          <th class="w-12">R</th>
+                          <th class="w-12">W</th>
+                          <th class="w-12">ECO</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for bowler in innings.bowlers %}
+                          <tr>
+                            <td class="name">{{ bowler.name }}</td>
+                            <td>{{ bowler.bowlerOver }}</td>
+                            <td>{{ bowler.maiden }}</td>
+                            <td>{{ bowler.runsAgainst }}</td>
+                            <td>{{ bowler.wickets }}</td>
+                            <td>{{ bowler.economy }}</td>
+                          </tr>
+                        {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+        <div id="commentary" class="tab-pane fade pad-top-15">
+          {% if data.istobeplayed is not empty %}
+            <div> Match hasents started yet</div>
+          {% else %}
+            {% for items in comments.innings %}
+              {% for inning in items.overs %}
+                <div>
+                  <div class="commentary__header">
+                    <h3 class="commentary__header__title text-uppercase theme--font-headline">OVER {{ inning.number }}</h3>
+                    <small class="commentary__header__subtitle text-uppercase">{{ inning.overSummary.runsConcededinOver }} RUNS,{{ inning.overSummary.wicketsTakeninOver }} WICKETS</small>
+                  </div>
+                  {% for ball in inning.balls %}
+                    {% for commen in ball.comments %}
+                      <div class="commentary__cell commentary__cell--default">
+                        <div class="commentary__cell__comment">
+                          <div class="commentary__cell__col commentary__cell__icon text-center">
+                            <span class="icon-wrapper icon-wrapper--default">{{ commen.runs }}</span>
+                            <small class="ball-number">{{ inning.id }}.{{ ball.ballNumber }}</small>
+                          </div>
+                          <small class="commentary__cell__col commentary__cell__text">
+                            {{ commen.text }}
+                          </small>
+                          <div class="commentary__cell__col commentary__cell__replay-button"></div>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  {% endfor %}
+                </div>
+              {% endfor %}
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>

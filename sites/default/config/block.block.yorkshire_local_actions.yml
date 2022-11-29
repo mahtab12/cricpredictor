@@ -1,0 +1,20 @@
+uuid: 8c071dd3-cdae-4bb1-b21e-55f8a90c5651
+langcode: en
+status: true
+dependencies:
+  theme:
+    - yorkshire
+_core:
+  default_config_hash: seJxgYrod5V2hxdSLtE80ziqvhV-cSXMTHI8PPyCg2Y
+id: yorkshire_local_actions
+theme: yorkshire
+region: content
+weight: -11
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

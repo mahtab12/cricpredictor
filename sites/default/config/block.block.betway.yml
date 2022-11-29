@@ -1,0 +1,29 @@
+uuid: d6aff504-c6d4-4723-91ab-90f27b17146e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d0099075-b7fd-463d-8c1f-0f40f62c56b7'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - newsplus_lite
+third_party_settings:
+  block_class:
+    classes: text-center
+id: betway
+theme: newsplus_lite
+region: top_content
+weight: -22
+provider: null
+plugin: 'block_content:d0099075-b7fd-463d-8c1f-0f40f62c56b7'
+settings:
+  id: 'block_content:d0099075-b7fd-463d-8c1f-0f40f62c56b7'
+  label: Betway
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

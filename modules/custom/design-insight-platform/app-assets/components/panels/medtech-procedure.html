@@ -1,0 +1,108 @@
+<div class="panel panel-default landing-page-panel">
+  <div class="panel-body"> 
+    <div class="chart-title">
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class="hide"> Download</span> <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+        </ul>
+      </div>
+      <h2 class="landingcard-type blue">Market Insight</h2>  
+      <h3>Manufacturer Share in 
+        <div class="btn-group title-button">
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"> All Markets <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu" style="padding: 5px;">
+            <li class="checkbox active"><label><input type="checkbox" checked name="group-checkboxes" checked="checked">United States</label></li>
+            <li class="checkbox active"><label><input type="checkbox" checked name="group-checkboxes" checked="checked">Europe</label></li>
+            <li class="checkbox active"><label><input type="checkbox" checked name="group-checkboxes" checked="checked">Asia Pacific</label></li>
+          </ul>
+        </div>
+      </h3>
+      <div class="btn-toolbar hide">  
+        <div class="btn-group">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"> Procedure Type <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li class="active"><a href="#">Procedure Type</a></li>
+            <li><a href="#">Position</a></li>
+            <li><a href="#">Product Type</a></li>
+          </ul>
+        </div>
+
+      </div>    
+    </div> 
+    <div id="donutChart1" style="height:220px; margin-top:30px;"></div>
+  </div>
+  <div class="panel-footer text-right">
+    <a href="#" class="landingcard-popover-link2">Go to Market Insight <i class="fa fa-caret-right fa-lg"></i></a>
+  </div>
+</div>
+
+<div class="hide" id="landingcard-popover2">
+  <ul class="dropdown-menu nondropdown landingcard-popover-menu">
+    <li><a href="#"><span class="owned-tag">Global Market Trends</span></a></li>         
+    <li><a href="devicecat-2.html"><span class="owned-tag">United States</span></a></li>         
+    <li><a href="#"><span class="owned-tag">Europe</span></a></li>         
+    <li><a href="#"><span class="owned-tag">Europe (Supplementary)</span></a></li>          
+    <li><a href="devicecat-2a-notowned.html"><span class="free-tag">About Market Insight</span></a></li>          
+  </ul>
+  <div class="clearfix"></div>
+</div>  
+  
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.landingcard-popover-link2').popover({ 
+    placement: 'top',
+    html : true,
+    content: function() {
+      return $('#landingcard-popover2').html();
+    }
+  });
+  $('a.landingcard-popover-link2').click(function(e) {
+    e.preventDefault();
+  });
+});
+</script>
+
+<script type="text/javascript">
+	// Donut 1
+	var donutData1 = {
+		chart: {
+      renderTo: 'donutChart1',
+    },
+   colors: ["#275379", "#346ea1", "#418ac9", "#67a1d4", "#8db9df","#1a3750"],
+    plotOptions: {
+		pie: {
+			allowPointSelect: true,
+			cursor: 'pointer',
+			dataLabels: {
+				enabled: false
+			},
+			showInLegend: true,
+			innerSize: '50%',
+		}
+	},
+  tooltip: { 
+    enabled: false 
+  },
+	legend: {
+		layout: 'vertical',
+		align: 'right',
+		verticalAlign: 'middle',
+		useHTML: true,
+		itemStyle: { fontSize: '12px'},
+    labelFormatter: function() {
+			return ('<span style="width:120px; height: 16px; overflow:hidden; font-size: 12px; line-height: 16px; text-overflow:ellipsis; display:block; white-space:nowrap;" title="' + this.name + '">' + this.name + '</span>');
+		}
+	},
+		series: [{
+			type: 'pie',
+			data: [['Manufacturer 1', 9812],
+			       ['Manufacturer 2', 8671],
+			       ['Manufacturer 3', 8361],
+			       ['Manufacturer 4', 3285],
+			       ['Manufacturer 5', 2533],
+			       ['Other', 7136]]
+		}]
+  };
+	donutChart1 = jQuery.extend(true, {}, donut, donutData1);
+  var donutChart1 = new Highcharts.Chart(donutChart1);

@@ -1,0 +1,74 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h3><span class="number">4</span> What rows do you want to include?</h3>
+</div>
+
+<div class="modal-body">
+  <div class="row double-padding">
+    <div class="col-sm-6 col-sm-divider-right">
+      <h4>Choose Rows</h4>
+      <div class="set-height-wrapper">
+        <ul class="dropdown-menu nondropdown set-height available-fields">
+          <li class="dropdown-header">Standard</li>
+          <li class="checkbox active"><label><input type="checkbox" value="Therapy Area" checked="checked">Therapy Area</label></li>
+          <li class="checkbox active"><label><input type="checkbox" value="Device Series" checked="checked">Device Series</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Segment">Segment</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Procedure">Procedure</label></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">Facilities</li>
+          <li class="checkbox"><label><input type="checkbox" value="Provider ID">Provider ID</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Hospital Name">Hospital Name</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Hospital Beds">Hospital Beds</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Hospital City">Hospital City</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Hospital County">Hospital County</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Hospital State">Hospital State</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Hospital ZIP">Hospital ZIP</label></li>
+          <li class="checkbox"><label><input type="checkbox" value="Hospital Region">Hospital Region</label></li>
+          <li class="divider hide physicians-row"></li>
+          <li class="dropdown-header hide physicians-row">Physicians</li>
+          <li class="checkbox hide physicians-row"><label><input type="checkbox" value="Final Physician NPI">Final Physician NPI</label></li>
+          <li class="checkbox hide physicians-row"><label><input type="checkbox" value="Physician Name">Physician Name</label></li>
+          <li class="checkbox hide physicians-row"><label><input type="checkbox" value="Parent Network">Parent Network</label></li>
+          <li class="checkbox hide physicians-row"><label><input type="checkbox" value="Primary Specialty">Primary Specialty</label></li>
+          <li class="checkbox hide physicians-row"><label><input type="checkbox" value="Category">Category</label></li>
+          <li class="checkbox hide physicians-row"><label><input type="checkbox" value="Sub Category">SubCategory</label></li>
+        </ul>
+      </div>      
+    </div>
+    <div class="col-md-6 col-sm-divider-left"> 
+      <h4>Order Rows</h4>
+      <ul class="dropdown-menu nondropdown list-group-sortable selected-fields">
+        <li class="draggable-item" draggable="true" data-field-name="Therapy Area">Therapy Area <span class="fa fa-times-circle"></span></li>
+        <li class="draggable-item" draggable="true" data-field-name="Device Series">Device Series <span class="fa fa-times-circle"></span></li>
+      </ul>           
+    </div>  
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-lg btn-primary pull-left goto-step3"><i class="fa fa-arrow-left" aria-hidden="true"></i> Previous</button>
+  <button type="button" class="btn btn-lg btn-primary pull-right create-table">Finish</button>
+</div>
+
+<script type="text/javascript">
+
+
+$(document).on('click', '.available-fields > .checkbox:not(.has-dropdown) > label > input', function (e) {
+  var value = $(this).val();
+  if ($(this).prop('checked')) {
+    var field = '<li class="draggable-item" draggable="true" data-field-name="'+value+'">'+value+' <span class="fa fa-times-circle"></span></li>';
+    $(this).closest('.modal-body').find('.selected-fields').append(field);
+    sortable('.list-group-sortable', {});
+  } else {
+    $(this).closest('.modal-body').find('.selected-fields li[data-field-name="'+value+'"]').remove();    
+  }
+});
+
+$(document).on('click', '.selected-fields .fa-times-circle', function (e) {
+  var value = $(this).closest('li').data('field-name');
+  var field = $(this).closest('.modal-body').find('.available-fields').find('input[value="'+value+'"]');
+  field.closest('li').removeClass('active');
+  field.attr('checked', false);
+  $(this).closest('li').remove();
+});  
+</script> 

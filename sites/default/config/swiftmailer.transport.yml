@@ -1,0 +1,14 @@
+transport: smtp
+smtp_host: smtp.gmail.com
+smtp_port: 587
+smtp_encryption: tls
+smtp_credential_provider: swiftmailer
+smtp_credentials:
+  swiftmailer:
+    username: cricpredictor.2018@gmail.com
+    password: Cricket@2018
+sendmail_path: /usr/sbin/sendmail
+sendmail_mode: bs
+spool_directory: ''
+_core:
+  default_config_hash: 0dJfQivKgyEp-S8D6gSRTBbpRFApE3VkpltnPMBQ5OY

@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DRG Insight Platform</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/drg-bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/toc.css">
+    <link rel="stylesheet" href="assets/css/sitemap.css">
+    <!-- <link rel="stylesheet" href="assets/css/misc.css">-->
+    <link href="assets/images/favicon.ico" rel="shortcut icon">
+    <script src="assets/js/drg-bootstrap.js"></script>
+
+    <script src="assets/js/jquery.cookie.js"></script>
+    <script src="assets/js/contextmenu.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body class="background-grey" data-spy="scroll" data-offset="20" data-target=".nav">
+
+<div class="navbar navbar-default navbar-insights">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse"><i class="fa fa-lg fa-bars"></i></button>
+        <a class="insight-logo" href="#">
+            <span class="navbar-brand drg-logo text-hide">Decision Resources Group</span>
+            <span class="insight-text">Insight Platform</span>
+        </a>
+
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-right navmenus">
+                <li class="dropdown navmenu-icon open">
+                    <a href="report.html" class="dropdown-toggle activeclass mt13"><i class="fas fa-file blck"></i> <span class="ft10">Reports</span></a>
+                </li>
+                <li class="dropdown navmenu-icon open">
+                    <a href="taxonomy.html" class="dropdown-toggle mt13"><i class="fas fa-sitemap blck"></i> <span class="ft10">Taxonomy</span></a>
+                </li>
+                <li class="dropdown navmenu-icon open">
+                    <a href="taxonomy.html" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"></a>
+                    <div class="btn-group navmenu-divider">
+                        <button type="button" class="btn btn-link dropdown-toggle download-tooltip padd0 mt10 ht44" data-toggle="dropdown">
+                            <i class="fas fa-user-circle ft15em"></i> Analyst <span class="caret"></span> </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="update.html">Update Profile</a></li>
+                            <li><a href="#">Sign Out</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12 color_white pdlt0">
+    <!--<div class="col-md-3 mt10 mb10 pdlt0 brdrrgt">
+        <div class="col-md-2 text-center"><span class="display_blck"><i class="fas fa-file-alt"></i></span>New </div>
+        <div class="col-md-2 text-center"><span class="display_blck"><i class="fas fa-times-circle ml10"></i></span>Delete</div>
+        <div class="col-md-2 text-center"><span class="display_blck"><i class="fas fa-copy ml10"></i></span>Copy</div>
+        <div class="col-md-2 text-center"><span class="display_blck"><i class="fas fa-arrows-alt ml10"></i></span>Move</div>
+        <div class="col-md-2 text-center"><span class="display_blck"><i class="fas fa-arrow-circle-up"></i></span>Up</div>
+        <div class="col-md-2 text-center"><span class="display_blck"><i class="fas fa-arrow-circle-down ml10"></i></span>Down</div>
+    </div>-->
+    <div class="col-md-6 mt10 mb10 pdlt0">
+        <div class="col-md-1"><span class="display_blck"><i class="fas fa-search ml10"></i></span> Search</div>
+        <div class="col-md-1 ml10 bdrlt1 bdrrt1"><span class="display_blck"><i class="fas fa-trash-alt ml10"></i></span> <span class="ml5"> Bin</span></div>
+        <div class="col-md-1 bdrrt1 ml10 padd0"><span class="display_blck"><i class="fas fa-table ml10"></i></span> Tables</div>
+        <div class="col-md-1 ml10 bdrrt1 padd0"><span class="display_blck"><i class="fas fa-users ml10"></i></span> Users</div>
+    </div>
+    <div class="pull-right mt8">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary btn-link dropdown-toggle download-tooltip" data-toggle="dropdown">
+                Download Report</button>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                <!--<li class="dropdown-header">Full Report</li>-->
+                <li><a href="#"><span class="icon icon-pdf"></span> <span class="icon icon-word"></span></a></li>
+                <li class="divider"></li>
+                <!--<li class="dropdown-header">Additional Files</li>
+                <li><a href="#"><span class="icon icon-pdf"></span> Table of Contents</a></li>
+                <li><a href="#"><span class="icon icon-powerpoint"></span> All Figures</a></li>
+                <li><a href="#"><span class="icon icon-excel"></span> All Tables</a></li>-->
+            </ul>
+        </div>
+        <a href="editreport_preview.html"><button type="button" class="btn btn-primary">Preview Report</button></a>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary btn-link dropdown-toggle download-tooltip" data-toggle="dropdown">
+                Publish Report</button>
+            <ul class="dropdown-menu dropdwn dropdown-menu-right" role="menu">
+                <li><p class="black">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p></li>
+                <li>
+                    <form>
+                        <div class="form-group mb0">
+                            <div class="col-sm-12 pdlt0">
+                                <textarea class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <a class="dis_inline" href="report_preview.html"><button type="button" class="btn btn-primary btn-sm col-md-5 mt10">Publish</button></a>
+                        <a class="dis_inline" href="#"><button type="button" class="btn btn-primary btn-sm col-md-5 mt10 ml10" data-toggle="modal" data-target="#report_preview">Choose from list</button></a>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary btn-link dropdown-toggle download-tooltip" data-toggle="dropdown">
+                Send for Approval</button>
+            <ul class="dropdown-menu dropdwn dropdown-menu-right" role="menu">
+                <li><p class="black">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p></li>
+                <li>
+                    <form>
+                        <div class="form-group mb0">
+                            <div class="col-sm-12 pdlt0">
+                                <textarea class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <a class="dis_inline" href="#"><button type="button" class="btn btn-primary btn-sm col-md-5 mt10">Send</button></a>
+                        <a class="dis_inline" href="#"><button type="button" class="btn btn-primary btn-sm col-md-5 mt10 ml10" data-toggle="modal" data-target="#report_preview1">Choose from list</button></a>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 leftnbar">
+    <div class="row">
+        <div class="span3">
+            <div class="brdrnone">
+                <div class="sticky-toc" id="example">
+                    <div class="toc mt10">
+                        <ul class="toc-menu nav active">
+                            <li class="current-chapter active panel"><span data-toggle="collapse" class="toc-divider" href="#csg1"><span class="owned-tag"><i class="fas fa-chevron-circle-down mt5" data-toggle="collapse" href="#chapter1" aria-expanded="true"></i> Autoimmune & Inflammation</span></span>
+                                <ul class="nav collapse in" id="chapter1">
+                                    <li class="current-chapter active panel"><a href="#">Dermatology<i class="fas fa-chevron-circle-down" data-toggle="collapse" href="#chapter5" aria-expanded="true"></i></a>
+                                        <ul class="nav collapse in" id="chapter5">
+                                            <li class="current-chapter active panel"><a href="#">Atopic Dermatitis/Eczema <i class="fas fa-chevron-circle-down" data-toggle="collapse" href="#chapter51" aria-expanded="true"></i></a>
+                                                <ul class="nav collapse in" id="chapter51">
+                                                    <li class="panel folder">
+                                                        <a class="c-section title-link active" href="#">Landscape & Forecast <span href="#chapter5-1" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down"></span></a>
+                                                        <ul id="chapter5-1" class="nav child-section collapse in">
+                                                            <li class="panel folder"><a class="c-section title-link" href="#">Overview <span href="#chapter6-1" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down"></span></a>
+                                                                <ul id="chapter6-1" class="nav child-section collapse">
+                                                                    <li><a class="c-section title-link" href="#text_heading" id="text_heading1"><i class="fas fa-file-alt ft9"></i> Overview  </a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="panel folder"><a class="c-section title-link" href="#landscape_heading" id="landscape_heading1">Disease Landscape & Forecast </a> <span href="#chapter6-2" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span>
+                                                                <ul id="chapter6-2" class="nav child-section collapse in">
+                                                                    <li class="panel folder"><a class="c-section title-link" href="#folder_heading" id="folder_heading1"><i class="fas fa-folder"></i> Key Updates </a> <span href="#chapter6-3" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span>
+                                                                        <ul id="chapter6-3" class="nav child-section collapse in connected-sortable draggable-left">
+                                                                            <li><a class="c-section title-link" href="#text_heading" id="text_heading2"><i class="fas fa-file-alt ft9"></i> Text</a></li>
+                                                                            <li><a class="c-section title-link" href="#image_heading" id="image_heading1"><i class="fas fa-image ft9"></i> Image</a></li>
+                                                                            <li><a class="c-section title-link" href="#table_heading" id="table_heading1"><i class="fas fa-table ft9"></i> Table</a></li>
+                                                                            <li><a class="c-section title-link" href="#attachment_heading" id="attachment_heading1"><i class="fas fa-upload ft9"></i> Attachment</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="panel folder">
+                                                        <a class="c-section title-link active" href="#">Epidemiology <span href="#chapter5-2" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                                                        <ul id="chapter5-2" class="nav child-section collapse">
+                                                            <li><a class="c-section title-link" href="#">Overview</a></li>
+                                                            <li><a class="c-section title-link" href="#">Mature Markets Data</a></li>
+                                                            <li><a class="c-section title-link" href="#">Emerging Markets Data</a></li>
+                                                            <li><a class="c-section title-link" href="#">Americas Data</a></li>
+                                                            <li><a class="c-section title-link" href="#">Europe Data</a></li>
+                                                            <li><a class="c-section title-link" href="#">Middle East & Africa Data</a></li>
+                                                            <li><a class="c-section title-link" href="#">Asia & Pacific Data</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="panel folder">
+                                                        <a class="c-section title-link active" href="#">Current Treatment <span href="#chapter5-3" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                                                        <ul id="chapter5-3" class="nav child-section collapse">
+                                                            <li><a class="c-section title-link" href="#">Detailed, Expanded Analysis (US)</a></li>
+                                                            <li><a class="c-section title-link" href="#">Detailed, Expanded Analysis - Treatment Algorithms - Claims Data Analysis (Adult) (US)</a></li>
+                                                            <li><a class="c-section title-link" href="#">Detailed, Expanded Analysis: Treatment Algorithms: Claims Data Analysis (Pediatric) (US)</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="panel folder">
+                                                        <a class="c-section title-link active" href="#">Unmet Need<span href="#chapter5-4" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                                                        <ul id="chapter5-4" class="nav child-section collapse">
+                                                            <li><a class="c-section title-link" href="#">Overview</a></li>
+                                                            <li><a class="c-section title-link" href="#">Detailed, Expanded Analysis (US & EU)</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="panel folder">
+                                                        <a class="c-section title-link active" href="#">Emerging Therapies<span href="#chapter5-5" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                                                        <ul id="chapter5-5" class="nav child-section collapse">
+                                                            <li><a class="c-section title-link" href="#">Overview</a></li>
+                                                            <li><a class="c-section title-link" href="#">Dupixent Launch Tracking Wave 3 (US)</a></li>
+                                                            <li><a class="c-section title-link" href="#">Dupixent Launch Tracking Wave 2 (US)</a></li>
+                                                            <li><a class="c-section title-link" href="#">Dupixent Launch Tracking Wave 1 (US)</a></li>
+                                                            <li><a class="c-section title-link" href="#">Eucrisa Launch Tracking Wave 3 (US)</a></li>
+                                                            <li><a class="c-section title-link" href="#">Eucrisa Launch Tracking Wave 2 (US)</a></li>
+                                                            <li><a class="c-section title-link" href="#">Eucrisa Launch Tracking Wave 1 (US))</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="panel folder">
+                                                        <a class="c-section title-link active" href="#">Access & Reimbursement<span href="#chapter5-6" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                                                        <ul id="chapter5-6" class="nav child-section collapse">
+                                                            <li><a class="c-section title-link" href="#">Overview</a></li>
+                                                            <li><a class="c-section title-link" href="#">Detailed, Expanded Analysis (US)</a></li>
+                                                            <li><a class="c-section title-link" href="#">Detailed, Expanded Analysis (EU)</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="current-chapter active panel"><a href="#">Psoriasis <i class="fas fa-chevron-circle-down collapsed" data-toggle="collapse" href="#chapter8" aria-expanded="true"></i></a>
+                                                <ul class="nav collapse" id="chapter8">
+                                                    <li class="panel folder">
+                                                        <a class="c-section title-link active" href="landscape.html">Landscape & Forecast <span href="#chapter8-1" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                                                        <ul id="chapter8-1" class="nav child-section collapse">
+                                                            <li class="panel folder"><a class="c-section title-link" href="#">Overview <span href="#chapter9-1" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                                                                <ul id="chapter9-1" class="nav child-section collapse">
+                                                                    <li><a class="c-section title-link" href="#"><i class="fas fa-file-alt ft9"></i> Overview</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="panel folder"><a class="c-section title-link" href="#">Disease Landscape & Forecast <span href="#chapter9-2" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                                                                <ul id="chapter9-2" class="nav child-section collapse">
+                                                                    <li class="panel folder"><a class="c-section title-link" href="#"><i class="fas fa-folder"></i> Key Updates <span href="#chapter9-3" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                                                                        <ul id="chapter9-3" class="nav child-section collapse">
+                                                                            <li><a class="c-section title-link" href="#"><i class="fas fa-file-alt ft9"></i> Text</a></li>
+                                                                            <li><a class="c-section title-link" href="#"><i class="fas fa-image ft9"></i> Image</a></li>
+                                                                            <li><a class="c-section title-link" href="#"><i class="fas fa-table ft9"></i> Table</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="context-menu" style="display:none">
+    <!-- The actual menu that will be displayed-->
+    <ul class="dropdown-menu">
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fas fa-file-alt"></i> New</button>
+            <div class="dropdown-content">
+                <a href="#" id="modal1"><i class="fas fa-folder"></i> Folder</a>
+                <a href="#" id="modal2"><i class="fas fa-file-alt"></i> Text</a>
+                <a href="#" id="modal3"><i class="fas fa-image"></i> Image</a>
+                <a href="#" id="modal4"><i class="fas fa-table"></i> Table</a>
+                <a href="#" id="modal5"><i class="fas fa-upload"></i> Attachment</a>
+                <a href="#" id="modal6"><i class="fas fa-credit-card"></i> Landing Card</a>
+            </div>
+        </div>
+        <li><a href="#" id="modal7"><i class="fas fa-edit"></i> Edit</a></li>
+        <li><a href="#"><i class="fas fa-times-circle"></i> Delete</a></li>
+        <li><a href="#" id="cut"><i class="fas fa-cut"></i> Cut</a></li>
+        <li><a href="#"><i class="fas fa-copy"></i> Copy</a></li>
+        <li><a href="#" id="paste" class="list-group-item disabled"><i class="fas fa-paste"></i> Paste</a></li>
+        <!--<li><a href="#"><i class="fas fa-arrows-alt"></i> Move</a></li>-->
+        <li><a href="#"><i class="fas fa-sync-alt"></i> Refresh</a></li>
+    </ul>
+</div>
+
+<div id="context-menu1" style="display:none">
+    <!-- The actual menu that will be displayed-->
+    <ul class="dropdown-menu">
+        <li><a href="#" id="modal8"><i class="fas fa-edit"></i> Edit</a></li>
+        <li><a href="#"><i class="fas fa-times-circle"></i> Delete</a></li>
+        <li><a href="#"><i class="fas fa-cut"></i> Cut</a></li>
+        <li><a href="#"><i class="fas fa-copy"></i> Copy</a></li>
+        <li><a href="#"><i class="fas fa-paste"></i> Paste</a></li>
+        <!--<li><a href="#"><i class="fas fa-arrows-alt"></i> Move</a></li>-->
+        <li><a href="#"><i class="fas fa-sync-alt"></i> Refresh</a></li>
+    </ul>
+</div>
+
+<div id="context-menu2" style="display:none">
+    <!-- The actual menu that will be displayed-->
+    <ul class="dropdown-menu">
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fas fa-file-alt"></i> New</button>
+            <div class="dropdown-content">
+                <a href="#" id="modal9"><i class="fas fa-file-alt"></i> Report</a>
+            </div>
+            <li><a href="#" id="modal7"><i class="fas fa-edit"></i> Edit</a></li>
+            <li><a href="#"><i class="fas fa-times-circle"></i> Delete</a></li>
+            <li><a href="#" id="cut"><i class="fas fa-cut"></i> Cut</a></li>
+            <li><a href="#"><i class="fas fa-copy"></i> Copy</a></li>
+            <li><a href="#" id="paste" class="list-group-item disabled"><i class="fas fa-paste"></i> Paste</a></li>
+            <!--<li><a href="#"><i class="fas fa-arrows-alt"></i> Move</a></li>-->
+            <li><a href="#"><i class="fas fa-sync-alt"></i> Refresh</a></li>
+        </div>
+    </ul>
+</div>
+
+<div class="col-md-9 rightnbar" style="background: whitesmoke;">
+    <!-- <div class="col-md-offset-3 col-md-9 text-right navbar-fixed-top buttons_fix">
+         <button type="button" class="btn btn-primary">Preview Report</button>
+         <button type="button" class="btn btn-primary">Publish Report</button>
+     </div>-->
+    <div class="mt20">
+        <div class="col-md-12 background-white padd0" id="landscape_heading">
+            <div class="background-green"> </div>
+            <div class="col-md-6 ft10 mt25"><b>Last Modified :</b> October 30,2018 - 4:12 AM | <b>Checked Out By : Rahul</b></div>
+                <div class="col-md-6 padd10 text-right">
+                    <span class="fieldset_font">Saved 10 Sec ago</span>
+                    <button type="button" class="btn btn-primary btn-sm">Save</button>
+                    <button type="button" class="btn btn-primary btn-sm" id="edit4">Edit</button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-link dropdown-toggle download-tooltip padd0" data-toggle="dropdown">
+                            <i class="fas fa-chevron-circle-down"></i></button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="#" data-toggle="modal" data-target="#landscape_heading_popup">Edit All</a></li>
+                            <li><a href="editreport_preview.html">Preview</a></li>
+                            <li><a href="#">Send for Approval</a></li>
+                            <li><a href="#">Publish</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" data-toggle="modal" data-target="#version">Version History</a></li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="clearfix"></div>
+            <form class="form-horizontal">
+                <div class="form-group padd10">
+                    <label class="col-sm-1 text-right labl_green">Title:</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control inputDisabled4" disabled value="Disease Landscape & Forecast">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-12 background-white padd0 mt20" id="folder_heading">
+            <div class="background-green"> </div>
+            <div class="col-md-6 ft10 mt25"><b>Last Modified :</b> October 30,2018 - 1:12 PM | <b>Checked Out By : Sree</b></div>
+            <div class="col-md-6 padd10 text-right">
+                <span class="fieldset_font">Saved 10 Sec ago</span>
+                <button type="button" class="btn btn-primary btn-sm">Save</button>
+                <button type="button" class="btn btn-primary btn-sm" id="edit1">Edit</button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-link dropdown-toggle download-tooltip padd0" data-toggle="dropdown">
+                        <i class="fas fa-chevron-circle-down"></i></button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        <li><a href="#" data-toggle="modal" data-target="#folder_heading_popup">Edit All</a></li>
+                        <li><a href="editreport_preview.html">Preview</a></li>
+                        <li><a href="#">Send for Approval</a></li>
+                        <li><a href="#">Publish</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" data-toggle="modal" data-target="#version">Version History</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <form class="form-horizontal">
+                <div class="form-group padd10">
+                    <label class="col-sm-1 text-right labl_green">Title:</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control inputDisabled1" disabled value="Key Updates">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-12 background-white padd0 mt20" id="text_heading">
+            <div class="background-red"></div>
+            <div class="col-md-6 ft10 mt25"><i class="fas fa-lock"></i> <b>Last Modified :</b> October 30,2018 - 9:12 AM | <b>Checked Out By : Kiran</b></div>
+            <div class="col-md-6 padd10 text-right">
+                    <span class="fieldset_font">Saved 10 days ago</span>
+                    <button type="button" class="btn btn-primary btn-sm disabled">Save</button>
+                    <button type="button" class="btn btn-primary btn-sm disabled" id="edit3">Edit</button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-link dropdown-toggle download-tooltip padd0" data-toggle="dropdown">
+                            <i class="fas fa-chevron-circle-down"></i></button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="#" data-toggle="modal" data-target="#text_heading_popup">Edit All</a></li>
+                            <li><a href="editreport_preview.html">Preview</a></li>
+                            <li><a href="#">Send for Approval</a></li>
+                            <li><a href="#">Publish</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" data-toggle="modal" data-target="#version">Version History</a></li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="clearfix"></div>
+            <form class="form-horizontal">
+                <div class="form-group padd10">
+                    <label class="col-sm-1 text-right labl_green">Title:</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control inputDisabled3" disabled value="Text">
+                    </div>
+                </div>
+                <div class="form-group padd10">
+                    <label class="col-sm-1 text-right labl_green">Body:</label>
+                    <div class="col-sm-11">
+                        <textarea class="form-control inputDisabled3" rows="6" disabled></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-12 background-white padd0 mt20" id="image_heading">
+            <div class="background-red"></div>
+            <div class="col-md-6 ft10 mt25"><i class="fas fa-lock"></i> <b>Last Modified :</b> October 30,2018 - 12:12 PM | <b>Checked Out By : Sarih</b></div>
+            <div class="col-md-6 padd10 text-right">
+                <span class="fieldset_font">Saved 10 days ago</span>
+                <button type="button" class="btn btn-primary btn-sm disabled">Save</button>
+                <button type="button" class="btn btn-primary btn-sm disabled" id="edit2">Edit</button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-link dropdown-toggle download-tooltip padd0" data-toggle="dropdown">
+                        <i class="fas fa-chevron-circle-down"></i></button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        <li><a href="#" data-toggle="modal" data-target="#image_heading_popup">Edit All</a></li>
+                        <li><a href="editreport_preview.html">Preview</a></li>
+                        <li><a href="#">Send for Approval</a></li>
+                        <li><a href="#">Publish</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" data-toggle="modal" data-target="#version">Version History</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-1 text-right labl_green">Title:</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control inputDisabled2" disabled value="Image">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-1 text-right labl_green">Upload:</label>
+                    <div class="col-sm-11">
+                        <input type="file" class="form-control inputDisabled2" disabled>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-12 background-white padd0 mt20" id="table_heading">
+            <div class="background-green"></div>
+            <div class="col-md-6 ft10 mt25"><b>Last Modified :</b> October 30,2018 - 12:12 PM | <b>Checked Out By : Sarih</b></div>
+            <div class="col-md-6 padd10 text-right">
+                <span class="fieldset_font">Saved 10 days ago</span>
+                <button type="button" class="btn btn-primary btn-sm">Save</button>
+                <button type="button" class="btn btn-primary btn-sm" id="edit">Edit</button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-link dropdown-toggle download-tooltip padd0" data-toggle="dropdown">
+                        <i class="fas fa-chevron-circle-down"></i></button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        <li><a href="#" data-toggle="modal" data-target="#table_heading_popup">Edit All</a></li>
+                        <li><a href="editreport_preview.html">Preview</a></li>
+                        <li><a href="#">Send for Approval</a></li>
+                        <li><a href="#">Publish</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" data-toggle="modal" data-target="#version">Version History</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <form class="form-horizontal">
+                <div class="form-group padd10">
+                    <label class="col-sm-1 text-right labl_green">Title:</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control inputDisabled" disabled value="Table">
+                    </div>
+                </div>
+                <div class="form-group padd10">
+                    <label class="col-sm-1 text-right labl_green">Body:</label>
+                    <div class="col-sm-11">
+                        <textarea class="form-control inputDisabled" rows="6" disabled></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-12 background-white padd0 mt20" id="attachment_heading">
+            <div class="background-green"></div>
+            <div class="col-md-6 ft10 mt25"><b>Last Modified :</b> October 30,2018 - 12:12 PM | <b>Checked Out By : Sarih</b></div>
+            <div class="col-md-6 padd10 text-right">
+                <span class="fieldset_font">Saved 10 days ago</span>
+                <button type="button" class="btn btn-primary btn-sm">Save</button>
+                <button type="button" class="btn btn-primary btn-sm" id="edit5">Edit</button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-link dropdown-toggle download-tooltip padd0" data-toggle="dropdown">
+                        <i class="fas fa-chevron-circle-down"></i></button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        <li><a href="#" data-toggle="modal" data-target="#image_heading_popup">Edit All</a></li>
+                        <li><a href="editreport_preview.html">Preview</a></li>
+                        <li><a href="#">Send for Approval</a></li>
+                        <li><a href="#">Publish</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" data-toggle="modal" data-target="#version">Version History</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <form class="form-horizontal">
+                <div class="form-group padd10">
+                    <label class="col-sm-1 text-right labl_green">Title:</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control inputDisabled5" disabled value="Attachment">
+                    </div>
+                </div>
+                <div class="form-group padd10">
+                    <label class="col-sm-1 text-right labl_green">Attachment:</label>
+                    <div class="col-sm-11">
+                        <input type="file" class="form-control" disabled>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+
+
+<div class="modal fade" id="text_heading_popup" role="dialog" style="z-index: 9999">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Text</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal mt10">
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Title:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" value="Assessing Drug Development Oppurtunities_edited">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Suppress Title:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value="" checked></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Heading Type:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Standard</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <textarea class="form-control" rows="6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Numbered:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value="" checked></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Visible in Navigation:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value=""></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Page Orientation:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Auto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Exclude form Publication:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Never</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="image_heading_popup" role="dialog" style="z-index: 9999">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Image</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal mt10">
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Title:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" value="test Fig_2_changed">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Suppress Title:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" class="form-control" value=""></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Chart Output:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Figure</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Figure:</label>
+                        <div class="col-sm-9">
+                            <img src="assets/images/image.png" class="img-responsive">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">File:</label>
+                        <div class="col-sm-9">
+                            <input type="file" class="form-control" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Internal Comments:</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Numbered:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value="" checked></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Visible in Navigation:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value=""></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Page Orientation:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Auto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Exclude form Publication:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Never</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="folder_heading_popup" role="dialog" style="z-index: 9999">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Folder</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal mt10">
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Title:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" value="Products">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Suppress Title:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value=""></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">File:</label>
+                        <div class="col-sm-9">
+                            <input type="file" class="form-control" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Embed Attachment:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value="" checked>Sidebar</label>
+                            <label><input type="checkbox" value="">Embed</label>
+                            <label><input type="checkbox" value="">Inline</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Internal Comments:</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Numbered:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value="" checked></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Visible in Navigation:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value=""></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Page Orientation:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Auto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Exclude form Publication:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Never</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="landscape_heading_popup" role="dialog" style="z-index: 9999">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Report</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal mt10">
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Document Type:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" value="For Testing AL-214">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Full Title:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" value="Testing AL-214">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Product Code:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" value="Test">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Last Update:</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" value="Products">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Alert Headline (Customer Facing):</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" value="Test">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Abstract:</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Authors:</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Subpopulation (optional,expanded Content only):</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Covered Indications (multi-indication projects only):</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Internal Comments:</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Numbered:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value="" checked></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Visible in Navigation:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value=""></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Page Orientation:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Auto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Exclude form Publication:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Never</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="landing_card" role="dialog" style="z-index: 9999">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Landing Card</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal mt10">
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Title:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Suppress Title:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value=""></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Body:</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Exclude form Publication:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Never</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="table_heading_popup" role="dialog" style="z-index: 9999">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Table</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal mt10">
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Title:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" value="Test_Table_Edited">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Suppress Title:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value=""></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Keep Table Together?:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value=""></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Table Style:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Qualitative</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Numbered:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value="" checked></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Visible in Navigation:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value=""></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Page Orientation:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Auto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Exclude form Publication:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Never</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="upload_popup" role="dialog" style="z-index: 9999">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Upload</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal mt10">
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Title:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Upload:</label>
+                        <div class="col-sm-9">
+                            <input type="file" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Exclude form Publication:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Never</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="report_heading_popup" role="dialog" style="z-index: 9999">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Report</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal mt10">
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Document Type:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" value="For Testing AL-214">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Full Title:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" value="Testing AL-214">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Product Code:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" value="Test">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Last Update:</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" value="Products">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Alert Headline (Customer Facing):</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" value="Test">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Abstract:</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Authors:</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Subpopulation (optional,expanded Content only):</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Covered Indications (multi-indication projects only):</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Approval : </label>
+                        <div class="col-sm-9">
+                            <div class="bdrgrey">
+                            <div class="checkbox">
+                                <label><input type="checkbox">Assignee</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox">Reviewer</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox">Approver</label>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Internal Comments:</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Numbered:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value="" checked></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Visible in Navigation:</label>
+                        <div class="col-sm-9">
+                            <label><input type="checkbox" value=""></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Page Orientation:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Auto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 text-right labl_green">Exclude form Publication:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>Never</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="nodes" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-sm">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add Document</h4>
+            </div>
+            <div class="modal-body related-links">
+                <p data-toggle="modal" data-target="#folder_heading_popup"><i class="fas fa-folder"></i> <a href="#"> Folder</a></p>
+                <p data-toggle="modal" data-target="#text_heading_popup"><i class="fas fa-file-alt"></i><a href="#"> Text</a></p>
+                <p data-toggle="modal" data-target="#image_heading_popup"><i class="fas fa-image"></i><a href="#"> Figure</a></p>
+                <p data-toggle="modal" data-target="#table_heading_popup"><i class="fas fa-table"></i><a href="#"> Table</a></p>
+                <p data-toggle="modal" data-target="#upload_popup"><i class="fas fa-upload"></i><a href="#"> Upload</a></p>
+                <p data-toggle="modal" data-target="#landing_card"><i class="far fa-credit-card"></i><a href="#"> Landing Card</a></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="report" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-sm">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add Document</h4>
+            </div>
+            <div class="modal-body related-links">
+                <p data-toggle="modal" data-target="#report_heading_popup"><i class="fas fa-folder"></i> <a href="#"> Report</a></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="version" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Versions</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal mt10">
+                    <div class="form-group">
+                        <label class="col-sm-4 text-right labl_green">View Versions:</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" id="option_change">
+                                <option value="0">View Versions</option>
+                                <option value="1">CMS 1.02</option>
+                                <option value="2">CMS 2.02</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-horizontal mt10">
+                    <div class="form-group">
+                        <label class="col-sm-4 text-right labl_green">Title:</label>
+                        <div class="col-sm-8">
+                            <p id="change_value">Products</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text-right labl_green">Suppress Title:</label>
+                        <div class="col-sm-8">
+                            <p id="change_value1">No</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text-right labl_green">Numbered:</label>
+                        <div class="col-sm-8">
+                            <p id="change_value2">Yes</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text-right labl_green">Visible in Navigation:</label>
+                        <div class="col-sm-8">
+                            <p id="change_value3">Yes</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text-right labl_green">Page Orientation:</label>
+                        <div class="col-sm-8">
+                            <p id="change_value4">Auto</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 text-right labl_green">Exclude form Publication:</label>
+                        <div class="col-sm-8">
+                            <p id="change_value5">Never</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Revert to this version </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="report_preview" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content background-whitesmoke">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Choose from List</h4>
+            </div>
+            <div class="modal-body">
+                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <form class="form-horizontal mt10">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="span3">
+                                <div class="brdrnone">
+                                    <div class="sticky-toc">
+                                        <div class="toc mt10">
+                                            <ul class="toc-menu nav active">
+                                                <li class="current-chapter active panel"><span data-toggle="collapse" class="toc-divider" href="#csg1"><span class="owned-tag"><i class="fas fa-chevron-circle-down mt5" data-toggle="collapse" href="#chapter121" aria-expanded="true"></i> Disease Landscape & Forecast  </span></span>
+                                                    <ul class="nav collapse in" id="chapter121">
+                                                        <li class="current-chapter active panel"><a href="#"><input type="checkbox" class="form-control"> Key Updates<i class="fas fa-chevron-circle-down" data-toggle="collapse" href="#chapter531" aria-expanded="true"></i></a>
+                                                            <ul id="chapter531" class="nav child-section collapse in connected-sortable draggable-left">
+                                                                <li><a class="c-section title-link"><input type="checkbox" class="form-control"> Text</a></li>
+                                                                <li><a class="c-section title-link"><input type="checkbox" class="form-control"> Image</a></li>
+                                                                <li><a class="c-section title-link"><input type="checkbox" class="form-control"> Table</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#welcome_text" id="popupclose">Publish </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="report_preview1" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content background-whitesmoke">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Choose from List</h4>
+            </div>
+            <div class="modal-body">
+                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <form class="form-horizontal mt10">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="span3">
+                                <div class="brdrnone">
+                                    <div class="sticky-toc">
+                                        <div class="toc mt10">
+                                            <ul class="toc-menu nav active">
+                                                <li class="current-chapter active panel"><span data-toggle="collapse" class="toc-divider" href="#csg1"><span class="owned-tag"><i class="fas fa-chevron-circle-down mt5" data-toggle="collapse" href="#chapter12" aria-expanded="true"></i> Disease Landscape & Forecast  </span></span>
+                                                    <ul class="nav collapse in" id="chapter12">
+                                                        <li class="current-chapter active panel"><a href="#"><input type="checkbox" class="form-control"> Key Updates<i class="fas fa-chevron-circle-down" data-toggle="collapse" href="#chapter53" aria-expanded="true"></i></a>
+                                                            <ul id="chapter53" class="nav child-section collapse in connected-sortable draggable-left">
+                                                                <li><a class="c-section title-link"><input type="checkbox" class="form-control"> Text</a></li>
+                                                                <li><a class="c-section title-link"><input type="checkbox" class="form-control"> Image</a></li>
+                                                                <li><a class="c-section title-link"><input type="checkbox" class="form-control"> Table</a></li>
+                                                                <li><a class="c-section title-link"><input type="checkbox" class="form-control"> Attachment</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#welcome_text" id="popupclose1">Send </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="welcome_text" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Success Text</h4>
+            </div>
+            <div class="modal-body">
+                <p class="green mt20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+
+<script>
+    $('.tree-toggle').click(function () {
+        $(this).parent().children('ul.tree').toggle(200);
+    });
+    $('.sitemap-quicklinks ul.nav li a').click(function(){
+        $(this).parent().addClass('active');
+    });
+    $(document).ready(function(){
+        $("#text_heading1").click(function() {
+            $('.rightnbar').animate({
+                scrollTop: $("#text_heading").offset().top
+            }, 1000);
+        });
+        $("#text_heading2").click(function() {
+            $('.rightnbar').animate({
+                scrollTop: $("#text_heading").offset().top
+            }, 1000);
+        });
+        $("#folder_heading1").click(function() {
+            $('.rightnbar').animate({
+                scrollTop: $("#folder_heading").offset().top
+            }, 1000);
+        });
+        $("#table_heading1").click(function() {
+            $('.rightnbar').animate({
+                scrollTop: $("#table_heading").offset().top
+            }, 1000);
+        });
+        $("#image_heading1").click(function() {
+            $('.rightnbar').animate({
+                scrollTop: $("#image_heading").offset().top
+            }, 1000);
+        });
+        $("#landscape_heading1").click(function() {
+            $('.rightnbar').animate({
+                scrollTop: $("#landscape_heading").offset().top
+            }, 1000);
+        });
+        $("#attachment_heading1").click(function() {
+            $('.rightnbar').animate({
+                scrollTop: $("#attachment_heading").offset().top
+            }, 1000);
+        });
+        $("#edit").click(function(event){
+            event.preventDefault();
+            $('.inputDisabled').prop("disabled", false); // Element(s) are now enabled.
+        });
+        $("#edit1").click(function(event){
+            event.preventDefault();
+            $('.inputDisabled1').prop("disabled", false); // Element(s) are now enabled.
+        });
+        $("#edit2").click(function(event){
+            event.preventDefault();
+            $('.inputDisabled2').prop("disabled", false); // Element(s) are now enabled.
+        });
+        $("#edit3").click(function(event){
+            event.preventDefault();
+            $('.inputDisabled3').prop("disabled", false); // Element(s) are now enabled.
+        });
+        $("#edit4").click(function(event){
+            event.preventDefault();
+            $('.inputDisabled4').prop("disabled", false); // Element(s) are now enabled.
+        });
+        $("#edit5").click(function(event){
+            event.preventDefault();
+            $('.inputDisabled5').prop("disabled", false); // Element(s) are now enabled.
+        });
+        $("#cut").click(function(){
+            $("#paste").removeClass("disabled");
+            $("#text_heading2,#image_heading1,#table_heading1,#folder_heading1").addClass("blur")
+        });
+
+        $('#example').contextmenu({
+            target: "#context-menu"
+        });
+        $('#text_heading2, #image_heading1, #table_heading1').contextmenu({
+            target: "#context-menu1"
+        });
+        $('#landscape_heading1').contextmenu({
+            target: "#context-menu2"
+        });
+        $(".draggable-left").sortable({
+            connectWith: ".connected-sortable",
+            stack: ".connected-sortable ul"
+        }).disableSelection();
+        $('#modal1').click( function(event){
+            $("#folder_heading_popup").modal('show');
+        });
+        $('#modal2').click( function(event){
+            $("#text_heading_popup").modal('show');
+        });
+        $('#modal3').click( function(event){
+            $("#image_heading_popup").modal('show');
+        });
+        $('#modal4').click( function(event){
+            $("#table_heading_popup").modal('show');
+        });
+        $('#modal5').click( function(event){
+            $("#upload_popup").modal('show');
+        });
+        $('#modal6').click( function(event){
+            $("#landing_card").modal('show');
+        });
+        $('#modal7').click( function(event){
+            $("#folder_heading_popup").modal('show');
+        });
+        $('#modal8').click( function(event){
+            $("#text_heading_popup").modal('show');
+        });
+        $('#modal9').click( function(event){
+            $("#report_heading_popup").modal('show');
+        });
+        $("#option_change").change(function(){
+            /*var version = $(this).val();
+            $("#change_value").text("Version Products "+ version);
+            $("#change_value1").text("Yes "+ version);
+            $("#change_value2").text("No "+ version);
+            $("#change_value3").text("No "+ version);
+            $("#change_value4").text("Scroll "+ version);
+            $("#change_value5").text("Accept "+ version);*/
+            $("#change_value").text("Version Products");
+            $("#change_value1").text("Yes");
+            $("#change_value2").text("No");
+            $("#change_value3").text("No");
+            $("#change_value4").text("Scroll");
+            $("#change_value5").text("Accept");
+        });
+        $('#popupclose,#popupclose1').click( function(event){
+            $("#report_preview,#report_preview1").modal('hide');
+        });
+        $('#example ul li a').click(function(){
+            $('li a').removeClass("active_item");
+            $(this).addClass("active_item");
+        });
+    });
+
+</script>
+</html>

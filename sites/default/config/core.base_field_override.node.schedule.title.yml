@@ -1,0 +1,18 @@
+uuid: a46b79a5-5c49-43ee-802b-6eca3ec83889
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.schedule
+id: node.schedule.title
+field_name: title
+entity_type: node
+bundle: schedule
+label: 'Match No'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

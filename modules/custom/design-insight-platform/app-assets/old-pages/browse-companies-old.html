@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <title>DRG Insight Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- DRG Bootstrap Files -->
+  <link href="assets/css/drg-bootstrap.css" rel="stylesheet" media="all" type="text/css">
+  <link href="assets/css/fontawesome.css" rel="stylesheet" media="all" type="text/css">
+  <link href="assets/images/favicon.ico" rel="shortcut icon"> 
+  <script src="assets/js/drg-bootstrap.js"></script>
+
+  <!-- App-Specific Files -->
+  <link href="app-assets/css/insight.css" media="all" rel="stylesheet">
+  <script src="app-assets/js/load-content.js"></script> 
+  <script src="//code.highcharts.com/highcharts.js"></script> 
+  <script src="app-assets/js/highcharts-theme-drg.js"></script> 
+  <script src="app-assets/js/charts.js"></script>
+  <script type="text/javascript">
+  $(document).ready( function () {
+    $('.select-menu a').click(function () {	
+  		var text = $(this).text();
+  		$(this).parent().parent().siblings().html(text + ' <span class="caret"></span>');
+  		$(this).parent().siblings().removeClass('active');
+  		$(this).parent().addClass('active');
+  	});
+	});
+  </script>
+  
+</head>
+
+<body>
+	
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse"><i class="fa fa-bars"></i> Menu</button>
+      <a class="insight-logo" href="index.html">
+        <span class="navbar-brand drg-logo text-hide">Decision Resources Group</span>
+        <span class="insight-text">Insight Platform</span>
+      </a>
+      <a class="navbar-brand" href="index.html">Insights</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <form class="navbar-form navbar-left has-feedback has-icon no-label">
+        <input type="text" class="form-control hasclear nav-search-box" placeholder="Type your interest area or question" id="search-box" autocomplete="off">
+        <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span>
+        <span class="fa fa-search fa-lg input-icon"></span>
+        <button class="btn btn-primary nav-search-button" type="button" onclick="window.location = 'search-disease1.html';">Go</button>
+        <div data-partial="app-assets/components/searchbox.html"></div>             
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown"> 
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sitemap fa-lg"></i> Browse Insights <b class="caret"></b></a></a>
+          <ul class="dropdown-menu insight-browse-menu">
+            <li class="diseases"><a href="browse-therapy.html">Therapy Areas &amp; Diseases <span class="smalltext">You have access to insights on 23 diseases</span></a></li>
+            <li class="drugs"><a href="browse-drugs.html">Drugs <span class="smalltext">You have access to insights on all drugs</span></a></li>
+            <li class="companies"><a href="browse-companies.html">Companies <span class="smalltext">You have access to insights on all company</span></a></li>
+            <li class="devices"><a href="browse-devices.html">Devices <span class="smalltext">You have access to insights on 1 device</span></a></li>
+            <li class="report-center"><a href="report-center.html">Report Archive <span class="smalltext">You have access to 6 legacy reports</span></a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right navbar-toplinks">
+        <li><a href="http://www.decisionresourcesgroup.com" target="blank">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="https://authentication.decisionresourcesgroup.com/login/Solutions" class="dropdown-toggle">My Products</a>
+        </li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Steve Clark <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://authentication.decisionresourcesgroup.com/login/MyProfile">Edit Profile</a></li>
+            <li><a href="https://authentication.decisionresourcesgroup.com/login/Password/ChangePassword">Change Password</a></li>
+            <li><a href="https://authentication.decisionresourcesgroup.com/login/Logout">Log Out</a></li>
+          </ul>
+        </li>
+      </ul>      
+    </div>
+  </div>
+    
+  <div class="container-fluid affix-top" id="sticky-page-title">
+    <ul class="breadcrumb">
+      <li><a href="index.html">Home</a></li>
+    </ul>
+    <h1 class="page-title">Companies</h1>
+    <ul class="nav nav-pills hidden-xs">
+      <li class="active"><a href="browse-companies.html">Overview</a></li>
+      <li><a href="browse-companies2.html">Sales Ranking</a></li>
+    </ul>
+    <hr class="hidden-sm hidden-md hidden-lg">
+  </div>
+  
+  <div class="container-fluid" id="content-container">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="panel panel-default landing-page-panel">
+          <div class="panel-body">
+            <h3 class="h4"> </h3>     
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div class="panel panel-default landing-page-panel">
+          <div class="panel-body">
+            <h3 class="h4">Company Profiles</h3>
+            <div class="row">
+            <div class="col-md-4">
+            <ul class="triangle-bullets">
+              <li><a href="/Company/1/KeyIssues">Abbott</a></li>
+              <li><a href="/Company/2221/KeyIssues">AbbVie</a></li>
+              <li><a href="/Company/111/KeyIssues">Actavis</a></li>
+              <li><a href="/Company/10/KeyIssues">Almirall</a></li>
+              <li><a href="/Company/11/KeyIssues">Amgen</a></li>
+              <li><a href="/Company/15/KeyIssues">Astellas Pharma</a></li>
+              <li><a href="/Company/16/KeyIssues">AstraZeneca</a></li>
+              <li><a href="/Company/19/KeyIssues">Bayer</a></li>
+              <li><a href="/Company/21/KeyIssues">Biogen</a></li>
+              <li><a href="/Company/23/KeyIssues">Boehringer Ingelheim</a></li>
+              <li><a href="/Company/24/KeyIssues">Bristol-Myers Squibb</a></li>
+              <li><a href="/Company/26/KeyIssues">Celgene</a></li>
+              <li><a href="/Company/29/KeyIssues">Chugai</a></li>
+              <li><a href="/Company/34/KeyIssues">Daiichi-Sankyo</a></li>
+              <li><a href="/Company/37/KeyIssues">Eisai</a></li>
+
+            </ul> 
+            </div>
+            <div class="col-md-4">
+            <ul class="triangle-bullets">
+              <li><a href="/Company/39/KeyIssues">Eli Lilly</a></li>
+              <li><a href="/Company/40/KeyIssues">Endo International</a></li>
+              <li><a href="/Company/243/KeyIssues">Gedeon Richter</a></li>
+              <li><a href="/Company/45/KeyIssues">Gilead</a></li>
+              <li><a href="/Company/46/KeyIssues">GlaxoSmithKline</a></li>
+              <li><a href="/Company/51/KeyIssues">Ipsen</a></li>
+              <li><a href="/Company/53/KeyIssues">Johnson &amp; Johnson</a></li>
+              <li><a href="/Company/56/KeyIssues">Kyowa Hakko Kirin</a></li>
+              <li><a href="/Company/58/KeyIssues">Lundbeck</a></li>
+              <li><a href="/Company/190/KeyIssues">Meda</a></li>
+              <li><a href="/Company/61/KeyIssues">Merck &amp; Co</a></li>
+              <li><a href="/Company/63/KeyIssues">Merck KGaA</a></li>
+              <li><a href="/Company/64/KeyIssues">Mitsubishi Tanabe Pharma</a></li>
+              <li><a href="/Company/67/KeyIssues">Novartis</a></li>
+              <li><a href="/Company/68/KeyIssues">Novo Nordisk</a></li>
+            </ul>  
+            </div>
+            <div class="col-md-4">
+            <ul class="triangle-bullets">
+              <li><a href="/Company/70/KeyIssues">Ono</a></li>
+              <li><a href="/Company/73/KeyIssues">Otsuka</a></li>
+              <li><a href="/Company/76/KeyIssues">Pfizer</a></li>
+              <li><a href="/Company/84/KeyIssues">Recordati</a></li>
+              <li><a href="/Company/86/KeyIssues">Roche</a></li>
+              <li><a href="/Company/89/KeyIssues">Sanofi</a></li>
+              <li><a href="/Company/95/KeyIssues">Shionogi</a></li>
+              <li><a href="/Company/96/KeyIssues">Shire</a></li>
+              <li><a href="/Company/35/KeyIssues">Sumitomo Dainippon</a></li>
+              <li><a href="/Company/150/KeyIssues">Taisho</a></li>
+              <li><a href="/Company/100/KeyIssues">Takeda</a></li>
+              <li><a href="/Company/102/KeyIssues">Teva</a></li>
+              <li><a href="/Company/105/KeyIssues">UCB</a></li>
+              <li><a href="/Company/189/KeyIssues">Valeant</a></li>
+              <li><a href="/Company/108/KeyIssues">Vertex</a></li>
+            </ul>
+            </div>
+            </div>   
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <div class="panel panel-default landing-page-panel">
+          <div class="panel-body">
+            <h3 class="h4">Top 10 by Sales in 
+              <div class="btn-group title-button">
+                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"> All Countries <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="active"><a href="#">All Countries</a></li>
+                  <li><a href="#">United States</a></li>
+                  <li><a href="#">Rest of the World</a></li>
+                </ul>
+              </div>
+            </h3>
+            <table class="table">
+              <thead>
+                <tr class="first last">
+                  <th>Company</th>
+                  <th align="right">2014 Sales ($m)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="/Company/67/KeyIssues">Novartis</a></td>
+                  <td align="right">46,623</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/76/KeyIssues">Pfizer</a></td>
+                  <td align="right">45,708</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/86/KeyIssues">Roche</a></td>
+                  <td align="right">40,086</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/89/KeyIssues">Sanofi</a></td>
+                  <td align="right">37,784</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/61/KeyIssues">Merck &amp; Co</a></td>
+                  <td align="right">36,506</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/53/KeyIssues">Johnson &amp; Johnson</a></td>
+                  <td align="right">32,313</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/46/KeyIssues">GlaxoSmithKline</a></td>
+                  <td align="right">26,611</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/16/KeyIssues">AstraZeneca</a></td>
+                  <td align="right">26,095</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/45/KeyIssues">Gilead</a></td>
+                  <td align="right">24,473</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/2221/KeyIssues">AbbVie</a></td>
+                  <td align="right">19,960</td>
+                </tr>
+              </tbody>
+            </table>   
+          </div>
+        </div>
+      </div>
+       <div class="col-xs-12 col-md-6 col-lg-4">
+        <div class="panel panel-default landing-page-panel">
+          <div class="panel-body">
+            <h3 class="h4">Top 10 by Sales in 
+              <div class="btn-group title-button">
+                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"> Small Molecule (Chemical) <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Antibody/Antibody Derivative</a></li>
+                  <li><a href="#">Cell Therapy</a></li>
+                  <li><a href="#">DNA/RNA Therapy</a></li>
+                  <li><a href="#">Gene Therapy</a></li>
+                  <li><a href="#">Other</a></li>
+                  <li><a href="#">Other (Biologic)</a></li>
+                  <li><a href="#">Other (Protein)</a></li>
+                  <li><a href="#">Recombinant Protein</a></li>
+                  <li class="active"><a href="#">Small Molecule (Chemical)</a></li>
+                  <li><a href="#">Synthetic Peptide</a></li>
+                  <li><a href="#">Unknown</a></li>
+                  <li><a href="#">Vaccine</a></li>
+                </ul>
+              </div>
+            </h3>
+            <table class="table">
+              <thead>
+                <tr class="first last">
+                  <th>Company</th>
+                  <th align="right">2014 Sales ($m)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="/Company/67/KeyIssues">Novartis</a></td>
+                  <td align="right">46,623</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/76/KeyIssues">Pfizer</a></td>
+                  <td align="right">45,708</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/86/KeyIssues">Roche</a></td>
+                  <td align="right">40,086</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/89/KeyIssues">Sanofi</a></td>
+                  <td align="right">37,784</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/61/KeyIssues">Merck &amp; Co</a></td>
+                  <td align="right">36,506</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/53/KeyIssues">Johnson &amp; Johnson</a></td>
+                  <td align="right">32,313</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/46/KeyIssues">GlaxoSmithKline</a></td>
+                  <td align="right">26,611</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/16/KeyIssues">AstraZeneca</a></td>
+                  <td align="right">26,095</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/45/KeyIssues">Gilead</a></td>
+                  <td align="right">24,473</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/2221/KeyIssues">AbbVie</a></td>
+                  <td align="right">19,960</td>
+                </tr>
+              </tbody>
+            </table>   
+          </div>
+        </div>
+      </div>
+       <div class="col-xs-12 col-md-6 col-lg-4">
+        <div class="panel panel-default landing-page-panel">
+          <div class="panel-body">
+            <h3 class="h4">Top 10 Companies in 
+              <div class="btn-group title-button">
+                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"> All Countries <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="active"><a href="#">All Countries</a></li>
+                  <li><a href="#">United States</a></li>
+                  <li><a href="#">Rest of the World</a></li>
+                </ul>
+              </div>
+            </h3>
+            <table class="table">
+              <thead>
+                <tr class="first last">
+                  <th>Company</th>
+                  <th align="right">2014 Sales ($m)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="/Company/67/KeyIssues">Novartis</a></td>
+                  <td align="right">46,623</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/76/KeyIssues">Pfizer</a></td>
+                  <td align="right">45,708</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/86/KeyIssues">Roche</a></td>
+                  <td align="right">40,086</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/89/KeyIssues">Sanofi</a></td>
+                  <td align="right">37,784</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/61/KeyIssues">Merck &amp; Co</a></td>
+                  <td align="right">36,506</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/53/KeyIssues">Johnson &amp; Johnson</a></td>
+                  <td align="right">32,313</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/46/KeyIssues">GlaxoSmithKline</a></td>
+                  <td align="right">26,611</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/16/KeyIssues">AstraZeneca</a></td>
+                  <td align="right">26,095</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/45/KeyIssues">Gilead</a></td>
+                  <td align="right">24,473</td>
+                </tr>
+                <tr>
+                  <td><a href="/Company/2221/KeyIssues">AbbVie</a></td>
+                  <td align="right">19,960</td>
+                </tr>
+              </tbody>
+            </table>   
+          </div>
+        </div>
+      </div>
+    </div>     
+  </div> 
+
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+uuid: ca8f48d1-859d-4cf6-a8b7-4abc899ccf1c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Bangabandhu T20 Cup , 2020'
+vid: tournament
+description: Tournament
+weight: 0

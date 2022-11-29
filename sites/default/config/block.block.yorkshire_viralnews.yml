@@ -1,0 +1,26 @@
+uuid: 65587baa-9006-45b4-a7b1-108e240d00f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_shares
+    - system
+  theme:
+    - yorkshire
+id: yorkshire_viralnews
+theme: yorkshire
+region: brand
+weight: 1
+provider: null
+plugin: viral_news_block
+settings:
+  id: viral_news_block
+  label: 'Viral News'
+  provider: social_shares
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

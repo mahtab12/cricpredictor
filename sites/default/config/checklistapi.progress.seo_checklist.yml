@@ -1,0 +1,62 @@
+progress:
+  '#changed': 1582886976
+  '#changed_by': '1'
+  '#completed_items': 19
+  '#items':
+    install_and_enable_seo_checklist_module:
+      '#completed': 1582886908
+      '#uid': '1'
+    install_and_enable_admin_toolbar_module:
+      '#completed': 1582886908
+      '#uid': '1'
+    enable_clean_urls:
+      '#completed': 1582886908
+      '#uid': '1'
+    install_and_enable_redirect_module:
+      '#completed': 1582886908
+      '#uid': '1'
+    configure_the_redirect_module:
+      '#completed': 1582886908
+      '#uid': '1'
+    install_and_enable_pathauto_module:
+      '#completed': 1582886908
+      '#uid': '1'
+    configure_pathauto_module:
+      '#completed': 1582886908
+      '#uid': '1'
+    create_pathauto_patterns:
+      '#completed': 1582886908
+      '#uid': '1'
+    install_and_enable_metatag_module:
+      '#completed': 1582886908
+      '#uid': '1'
+    set_metatags_for_your_site:
+      '#completed': 1582886976
+      '#uid': '1'
+    install_and_enable_xml_sitemap_module:
+      '#completed': 1582886976
+      '#uid': '1'
+    configure_xml_sitemap_module:
+      '#completed': 1582886976
+      '#uid': '1'
+    set_up_cron:
+      '#completed': 1582886976
+      '#uid': '1'
+    get_a_google_account:
+      '#completed': 1582886976
+      '#uid': '1'
+    verify_with_google_search_console:
+      '#completed': 1582886976
+      '#uid': '1'
+    submit_xml_sitemap_to_google:
+      '#completed': 1582886976
+      '#uid': '1'
+    add_xml_sitemap_to_your_robotstxt_file:
+      '#completed': 1582886976
+      '#uid': '1'
+    install_and_enable_yoast_seo_module:
+      '#completed': 1582886908
+      '#uid': '1'
+    install_and_enable_advanced_css_js_aggregation_module:
+      '#completed': 1582886908
+      '#uid': '1'

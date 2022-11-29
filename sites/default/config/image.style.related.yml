@@ -1,0 +1,15 @@
+uuid: bf7330cd-0241-4f31-b2f2-fa66b5cf07d4
+langcode: en
+status: true
+dependencies: {  }
+name: related
+label: related
+effects:
+  bea4b21a-1106-4892-a39a-11b39a8064a6:
+    uuid: bea4b21a-1106-4892-a39a-11b39a8064a6
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 360
+      height: 190
+      anchor: center-center

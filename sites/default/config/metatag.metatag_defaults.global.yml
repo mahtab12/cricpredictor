@@ -1,0 +1,38 @@
+uuid: a76f4b5a-16c5-4806-9736-e42dfe4f32c9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Global
+tags:
+  keywords: 'cricket prediction, match prediction, who will win, live cricket score'
+  description: 'We provide 100% sure shot prediction. PSL 2020 Full prediction, Live Cricket Score ,Cricket Prediction ,Cricket Predictor ,Cricket Betting Tips , Match Prediction ,Today Match Prediction , Ball By Ball Big Bash League 2018-19 Live Cricket score, [current-page:title]'
+  title: '[current-page:title] | [site:name]'
+  image_src: /sites/default/files/cricket_1.png
+  canonical_url: '[current-page:url]'
+  og_title: '[current-page:title]'
+  og_url: '[current-page:url]'
+  og_image_url: /sites/default/files/cricket_1.png
+  og_description: '[current-page:title]'
+  og_site_name: '[site:name]'
+  twitter_cards_site: '@PredictorCric'
+  twitter_cards_type: summary_large_image
+  twitter_cards_description: '[current-page:title]'
+  twitter_cards_page_url: '[current-page:url]'
+  twitter_cards_title: '[current-page:title]'
+  schema_organization_brand: 'a:6:{s:5:"@type";s:5:"Brand";s:3:"@id";s:10:"[site:url]";s:4:"name";s:11:"[site:name]";s:11:"description";s:59:"We provide free cricket match prediction which is 100% sure";s:3:"url";s:10:"[site:url]";s:6:"sameAs";s:38:"https://www.facebook.com/cricpredicto/";}'
+  schema_organization_telephone: '+917504289838'
+  schema_organization_type: Organization
+  schema_organization_address: 'a:6:{s:5:"@type";s:13:"PostalAddress";s:13:"streetAddress";s:24:"Lane No 2, Sattar Colony";s:15:"addressLocality";s:7:"Bariatu";s:13:"addressRegion";s:6:"Ranchi";s:10:"postalCode";s:6:"834009";s:14:"addressCountry";s:5:"India";}'
+  schema_organization_id: '[site:url]'
+  schema_organization_name: '[site:name]'
+  schema_organization_url: '[site:url]'
+  schema_organization_logo: 'a:4:{s:5:"@type";s:11:"ImageObject";s:3:"url";s:59:"https://cricpredictor.com/sites/default/files/cricket_1.png";s:5:"width";s:3:"100";s:6:"height";s:3:"100";}'
+  schema_organization_additional_type: SportsOrganization
+  schema_web_page_id: '[site:url]'
+  schema_web_page_description: '[node:summary]'
+  schema_web_page_is_accessible_for_free: 'True'
+  schema_web_page_breadcrumb: 'Yes'
+  schema_web_page_type: WebPage

@@ -1,0 +1,28 @@
+uuid: 9ebfc882-c529-4bf2-845e-d174d8b5bb49
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - simplenews
+  theme:
+    - yorkshire
+third_party_settings:
+  block_class:
+    classes: col-sm-8
+id: yorkshire_simplenewssubscription
+theme: yorkshire
+region: brand
+weight: -15
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Simplenews subscription'
+  provider: simplenews
+  label_display: '0'
+  newsletters:
+    default: default
+  message: 'Stay informed - subscribe to our newsletter.'
+  unique_id: 00ccd034-4fde-4ebb-9c8f-856065529692
+visibility: {  }

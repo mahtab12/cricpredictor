@@ -1,0 +1,26 @@
+uuid: 5f1a7370-1987-4788-830f-1c368e7eefc9
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_shares
+    - system
+  theme:
+    - yorkshire
+id: yorkshire_spotlight
+theme: yorkshire
+region: brand
+weight: 0
+provider: null
+plugin: spot_light_block
+settings:
+  id: spot_light_block
+  label: SpotLight
+  provider: social_shares
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

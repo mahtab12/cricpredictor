@@ -1,0 +1,72 @@
+<div class="panel panel-default landing-page-panel">
+  <div class="panel-body">
+    <div class="chart-title">
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class=" text-hide">Downloads</span><span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+          <li><a href="#"><span class="icon icon-excel"></span> Data to Excel</a></li>
+        </ul>
+      </div>
+      <h2>Sales</h2>
+      <h3> 
+        <div class="btn-group title-button">
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"> Sales ($m) <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li class="active"><a href="#">Sales ($m)</a></li>
+            <li><a href="#">Sales Growth (%)</a></li>
+          </ul>
+        </div>
+        <span class="connecting-word"> in </span>
+        <div class="btn-group title-button">
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"> All Countries <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li class="active"><a href="#">All Countries</a></li>
+            <li><a href="#">United States</a></li>
+            <li><a href="#">Rest of the World</a></li>
+          </ul>
+        </div>
+      </h3>
+    </div>
+    <div id="forecast" style="height: 220px;margin: 30px 0 0;"></div>
+    
+  </div>
+  <div class="panel-footer text-right">
+    <a href="#">Read More <i class="fa fa-caret-right fa-lg"></i></a>
+  </div>
+</div>
+
+<script type="text/javascript">
+	var stackedChart = {
+		chart: {
+      renderTo: 'forecast',
+      type: 'column'
+    },
+    xAxis: {
+      categories: ['2010', '2011', '2012', '2013', '2014', '2015','2016', '2017', '2018', '2019', '2020', '2021'],
+      labels: {rotation: 270},
+    },
+    yAxis: {
+			reversedStacks: true,
+			title: {
+            text: 'Sales ($m)'
+        }
+    },
+    tooltip: {
+  		headerFormat: '<span style="color:{point.color}">● </span> <b>{series.name}</b><br>',
+  		pointFormat: '{point.category} Sales = ${point.y}m',
+  	},
+		series: [{
+            name: 'Abbott',
+            data: [6547,7933,9265,0,0,0,0,0,0,0,0,0]
+        },{
+            name: 'AbbVie',
+            data: [0,0,0,10659,12543,13901,15295,15692,14090,11861,10097,8443]
+        },{
+            name: 'Eisai',
+            data: [194,304,350,354,361,391,418,438,455,465,456,447]
+        }]
+  };
+	stackedChart = jQuery.extend(true, {}, BarChartStacked2, stackedChart);
+  var stackedChart = new Highcharts.Chart(stackedChart);
+</script>

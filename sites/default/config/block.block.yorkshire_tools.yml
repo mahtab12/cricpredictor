@@ -1,0 +1,27 @@
+uuid: 1ea010fe-eb7c-4859-ac6b-4962e5e7fc05
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - yorkshire
+_core:
+  default_config_hash: hV76BQtQlY3Ppx4zj67vFofBAbUIhbOqCYI6Ron3yco
+id: yorkshire_tools
+theme: yorkshire
+region: brand
+weight: 9
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

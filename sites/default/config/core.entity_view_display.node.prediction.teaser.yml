@@ -1,0 +1,63 @@
+uuid: 4bc021cc-4ef1-4558-888f-7dc16e76dacf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.prediction.body
+    - field.field.node.prediction.field_comments
+    - field.field.node.prediction.field_date
+    - field.field.node.prediction.field_format
+    - field.field.node.prediction.field_meta_tags
+    - field.field.node.prediction.field_percentage_of_win
+    - field.field.node.prediction.field_team_1
+    - field.field.node.prediction.field_team_2
+    - field.field.node.prediction.field_team_to_win
+    - field.field.node.prediction.field_tournament
+    - field.field.node.prediction.field_venue_match
+    - field.field.node.prediction.field_why_win_point_1
+    - field.field.node.prediction.field_why_win_point_2
+    - field.field.node.prediction.field_why_win_point_3
+    - field.field.node.prediction.field_yoast_seo
+    - node.type.prediction
+  module:
+    - text
+    - user
+id: node.prediction.teaser
+targetEntityType: node
+bundle: prediction
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_comments: true
+  field_date: true
+  field_format: true
+  field_meta_tags: true
+  field_percentage_of_win: true
+  field_team_1: true
+  field_team_2: true
+  field_team_to_win: true
+  field_tournament: true
+  field_venue_match: true
+  field_why_win_point_1: true
+  field_why_win_point_2: true
+  field_why_win_point_3: true
+  field_yoast_seo: true

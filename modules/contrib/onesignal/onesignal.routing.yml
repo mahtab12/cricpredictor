@@ -1,0 +1,59 @@
+onesignal.config_form:
+  path: '/admin/config/services/onesignal'
+  defaults:
+    _form: '\Drupal\onesignal\Form\OneSignalConfigForm'
+    _title: 'OneSignal'
+  requirements:
+    _permission: 'administer onesignal'
+  options:
+    _admin_route: TRUE
+
+onesignal.notifications:
+  path: '/admin/config/services/onesignal/notifications'
+  defaults:
+    _controller: '\Drupal\onesignal\Controller\OneSignalController::getNotifications'
+    _title: 'Notifications'
+  requirements:
+    _permission: 'administer onesignal'
+  options:
+    _admin_route: TRUE
+
+onesignal.notification_add:
+  path: '/admin/config/services/onesignal/notifications/add'
+  defaults:
+    _form: '\Drupal\onesignal\Form\OneSignalNotificationForm'
+    _title: 'Create Notification'
+  requirements:
+    _permission: 'administer onesignal'
+  options:
+    _admin_route: TRUE
+
+onesignal.notification_edit:
+  path: '/admin/config/services/onesignal/notifications/{id}/edit'
+  defaults:
+    _form: '\Drupal\onesignal\Form\OneSignalNotificationForm'
+    _title: 'View Notification'
+  requirements:
+    _permission: 'administer onesignal'
+  options:
+    _admin_route: TRUE
+
+onesignal.notification_stop:
+  path: '/admin/config/services/onesignal/notifications/{id}/stop'
+  defaults:
+    _form: '\Drupal\onesignal\Form\OneSignalStopNotificationForm'
+    _title: 'Stop Notification'
+  requirements:
+    _permission: 'administer onesignal'
+  options:
+    _admin_route: TRUE
+
+onesignal.devices:
+  path: '/admin/config/services/onesignal/devices'
+  defaults:
+    _controller: '\Drupal\onesignal\Controller\OneSignalController::getDevices'
+    _title: 'Devices'
+  requirements:
+    _permission: 'administer onesignal'
+  options:
+    _admin_route: TRUE

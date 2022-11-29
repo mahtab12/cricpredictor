@@ -1,0 +1,81 @@
+<div class="panel panel-default landing-page-panel">
+  <div class="panel-body">
+    <div class="chart-title">
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class="hide-xs"> Download </span><span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+          <li><a href="#"><span class="icon icon-excel"></span> Data to Excel</a></li>
+        </ul>
+      </div>
+      <h2>Market Value</h2>
+      <h3>  
+        <div class="btn-group title-button">
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"> All Segments <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">VADs</label></li>
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">IABP Disposables</label></li>
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">TAHs</label></li>
+          </ul>
+        </div>
+        in
+        <div class="btn-group title-button">
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"> All Markets <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">United States</label></li>
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">Europe</label></li>
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">Europe (Supplementary)</label></li>
+
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">Asia Pacific</label></li>
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">Asia Pacific (Supplementary)</label></li>
+
+          </ul>
+        </div>
+        in 2016
+      </h3>
+    </div>
+    <div id="columnchart2" style="height: 220px;margin: 30px 0 0;"></div>
+    
+  </div>
+  <div class="panel-footer text-right">
+    <a href="#" class="pull-left methodology" data-target="#ModalMethod2" data-toggle="modal"><i class="fa fa-lg fa-question-circle"></i> Methodology</a>
+    <a href="#">Go to Name of Section <i class="fa fa-caret-right fa-lg"></i></a>  </div>
+</div>
+
+<script type="text/javascript">
+var stackedChart = {
+    chart: {
+        renderTo: 'columnchart2',
+        type: 'column'
+    },
+    xAxis: {
+        categories: ['US', 'EU', 'EU (Sup)', 'AP', 'AP (Sup)'],
+        labels: {
+            rotation: 270
+        },
+    },
+    yAxis: {
+        reversedStacks: true,
+        title: {
+            text: 'Market Value (USD M)'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="color:{point.color}">● </span> <b>{series.name}</b><br>',
+        pointFormat: '{point.category} Sales = ${point.y}m',
+    },
+    series: [{
+        name: 'VADs',
+        data: [5490, 3490, 3490, 3490, 3660]
+    }, {
+        name: 'IABP Disposables',
+        data: [14170, 11250, 12480, 3850, 5470]
+    }, {
+        name: 'TAHs',
+        data: [12170, 11250, 12480, 3850, 5470]
+    }]
+};
+stackedChart = jQuery.extend(true, {}, BarChartStacked2, stackedChart);
+var stackedChart = new Highcharts.Chart(stackedChart);
+
+</script>

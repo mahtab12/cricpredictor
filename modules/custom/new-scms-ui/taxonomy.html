@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DRG Insight Platform</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/drg-bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="assets/images/favicon.ico" rel="shortcut icon">
+    <script src="assets/js/drg-bootstrap.js"></script>
+
+    <script src="assets/js/jquery.cookie.js"></script>
+</head>
+
+<body class="background-grey">
+
+<div class="navbar navbar-default navbar-insights">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse"><i class="fa fa-lg fa-bars"></i></button>
+        <a class="insight-logo" href="#">
+            <span class="navbar-brand drg-logo text-hide">Decision Resources Group</span>
+            <span class="insight-text">Insight Platform</span>
+        </a>
+
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav navbar-right navmenus">
+                <li class="dropdown navmenu-icon open">
+                    <a href="report.html" class="dropdown-toggle mt13"><i class="fas fa-file blck"></i> <span class="ft10">Reports</span></a>
+                </li>
+                <li class="dropdown navmenu-icon open">
+                    <a href="taxonomy.html" class="dropdown-toggle activeclass mt13"><i class="fas fa-sitemap blck"></i> <span class="ft10">Taxonomy</span></a>
+                </li>
+                <li class="dropdown navmenu-icon open">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"></a>
+                    <div class="btn-group navmenu-divider">
+                        <button type="button" class="btn btn-link dropdown-toggle download-tooltip padd0 mt10 ht44" data-toggle="dropdown">
+                            <i class="fas fa-user-circle ft15em"></i> pkarunamoorthy <span class="caret"></span> </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="update.html">Update Profile</a></li>
+                            <li><a href="#">Sign Out</a></li>
+                        </ul>
+                    </div>
+                </li>
+        </ul>
+
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <div class="row mt10">
+        <div class="col-md-3">
+            <div class="bdr ht200">
+                <div class="therapy-icon"></div>
+                <h4 class="mb10 text-center">Biopharma - Therapy Area </h4>
+                <p class="mt20 mb30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                <p class="taxonomy">Total - <span>100</span> <span class="pull-right"><i class="fas fa-eye" data-toggle="modal" data-target="#therapyarea"></i></span> </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="bdr ht200">
+                <div class="injection-icon"></div>
+                <h4 class="mb10 text-center">Indications </h4>
+                <p class="mt20 mb30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                <p class="taxonomy">Total - <span>100</span> <span class="pull-right"><i class="fas fa-eye" data-toggle="modal" data-target="#indications"></i></span> </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="bdr ht200">
+                <div class="device-icon"></div>
+                <h4 class="mb10 text-center">Devices </h4>
+                <p class="mt20 mb30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                <p class="taxonomy">Total - <span>100</span> <span class="pull-right"><i class="fas fa-eye" data-toggle="modal" data-target="#devices"></i></span> </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="bdr ht200">
+                <div class="building-icon"></div>
+                <h4 class="mb10 text-center">Company </h4>
+                <p class="mt20 mb30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                <p class="taxonomy">Total - <span>100</span> <span class="pull-right"><i class="fas fa-eye" data-toggle="modal" data-target="#company"></i></span> </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt20">
+        <div class="col-md-3">
+            <div class="bdr ht200">
+                <div class="segment-icon"></div>
+                <h4 class="mb10 text-center">Segment Type </h4>
+                <p class="mt20 mb30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                <p class="taxonomy">Total - <span>100</span> <span class="pull-right"><i class="fas fa-eye" data-toggle="modal" data-target="#report"></i></span> </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="bdr ht200">
+                <div class="money-icon"></div>
+                <h4 class="mb10 text-center">Currency Exchange </h4>
+                <p class="mt20 mb30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                <p class="taxonomy">Total - <span>100</span> <span class="pull-right"><i class="fas fa-eye" data-toggle="modal" data-target="#report"></i></span> </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="bdr ht200">
+                <div class="therapy-icon"></div>
+                <h4 class="mb10 text-center">Medtech - Therapy Area </h4>
+                <p class="mt20 mb30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                <p class="taxonomy">Total - <span>100</span> <span class="pull-right"><i class="fas fa-eye" data-toggle="modal" data-target="#therapyarea1"></i></span> </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="indications" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-sm">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Indications</h4>
+            </div>
+            <div class="modal-body related-links">
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Psoriasis</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Chron's Disease</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Asthma</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Heart Failure</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Migrane</span></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="company" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-sm">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Company</h4>
+            </div>
+            <div class="modal-body related-links">
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Abott</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Biogen</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Ipsen</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Lundbeck</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Saneten</span></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="therapyarea" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-sm">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Biopharma - Therapy Area</h4>
+            </div>
+            <div class="modal-body related-links">
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Bacterial Infections</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Cardiovascular</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Dermatology</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Gastrointestinal</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Genitourinary</span></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="therapyarea1" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-sm">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Medtech - Therapy Area</h4>
+            </div>
+            <div class="modal-body related-links">
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Aesthetics</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Cardiovascular</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Debtal</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Gynecology</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Imaging</span></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="devices" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-sm">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Devices</h4>
+            </div>
+            <div class="modal-body related-links">
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Aesthetics</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Cardiovascular</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Dental</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Urology</span></p>
+                <p><i class="fas fa-align-justify ml10"></i> <span class="ml10">Wound Care</span></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+
+
+</html>

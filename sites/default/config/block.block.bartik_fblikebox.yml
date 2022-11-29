@@ -1,0 +1,39 @@
+uuid: 45132993-6214-41ec-b222-47cd248a4fc0
+langcode: en
+status: true
+dependencies:
+  module:
+    - fb_likebox
+    - system
+  theme:
+    - bartik
+id: bartik_fblikebox
+theme: bartik
+region: header
+weight: -15
+provider: null
+plugin: fb_likebox_block
+settings:
+  id: fb_likebox_block
+  label: 'Facebook Page'
+  provider: fb_likebox
+  label_display: '0'
+  url: 'https://www.facebook.com/cricpredicto'
+  app_id: '287666355360754'
+  hide_header: 0
+  stream: 1
+  show_faces: 1
+  title: CricPredictor
+  width: '350'
+  height: '320'
+  hide_cta: 0
+  small_cta: ''
+  small_header: 1
+  adapt_container_width: 1
+  language: en_EN
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

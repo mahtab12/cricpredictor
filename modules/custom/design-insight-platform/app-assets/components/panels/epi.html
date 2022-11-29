@@ -1,0 +1,82 @@
+<div class="panel-body">
+  <div class="chart-title">
+    <div class="btn-group pull-right">
+      <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class=" text-hide">Downloads</span><span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+        <li><a href="#"><span class="icon icon-excel"></span> Data to Excel</a></li>
+      </ul>
+    </div>
+    <h2 class="hide">Epidemiology</h2>
+    <h3>Prevalence in Major Markets 2015</h3>  
+  </div>
+  <p class="text-center donut-title"><strong>62.1 M</strong> prevalent cases</p>
+  <div class="donut-container">
+    <div id="donutChart1" class="donut-chart"></div>
+    <div id="donutChart1addText" class="donut-add-text"></div>
+  </div>
+  <div class="donut-container">
+  <div id="donutChart2" class="donut-chart"></div>
+    <div id="donutChart2addText" class="donut-add-text"></div>
+  </div>
+</div>
+<div class="panel-footer text-right">
+  <a href="disease-3epidemiology-1.html">Read More <i class="fa fa-caret-right fa-lg"></i></a>
+</div>
+
+
+<script type="text/javascript">
+  var donutData1 = {
+    chart: {
+      renderTo: 'donutChart1',
+    },
+	series: [{
+	  type: 'pie',
+	  data: [['Diagnosed', 46575000],['Not Diagnosed', 15525000]]
+	}]
+  };  
+  donutChart1 = jQuery.extend(true, {}, donut, donutData1);
+  var donutChart1 = new Highcharts.Chart(donutChart1,       
+    function(donutChart1) {
+      var textX = donutChart1.plotLeft + (donutChart1.plotWidth  * 0.5);
+      var textY = donutChart1.plotTop  + (donutChart1.plotHeight * 0.5);
+
+      var span = '<span id="donutChart1Text" class="donut-text">';
+      span    += '<span class="donut-number">75%</span>';
+      span    += '<span class="donut-desc">Diagnosed</span>';
+      span    += '</span>';
+
+      $("#donutChart1addText").append(span);
+      span = $('#donutChart1Text');
+      span.css('left', textX + (span.width() * -0.5));
+      span.css('top', textY + (span.height() * -0.5));
+    }
+  );
+
+  var donutData2 = {
+    chart: {
+      renderTo: 'donutChart2',
+    },
+	series: [{
+	  type: 'pie',
+	  data: [['Drug Treated', 54648000],['Not Drug Treated', 7452000]]
+	}]
+  };  
+  donutChart2 = jQuery.extend(true, {}, donut, donutData2);
+  var donutChart2 = new Highcharts.Chart(donutChart2,       
+    function(donutChart2) {
+      var textX = donutChart2.plotLeft + (donutChart2.plotWidth  * 0.5);
+      var textY = donutChart2.plotTop  + (donutChart2.plotHeight * 0.5);
+
+      var span = '<span id="donutChart2Text" class="donut-text">';
+      span    += '<span class="donut-number">88%</span>';
+      span    += '<span class="donut-desc">Drug Treated</span>';
+      span    += '</span>';
+
+      $("#donutChart2addText").append(span);
+      span = $('#donutChart2Text');
+      span.css('left', textX + (span.width() * -0.5));
+      span.css('top', textY + (span.height() * -0.5));
+    }
+  );
+</script>

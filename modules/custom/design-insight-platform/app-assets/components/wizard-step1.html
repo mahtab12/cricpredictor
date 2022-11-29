@@ -1,0 +1,37 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h3><span class="number">1</span> What data source do you want to dig in to?</h3>
+</div>
+
+<div class="modal-body">
+  <ul class="dropdown-menu nondropdown big-radio-list" id="dataSource">
+    <li class="radio">
+      <label>
+        <input type="radio" name="datasource" value="Market Insight">Market Insight
+        <span class="description">Compare market forecast data across medtech markets and regions around the world. </span>
+      </label>
+    </li>
+    <li class="radio">
+      <label>
+        <input type="radio" name="datasource" value="Commercial Targeting">Commercial Targeting 
+        <span class="description">Compare facility-level procedure volumes for hospitals, health systems, physicians and surgeons.</span>
+      </label>
+    </li>
+    <li class="radio">
+      <label>
+        <input type="radio" name="datasource" value="Brand Tracking">Brand Tracking
+        <span class="description">Compare brand-level market share data from facilities in the US and 20 medtech markets around the world.</span>
+      </label>
+    </li>
+  </ul>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-lg btn-primary pull-right disabled goto-step2">Next <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+</div>
+          
+<script type="text/javascript">
+$(document).on('click', '#dataSource input', function (e) {
+  $(this).closest('.wizard-pane').find('.goto-step2').removeClass('disabled');
+}); 
+</script>

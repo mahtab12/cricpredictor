@@ -1,0 +1,109 @@
+uuid: 9e6d9366-9e5b-4ce2-8d1b-6c72c4b561e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.stadium.field_capacity
+    - field.field.taxonomy_term.stadium.field_city
+    - field.field.taxonomy_term.stadium.field_country
+    - field.field.taxonomy_term.stadium.field_flood_light
+    - field.field.taxonomy_term.stadium.field_known_as
+    - field.field.taxonomy_term.stadium.field_opened
+    - field.field.taxonomy_term.stadium.field_stadium_image
+    - field.field.taxonomy_term.stadium.field_timezone
+    - image.style.thumbnail
+    - taxonomy.vocabulary.stadium
+  module:
+    - image
+    - path
+    - text
+id: taxonomy_term.stadium.default
+targetEntityType: taxonomy_term
+bundle: stadium
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_capacity:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_city:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_country:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_flood_light:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_known_as:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_opened:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_stadium_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_timezone:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

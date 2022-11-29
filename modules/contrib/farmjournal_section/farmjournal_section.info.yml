@@ -1,0 +1,5 @@
+name: Farmjournal Section
+type: module
+description: Farmjournal Site Sections
+core: 8.x
+package: Custom

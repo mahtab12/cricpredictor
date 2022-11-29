@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>DRG Insight Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- DRG Bootstrap Files -->
+    <link href="assets/css/drg-bootstrap.css" rel="stylesheet" media="screen" type="text/css">
+    <link href="assets/css/fontawesome.css" rel="stylesheet" media="screen" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" media="screen" rel="text/css">
+    <link href="assets/css/toc.css" rel="stylesheet" media="screen" rel="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="assets/images/favicon.ico" rel="shortcut icon"> 
+    <script src="assets/js/drg-bootstrap.js"></script>
+
+    <!-- App-Specific Files -->
+    <link href="app-assets/css/insight.css" media="screen" rel="stylesheet">
+    <link href="app-assets/css/print.css" media="print" rel="stylesheet">
+    <script src="app-assets/js/load-content.js"></script> 
+    <script src="https://code.highcharts.com/highcharts.js"></script> 
+    <script src="app-assets/js/highcharts-theme-drg.js"></script> 
+    <script src="app-assets/js/charts.js"></script>
+    <script src="app-assets/js/responsive-tab.js"></script>
+    <script src="app-assets/js/bootstrap-tour.min.js"></script>
+    <script src="app-assets/js/insight-tours.js"></script>
+
+  </head>
+
+  <body data-spy="scroll" data-target=".current-chapter">
+
+    <div class="navbar navbar-default navbar-insights">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse"><i class="fa fa-lg fa-bars"></i></button>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-search"><i class="fa fa-lg fa-search"></i></button>
+        <a class="insight-logo" href="index.html">
+          <span class="navbar-brand drg-logo text-hide">Decision Resources Group</span>
+          <span class="insight-text">Insight Platform</span>
+        </a>
+      </div>
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <div data-partial="app-assets/components/authoring-header.html"></div>                         
+      </div>
+    </div>
+
+    <div class="container-fluid affix-top" id="sticky-page-title">
+      <ul class="breadcrumb">
+        <li><a href="#">Autoimmune &amp; Inflammation</a></li>
+        <li><a href="#">Dermatology</a></li>
+        <li><a href="#">Psoriasis</a></li>
+      </ul>
+      <!--<h1 class="page-title">Psoriasis</h1>
+      <div class="pull-right contact-tab">
+        <a href="#" data-toggle="modal" class="btn btn-primary" data-target="#contactFrom"><i class="fa fa-comment hidden-xs"></i> Need Some Help?</a>
+      </div>-->
+
+      <ul class="nav nav-tabs hidden-xs hidden-sm">
+        <li class="active"><a href="#">Content</a></li>
+        <li><a href="search-docs.html">Search</a></li>
+        <li><a href="user-bin.html">Bin</a></li>
+        <li><a href="#">Custom Tables</a></li>
+        <li><a href="user-list.html">Users</a></li>
+      </ul>
+    </div>
+
+
+    <div class="mobile-toc-panel hidden-md hidden-lg">
+      <a href="#" data-toggle="modal" data-target="#tocModal"><i class="fa fa-list-ul"></i> Table of Contents</a>
+      <!--<a href="#"data-toggle="modal" data-target="#relatedModal"><i class="fa fa-share-alt"></i> Related Content</a>-->
+    </div>
+
+    <div id="content-container">
+      <div class="toc-panel related-hidden">
+
+        <div class="sticky-toc">
+          <div class="toc-toggle"><i class="fa fa-angle-double-left"></i></div>
+          <div class="toc scrollbox">
+            <div data-partial="app-assets/components/toc.html"></div> 
+          </div>
+        </div>
+
+        <div class="content-panel">          
+
+          <div class="content-body qualative-content" id="tourDiseaseContent">
+            <div class="report-header">
+              <h1 id="chapter-top">Disease Landscape &amp; Forecast</h1>
+              <div class="report-information">
+                <div class="report-meta pull-left">  
+                  <span class="pub-date"><i class="fa fa-calendar"></i> 9 Apr 2016</span> 
+                  <span class="btn-group">
+                    <a href="#" class="dropdown-toggle btn btn-link" data-toggle="dropdown" aria-expanded="false"><span class="fa fa-arrow-circle-down"></span> Download <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#"><span class="icon icon-word"></span> Word</a></li>
+                      <li><a href="#"><span class="icon icon-pdf"></span> PDF</a></li>
+                    </ul>
+                  </span> 
+                  <span class="preview"><i class="fas fa-eye"></i> <a href="report-preview.html" class="btn-link">Preview</a></span> 
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+
+            <div class="col-md-12 form-horizontal form-spacing">
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Document Name:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" value="Disease Landscape & Forecast">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Full Title:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" value="Disease Landscape & Forecast">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Product Code:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" value="DLF2018">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Last Update:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" value="MM/DD/YYYY">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Alert Headline (Customer Facing):</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" value="Disease Landscape & Forecast">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Abstract:</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" rows="6"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Authors:</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" rows="6"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Subpopulation (optional,expanded Content only):</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" rows="6"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Covered Indications (multi-indication projects only):</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" rows="6"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Internal Comments:</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" rows="6"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Numbered:</label>
+                <div class="col-sm-10">
+                  <label><input type="checkbox" value="" checked></label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Visible in Navigation:</label>
+                <div class="col-sm-10">
+                  <label><input type="checkbox" value=""></label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Page Orientation:</label>
+                <div class="col-sm-10">
+                  <select class="form-control">
+                    <option>Auto</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Exclude form Publication:</label>
+                <div class="col-sm-10">
+                  <select class="form-control">
+                    <option>Never</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mt10 pull-right">
+                <button type="button" class="btn btn-primary" data-toggle="dropdown">Save Report</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="container-fluid">
+      <div class="row">
+        <p class="col-sm-6">© 2015 DR/Decision Resources, LLC. All rights reserved.</p>
+        <ul class="col-sm-6">
+          <li><a href="http://www.decisionresources.com/Privacy-Policy.aspx" target="_blank" class="">Privacy Policy</a></li>
+          <li><a href="http://www.decisionresources.com/Terms-of-Use.aspx" target="_blank" class="">Terms of Use</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <div data-partial="app-assets/components/modals.html"></div>         
+    <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="tocModal" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-toc">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="relatedModal" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="content-related">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      // MODALS FOR RESPONSIVE DESIGN
+      $(document).ready(function () {
+        $('#tocModal').on('show.bs.modal', function (e) {
+          $($('.sticky-toc').contents()).appendTo('#tocModal .modal-toc')
+        });
+        $('#tocModal').on('hide.bs.modal', function (e) {
+          $($('#tocModal .modal-toc').contents()).appendTo('.sticky-toc')
+        });
+        $('#relatedModal').on('show.bs.modal', function (e) {
+          $($('.content-related').contents()).appendTo('#relatedModal .content-related')
+        });
+        $('#relatedModal').on('hide.bs.modal', function (e) {
+          $($('#relatedModal .content-related').contents()).appendTo('.toc-panel .content-related')
+        });
+        $('.mobile-toc-panel').affix({
+          offset: 152
+        });
+
+        $('.content-panel input, .content-panel textarea, .content-panel select, .content-panel button').attr('disabled', 'disabled');
+      });
+
+    </script> 
+
+    <script type="text/javascript">
+      $('.btn-alert').click(function () {
+        if ($(this).hasClass("alerts-off")) {
+          $(this).addClass('alerts-on');
+          $(this).removeClass('alerts-off');
+          $('.btn-alert .fa-bell').addClass('faa-ring animated faa-slow');
+          setTimeout(function () {
+            $('.btn-alert .fa-bell').removeClass('faa-ring animated faa-slow');
+          }, 1000);
+        } else {
+          $(this).removeClass('alerts-on');
+          $(this).addClass('alerts-off');
+        }
+      });
+    </script>
+
+  </body>
+
+</html>

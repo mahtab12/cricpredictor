@@ -1,0 +1,34 @@
+uuid: a66db52f-7c91-478f-8334-897ac6afab06
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.trending_news
+  module:
+    - block_class
+    - system
+    - views
+  theme:
+    - yorkshire
+third_party_settings:
+  block_class:
+    classes: trd-blk
+id: yorkshire_views_block__trending_news_block_1
+theme: yorkshire
+region: brand
+weight: -19
+provider: null
+plugin: 'views_block:trending_news-block_1'
+settings:
+  id: 'views_block:trending_news-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/prediction/*\r\n/cricket-prediction\r\n/videos\r\n/articles/*\r\n/videos/*\r\n/match/*\r\n/cricket-match/live-scores\r\n/author/*\r\n/series\r\n/matches/*"
+    negate: false
+    context_mapping: {  }

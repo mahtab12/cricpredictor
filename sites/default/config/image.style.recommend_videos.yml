@@ -1,0 +1,7 @@
+uuid: 7fd33671-e159-4bb8-a950-9dbf67bc4011
+langcode: en
+status: true
+dependencies: {  }
+name: recommend_videos
+label: recommend-videos
+effects: {  }

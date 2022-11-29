@@ -1,0 +1,40 @@
+<div class="panel-body">
+  <div class="chart-title">
+    <div class="btn-group pull-right">
+      <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class=" text-hide">Downloads</span><span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+        <li><a href="#"><span class="icon icon-excel"></span> Data to Excel</a></li>
+      </ul>
+    </div>
+    <h2 class="hide">Emerging Therapies</h2>
+    <h3>Most Promising Emerging Therapies</h3> 
+  </div> 
+  <ul class="dash-bullets">
+    <li><span class="drug-name">Semaglutide</span> <span class="drug-info">Novo Nordisk</span></li>
+    <li><span href="#" class="drug-name">Xultophy</span> <span class="drug-info">Novo Nordisk</span></li>
+    <li><span class="drug-name">ITCA-650</span> <span class="drug-info"> Intarcia Therapeutics/Servier</span></li>
+  </ul>
+  <div class="clearfix"></div>
+  <hr class="dotted clearfix">   
+  <h3>Late-Stage Pipeline Activity</h3>
+  <div id="pipeline" style="height: 70px;"></div>  
+</div>
+<div class="panel-footer text-right">
+  <a href="disease-6emerging-1.html">Read More <i class="fa fa-caret-right fa-lg"></i></a>
+</div>
+
+<script type="text/javascript">
+var	pipelineData = {
+	chart: {
+		renderTo: 'pipeline'
+	},
+	series: [{
+		name: 'Phase II', data: [39]
+	},{
+		name: 'Phase III', data: [8]
+	}]
+};
+pipelineData = jQuery.extend(true, {}, BarChartPipeline, pipelineData);
+var pipelineData = new Highcharts.Chart(pipelineData);
+</script>

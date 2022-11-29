@@ -1,0 +1,21 @@
+uuid: d0db6999-b0d5-4261-8162-2c206c574b6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_series_category
+    - node.type.schedule
+  module:
+    - options
+id: node.schedule.field_series_category
+field_name: field_series_category
+entity_type: node
+bundle: schedule
+label: 'Series Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

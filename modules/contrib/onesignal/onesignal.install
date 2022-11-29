@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the OneSignal module.
+ */
+
+use Drupal\Core\Url;
+use OneSignal\OneSignal;
+
+/**
+ * @file
+ * Install, update and uninstall hooks for the OneSignal module.
+ */
+
+/**
+ * Implements hook_requirements().
+ *
+ * {@inheritdoc}
+ */
+function onesignal_requirements($phase) {
+  // Instantiate array for requirements.
+  $requirements = [];
+
+  // Installation phase.
+  if ($phase === 'install' && !class_exists(OneSignal::class)) {
+    $requirements['onesignal_php_library'] = [
+      'description' => t('OneSignal module requires the OneSignal PHP library.'),
+      'severity' => REQUIREMENT_ERROR,
+    ];
+  }
+
+  // Runtime phase.
+  if ($phase === 'runtime') {
+    // Check required config settings.
+    $config = \Drupal::config('onesignal.config');
+    if (empty($config->get('onesignal_app_id')) || empty($config->get('onesignal_rest_api_key'))) {
+      $requirements['onesignal'] = [
+        'title' => t('OneSignal'),
+        'severity' => REQUIREMENT_WARNING,
+        'description' => t('OneSignal is missing important configurations. Please set these up at the <a href="%settings">settings page</a>.',
+          [
+            '%settings' => Url::fromRoute('onesignal.config_form')->toString(),
+          ]),
+      ];
+    }
+  }
+
+  return $requirements;
+}

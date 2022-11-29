@@ -1,0 +1,63 @@
+search_filter:
+  version: 4
+  css:
+    layout:
+      css/insight_search.css: {}
+  js:
+     js/search.js: {}
+     js/digital_search.js: {}
+     http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js: {}
+     js/jquery.jscroll.min.js: {}
+     js/insight_search_filter.js: {}
+     
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal.dialog.ajax
+## YAML Template.
+autosearch_header:
+  js:
+    js/autosearch.js: {}
+    js/search_toc.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal.dialog.ajax
+insight_biopharma_search:
+  js:
+    js/insight_biopharma_search.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal.dialog.ajax
+
+insight_auto_suggestion:
+  js:
+    js/search_autosuggestion.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal.dialog.ajax
+
+insight_medtech_search:
+  js:
+    js/insight_medtech_search.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal.dialog.ajax

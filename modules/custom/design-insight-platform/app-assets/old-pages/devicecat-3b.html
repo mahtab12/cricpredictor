@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <title>DRG Insight Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- DRG Bootstrap Files -->
+  <link href="assets/css/drg-bootstrap.css" rel="stylesheet" media="all" type="text/css">
+  <link href="assets/css/fontawesome.css" rel="stylesheet" media="all" type="text/css">
+  <link href="assets/images/favicon.ico" rel="shortcut icon"> 
+  <script src="assets/js/drg-bootstrap.js"></script>
+
+  <!-- App-Specific Files -->
+  <link href="app-assets/css/insight.css" media="all" rel="stylesheet">
+  <script src="app-assets/js/load-content.js"></script> 
+
+
+</head>
+
+<body class="background-white">
+	
+  <div class="navbar navbar-default navbar-insights">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse"><i class="fa fa-lg fa-bars"></i></button>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-search"><i class="fa fa-lg fa-search"></i></button>
+      <a class="insight-logo" href="index.html">
+        <span class="navbar-brand drg-logo text-hide">Decision Resources Group</span>
+        <span class="insight-text">Insight Platform</span>
+      </a>
+      <form class="navbar-form navbar-left has-feedback no-label navbar-collapse collapse navbar-responsive-search">
+        <input type="text" class="form-control hasclear nav-search-box" placeholder="Type your interest area or question" value="" id="search-box" autocomplete="off">
+        
+        <span class="clearer fa fa-times-circle form-control-feedback" style="display: block;"></span>
+        <button class="btn btn-primary nav-search-button" type="button" onclick="window.location = 'search-disease1.html';"><i class="fa fa-search fa-lg"></i></button>
+        <div class="scope-tag">Cardiac Assist Devices</div>             
+        <div data-partial="app-assets/components/searchbox.html"></div>             
+      </form>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <div data-partial="app-assets/components/navigation.html"></div>                        
+    </div>
+  </div>
+    
+  <div class="container-fluid affix-top" id="sticky-page-title">
+    <ul class="breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="browse-device.html">Devices</a></li>
+    </ul>
+    <h1 class="page-title">Cardiac Assist Devices</h1>
+    <ul class="nav nav-tabs hidden-xs hidden-sm">
+      <li><a href="devicecat-1.html"><span class="owned-tag">At a Glance</span></a></li>
+      <li><a href="devicecat-2.html"><span class="owned-tag">Market Insights</span></a></li>
+      <li class="active"><a href="devicecat-3.html"><span class="owned-tag">Commercial Targeting</span></a></li>
+      <li><a href="#"><span class="owned-tag">Brand Tracking</span></a></li>
+      <li><a href="#"><span class="owned-tag">Data Digger</span></a></li>
+      <li><a href="#">Meet the Team</a></li>
+    </ul>    
+  
+  <div class="procedurefinder-filters">
+
+    <p class="strike-line"><strong>Filter Data</strong></p>      
+
+    <div class="row half-padding filters">
+      
+      <div class="col-md-3 col-sm-4">
+        <div class="btn-group btn-group-block" id="procedureFilter">
+          <div type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown"> 
+            <span class="btn-name">All Procedures</span> 
+            <span class="caret"></span>
+            <span class="fa fa-times-circle multi-select-clear"></span>
+          </div>
+          <div class="dropdown-menu">
+            <ul class="list-unstyled">                      
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox" name="procedure" checked="checked" value="Cardiac Resynchronization Therapy Defibrillators (CRT-Ds)"> Cardiac Resynchronization Therapy Defibrillators (CRT-Ds)</label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox" name="procedure" checked="checked" value="Cardiac Resynchronization Therapy Pacemakers (CRT-Ps)"> Cardiac Resynchronization Therapy Pacemakers (CRT-Ps)</label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox" name="procedure" checked="checked" value="Dual-Chamber Implantation Pacemakers"> Dual-Chamber Implantation Pacemakers</label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox" name="procedure" checked="checked" value="Implantable Cardioverter Defibrillators (ICDs)"> Implantable Cardioverter Defibrillators (ICDs)</label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox" name="procedure" checked="checked" value="Single-Chamber Implantation Pacemakers"> Single-Chamber Implantation Pacemakers</label>
+              </li>
+            </ul>              
+            <div class="dropdown-footer">
+              <div class="dropdown-footer-buttons pull-right">
+                <button type="button" class="btn btn-default">Cancel</button>
+                <button type="button" class="btn btn-primary btn-update">Update</button>
+              </div>
+            </div>
+          </div>
+        </div>             
+      </div>
+      <div class="col-md-3 col-sm-4">
+        <div class="btn-group btn-group-block" id="geogFilters">
+          <div type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown"> 
+            <span class="btn-name geogName">All States</span> 
+            <span class="caret"></span>
+            <span class="fa fa-times-circle multi-select-clear"></span>
+          </div>
+          <ul class="dropdown-menu filter-menu set-height" role="menu">
+            <li class="active"><a href="#" id="allStates">All States</a></li>
+            <li><a href="#" data-id="21">Alabama</a></li>
+            <li><a href="#" data-id="50">Alaska</a></li>
+            <li><a href="#" data-id="47">Arizona </a></li>
+            <li><a href="#" data-id="18">Arkansas </a></li>
+            <li><a href="#" data-id="2">California </a></li>
+            <li><a href="#" data-id="9">Colorado </a></li>
+            <li><a href="#" data-id="33">Connecticut </a></li>
+            <li><a href="#" data-id="27">Delaware </a></li>
+            <li><a href="#" data-id="3">District of Columbia </a></li>
+            <li><a href="#" data-id="41">Florida </a></li>
+            <li><a href="#" data-id="42">Georgia </a></li>
+            <li><a href="#" data-id="49">Hawaii </a></li>
+            <li><a href="#" data-id="31">Idaho </a></li>
+            <li><a href="#" data-id="15">Illinois </a></li>
+            <li><a href="#" data-id="16">Indiana </a></li>
+            <li><a href="#" data-id="25">Iowa </a></li>
+            <li><a href="#" data-id="11">Kansas </a></li>
+            <li><a href="#" data-id="35">Kentucky </a></li>
+            <li><a href="#" data-id="40">Louisiana </a></li>
+            <li><a href="#" data-id="5">Maine </a></li>
+            <li><a href="#" data-id="26">Maryland </a></li>
+            <li><a href="#" data-id="0">Massachusetts </a></li>
+            <li><a href="#" data-id="6">Michigan </a></li>
+            <li><a href="#" data-id="44">Minnesota </a></li>
+            <li><a href="#" data-id="22">Mississippi </a></li>
+            <li><a href="#" data-id="14">Missouri </a></li>
+            <li><a href="#" data-id="45">Montana </a></li>
+            <li><a href="#" data-id="12">Nebraska </a></li>
+            <li><a href="#" data-id="7">Nevada </a></li>
+            <li><a href="#" data-id="34">New Hampshire </a></li>
+            <li><a href="#" data-id="29">New Jersey </a></li>
+            <li><a href="#" data-id="8">New Mexico </a></li>
+            <li><a href="#" data-id="30">New York </a></li>
+            <li><a href="#" data-id="23">North Carolina </a></li>
+            <li><a href="#" data-id="46">North Dakota </a></li>
+            <li><a href="#" data-id="36">Ohio </a></li>
+            <li><a href="#" data-id="13">Oklahoma </a></li>
+            <li><a href="#" data-id="3">Oregon </a></li>
+            <li><a href="#" data-id="28">Pennsylvania </a></li>
+            <li><a href="#" data-id="20">Rhode Island </a></li>
+            <li><a href="#" data-id="43">South Carolina </a></li>
+            <li><a href="#" data-id="32">South Dakota </a></li>
+            <li><a href="#" data-id="37">Tennessee </a></li>
+            <li><a href="#" data-id="19">Texas </a></li>
+            <li><a href="#" data-id="48">Utah </a></li>
+            <li><a href="#" data-id="17">Vermont </a></li>
+            <li><a href="#" data-id="24">Virginia </a></li>
+            <li><a href="#" data-id="1">Washington </a></li>
+            <li><a href="#" data-id="38">West Virginia </a></li>
+            <li><a href="#" data-id="4">Wisconsin </a></li>
+            <li><a href="#" data-id="10">Wyoming </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-4">
+        <div class="btn-group btn-group-block" id="insuranceFilter">
+          <div type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown"> 
+            <span class="btn-name">All Insurance Types</span> 
+            <span class="caret"></span>
+            <span class="fa fa-times-circle multi-select-clear"></span>
+          </div>
+          <ul class="dropdown-menu filter-menu" role="menu">
+            <li class="active"><a href="#">All Insurance Types</a></li>
+            <li><a href="#">Medicare</a></li>
+            <li><a href="#">Non-Medicare</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-4">
+        <div class="btn-group btn-group-block" id="patientFilter">
+          <div type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown"> 
+            <span class="btn-name">All Patient Types</span> 
+            <span class="caret"></span>
+            <span class="fa fa-times-circle multi-select-clear"></span>
+          </div>
+          <ul class="dropdown-menu filter-menu" role="menu">
+            <li class="active"><a href="#">All Patient Types</a></li>
+            <li><a href="#">Inpatients</a></li>
+            <li><a href="#">Outpatients</a></li>
+          </ul>
+        </div>
+      </div>      
+    </div>
+
+  </div>
+  
+  </div>
+  
+  <div class="container-fluid background-white" id="content-container">
+
+    <div class="row double-padding">
+      <div class="col-md-6 col-md-divider-right">
+        <h3 class="" style="margin-bottom: 0;font-size:20px;">Procedures by Geography in 
+          <div class="btn-group title-button">
+            <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"> 2015 <span class="caret"></span></button>
+            <ul class="dropdown-menu select-menu" role="menu">
+              <li><a href="#">2011</a></li>
+              <li><a href="#">2012</a></li>
+              <li><a href="#">2013</a></li>
+              <li><a href="#">2014</a></li>
+              <li class="active"><a href="#">2015</a></li>
+            </ul>
+          </div>         
+        </h3>
+        <div class="btn-toolbar links-divider chart-table-downloads">
+          <div class="btn-group">
+            <a href="#" class="btn btn-link"><span class="icon icon-powerpoint"></span> Download Figure</a>
+          </div>
+          <div class="btn-group">
+            <a href="#" class="btn btn-link"><span class="icon icon-excel"></span> Download Data</a>
+          </div>
+        </div>
+        <div style="height:360px;width:100%;margin-top:30px;" id="map"></div>
+      </div>
+      <div class="col-md-6">
+        <h3 style="margin-bottom: 0;font-size:20px;">Procedures by Year</h3>
+        <div class="btn-toolbar links-divider chart-table-downloads">
+          <div class="btn-group">
+            <a href="#" class="btn btn-link"><span class="icon icon-powerpoint"></span> Download Figure</a>
+          </div>
+          <div class="btn-group">
+            <a href="#" class="btn btn-link"><span class="icon icon-excel"></span> Download Data</a>
+          </div>
+        </div>
+        <div style="height:360px;width:100%;margin-top:30px;" id="chart"></div>
+      </div>
+    </div>
+ 
+    <ul class="nav nav-tabs mms-tabs">
+      <li class="active"><a href="#tab-summary" data-toggle="tab" aria-expanded="true">By Health System</a></li>
+      <li><a href="#tab-summary" data-toggle="tab" aria-expanded="true">By Hospital</a></li>
+      <li class=""><a href="#tab-medicare" data-toggle="tab" aria-expanded="false">By Physician</a></li>
+      <li class=""><a href="#tab-medicare" data-toggle="tab" aria-expanded="false">By Geography</a></li>
+    </ul> 
+
+
+    <div class="row table-filters">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <p>Quick Search</p>       
+        <form class="has-feedback has-icon no-label">
+          <input placeholder="Start Typing a Health System" type="text" class="form-control input-lg hasclear">
+          <span class="clearer fa fa-times-circle form-control-feedback hide"></span>
+          <span class="fa fa-lg fa-search input-icon"></span>
+        </form>      
+      </div>
+      <div class="col-sm-6 col-md-12 col-lg-9 table-download">
+        <div class="btn-toolbar links-divider">
+          <div class="btn-group"><a href="#" class="btn btn-lg btn-link"><span class="icon icon-excel"></span> Download Table</a></div>
+        </div>
+      </div>
+    </div>
+     
+    <div class="table-responsive">         
+      <table class="table table-hover table-striped table-lg">
+      <thead>
+        <tr>
+          <th class="sortable border-right">Health System</th>
+          <th class="border-right sortable">County</th>
+          <th class="border-right-thick sortable">State</th>
+          <th align="right" class="border-right sortable">2011</th>
+          <th align="right" class="border-right sortable">2012</th>
+          <th align="right" class="border-right sortable">2013</th>
+          <th align="right" class="border-right">2014</th>
+          <th align="right" class="sortable sort-up">2015</th>
+        </tr>      
+      </thead>
+        <tbody>
+          <tr>
+            <td class="border-right"><a href="devicecat-3a.html">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+          <tr>
+            <td class="border-right"><a href="#">Name of Health System</a></td>
+            <td class="border-right">Name of County</td>
+            <td class="border-right-thick">XX</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right" class="border-right">xxx,xxx</td>
+            <td align="right">xxx,xxx</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+
+  
+  <footer class="container-fluid background-white">
+    <div class="row">
+      <p class="col-sm-6">© 2015 DR/Decision Resources, LLC. All rights reserved.</p>
+      <ul class="col-sm-6">
+        <li><a href="http://www.decisionresources.com/Privacy-Policy.aspx" target="_blank" class="">Privacy Policy</a></li>
+        <li><a href="http://www.decisionresources.com/Terms-of-Use.aspx" target="_blank" class="">Terms of Use</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div data-partial="app-assets/components/modals.html"></div> 
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script> 
+<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/data.js"></script>
+<script src="https://code.highcharts.com/maps/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/us/custom/us-small.js"></script>
+<script src="app-assets/js/highcharts-theme-drg.js"></script> 
+
+<script type="text/javascript">
+$(function () {
+
+/*
+    TODO:
+    - Check data labels after drilling. Label rank? New positions?
+    - Not US Mainland text
+    - Separators
+    */
+
+    var data = Highcharts.geojson(Highcharts.maps['countries/us/custom/us-small'])
+
+    // Set drilldown pointers
+    $.each(data, function (i) {
+        this.drilldown = this.properties['hc-key'];
+        this.value = i; // Non-random bogus data
+    });
+
+    // Instanciate the map
+    $('#map').highcharts('Map', {
+        chart : {
+            events: {
+                drilldown: function (e) {
+
+                    if (!e.seriesOptions) {
+                        var chart = this,
+                            mapKey = 'countries/us/' + e.point.drilldown + '-all',
+                            // Handle error, the timeout is cleared on success
+                            fail = setTimeout(function () {
+                                if (!Highcharts.maps[mapKey]) {
+                                    chart.showLoading('<i class="icon-frown"></i> Failed loading ' + e.point.name);
+
+                                    fail = setTimeout(function () {
+                                        chart.hideLoading();
+                                    }, 1000);
+                                }
+                            }, 3000);
+
+                        // Show the spinner
+                        chart.showLoading('<i class="icon-spinner icon-spin icon-3x"></i>'); // Font Awesome spinner
+
+                        // Load the drilldown map
+                        $.getScript('https://code.highcharts.com/mapdata/' + mapKey + '.js', function () {
+
+                            data = Highcharts.geojson(Highcharts.maps[mapKey]);
+
+                            // Set a non-random bogus value
+                            $.each(data, function (i) {
+                                this.value = i;
+                            });
+
+                            // Hide loading and add series
+                            chart.hideLoading();
+                            clearTimeout(fail);
+                            chart.addSeriesAsDrilldown(e.point, {
+                                name: e.point.name,
+                                data: data,
+                                dataLabels: {
+                                    enabled: false,
+                                    format: '{point.name}'
+                                }
+                            });
+                        });
+                    }
+
+
+                    $('#geogFilters .btn-name').html(e.point.name);
+                    $('#geogFilters .btn').addClass('filtered');
+                    $('#geogFilters li').removeClass('active');
+                    $('#geogFilters li:contains("' + e.point.name + '")').addClass('active');
+                },
+                drillup: function () {
+                    $('#geogFilters .btn-name').html('All States');
+                    $('#geogFilters .btn').removeClass('filtered');
+                    $('#geogFilters li').removeClass('active');
+                    $('#geogFilters li:first-child').addClass('active');
+                }
+            }
+        },
+
+        subtitle: {
+            text: '',
+        },
+
+        colorAxis: {
+            min: 0,
+            minColor: '#dae8f4',
+            maxColor: '#418AC9'
+        },
+
+        tooltip: {
+          headerFormat: '<span style="color:{point.color}">● </span><b>{point.key}</b><br>',
+          pointFormat: '{point.x} Procedures'
+        },
+
+        plotOptions: {
+          map: {
+            borderColor: '#fff',
+                states: {
+                    hover: {
+                        color: '#732875'
+                    }
+                }
+            }
+        },
+
+        series : [{
+          data : data,
+          name: 'USA',
+          dataLabels: {
+              enabled: false
+          }
+		    }, {
+
+        type: 'mapline',
+            mapData: Highcharts.geojson(Highcharts.maps['countries/us/custom/us-small'], 'mapline'),
+        	"color": "#e5e5e5",
+        }],
+				
+				
+
+        drilldown: {
+            drillUpButton: {
+                relativeTo: 'spacingBox',
+                position: {
+                    x: 0,
+                    y: 0
+                }
+            }
+        }
+    });
+});
+</script> 
+
+
+
+<script type="text/javascript">
+$(document).ready( function () {
+
+  $('#geogFilters .filter-menu a').click(function () {	 
+      stateNumber = $(this).attr("data-id");
+      if ($('#geogFilters > .btn').hasClass('filtered')) {
+        $('#map').highcharts().drillUp();
+      }
+      $('#map').highcharts().series[0].data[stateNumber].doDrilldown();
+  });
+
+  $('#insuranceFilter .filter-menu a, #patientFilter .filter-menu a, #geogFilters  a').click(function () {	
+ 		var text = $(this).text();   
+    if ($(this).parent().is(':first-child')) {
+  		$(this).closest('.btn-group').find('.btn').removeClass('filtered');
+    } else {
+  		$(this).closest('.btn-group').find('.btn').addClass('filtered');      
+    }
+		$(this).closest('.btn-group').find('.btn-name').text(text);
+		$(this).parent().siblings().removeClass('active');
+		$(this).parent().addClass('active');
+	});
+	
+  $('#insuranceFilter .multi-select-clear, #patientFilter .multi-select-clear, #geogFilters  .multi-select-clear').click(function () {	 
+    var text = $(this).closest('.btn-group').find('li:first-child').text();
+    $(this).closest('.btn-group').find('.btn').removeClass('filtered');
+    $(this).closest('.btn-group').find('.btn-name').text(text);    
+    $(this).closest('.btn-group').find('li').removeClass('active');    
+    $(this).closest('.btn-group').find('li:first-child').addClass('active');    
+    event.stopPropagation();
+	});
+	
+  $('#geogFilters  .multi-select-clear, #geogFilters #allStates').click(function () {	 
+    $('#map').highcharts().drillUp();
+    event.stopPropagation();
+   });
+   
+
+  
+});   
+</script> 
+
+<script type="text/javascript">
+$(document).ready( function () {
+  $('.select-menu a').click(function () {	
+		var text = $(this).text();
+		$(this).parent().parent().siblings().html(text + ' <span class="caret"></span>');
+		$(this).parent().siblings().removeClass('active');
+		$(this).parent().addClass('active');
+	});
+});
+</script>
+<script type="text/javascript">
+$(function () {
+    $('#chart').highcharts({
+        chart: {
+            type: 'column'
+        },
+        xAxis: {
+            categories: ['2011', '2012', '2013', '2014', '2015']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Number of Procedures'
+            },
+            reversedStacks: false,
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                }
+            }
+        },
+        legend: {
+            align: 'center',
+        },
+        tooltip: {
+            headerFormat: '<span style="color:{point.color}">● </span> <b>{series.name}</b><br/>',
+            pointFormat: '{point.y} Procedures in {point.category}'
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: false,
+                }
+            }
+        },
+        series: [{
+            name: 'CRT-Ds',
+            data: [4067, 4567, 4667, 4767, 4967]
+        }, {
+            name: 'CRT-Ps',
+            data: [3067, 3167, 3267, 3367, 3467]
+        }, {
+            name: 'Dc-IP',
+            data: [2067, 2067, 2267, 2367, 2467]
+        }, {
+            name: 'ICDs',
+            data: [2067, 2167, 2267, 2367, 3167]
+        }, {
+            name: 'Sc-IP',
+            data: [2167, 2182, 2467, 2367, 2467]
+        }]
+    });
+});
+</script>
+
+
+<script type="text/javascript">
+
+    $("#procedureFilter .btn-update").click(function () {
+      
+      var checkedCheckboxes   = $("#procedureFilter input:checkbox:checked"),		
+          totalCheckboxes     = $("#procedureFilter input:checkbox").length,		
+          numberCheckboxes    = checkedCheckboxes.length;
+          
+    	if (numberCheckboxes == totalCheckboxes) {
+        $('#procedureFilter .btn-name').text('All Procedures');
+        $('#procedureFilter > .btn').removeClass('filtered');
+      } else if (numberCheckboxes == 1) {
+        $('#procedureFilter .btn-name').text(checkedCheckboxes.val());
+        $('#procedureFilter > .btn').addClass('filtered');
+      } else if (numberCheckboxes > 1) {
+        $('#procedureFilter .btn-name').text(numberCheckboxes + ' Procedures');
+        $('#procedureFilter > .btn').addClass('filtered');
+      }
+    });
+  $('#procedureFilter .multi-select-clear').click(function () {	 
+    $("#procedureFilter input:checkbox").prop('checked', true);
+    $('#procedureFilter .btn-name').text('All Procedures');
+    $('#procedureFilter > .btn').removeClass('filtered');
+
+    event.stopPropagation();
+   });
+</script> 
+ 
+</body>
+</html>

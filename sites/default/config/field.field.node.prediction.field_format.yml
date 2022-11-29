@@ -1,0 +1,29 @@
+uuid: fd1d4cfa-2efd-47a5-9240-ecbb1ccc9abc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_format
+    - node.type.prediction
+    - taxonomy.vocabulary.format
+id: node.prediction.field_format
+field_name: field_format
+entity_type: node
+bundle: prediction
+label: Format
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      format: format
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

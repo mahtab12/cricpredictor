@@ -1,0 +1,21 @@
+uuid: 18c2aca0-00f7-4259-bc4f-69e246a716fd
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_term__stadium
+label: 'Taxonomy term: Stadium'
+tags:
+  keywords: '[term:name] [term:field_city] [term:field_country], [term:field_known_as], cricket stadium, pitch stats'
+  title: '[term:name] [term:field_city] [term:field_country] | [site:name]'
+  image_src: '[term:field_stadium_image:featured_image]'
+  abstract: '[term:name] [term:field_city] [term:field_country] prediction, pitch stats, recent prediction, pitch report'
+  description: '[term:description]'
+  shortlink: '[current-page:url]'
+  canonical_url: '[current-page:url]'
+  og_image: '[term:field_stadium_image:featured_image]'
+  og_description: '[term:description]'
+  og_url: '[current-page:url]'
+  og_image_url: '[term:field_stadium_image:featured_image]'
+  og_title: '[term:name] [term:field_city] [term:field_country] | [site:name]'
+  og_site_name: '[site:name]'
+  og_image_secure_url: '[term:field_stadium_image:featured_image]'

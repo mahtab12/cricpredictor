@@ -1,0 +1,32 @@
+<article id="searchTour1" class="search-result-new  non-report-library">
+<p class="result-path-new">
+<a href="{{ content.sm_field_breadcrumb_links[0] }}"><span>{{ content.sm_field_breadcrumb_titles[0] }}</span></a>
+<a href="{{ content.sm_field_breadcrumb_links[1] }}"><span>{{ content.sm_field_breadcrumb_titles[1] }}</span></a>
+<a href="{{ content.sm_field_breadcrumb_links[2] }}"><span>{{ content.sm_field_breadcrumb_titles[2] }}</span></a>
+</p>
+<h1 class="result-title">
+<a style="font-size:22px;font-weight:500;margin-bottom:7px;" href="{{ content.url }}">
+{% if(highliteddocdata.title|length > 0)  %}
+{{ highliteddocdata.title | raw }}
+{% else %}
+{{ content.title }}
+{% endif %}
+</a>
+</h1>
+<p class="result-description">
+{{ highliteddocdata['description'] | raw }}   
+</p>
+<div class="result-meta" id="searchTour2">
+{% if (content.is_overview == TRUE or content.ss_field_product_type_value == 'OVERVIEW') %}  
+<span class="free-tag">Information</span>
+{%else%} 
+   
+{% if content.hasAccess == 1 %}
+<span class="owned-tag">Owned</span> 
+{%else%}
+<span class="not-owned-tag">Not Owned</span> 
+{%endif%}
+{%endif%}
+<span class="pub-date"><i class="fa fa-calendar"></i> {{ content.publish_date|date("j M Y") }}</span>
+</div>
+</article>          

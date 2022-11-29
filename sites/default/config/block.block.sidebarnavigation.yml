@@ -1,0 +1,25 @@
+uuid: 69360a63-d7c5-42e1-9a45-0d6d12a53d34
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.sidebar-navigation
+  module:
+    - system
+  theme:
+    - yorkshire
+id: sidebarnavigation
+theme: yorkshire
+region: sidebar
+weight: 0
+provider: null
+plugin: 'system_menu_block:sidebar-navigation'
+settings:
+  id: 'system_menu_block:sidebar-navigation'
+  label: 'Sidebar Navigation'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,57 @@
+uuid: 738d1a29-6e63-4cb1-ab0b-d91b94255719
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.video.body
+    - field.field.node.video.field_comments
+    - field.field.node.video.field_meta_tags
+    - field.field.node.video.field_recommended_video
+    - field.field.node.video.field_thumbnail_image
+    - field.field.node.video.field_video_you
+    - field.field.node.video.field_yoast_seo
+    - image.style.related
+    - node.type.video
+  module:
+    - text
+    - user
+    - video_embed_field
+id: node.video.teaser
+targetEntityType: node
+bundle: video
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 1
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_video_you:
+    type: video_embed_field_thumbnail
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      image_style: related
+      link_image_to: content
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_comments: true
+  field_meta_tags: true
+  field_recommended_video: true
+  field_thumbnail_image: true
+  field_yoast_seo: true

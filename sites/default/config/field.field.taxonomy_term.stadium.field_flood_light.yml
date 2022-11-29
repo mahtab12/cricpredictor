@@ -1,0 +1,23 @@
+uuid: 2e7e7d08-c3b2-48a0-ae13-b9f38f006e78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_flood_light
+    - taxonomy.vocabulary.stadium
+id: taxonomy_term.stadium.field_flood_light
+field_name: field_flood_light
+entity_type: taxonomy_term
+bundle: stadium
+label: FloodLights
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

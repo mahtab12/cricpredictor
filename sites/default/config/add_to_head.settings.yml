@@ -1,0 +1,63 @@
+add_to_head_profiles:
+  analytics:
+    name: analytics
+    code: "<!-- Global site tag (gtag.js) - Google Analytics -->\r\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-125393583-1\"></script>\r\n<script>\r\n  window.dataLayer = window.dataLayer || [];\r\n  function gtag(){dataLayer.push(arguments);}\r\n  gtag('js', new Date());\r\n\r\n  gtag('config', 'UA-125393583-1');\r\n</script>"
+    scope: head
+    paths:
+      visibility: exclude
+      paths: ''
+    roles:
+      visibility: exclude
+      list:
+        author: author
+        administrator: administrator
+  adsense:
+    name: adsense
+    code: "<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>\r\n<script>\r\n  (adsbygoogle = window.adsbygoogle || []).push({\r\n    google_ad_client: \"ca-pub-1104568852756410\",\r\n    enable_page_level_ads: true\r\n  });\r\n</script>"
+    scope: head
+    paths:
+      visibility: include
+      paths: '/admin/*'
+    roles:
+      visibility: exclude
+      list: {  }
+  meta-bing:
+    name: meta-bing
+    code: '<meta name="google-site-verification" content="EiBePracV_P8xcB3HSEN9xR6hP14nnH1KtyEWEXg754" />'
+    scope: head
+    paths:
+      visibility: exclude
+      paths: ''
+    roles:
+      visibility: exclude
+      list: {  }
+  customcss:
+    name: customcss
+    code: "<style>\r\n@media only screen and (max-width: 600px) {\r\n   .login-info {\r\n      float: left;\r\n   }\r\n}\r\n</style>"
+    scope: styles
+    paths:
+      visibility: exclude
+      paths: ''
+    roles:
+      visibility: exclude
+      list: {  }
+  clerventapi:
+    name: clerventapi
+    code: "<script data-cfasync=\"false\"  id=\"clevernt\" type=\"text/javascript\">\r\n\t\t\t\t\t\t\t (function (document, window) {\r\n                var c = document.createElement(\"script\");\r\n                c.type = \"text/javascript\"; c.async = !0; c.id = \"CleverNTLoader31277\";  c.setAttribute(\"data-target\",window.name); c.setAttribute(\"data-callback\",\"put-your-callback-macro-here\");\r\n                c.src = \"//clevernt.com/scripts/ba85032e90a1e94a31faecb675cde912.min.js?20190516=\" + Math.floor((new Date).getTime());\r\n                var a = !1;\r\n                try {\r\n                    a = parent.document.getElementsByTagName(\"script\")[0] || document.getElementsByTagName(\"script\")[0];\r\n                } catch (e) {\r\n                    a = !1;\r\n                }\r\n                a || ( a = document.getElementsByTagName(\"head\")[0] || document.getElementsByTagName(\"body\")[0]);\r\n                a.parentNode.insertBefore(c, a);\r\n            })(document, window);\r\n                                </script>"
+    scope: head
+    paths:
+      visibility: include
+      paths: /admin/config/development
+    roles:
+      visibility: exclude
+      list: {  }
+  onesignal:
+    name: onesignal
+    code: "<script src=\"https://cdn.onesignal.com/sdks/OneSignalSDK.js\" async=\"\"></script>\r\n<script>\r\n  var OneSignal = window.OneSignal || [];\r\n  OneSignal.push(function() {\r\n    OneSignal.init({\r\n      appId: \"e7c5b0d2-f354-456c-ae74-3a8a40d95f5b\",\r\n    });\r\n  });\r\n</script>"
+    scope: head
+    paths:
+      visibility: exclude
+      paths: ''
+    roles:
+      visibility: exclude
+      list: {  }

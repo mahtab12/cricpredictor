@@ -1,0 +1,26 @@
+uuid: d0188d8a-9663-4ca4-9607-d96c909e1afc
+langcode: en
+status: true
+dependencies:
+  module:
+    - cricket_api
+    - system
+  theme:
+    - yorkshire
+id: yorkshire_aroundground
+theme: yorkshire
+region: brand
+weight: -26
+provider: null
+plugin: around_ground
+settings:
+  id: around_ground
+  label: 'Around Ground'
+  provider: cricket_api
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

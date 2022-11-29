@@ -1,0 +1,744 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="panel-analyst">
+        <div class="analyst-details">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> 
+          <div class="analyst-image"><img alt="Andrea Merseth" src="app-assets/images/analysts/andrea.jpg"></div>
+          <p class="analyst-name">Andrea Merseth</p>
+          <p class="analyst-title">Analyst Title</p>
+          <ul class="nav nav-pills" style="position: absolute;bottom: -1px;">
+            <li class="active"><a href="#andrea-contact" data-toggle="tab">Ask the Expert</a></li>
+            <li><a href="#andrea-bio" data-toggle="tab">Biography</a></li>
+          </ul>  
+        </div>
+        <div class="tab-content analyst-bio">
+          <div class="tab-pane fade active in" id="andrea-contact">
+            <div class="contact-form" id="askAnalystForm">
+              <p class="form-group contact-intro-message" id="askAnalystIntro">Hi Steve. As part of your subscription, you can ask me any questions you have about our research.</p>
+              <p class="form-group contact-error-message" style="display:none" id="askAnalystError">There was a problem sending your message. Please try again or alternatively email your message to <strong><a href="mailto:questions@teamdrg.com">questions@teamdrg.com</a></strong></p>
+              <div class="form-group">
+                <textarea id="askAnalystQuestion" class="form-control input-lg" rows="6" placeholder="Type your question in here"></textarea>
+              </div>
+              <div class="form-group" style="overflow:hidden;">
+                <button type="submit" class="btn btn-primary btn-lg pull-right" id="askAnalystButton">Send your Question</button>
+              </div>
+            </div>
+            <div class="contact-success-message" style="display: none" id="askAnalystSuccess">
+              <h3 class="text-center">Thanks for your question</h3>
+              <p class="text-center">We'll get back to you with the answer as soon as possible</p>
+              <p class="text-center"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></p>
+            </div>
+          </div>
+          
+          <div class="tab-pane fade qualative-content" id="andrea-bio">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque arcu eu fermentum tincidunt. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent a neque fermentum, ultricies sapien sit amet, lacinia sapien. Aliquam nec ipsum non augue suscipit sodales in euismod purus. Fusce placerat vitae quam et lobortis. Nulla accumsan aliquet faucibus. In sit amet massa nec dolor egestas accumsan id vel nisl. Sed sodales, est sed aliquet faucibus, nisi felis tincidunt turpis, a euismod risus massa et est. Integer porta, tortor sit amet faucibus interdum, turpis nisi commodo tortor, eu eleifend nibh enim.</p>
+            <p>Pellentesque aliquet viverra leo, non sollicitudin mi vehicula rutrum. Etiam hendrerit libero vitae sodales consectetur. Praesent massa purus, pretium ac elit ac, maximus dictum nulla. Sed eu mollis sem. Aenean tellus dolor, rutrum et efficitur eu, luctus et eros. Curabitur sodales lacus purus. Donec eget euismod risus. In ornare nisi sed feugiat venenatis. Maecenas feugiat libero a viverra blandit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="consultingAdvert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="panel-analyst">
+        <div class="analyst-details">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> 
+          <div class="analyst-image"><img alt="Andrea Merseth" src="app-assets/images/analysts/martina.jpg"></div>
+          <p class="analyst-name">Josephine Bloggs</p>
+          <p class="analyst-title">Consulting &amp; Analytics</p> 
+        </div>
+        <div class="analyst-bio">
+          <div class="contact-form" id="consultingForm">
+            <p class="form-group contact-intro-message" id="consultingIntro">Hi Steve. Please give a brief summary of the type of custom data and analysis you are looking for.</p>
+            <p class="form-group contact-error-message" style="display:none" id="askAnalystError">There was a problem sending your message. Please try again or alternatively email your message to <strong><a href="mailto:questions@teamdrg.com">questions@teamdrg.com</a></strong></p>
+            <div class="form-group">
+              <textarea id="consultingQuestion" class="form-control input-lg" rows="6" placeholder="Type your summary in here"></textarea>
+            </div>
+            <div class="form-group" style="overflow:hidden;">
+              <button type="submit" class="btn btn-primary btn-lg pull-right" id="consultingButton">Send</button>
+            </div>
+          </div>
+          <div class="contact-success-message" style="display: none" id="consultingSuccess">
+            <h3 class="text-center">Thanks for your request</h3>
+            <p class="text-center">A member of the team will get back to as soon as possible</p>
+            <p class="text-center"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="related-provider" style="display: none;">
+  <div class="modal-dialog modal-related">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">Related Drugs <span class="count">(12)</span></h4>
+      </div>
+      <ul class="panel-body related-links">
+        <li><a href="#">Dulaglutide</a></li>
+        <li><a href="#">Semaglutide</a></li>
+        <li><a href="#">Omarigliptin</a></li>
+        <li><a href="#">Insulindegludec/liraglutide</a> </li>
+        <li><a href="#">Dulaglutide</a></li>
+        <li><a href="#">Dulaglutide</a></li>
+        <li><a href="#">Semaglutide</a></li>
+        <li><a href="#">Omarigliptin</a></li>
+        <li><a href="#">Insulindegludec/liraglutide</a> </li>
+        <li><a href="#">Dulaglutide</a></li>
+        <li><a href="#">Omarigliptin</a></li>
+        <li><a href="#">Insulindegludec/liraglutide</a> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="customDownload" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">Create a Custom Download</h4>
+      </div>
+      <div class="modal-body" style="overflow: hidden;">
+        <ul class="dropdown-menu nondropdown">
+          <li class="checkbox checkbox-level1">
+            <label>
+              <input type="checkbox">
+              Definition &amp; Forecast</label>
+          </li>
+          <li class="checkbox checkbox-level2">
+            <label>
+              <input type="checkbox">
+              Overview</label>
+          </li>
+          <li class="checkbox checkbox-level1">
+            <label>
+              <input type="checkbox">
+              Epidemiology</label>
+          </li>
+          <li class="checkbox checkbox-level2">
+            <label>
+              <input type="checkbox">
+              Overview</label>
+          </li>
+          <li class="checkbox checkbox-level2">
+            <label>
+              <input type="checkbox">
+              Mature Markets</label>
+          </li>
+          <li class="checkbox checkbox-level2 disabled">
+            <label>
+              <input type="checkbox" class="disabled" disable="disabled">
+              Emerging Markets</label>
+          </li>
+          <li class="checkbox checkbox-level2 disabled">
+            <label>
+              <input type="checkbox" class="disabled" disable="disabled">
+              Americas</label>
+          </li>
+          <li class="checkbox checkbox-level1">
+            <label>
+              <input type="checkbox">
+              Current Treatment</label>
+          </li>
+          <li class="checkbox checkbox-level2">
+            <label>
+              <input type="checkbox">
+              Overview</label>
+          </li>
+          <li class="checkbox checkbox-level2 disabled">
+            <label>
+              <input type="checkbox" class="disabled" disable="disabled">
+              Physician Prescribing Practices</label>
+          </li>
+          <li class="checkbox checkbox-level1">
+            <label>
+              <input type="checkbox">
+              Unmet Need</label>
+          </li>
+          <li class="checkbox checkbox-level2">
+            <label>
+              <input type="checkbox">
+              Overview</label>
+          </li>
+          <li class="checkbox checkbox-level2 disabled">
+            <label>
+              <input type="checkbox" class="disabled" disable="disabled">
+              Derived Unmet Need Advanced Analytics & Physician Insight</label>
+          </li>
+          <li class="checkbox checkbox-level1">
+            <label>
+              <input type="checkbox">
+              Emerging Therapies</label>
+          </li>
+          <li class="checkbox checkbox-level2">
+            <label>
+              <input type="checkbox">
+              Overview</label>
+          </li>
+          <li class="checkbox checkbox-level2 disabled">
+            <label>
+              <input type="checkbox" class="disabled" disable="disabled">
+              Launch Tracking - US</label>
+          </li>
+          <li class="checkbox checkbox-level2 disabled">
+            <label>
+              <input type="checkbox" class="disabled" disable="disabled">
+              Launch Tracking - EU</label>
+          </li>
+          <li class="checkbox checkbox-level1">
+            <label>
+              <input type="checkbox">
+              Access & Reimbursement</label>
+          </li>
+          <li class="checkbox checkbox-level2">
+            <label>
+              <input type="checkbox">
+              Overview</label>
+          </li>
+          <li class="checkbox checkbox-level2">
+            <label>
+              <input type="checkbox">
+              Name of the Access & Reimbursement Deep Dive</label>
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer" style="text-align: center;">
+        <button type="button" class="btn btn-default"><span class="icon icon-pdf"></span> All Content to PDF</button>
+        <button type="button" class="btn btn-default"><span class="icon icon-powerpoint"></span> All Figures to Powerpoint</button>
+        <button type="button" class="btn btn-default"><span class="icon icon-excel"></span> All Tables to Excel</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="contactFrom" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body double-padding">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+       
+        <div class="contact-form" id="contactUsForm">
+         
+          <p class="form-group contact-error-message" style="display:none">There was a problem sending your message. Please try again or alternatively email your message to <strong><a href="mailto:questions@teamdrg.com">questions@teamdrg.com</a></strong></p>
+
+          <div class="form-group">
+            <label for="jobTitleV" class="control-label">Subject</label>
+            <select aria-invalid="false" class="form-control input-lg" id="contactUsSubject">
+              <option value="" selected="selected" class="default">
+                  -- Select subject --
+              </option>
+              <option value="Request Training">Request Training</option>
+              <option value="Contact Analyst">Contact Analyst</option>
+              <option value="Contact Account Manager">Contact Account Manager</option>
+              <option value="Contact Technical Support">Contact Technical Support</option>
+              <option value="Content or Methods Question">Content or Methods Question</option>
+              <option value="Product Question">Product Question</option>
+              <option value="Custom Project Inquiry">Custom Project Inquiry</option>
+              <option value="General Inquiry/Other">General Inquiry/Other</option>                
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contactUsMessage" class="control-label">Your message</label>
+            <textarea id="contactUsMessage" class="form-control input-lg" rows="6" placeholder="Type your message in here"></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">
+                This is urgent </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="contactUsPhoneCheck">
+                Please follow up with me by phone </label>
+            </div>
+          </div>
+          
+          <div class="form-group no-label" id="contactUsPhoneWrapper" style="display:none;">
+            <input class="form-control input-lg" type="text" placeholder="Phone number" id="contactUsPhone">
+          </div>
+
+          <div class="form-group" style="overflow:hidden;">
+            <button type="submit" class="btn btn-primary btn-lg pull-right" id="contactUsButton">Send</button>
+            <button type="submit" class="btn btn-default btn-lg pull-right">Cancel</button>
+          </div>  
+                      
+        </div>
+        
+        <div class="contact-success-message" style="display:none" id="contactUsSuccess">
+          <h3 class="text-center">Thanks for your message</h3>
+          <p class="text-center">We will aim to respond as soon as possible</p>
+          <p class="text-center"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="requestAccess" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body double-padding">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <div class="contact-success-message">
+          <h3 class="text-center">Thank you for your interest in this content.</h3>
+          <p class="text-center">One of our customer support colleagues will contact you shortly to understand your needs and determine how we can best assist you.</p>
+          <p class="text-center"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="ModalMethod1" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Epidemiology-Based Market Forecasting – Disease Landscape &amp; Forecast</h4>
+      </div>
+      <div class="panel-body qualative-content">
+        <ul class="round-bullets">
+          <li>Bottom-up<sup>1</sup> market forecasts, validated using a top-down approach</li>
+          <li>Drug pricing and sales reported at the ex-manufacturer level</li>
+          <li>Indication-specific drug use/sales trends segmented by geography, population/subpopulation, and brands/generics</li>
+          <li>Separate forecasts for each G7 country<sup>2</sup></li>
+          <li>Annualized<sup>2</sup>, 10-year forecast window</li>
+          <li>1 year of historical sales<sup>2</sup></li>
+          <li>Event updated<sup>3</sup></li>
+        </ul>
+        <hr class="dotted">
+        <ol class="footnotes">
+          <li>Select multi-indication DL&F forecasts are top-down only.</li> 
+          <li>Regional base-year/out-year, or out-year only, forecasts for the US and EU5 are available for niche & rare diseases.</li>
+          <li>Most titles.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalMethod2" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Top-Down, Event-Based Market Forecasting – Drug and Company Insights</h4>
+      </div>
+      <div class="panel-body qualative-content">
+        <ul class="round-bullets">
+          <li>Historical data and forecasts are based on company-reported (net) sales</li>
+          <li>Presented at Global, US, and ex-US (ROW) levels</li>
+          <li>Events are built into baseline forecasts to produce final forecasts</li>
+          <li>Analysis and forecasting performed at the Drug level by Therapeutic Group and by Company</li>
+          <li>Forecasting leverages insight from across DRG</li>
+          <li>5 years of historical data and 7-year forecast period</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="reportModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <article class="search-result report-result"> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> 
+        <div class="report-cover"><div><span class="report-type">Unmet Need</span><span class="report-title">Type 2 Diabetes</span></div></div>
+        <h1 class="result-title" style="margin-top: 15px;margin-bottom: 7px;">Type 2 Diabetes - Unmet Need - Detailed Analysis (2016)</h1>
+        <p class="result-meta"><span class="owned-tag">Owned</span><span class="pub-date" style="margin-left:15px;padding-left: 15px;border-left: 1px solid #e5e5e5;"><i style="color: #444;" class="fa fa-calendar" aria-hidden="true"></i> 9 Apr 2016</span></p>
+        <div class="result-description">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="fa fa-arrow-circle-down fa-lg"></span> Download <span class="caret"></span> </button>
+            <ul class="dropdown-menu" role="menu">
+             <li><a href="#"><span class="icon icon-pdf"></span> Full Report</a></li>
+              <li><a href="#"><span class="icon icon-powerpoint"></span> Slidepack</a></li>
+              <li><a href="#"><span class="icon icon-excel"></span> Assumptions</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><span class="fa fa-lg fa-file-archive-o" style="margin-right: 8px;"></span> Download All</a></li>
+            </ul>
+          </div>
+          <a href="#" class="btn btn-default" id="copyLink"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+          <span class="copySuccess hide"> Link copied to clipboard</span> 
+        </div>
+      </article>
+      <div class="panel-body qualative-content">
+        <a href="disease-5unmetneed-1.html" class="alert alert-warning">
+          <i class="fa fa-lg fa-exclamation-circle" aria-hidden="true"></i> There is a newer version of this report available - <strong>Click here to learn more</strong>
+        </a> 
+        <div class="report-modal-description">
+          In 2013, Brazil’s total pharmaceutical market for <strong><strong><strong>type</strong></strong> 2 <strong><strong>diabetes</strong></strong></strong> rivaled the size of some of the major markets. Increasing public awareness, an aging population, and the launch of new premium-priced antidiabetic agents will all contribute to the growth of this market in the next five years. The large, growing prevalent population promises a 7% annual growth in sales and significant opportunity for multinational pharmaceutical companies as demand for branded antidiabetic drugs continues to grow throughout Brazil.      
+        <div class="report-modal-scope">  
+          <h3>Scope</h3>
+          <p><b>Primary research:</b> 92 endocrinologist and primary care physician surveys across Brazil. Separate in-depth interviews with 8 medical experts.</p>
+  
+          <p><b>Epidemiology:</b> Prevalence of <strong><strong><strong>type</strong></strong> 2 <strong><strong>diabetes</strong></strong></strong> in Brazil. Age- and gender-specific ten-year epidemiology forecast (2013-2023).</p>
+  
+          <p><b>Market forecast features:</b> Our analysis evaluates the size of the patient population, percentage of diagnosed patients, and percentage of drug-treated patients. We include a detailed forecast for antidiabetic drug classes and leading products from 2013-2018 using a combination of historical trend analysis and an epidemiology-based bottom-up market model.</p>
+        </div>
+        <div class="report-modal-companies">        
+          <h3>Companies Mentioned</h3>
+            <p>- AstraZeneca </p>
+            <p>- Bayer</p>
+            <p>- Boehringer Ingelheim</p>
+            <p>- Bristol-Myers Squibb</p>
+            <p>- GlaxoSmithKline</p>
+            <p>- Eli Lilly</p>
+            <p>- Furiex</p>
+            <p>- Intarcia Therapeutics</p>
+            <p>- Janssen</p>
+            <p>- Johnson &amp; Johnson</p>
+            <p>- MannKind</p>
+            <p>- Merck  </p>
+            <p>- Novartis</p>
+            <p>- Novo Nordisk</p>
+            <p>- Sanofi</p>
+            <p>- Servier</p>
+            <p>- Takeda Pharmaceutical</p>
+            <p>- Zealand Pharma</p>
+        </div>
+        <div class="report-modal-questions">        
+          <h3>Questions answered in this report</h3>
+      &nbsp; * &nbsp; 
+     As a result of population growth, aging, and trends in obesity, the number of prevalent cases of <strong><strong><strong>type</strong></strong> 2 <strong><strong>diabetes</strong></strong></strong> in Brazil will increase over the forecast period. <b>How many prevalent, diagnosed, and drug-treated <strong><strong><strong>type</strong></strong> 2 <strong><strong>diabetes</strong></strong></strong> cases were there in Brazil in 2013 and what will those numbers be in 2023? Are men and women equally susceptible to the disease in Brazil? Which age-group is most likely to develop <strong><strong><strong>type</strong></strong> 2 <strong><strong>diabetes</strong></strong></strong> in Brazil?</b>
+     <br> <br> &nbsp; * &nbsp; 
+     Similar to behaviors of U.S. and European physicians, the prescribing patterns of Brazilian endocrinologists and primary care physicians are most influenced by a drug’s efficacy and safety profiles. <b>What other factors drive Brazilian endocrinologists’ and primary care physicians’ prescribing habits? What are interviewed experts’ views of current medical practice and the trends they foresee in the future?</b>
+     <br> <br> &nbsp; * &nbsp; 
+     The Brazilian <strong><strong><strong>type</strong></strong> 2 <strong><strong>diabetes</strong></strong></strong> market is growing more rapidly than those in the United States, Europe, and Japan and is boasting strong annual double-digit growth in sales. <b>Which agents, current and emerging, will be the key players driving market growth over the forecast period? How are the branded drugs expected to fare against generic competitors over the forecast period? Which drugs will dominate the market by 2018?</b> 
+        </div>   
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="toolModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <article class="search-result report-result"> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> 
+        <img src="app-assets/images/tools/treatment.png">              
+        <p class="result-path">Current Treatment</p>
+        <h1 class="result-title">Treatment Algorithms Dashboard 2015</a></h1>
+        <p class="result-meta"><span class="owned-tag">In Your Subscription</span></p>
+        <div class="result-description">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="fa fa-arrow-circle-down fa-lg"></span> Access</button>
+          </div>
+        </div>
+      </article>
+      <div class="panel-body qualative-content">
+        <p>The Treatment Algorithms Insight Series examines physicians’ actual prescribing behavior as they initiate therapy and move through second- and third-line choices.</p>
+        <p>For each disease examined, Treatment Algorithms Insight Series provides the following:</p>
+        <ul class="round-bullets">
+          <li>Line of therapy analysis among newly diagnosed patients, including product share, progression times and top combination therapies.</li>
+          <li>Product-oriented patient flow from first-line therapies, among newly diagnosed patients.</li>
+          <li>Quarterly brand share and historical share trending, among drug-treated patients.</li>
+          <li>Pathway to key therapies from previous therapies, including add-versus-switch patterns and days to progression.</li>
+          <li>Product-level source of business analysis (continuing, add/switch, initial therapy).</li>
+          <li>Product-level compliance and persistency analysis.</li>
+          <li>Four quarters of historical data, accessible in an interactive, online Dashboard.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+   
+  // CONTACT US - FORM VALIDATION
+  $('#contactUsButton').click(function(){    
+    $('#contactUsForm').children().removeClass('has-error');
+    var validation = true;        
+    // Validation - Check user has selected a subject line    
+    if($('#contactUsSubject').val() == ('')) {
+      $('#contactUsSubject').parent().addClass('has-error');
+      validation = false;
+    }    
+    // Validation - Check user has typed a message 
+    if($('#contactUsMessage').val() == ('')) {
+      $('#contactUsMessage').parent().addClass('has-error');
+      validation = false;
+    }     
+    // Validation - Check user has typed a phone number if they checked the callback box
+    if($('#contactUsPhoneCheck').is(":checked") && $('#contactUsPhone').val() == ('')) {
+      $('#contactUsPhone').parent().addClass('has-error');
+      validation = false;
+    }     
+    // Error handling - If there is a problem sending error message
+    if ($('#contactUsMessage').val() == ('bug')) {
+      $(".contact-error-message").show();
+      validation = false;
+    }   
+    // Suceess - the sucess message
+    if (validation == true) {
+      $('#contactUsButton').addClass('disabled');
+      $('#contactUsButton').html('<i class="fa fa-circle-o-notch fa-spin"></i> Sending');
+      setTimeout(function(){$('#contactUsSuccess').show();}, 1000);
+      setTimeout(function(){$('#contactUsForm').hide();}, 1000);
+    }    
+  });
+  
+  // CONTACT US - PHONE NUMBER
+  $('#contactUsPhoneCheck').click(function() {
+    $('#contactUsPhoneWrapper')[this.checked ? "show" : "hide"]();
+  });
+  
+  // ASK ANALYST - FORM VALIDATION
+  $('#askAnalystButton').click(function(){
+    $('#askAnalystForm').children().removeClass('has-error');
+    var validation2 = true;
+    // Validation - Check user has typed a question
+    if($('#askAnalystQuestion').val() == ('')) {
+      $('#askAnalystQuestion').parent().addClass('has-error');
+      $('#askAnalystQuestion').focus();
+      validation2 = false;
+    } 
+    // Error handling - If there is a problem sending error message
+    if($('#askAnalystQuestion').val() == ('bug')) {
+      $("#askAnalystError").show();
+      $("#askAnalystIntro").hide();
+      validation2 = false;
+    }
+    // Suceess - the sucess message
+    if (validation2 == true) {
+      $('#askAnalystButton').addClass('disabled');
+      $('#askAnalystButton').html('<i class="fa fa-circle-o-notch fa-spin"></i> Sending');
+      setTimeout(function(){$('#askAnalystSuccess').show();}, 1000);
+      setTimeout(function(){$('#askAnalystForm').hide();}, 1000);
+    }  
+  }); 
+
+  // ASK ANALYST - FORM VALIDATION
+  $('#consultingButton').click(function(){
+    $('#consultingForm').children().removeClass('has-error');
+    var validation2 = true;
+    // Validation - Check user has typed a question
+    if($('#consultingQuestion').val() == ('')) {
+      $('#consultingQuestion').parent().addClass('has-error');
+      $('#consultingQuestion').focus();
+      validation2 = false;
+    } 
+    // Error handling - If there is a problem sending error message
+    if($('#consultingQuestion').val() == ('bug')) {
+      $("#consultingError").show();
+      $("#consultingIntro").hide();
+      validation2 = false;
+    }
+    // Suceess - the sucess message
+    if (validation2 == true) {
+      $('#consultingButton').addClass('disabled');
+      $('#consultingButton').html('<i class="fa fa-circle-o-notch fa-spin"></i> Sending');
+      setTimeout(function(){$('#consultingSuccess').show();}, 1000);
+      setTimeout(function(){$('#consultingForm').hide();}, 1000);
+    }  
+  }); 
+
+
+  
+  // REQUEST ACCESS - CHANGE BUTTON
+  $('#requestAccessButton').click(function(){
+    $(this).html("<i class='fa fa-lg fa-check-circle-o'></i> We will contact you shortly");
+    $(this).addClass('disabled');
+  });
+  
+    // REQUEST ACCESS - CHANGE BUTTON
+  $('#copyLink').click(function(){
+    $('.copySuccess').removeClass('hide');
+  });
+  
+  // DOWNLOAD INDICATOR
+  $('#downloads .dropdown-menu a#pcor').click(function(){    
+    $('#downloads .btn').addClass('disabled');
+    $('#downloads .btn').html('<i class="fa fa-circle-o-notch fa-spin"></i> Generating...');      
+    setTimeout(function(){$('#downloads .btn').html('<span class="fa fa-lg fa-arrow-circle-down"></span> <span class="hidden-xs">Download </span><span class="caret"></span>');}, 5000);
+    setTimeout(function(){$('#downloads .btn').removeClass('disabled');}, 5000);      
+  });
+  
+});
+
+$( "#saveButton" ).delay( 1500 ).fadeOut( 150, function() {
+  $('#successModal').modal()
+});
+
+</script>
+
+<script type="text/javascript">
+function tocHeight() {
+      
+  var $contentContainer = $('#content-container .content-panel'),
+      $tocContainer = $('.sticky-toc .toc'),
+
+      tocTop = $tocContainer.position().top,
+      scrollTop = $(this).scrollTop(),
+      scrollBot = scrollTop + $(this).height(),
+      
+      contentContainerTop    = $contentContainer.offset().top - tocTop,
+      contentContainerBottom = contentContainerTop + $contentContainer.outerHeight() + tocTop,
+      
+      visibleTop    = contentContainerTop    < scrollTop ? scrollTop : contentContainerTop,
+      visibleBottom = contentContainerBottom > scrollBot ? scrollBot : contentContainerBottom;
+      
+  $tocContainer.css('height',visibleBottom - visibleTop - tocTop + 'px');
+
+}
+
+$(window).on('load scroll resize', tocHeight);  
+</script>
+
+<script type="text/javascript"> 
+$(document).ready(function(){
+  if ($('.scope-tag').length ) {    
+    var tagWidth = $('.scope-tag').outerWidth();
+    var tagContent = $('.scope-tag').text();
+    $('.nav-search-box').css('paddingLeft', tagWidth + 15 );
+    $('.nav-search-box').attr("placeholder", "Search within " + tagContent);     
+    $('.scope-tag').click(function(){
+      $(this).remove();
+      $('.nav-search-box').css('paddingLeft', '');
+      $('.nav-search-box').attr("placeholder", "Type your interest area or question");
+      $('.nav-search-box').focus();
+      $('.scope-tag').tooltip('hide'); 
+    });  
+  }
+});
+</script>
+
+<script type="text/javascript">
+$(".filter-btn a").click(function () {		
+	 if ($(this).is('.active')) {
+	  $(this).removeClass('active');		
+	 } else{	  	
+    $(this).addClass('active');	  
+  }
+}); 
+$(document).ready(function(){
+  $('.search-navigation a').tooltip({placement: 'bottom', delay: { "show": 500, "hide": 100 }});   
+});
+$(document).ready(function(){
+  $('.help-text').tooltip({placement: 'top', delay: { "show": 500, "hide": 100 }});   
+});
+</script>
+
+
+<script type="text/javascript"> 
+$(".related-toggle").click(function () {		
+	 if ($(".toc-panel").is('.related-hidden')) {
+	  $(".toc-panel").removeClass('related-hidden');		
+	 } else{	  	
+    $(".toc-panel").addClass('related-hidden');	  
+  }
+  $(".related-toggle").tooltip('hide');
+});
+$(".toc-toggle").click(function () {		
+	 if ($(".toc-panel").is('.toc-hidden')) {
+	  $(".toc-panel").removeClass('toc-hidden');		
+	 } else{	  	
+    $(".toc-panel").addClass('toc-hidden');	  
+  }
+  $(".toc-toggle").tooltip('hide');
+});
+$(function () {
+  $(".related-toggle").tooltip({
+    placement: 'top',
+    title: 'Show/Hide Related Content',
+    container: 'body'
+  });
+});
+$(function () {
+  $(".toc-toggle").tooltip({
+    placement: 'top',
+    title: 'Show/Hide Table of Contents',
+    container: 'body'
+  });
+});
+
+
+</script>
+<script type="text/javascript"> 
+$("#toc-expand").click(function () {		
+	  $(".toc .nav.collapse").addClass('in').css('height', '').css('height', null);
+	  $(".toc .toc-divider").removeClass('collapsed');
+	  $(".toc .fa-chevron-circle-down").removeClass('collapsed');
+	  $("#toc-expand").addClass('hide');
+	  $("#toc-collapse").removeClass('hide');
+});
+$("#toc-collapse").click(function () {		
+	  $(".toc .nav.collapse").removeClass('in').css('height', '');
+	  $(".toc .toc-divider").addClass('collapsed')
+	  $(".toc .fa-chevron-circle-down").addClass('collapsed');
+	  $("#toc-expand").removeClass('hide');
+	  $("#toc-collapse").addClass('hide');
+});
+</script>
+
+<script type="text/javascript"> 
+$(document).ready(function(){
+  var fixedColWidth = Math.max.apply( null, $('#epiTable tr td:first-child').map( function () {
+    return $( this ).outerWidth( true );
+}).get());
+  $("#epiTable tr td:first-child, #epiTable tr th:first-child").addClass('first-cell');
+  $("#epiTable tr td:first-child, #epiTable tr th:first-child").css('width', fixedColWidth);
+  $("#epiTable tr td:first-child, #epiTable tr th:first-child").css('left', - fixedColWidth +2);
+  $("#epiTable").css('margin-left', fixedColWidth);
+  var startCol = $("#epiTable .start-col");
+  var scrollOffset = startCol.offset().left - startCol.parent().offset().left;
+  $("#epiTable .table-responsive").scrollLeft(scrollOffset);
+});
+</script>
+<script type="text/javascript">
+  $(function() {
+    $("#yearRange").slider();
+    $("#yearRange").on("slide", function(slideEvt) {
+      var range = slideEvt.value;
+      var range = range.toString()
+      var range = range.replace(",", " to ");
+      $("#yearRangeLabel").text(range);
+    
+    });     
+  });
+</script>
+<script type="text/javascript">
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+});
+
+$(document).ready(function(){
+  $('.mobile-toc-panel').affix({
+    offset: {
+      top: 304;
+    }
+  })
+});
+</script>
+

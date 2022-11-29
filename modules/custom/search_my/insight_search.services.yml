@@ -1,0 +1,19 @@
+services:
+  insight_search.SearchDocumentCreation:
+    class: 'Drupal\insight_search\SearchDocumentCreation'
+    arguments:
+      - '@entity_type.manager'
+    calls:
+    - [setContentTreeService, ['@?content_tree.ReportService','@?content_tree.chapterService','@?content_tree.FolderService']]
+  insight_search.index:
+    class: 'Drupal\insight_search\Controller\IndexController'
+    arguments: ['@entity_type.manager']
+  insight_search.ReportLibraryGetSignedUrl:
+    class: 'Drupal\insight_search\ReportLibraryHelper'
+  insight_search.digitalreport:
+    class: 'Drupal\insight_search\Controller\DigitalReport'
+    arguments: ['@entity_type.manager', '@request_stack', '@plugin.manager.search_api.parse_mode','@?content_tree.TaxonomyTermTree']
+  insight_search.search_controller_resolver:
+    class: '\Drupal\insight_search\EventSubscriber\SearchControllerSubscriber'
+    tags:
+      - { name: 'event_subscriber' }

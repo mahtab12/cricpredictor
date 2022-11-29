@@ -1,0 +1,19 @@
+uuid: a850e31d-c886-4fd7-89f1-f44a3f1d353a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_country
+    - taxonomy.vocabulary.stadium
+id: taxonomy_term.stadium.field_country
+field_name: field_country
+entity_type: taxonomy_term
+bundle: stadium
+label: Country
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

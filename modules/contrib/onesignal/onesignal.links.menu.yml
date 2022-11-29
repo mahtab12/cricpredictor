@@ -1,0 +1,18 @@
+onesignal.config_form:
+  title: 'OneSignal'
+  route_name: onesignal.config_form
+  description: 'Configuration and management of OneSignal.'
+  parent: system.admin_config_services
+  weight: 99
+
+onesignal.notifications:
+  title: 'Notifications'
+  route_name: onesignal.notifications
+  description: 'Display table of available notifications.'
+  parent: onesignal.config_form
+
+onesignal.devices:
+  title: 'Devices'
+  route_name: onesignal.devices
+  description: 'Display table of available devices.'
+  parent: onesignal.config_form

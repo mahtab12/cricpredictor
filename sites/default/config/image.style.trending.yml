@@ -1,0 +1,15 @@
+uuid: b7e36311-66f7-48b5-b348-414a0ea8f9ed
+langcode: en
+status: true
+dependencies: {  }
+name: trending
+label: trending
+effects:
+  319923a8-4676-4a65-8b66-4c52857cd8e0:
+    uuid: 319923a8-4676-4a65-8b66-4c52857cd8e0
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 120
+      height: 60
+      anchor: center-center

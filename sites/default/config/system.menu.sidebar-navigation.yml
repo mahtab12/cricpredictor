@@ -1,0 +1,8 @@
+uuid: 045dd93b-f46c-418a-a5e7-032e6d1f218b
+langcode: en
+status: true
+dependencies: {  }
+id: sidebar-navigation
+label: 'Sidebar Navigation'
+description: ''
+locked: false

@@ -1,0 +1,128 @@
+<div class="panel panel-default landing-page-panel">
+  <div class="panel-body">
+    <div class="chart-title">
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class="hide">Download</span> <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+        </ul>
+      </div>
+      <h2 class="landingcard-type orange">Commercial Targeting</h2>
+      <h3>Procedure Volumes by State</h3>
+    </div>
+    <div id="map" style="height: 247px;margin: 15px 0 0;"></div>
+
+  </div>
+  <div class="panel-footer text-right">
+    <a href="#" class="landingcard-popover-link3">Go to Commercial Targeting <i class="fa fa-caret-right fa-lg"></i></a>
+  </div>
+</div>
+
+
+<div class="hide" id="landingcard-popover3">
+  <ul class="dropdown-menu nondropdown landingcard-popover-menu">
+    <li><a href="devicecat-3.html"><span class="owned-tag">Heart Valves <span class="label label-default">Custom</span></span></a></li>         
+    <li><a href="devicecat-3-notowned.html"><span class="free-tag">About Commercial Targeting</span></a></li>         
+  </ul>
+  <div class="clearfix"></div>
+</div>  
+  
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.landingcard-popover-link3').popover({ 
+    placement: 'top',
+    html : true,
+    content: function() {
+      return $('#landingcard-popover3').html();
+    }
+  });
+  $('a.landingcard-popover-link3').click(function(e) {
+    e.preventDefault();
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(function () {
+
+/*
+    TODO:
+    - Check data labels after drilling. Label rank? New positions?
+    - Not US Mainland text
+    - Separators
+    */
+
+    var data = Highcharts.geojson(Highcharts.maps['countries/us/custom/us-small'])
+
+    // Set drilldown pointers
+    $.each(data, function (i) {
+        this.drilldown = this.properties['hc-key'];
+        this.value = i; // Non-random bogus data
+    });
+
+    // Instanciate the map
+    $('#map').highcharts('Map', {
+
+        subtitle: {
+            text: '',
+        },
+
+        colorAxis: {
+            min: 0,
+            stops: [
+        [0, '#f9dfb3'],
+        [0.5, '#f1af42'],
+        [1, '#60461a']
+    ]
+        },
+
+        tooltip: {
+          headerFormat: '<span style="color:{point.color}">● </span><b>{point.key}</b><br>',
+          pointFormat: '{point.x} Procedures'
+        },
+
+        plotOptions: {
+          map: {
+            borderColor: '#fff',
+                states: {
+                    hover: {
+                        color: '#732875'
+                    }
+                }
+            }
+        },
+
+legend: {
+                layout: 'vertical',
+align: 'left',
+                    verticalAlign: 'middle'
+            },
+
+        series : [{
+          data : data,
+          name: 'USA',
+          dataLabels: {
+              enabled: false
+          }
+		    }, {
+
+        type: 'mapline',
+            mapData: Highcharts.geojson(Highcharts.maps['countries/us/custom/us-small'], 'mapline'),
+        	"color": "#e5e5e5",
+        }],
+				
+				
+
+        drilldown: {
+            drillUpButton: {
+                relativeTo: 'spacingBox',
+                position: {
+                    x: 0,
+                    y: 0
+                }
+            }
+        }
+    });
+});
+</script>

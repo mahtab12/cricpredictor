@@ -1,0 +1,19 @@
+uuid: c69fb1d1-fdb5-487d-af1d-0c11c8d6ad6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_opened
+    - taxonomy.vocabulary.stadium
+id: taxonomy_term.stadium.field_opened
+field_name: field_opened
+entity_type: taxonomy_term
+bundle: stadium
+label: Opened
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

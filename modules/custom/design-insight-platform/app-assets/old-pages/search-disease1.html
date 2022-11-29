@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <title>DRG Insight Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- DRG Bootstrap Files -->
+  <link href="assets/css/drg-bootstrap.css" rel="stylesheet" media="all" type="text/css">
+  <link href="assets/css/fontawesome.css" rel="stylesheet" media="all" type="text/css">
+  <link href="assets/images/favicon.ico" rel="shortcut icon"> 
+  <script src="assets/js/drg-bootstrap.js"></script>
+
+  <!-- App-Specific Files -->
+  <link href="app-assets/css/insight.css" media="all" rel="stylesheet">
+  <script src="app-assets/js/load-content.js"></script> 
+  <script src="https://code.highcharts.com/highcharts.js"></script> 
+  <script src="app-assets/js/highcharts-theme-drg.js"></script> 
+  <script src="app-assets/js/charts.js"></script>
+
+</head>
+
+<body data-spy="scroll" data-target="#chapterOne">
+	
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse"><i class="fa fa-bars"></i> Menu</button>
+      <a class="insight-logo" href="index.html">
+        <span class="navbar-brand drg-logo text-hide">Decision Resources Group</span>
+        <span class="insight-text">Insight Platform</span>
+      </a>
+      <a class="navbar-brand" href="index.html">Insights</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <form class="navbar-form navbar-left has-feedback has-icon no-label">
+        <input type="text" class="form-control hasclear nav-search-box" placeholder="Type your interest area or question" value="Type 2 Diabetes - Overview &amp; Forecast" id="search-box" autocomplete="off">
+        <span class="clearer fa fa-times-circle form-control-feedback" style="display: block;"></span>
+        <span class="fa fa-search fa-lg input-icon"></span>
+        <button class="btn btn-primary nav-search-button" type="button" onclick="window.location = 'search-disease1.html';">Go</button>
+        <div data-partial="app-assets/components/searchbox.html"></div>             
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown"> 
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sitemap fa-lg"></i> Browse Insights <b class="caret"></b></a></a>
+          <ul class="dropdown-menu insight-browse-menu">
+            <li class="diseases"><a href="browse-therapy.html">Therapy Areas &amp; Diseases <span class="smalltext">You have access to insights on 23 diseases</span></a></li>
+            <li class="drugs"><a href="browse-drugs.html">Drugs <span class="smalltext">You have access to insights on all drugs</span></a></li>
+            <li class="companies"><a href="browse-companies.html">Companies <span class="smalltext">You have access to insights on all company</span></a></li>
+            <li class="devices"><a href="browse-devices.html">Devices <span class="smalltext">You have access to insights on 1 device</span></a></li>
+            <li class="report-center"><a href="report-center.html">Report Archive <span class="smalltext">You have access to 6 legacy reports</span></a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right navbar-toplinks">
+        <li><a href="http://www.decisionresourcesgroup.com" target="blank">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="https://authentication.decisionresourcesgroup.com/login/Solutions" class="dropdown-toggle">My Products</a>
+        </li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Steve Clark <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://authentication.decisionresourcesgroup.com/login/MyProfile">Edit Profile</a></li>
+            <li><a href="https://authentication.decisionresourcesgroup.com/login/Password/ChangePassword">Change Password</a></li>
+            <li><a href="https://authentication.decisionresourcesgroup.com/login/Logout">Log Out</a></li>
+          </ul>
+        </li>
+      </ul>      
+    </div>
+  </div>
+  
+  <div class="container-fluid hide">
+    <h1 class="page-title"><span style="font-weight:normal">You searched for</span> "Type 2 Diabetes - Overview &amp; Forecast"</h1>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-lg-9">
+        <div class="panel panel-default toc-panel">
+          <div class="row no-padding">
+            <div class="col-md-3 hidden-sm hidden-xs search-filters">
+              <div class="panel-body">
+                <h4>Filters</h4>
+                <div class="search-container">
+                <div class="form-group has-icon has-feedback no-label">
+                  <input type="text" class="form-control hasclear" placeholder="Search within your results">
+                  <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span> <span class="fa fa-search fa-lg input-icon"></span> 
+                </div>
+                </div>
+                <div class="category-container">
+                  <div data-toggle="dropdown">
+<i class="fa fa-stethoscope fa-lg fa-fw category-icon"></i>
+                    <h5>Diseases</h5>
+                  </div>
+                  <div class="dropdown-menu  two-tier-select" role="menu">
+<div class="row no-padding" id="ta">
+              <ul class="col-sm-12 list-unstyled">
+                <li class="searchbox has-feedback has-icon no-label">
+                  <input type="text" class="form-control hasclear" placeholder="Type a Disease">
+                  <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span> <span class="fa fa-search input-icon"></span> </li>
+              </ul>
+              <ul class="col-sm-5 list-unstyled set-height parent-select" id="ta-selector">
+                <li class="hidden" id=""><a href="#"></a></li>
+                <li class="active" id="ta1"><a href="#">Therapy Area 1</a></li>
+                <li id="ta2"><a href="#">Therapy Area 2</a></li>
+                <li id="ta3"><a href="#">Therapy Area 3</a></li>
+                <li id="ta4"><a href="#">Therapy Area 4</a></li>
+                <li id="ta5"><a href="#">Therapy Area 5</a></li>
+                <li id="ta6"><a href="#">Therapy Area 6</a></li>
+                <li id="ta7"><a href="#">Therapy Area 7</a></li>
+                <li id="ta8"><a href="#">Therapy Area 8</a></li>
+                <li id="ta9"><a href="#">Therapy Area 9</a></li>
+                <li id="ta10"><a href="#">Therapy Area 10</a></li>
+              </ul>
+              <ul class="col-sm-7 list-unstyled set-height child-select" id="ta-selections">
+                <li class="show ta1 checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-ta1">All Therapy Area 1 </label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 1 <span class="category-count">(62)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 2 <span class="category-count">(54)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 3 <span class="category-count">(27)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 4 <span class="category-count">(25)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 5 <span class="category-count">(23)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 6 <span class="category-count">(23)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 7 <span class="category-count">(7)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 8 <span class="category-count">(4)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 9 <span class="category-count">(3)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 10 <span class="category-count">(3)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 11 <span class="category-count">(4)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 12 <span class="category-count">(3)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 13 <span class="category-count">(3)</span></label>
+                </li>
+              </ul>
+            </div>
+          </div>
+                </div>
+                                <div class="category-container">
+                  <div data-toggle="dropdown">
+<i class="fa fa-flask fa-lg fa-fw category-icon"></i>
+                    <h5>Drug</h5>
+                  </div>
+                  <div class="dropdown-menu  two-tier-select" role="menu">
+<div class="row no-padding" id="drug">
+              <ul class="col-sm-12 list-unstyled">
+                <li class="searchbox has-feedback has-icon no-label">
+                  <input type="text" class="form-control hasclear" placeholder="Type a Drug">
+                  <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span> <span class="fa fa-search input-icon"></span> </li>
+              </ul>
+              <ul class="col-sm-5 list-unstyled set-height parent-select" id="drug-selector">
+                <li class="hidden" id=""><a href="#"></a></li>
+                <li class="active" id="drug1"><a href="#">AGIs</a></li>
+                <li id="drug2"><a href="#">GLP-1 Analogs</a></li>
+                <li id="drug3"><a href="#">DPP-IV Inhibitors</a></li>
+                <li id="drug4"><a href="#">Insulins</a></li>
+                <li id="drug5"><a href="#">Dopamine D2 Receptor Agonists</a></li>
+                <li id="drug6"><a href="#">SGLT Inhibitors</a></li>
+              </ul>
+              <ul class="col-sm-7 list-unstyled set-height child-select" id="drug-selections">
+                      <li class="show drug1 checkbox checkbox-parent">
+                        <label>
+                          <input type="checkbox" name="group-drug1">All AGIs </label>
+                      </li>
+                      <li class="show drug1 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug1"> Acarbose  <span class="category-count">(19)</span> <span class="smalltext">Glucobay</span></label>
+                      </li> 
+                      <li class="show drug1 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug1"> Acarbose  <span class="category-count">(16)</span> <span class="smalltext">Precose</span></label>
+                      </li>
+                      <li class="drug2 checkbox checkbox-parent">
+                        <label>
+                          <input type="checkbox" name="group-drug2">All GLP-1 Analogs </label>
+                      </li>                      
+                      <li class="drug2 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug2"> Albiglutide  <span class="category-count">(14)</span> <span class="smalltext">Eperzan</span></label>
+                      </li>
+                      <li class="drug2 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug2"> Albiglutide <span class="category-count">(11)</span> <span class="smalltext">Tanzeum</span></label>
+                      </li>
+                      <li class="drug3 checkbox checkbox-parent">
+                        <label>
+                          <input type="checkbox" name="group-drug3">All DPP-IV Inhibitors </label>
+                      </li>
+                      <li class="drug3 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug3"> Albiglutide <span class="category-count">(10)</span> <span class="smalltext">Vipidia</span></label>
+                      </li>
+                      <li class="drug3 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug3"> Albiglutide <span class="category-count">(9)</span> <span class="smalltext">Nesina</span></label>
+                      </li>
+                      <li class="drug3 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug3"> Alogliptin + Metformin <span class="category-count">(8)</span> <span class="smalltext">Vipdomet</span></label>
+                      </li>
+                      <li class="drug3 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug3"> Alogliptin + Metformin <span class="category-count">(6)</span> <span class="smalltext">Kazano</span></label>
+                      </li>
+                      <li class="drug3 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug3"> Alogliptin + Pioglitazone <span class="category-count">(6)</span> <span class="smalltext">Incresync</span></label>
+                      </li>
+                      <li class="drug3 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug3"> Alogliptin + Pioglitazone <span class="category-count">(6)</span> <span class="smalltext">Liovel </span></label>
+                      </li>
+                      <li class="drug3 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug3"> Alogliptin + Pioglitazone <span class="category-count">(6)</span> <span class="smalltext">Oseni</span></label>
+                      </li>
+                      <li class="drug3 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug3"> Anagliptin <span class="category-count">(4)</span> <span class="smalltext">Beskoa</span></label>
+                      </li>
+                      <li class="drug3 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug3"> Anagliptin <span class="category-count">(3)</span> <span class="smalltext">Suiny</span></label>
+                      </li>
+                      <li class="drug4 checkbox checkbox-parent">
+                        <label>
+                          <input type="checkbox" name="group-drug4">All Insulins </label>
+                      </li>
+                      <li class="drug4 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug4"> Biphasic Insulin Aspart <span class="category-count">(3)</span> <span class="smalltext">NovoMix</span></label>
+                      </li>
+                      <li class="drug5 checkbox checkbox-parent">
+                        <label>
+                          <input type="checkbox" name="group-drug5">All Dopamine D2 Receptor Agonists </label>
+                      </li>
+                      <li class="drug5 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug5"> Bromocriptine <span class="category-count">(2)</span> <span class="smalltext">Cycloset</span></label>
+                      </li>
+                      <li class="drug6 checkbox checkbox-parent">
+                        <label>
+                          <input type="checkbox" name="group-drug6">All SGLT Inhibitors </label>
+                      </li>
+                      <li class="drug6 checkbox">
+                        <label>
+                          <input type="checkbox" name="group-drug6"> Canagliflozin <span class="category-count">(2)</span> <span class="smalltext">Invokana</span></label>
+                      </li>
+              </ul>
+            </div>
+          </div>
+                </div>
+                                <div class="category-container">
+                  <div data-toggle="dropdown">
+                    <i class="fa fa-building-o fa-lg fa-fw category-icon"></i>
+                    <h5>Companies</h5>
+                    <ul class="list-unstyled remove-list hidden">
+                      <li><a href="#" class="remove-filter"><i class="fa fa-times-circle"></i> Takeda</a></li>
+                      <li><a href="#" class="remove-filter"><i class="fa fa-times-circle"></i> Eli Lilly</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-menu">
+                    <ul class="list-unstyled">
+                      <li class="searchbox has-feedback has-icon no-label">
+                        <input type="text" class="form-control hasclear" placeholder="Type a Company">
+                        <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span> 
+                        <span class="fa fa-search input-icon"></span>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled set-height">       
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Novo Nordisk <span class="category-count">(19)</span></label>
+                      </li> 
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Takeda <span class="category-count">(16)</span></label>
+                      </li>                      
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Sanofi <span class="category-count">(14)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Eli Lilly <span class="category-count">(11)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> AstraZeneca <span class="category-count">(10)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Bristol-Myers Squibb <span class="category-count">(9)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Merck &amp; Co <span class="category-count">(8)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Boehringer Ingelheim <span class="category-count">(6)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Daiichi-Sankyo <span class="category-count">(6)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> GlaxoSmithKline <span class="category-count">(6)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Pfizer <span class="category-count">(6)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Novartis <span class="category-count">(4)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Amylin <span class="category-count">(3)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Bayer <span class="category-count">(3)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Johnson & Johnson <span class="category-count">(2)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Merck KGaA <span class="category-count">(2)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> ... </label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="category-container">
+                  <div data-toggle="dropdown">
+                    <i class="fa fa-globe fa-lg fa-fw category-icon"></i>
+                    <h5>Geographies</h5>
+                  </div>
+                  <div class="dropdown-menu  two-tier-select" role="menu">
+<div class="row no-padding" id="county">
+              <ul class="col-sm-12 list-unstyled">
+                <li class="searchbox has-feedback has-icon no-label">
+                  <input type="text" class="form-control hasclear" placeholder="Type a Country">
+                  <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span> <span class="fa fa-search input-icon"></span> </li>
+              </ul>
+              <ul class="col-sm-5 list-unstyled set-height parent-select" id="county-selector">
+                <li class="hidden" id=""><a href="#"></a></li>
+                <li class="active" id="county-eu"><a href="#">Europe</a></li>
+                <li id="county-na"><a href="#">North America</a></li>
+                <li id="county-latin"><a href="#">Latin America</a></li>
+                <li id="county-ap"><a href="#">Asia Pacific</a></li>
+                <li id="county-mea"><a href="#">Middle East / Africa</a></li>
+              </ul>
+              <ul class="col-sm-7 list-unstyled set-height child-select" id="county-selections">
+                <li class="show county-eu checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-county-eu">All Europe </label>
+                </li>
+                <li class="show county-eu checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-eu">United Kingdom <span class="category-count">(62)</span></label>
+                </li>
+                <li class="show county-eu checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-eu">Germany <span class="category-count">(54)</span></label>
+                </li>
+                <li class="show county-eu checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-eu">France <span class="category-count">(27)</span></label>
+                </li>
+                <li class="show county-eu checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-eu">Netherlands <span class="category-count">(25)</span></label>
+                </li>
+                <li class="show county-eu checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-eu">Italy <span class="category-count">(23)</span></label>
+                </li>
+                <li class="show county-eu checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-eu">Spain <span class="category-count">(23)</span></label>
+                </li>
+                <li class="show county-eu checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-eu">Belgium <span class="category-count">(7)</span></label>
+                </li>
+                <li class="show county-eu checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-eu">Czech Republic <span class="category-count">(4)</span></label>
+                </li>
+                <li class="show county-eu checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-eu">Sweden <span class="category-count">(3)</span></label>
+                </li>
+                <li class="show county-eu checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-eu">Ukraine <span class="category-count">(3)</span></label>
+                </li>
+                <li class="show county-eu checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-eu">Austria <span class="category-count">(2)</span></label>
+                </li>
+                <li class="county-na checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-county-na">All North America</label>
+                </li>
+                <li class="county-na checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-na">United States <span class="category-count">(58)</span></label>
+                </li>
+                <li class="county-na checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-na">Canada <span class="category-count">(9)</span></label>
+                </li>
+                <li class="county-latin checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-county-latin">All Latin America</label>
+                </li>
+                <li class="county-latin checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-latin">Brazil <span class="category-count">(37)</span></label>
+                </li>
+                <li class="county-latin checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-latin">Argentina <span class="category-count">(36)</span></label>
+                </li>
+                <li class="county-latin checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-latin">Mexico <span class="category-count">(19)</span></label>
+                </li>
+                <li class="county-latin checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-latin">Columbia <span class="category-count">(5)</span></label>
+                </li>
+                  <li class="county-latin checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-latin">Chile <span class="category-count">(4)</span></label>
+                </li>
+                  <li class="county-latin checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-latin">Venezuela <span class="category-count">(3)</span></label>
+                </li>
+                <li class="county-ap checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-county-ap">All Asia Pacific</label>
+                </li>
+                <li class="county-ap checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-ap">China <span class="category-count">(37)</span></label>
+                </li>
+                <li class="county-ap checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-ap">India <span class="category-count">(36)</span></label>
+                </li>
+                <li class="county-ap checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-ap">Japan <span class="category-count">(19)</span></label>
+                </li>
+                <li class="county-ap checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-ap">Australia <span class="category-count">(5)</span></label>
+                </li>
+                  <li class="county-ap checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-ap">Russia <span class="category-count">(4)</span></label>
+                </li>
+                <li class="county-mea checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-county-mea">All Middle East / Africa</label>
+                </li>
+                <li class="county-mea checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-mea">Egypt <span class="category-count">(37)</span></label>
+                </li>
+                <li class="county-mea checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-mea">Nigeria <span class="category-count">(36)</span></label>
+                </li>
+                <li class="county-mea checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-mea">Saudi Arabia <span class="category-count">(19)</span></label>
+                </li>
+                <li class="county-mea checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-mea">South Africa <span class="category-count">(5)</span></label>
+                </li>
+                  <li class="county-mea checkbox">
+                  <label>
+                    <input type="checkbox" name="group-county-mea">Turkey <span class="category-count">(4)</span></label>
+                </li>
+              </ul>
+            </div>
+          </div>
+                </div>
+                <div class="category-container">
+                  <div data-toggle="dropdown">
+                    <i class="fa fa-file-text-o fa-lg fa-fw category-icon"></i>
+                    <h5>Insight Types</h5>
+                    </div>
+                  <div class="dropdown-menu">
+                    <ul class="list-unstyled">                    
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Overview &amp; Forecast <span class="category-count">(19)</span></label>
+                      </li> 
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Epidemiology <span class="category-count">(16)</span></label>
+                      </li>                      
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Current Treatment <span class="category-count">(14)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Unmet Need <span class="category-count">(11)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Emerging Treatment <span class="category-count">(10)</span></label>
+                      </li>
+                      <li class="checkbox">
+                        <label>
+                          <input type="checkbox"> Market Access <span class="category-count">(9)</span></label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="checkbox">
+          <label>
+            <input type="checkbox" checked>
+            Show results that are not part of my subscription 
+          </label>
+        </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-9 col-md-divider-left content-panel">
+                                          <div class="panel-heading">
+        <ul class="nav nav-pills">
+          <li class="active"><a href="#">All</a></li>
+          <li><a href="#"><i class="fa fa-align-left"></i> Text</a></li>
+          <li><a href="#"><i class="fa fa-bar-chart"></i> Charts</a></li>
+          <li><a href="#"><i class="fa fa-table"></i> Tables</a></li>
+        </ul>
+      </div>
+              <div class="panel-body search-results">       
+                <article class="feature-result">
+                  <div data-partial="app-assets/components/panels/forecast.html"></div>
+                </article>
+                
+                <article class="search-result special-result">
+                  <p class="result-path">Type 2 Diabetes</p>                  
+                  <h1 class="result-title"><a href="disease-2overview-1.html">Overview &amp; Market Forecast for Type 2 Diabetes</a></h1>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <ul class="round-bullets">
+                    <li><a href="disease-2overview-1.html">Executive Summary</a></li>
+                    <li><a href="disease-2overview-2.html">Etiology & Pathophysiology</a></li>
+                    <li><a href="disease-2overview-3.html">Market Outlook</a></li>
+                  </ul>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">What Factors Are Constraining the Market for Type 2 Diabetes?</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Patient Share of DPP-IV Inhibitors in Type 2 Diabetes, United States 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path"><i class="fa fa-lock"></i> Type 2 Diabetes <i class="fa fa-caret-right"></i> Unmet Need</p>
+                  <h1 class="result-title"> <a href="#">Opportunities for New Therapies in Type 2 Diabetes</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="search-result">
+                  <p class="result-path">Type 2 Diabetes <i class="fa fa-caret-right"></i> Overview &amp; Market Forecast</p>
+                  <h1 class="result-title"><a href="#">Annual Sales of SGLT-2 Inhibitors in Type 2 Diabetes, 2013-2023</a></h1>
+                  <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 14 May 2015</p>
+                  <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem est, pulvinar ac sapien quis, gravida rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-lg-3 hidden-xs">       
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

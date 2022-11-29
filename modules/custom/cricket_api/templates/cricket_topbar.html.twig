@@ -1,0 +1,73 @@
+<div class="slick-parent">
+  <div class="slick-slider">
+    {% for items in data %}
+      <div class="hello">
+        {% if items.status == "UPCOMING" %}
+          <a href="/match/{{ items.id }}/{{ items.series.id }}/{{ items.homeTeam.shortName | lower }}-vs-{{ items.awayTeam.shortName | lower  }}/scorecard" target="_self">
+            <div class="slick-crou upcoming">
+              <div class="row top-slick-title">
+                {% if items.name is not empty  %}<span class="name">{{ items.name }}</span>,{% endif %}
+                <span class="series">{{ items.series.shortName }}</span>
+              </div>
+              <div class="row">
+                <div class="col-xs-2 logo-img">
+                  <img src="{{ items.homeTeam.logoUrl }}" alt="home-team-logo" width="20px" height="25px">
+                </div>
+                <div class="col-xs-10 homeTeamName">
+                  {{ items.homeTeam.name }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-2 logo-img">
+                  <img src="{{ items.awayTeam.logoUrl }}" alt="home-team-logo" width="20px" height="25px">
+                </div>
+                <div class="col-xs-10 awayTeamName">
+                  {{ items.awayTeam.name }}
+                </div>
+              </div>
+              <div class="date-time-match">
+                {{ items.startDateTime | date("D, d M, h:i a", "Asia/Calcutta") }} IST
+              </div>
+            </div>
+          </a>
+        {% else %}
+          <a href="/match/{{ items.id }}/{{ items.series.id }}/{{ items.homeTeam.shortName | lower }}-vs-{{ items.awayTeam.shortName | lower  }}/scorecard" target="_self">
+            <div class="slick-crou completed-live">
+                <div class="row top-slick-title">
+                  {% if items.name is not empty  %}<span class="name">{{ items.name }}</span>,{% endif %}
+                  <span class="series">{{ items.series.shortName }}</span>
+                </div>
+                <div class="row">
+                  <div class="col-xs-2 col-sm-2 logo-img">
+                    <img src="{{ items.homeTeam.logoUrl }}" alt="home-team-logo" width="25px" height="25px">
+                  </div>
+                  <div class="col-xs-4 col-sm-3 homeTeamName">
+                    {{ items.homeTeam.shortName }}{% if items.isWomensMatch is not empty %}<span>-W</span>{% endif %}
+                  </div>
+                  <div class="col-xs-6 col-sm-7 homeTeamScores">
+                    {{ items.scores.homeScore }}
+                    <span class="">({{ items.scores.homeOvers }})</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-2 col-sm-2 logo-img">
+                    <img src="{{ items.awayTeam.logoUrl }}" alt="home-team-logo" width="25px" height="25px">
+                  </div>
+                  <div class="col-xs-4 col-sm-3 awayTeamName">
+                    {{ items.awayTeam.shortName }}{% if items.isWomensMatch is not empty %}<span>-W</span>{% endif %}
+                  </div>
+                  <div class="col-xs-6 col-sm-7 awayTeamScore">
+                    {{ items.scores.awayScore }}
+                    <span class="">({{ items.scores.awayOvers }})</span>
+                  </div>
+                </div>
+                <div class="summary-text-home">
+                  {{ items.matchSummaryText }}
+                </div>
+            </div>
+          </a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

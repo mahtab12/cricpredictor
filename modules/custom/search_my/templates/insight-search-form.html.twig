@@ -1,0 +1,47 @@
+{% set default_selected_tab = form.business_filters['#default_value'] %}
+{% set default_selected = form.business_filters['#placeholder'] %}
+{% set default_options = form.business_filters['#options'] %}
+
+{#<!-- {{kint(form.business_filters['#placeholder'][default_selected])}}
+{{kint(default_selected)}}
+ -->#}
+{% if form.business_filters['#placeholder'][default_selected] is not empty %}
+  {% set tab_selected = form.business_filters['#placeholder'][default_selected] %}
+{% else %}
+	{%set tab_selected = default_selected%}
+{% endif %}
+
+<div class="btn-group" id="searchDropdown">
+    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+	{{ tab_selected|trim }}&nbsp; <span class="caret"></span></button>
+	<ul class="dropdown-menu" role="menu">
+
+    	{% for key, value in default_options %}
+            {% set defaultSltd1 = tab_selected|lower %}
+            {% set defaultSltd = defaultSltd1|trim %}
+            {% if  defaultSltd == key %}
+                {% set activedropdrown = 'active in' %}
+            {% else %}
+                {% set activedropdrown = '' %}
+            {% endif %}
+    		<li class ="{{activedropdrown}}"> <a href="javascript:void(0);" id="{{key}}">
+    			{% autoescape false %}
+    			{{ value }}
+    			{% endautoescape %}
+    			</a>
+    		</li>
+        {% endfor %}
+
+    </ul>
+</div>
+{{ form.query }}
+{{ form.actions.submit }}
+
+{{ form.search_autocomplete }}
+{{ form.search_bunit }}
+{{ form.category }}
+
+<ul class="list-unstyled search-suggestions dropdown-menu category-search" id="usaccess-search">
+</ul>
+<button id="edit-submit-button" type="submit" class="btn btn-primary nav-search-button"><i class="fa fa-search fa-lg"></i></button>
+<div class="searchhistory"></div>

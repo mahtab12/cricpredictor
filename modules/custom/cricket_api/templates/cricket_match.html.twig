@@ -1,0 +1,219 @@
+<div class="matches">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#live">Live & Upcoming</a></li>
+    <li><a data-toggle="tab" href="#result">Results</a></li>
+  </ul>
+  <div class="match-list">
+    <div class="tab-content">
+      <div id="result" class="tab-pane fade">
+        {% for item in data  %}
+          {% if item.status == "completed" %}
+              <div class="live-match-panel upcoming">
+                <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="col-xs-12 col-md-8 up-match-date">
+                      <p class="match-date">{{ item.match_date_time | date("D, d M, h:i a", "Asia/Calcutta") }} IST</p>
+                    </div>
+                    <div class="col-md-4 hidden-xs">
+                      <p class="live-now-soon soon">{{ item.status }}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="match-details">
+                        <p class="text-center series-name">{{ item.series_name }} <span>,</span>{{ item.match_num }}</p>
+                        <p class="text-center venue-name">{{ item.venue }}</p>
+                      </div>
+                    </div>
+                    <div class="match-wrapper row">
+                      <div class="team n01 col-md-5" style="color: #006f3b">
+                        <div class="team-wrapper left ">
+                          <div class="team-name">
+                            <span class="teamLogo">
+                                <img src="{{ item.logo_home_team }}">
+                            </span>
+                            <span class="teamName" style="color:{{ item.home_team_color }}">{{ item.home_short_name }}</span>
+                          </div>
+                          <hr class="row-style" style="border-bottom: 3px solid {{ item.home_team_color }}">
+                          <p class="score-win" style="color:{{ item.home_team_color }} ">
+                            {{ item.home_score }}
+                            <span class="overs">{{ item.home_over }}</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="fix-logo col-md-2">
+                        <img src="{{ item.series_image }}" class="matchType">
+                      </div>
+                      <div class="team n02 col-md-5">
+                        <div class="team-wrapper right">
+                          <div class="team-name">
+                            <span class="teamName" style="color:{{ item.away_team_color }}">{{ item.away_short_name }}</span>
+                            <span class="teamLogo">
+                                <img src="{{ item.logo_away_team }}">
+                            </span>
+                          </div>
+                          <hr class="row-style" style="border-bottom: 3px solid {{ item.away_team_color }}">
+                          <p class="score-win" style="color: {{ item.away_team_color }}">
+                            {{ item.away_score }}
+                            <span class="overs">{{ item.away_over }}</span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <p class="text-center summary-text">{{ item.summary_text }}</p>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12 text-center pad-10">
+                        <a href="/match/{{ item.match_id }}/{{ item.series_id }}/{{ item.team_url }}/scorecard" target="_self" class="btn btn-primary">Match Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div id="live" class="tab-pane fade in active">
+        {% for item in data  %}
+          {% if item.status == "completed" %}
+          {% elseif item.status == "upcoming" %}
+              <div class="live-match-panel upcoming">
+                <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="col-xs-12 col-md-8 up-match-date">
+                      <p class="match-date">{{ item.match_date_time | date("D, d M, h:i a", "Asia/Calcutta") }} IST</p>
+                    </div>
+                    <div class="col-md-4">
+                      <p class="live-now-soon soon">{{ item.status }}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="match-details">
+                        <p class="text-center series-name">{{ item.series_name }} <span>,</span> {{ item.match_num }}</p>
+                        <p class="text-center venue-name">{{ item.venue }}</p>
+                      </div>
+                    </div>
+                    <div class="match-wrapper row">
+                      <div class="team n01 col-md-5" style="color: #006f3b">
+                        <div class="team-wrapper left ">
+                          <div class="team-name">
+                            <span class="teamLogo">
+                                <img src="{{ item.logo_home_team }}">
+                            </span>
+                            <span class="teamName" style="color: {{ item.home_team_color }}">{{ item.home_short_name }}</span>
+                          </div>
+                          <hr class="row-style" style="border-bottom: 3px solid {{ item.home_team_color }}">
+                          <p class="score-win" style="color: {{ item.home_team_color }}">
+                              {{ item.home_score }}
+                            <span class="overs">{{ item.home_over }}</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="fix-logo col-md-2">
+                        <img src="{{ item.series_image }}" class="matchType">
+                      </div>
+                      <div class="team n02 col-md-5">
+                        <div class="team-wrapper right">
+                          <div class="team-name">
+                            <span class="teamName" style="color:{{ item.away_team_color }};">{{ item.away_short_name }}</span>
+                            <span class="teamLogo">
+                                <img src="{{ item.logo_away_team }}">
+                            </span>
+                          </div>
+                          <hr class="row-style" style="border-bottom: 3px solid {{ item.away_team_color }}">
+                          <p class="score-win" style="color: {{ item.away_team_color }}">
+                              {{ item.away_score }}
+                            <span class="overs">{{ item.away_over }}</span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <p class="text-center summary-text">{{ item.summary_text }}</p>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12 text-center pad-10">
+                        <a href="/match/{{ item.match_id }}/{{ item.series_id }}/{{ item.team_url }}/scorecard" target="_self" class="btn btn-primary">Match Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          {% else %}
+              <div class="live-match-panel upcoming">
+                <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="col-xs-12 col-md-8 up-match-date">
+                      <p class="match-date">{{ item.match_date_time | date("D, d M, h:i a", "Asia/Calcutta") }} IST</p>
+                    </div>
+                    <div class="col-md-4">
+                      <p class="live-now-soon soon">{{ item.status }}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="match-details">
+                        <p class="text-center series-name">{{ item.series_name }} <span>,</span> {{ item.match_num }}</p>
+                        <p class="text-center venue-name">{{ item.venue }}</p>
+                      </div>
+                    </div>
+                    <div class="match-wrapper row">
+                      <div class="team n01 col-md-5" style="color: #006f3b">
+                        <div class="team-wrapper left ">
+                          <div class="team-name">
+                            <span class="teamLogo">
+                                <img src="{{ item.logo_home_team }}">
+                            </span>
+                            <span class="teamName" style="color: {{ item.home_team_color }}">{{ item.home_short_name }}</span>
+                          </div>
+                          <hr class="row-style" style="border-bottom: 3px solid {{ item.home_team_color }}">
+                          <p class="score-win" style="color: {{ item.home_team_color }}">
+                            {{ item.home_score }}
+                            <span class="overs">{{ item.home_over }}</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="fix-logo col-md-2">
+                        <img src="{{ item.series_image }}" class="matchType">
+                      </div>
+                      <div class="team n02 col-md-5">
+                        <div class="team-wrapper right">
+                          <div class="team-name">
+                            <span class="teamName" style="color:{{ item.away_team_color }};">{{ item.away_short_name }}</span>
+                            <span class="teamLogo">
+                                <img src="{{ item.logo_away_team }}">
+                            </span>
+                          </div>
+                          <hr class="row-style" style="border-bottom: 3px solid {{ item.away_team_color }}">
+                          <p class="score-win" style="color: {{ item.away_team_color }}">
+                            {{ item.away_score }}
+                            <span class="overs">{{ item.away_over }}</span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <p class="text-center summary-text">{{ item.summary_text }}</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 text-center pad-10">
+                      <a href="/match/{{ item.match_id }}/{{ item.series_id }}/{{ item.team_url }}/scorecard" target="_self" class="btn btn-primary">Match Details</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

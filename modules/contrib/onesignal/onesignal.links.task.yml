@@ -1,0 +1,14 @@
+onesignal.settings_tab:
+  route_name: onesignal.config_form
+  title: 'Settings'
+  base_route: onesignal.config_form
+
+onesignal.devices_tab:
+  route_name: onesignal.devices
+  title: 'Devices'
+  base_route: onesignal.config_form
+
+onesignal.notifications_tab:
+  route_name: onesignal.notifications
+  title: 'Notifications'
+  base_route: onesignal.config_form

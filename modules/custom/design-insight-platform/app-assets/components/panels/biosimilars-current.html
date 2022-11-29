@@ -1,0 +1,79 @@
+<div class="panel panel-default landing-page-panel">
+  <div class="panel-body">
+    <div class="chart-title">
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class=" text-hide">Downloads</span><span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+          <li><a href="#"><span class="icon icon-excel"></span> Data to Excel</a></li>
+        </ul>
+      </div>
+      <h2>Current Treatment</h2>
+      <h3>Physician Familiarity with Biosimilars by  
+        <div class="btn-group title-button">
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"> Specialty <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li class="active"><a href="#">Specialty</a></li>
+            <li><a href="#">Region</a></li>
+          </ul>
+        </div>
+      </h3>
+    </div>
+    <div id="forecast" style="height: 220px;margin: 30px 0 0;"></div>
+    
+  </div>
+  <div class="panel-footer text-right">
+    <a href="#">Go to Physician Practice and Perceptions <i class="fa fa-caret-right fa-lg"></i></a>
+  </div>
+</div>
+
+<script type="text/javascript">
+	var stackedChart = {
+		chart: {
+      renderTo: 'forecast',
+      type: 'column'
+    },
+    xAxis: {
+      categories: ['Hem-onc', 'Med onc', 'Gastro', 'Rheum', 'Neph', 'Endo']
+    },
+    yAxis: {
+			reversedStacks: true,
+			title: {
+            text: 'Percentage of Physician'
+        },
+        max: 100
+    },
+    legend: {
+      align: 'right',
+      verticalAlign: 'middle',
+      layout: 'vertical',
+    },
+    plotOptions: {
+      column: {
+          stacking: 'percent'
+      }
+    },
+    tooltip: {
+  		headerFormat: '<span style="color:{point.color}">● </span> <b>{series.name}</b><br>',
+  		pointFormat: '{point.category} = {point.y}%',
+  	},
+		series: [{
+            name: 'Extremely',
+            data: [16,15,12,9,8,5]
+        },{
+            name: 'Very',
+            data: [42,35,29,24,22,16]
+        },{
+            name: 'Moderately',
+            data: [33,38,41,37,42,35]
+        },{
+            name: 'Slightly',
+            data: [9,12,18,28,26,39]
+        },{
+            name: 'Not at all',
+            data: [0,0,0,2,2,5]
+        }]
+  };
+	stackedChart = jQuery.extend(true, {}, BarChartStacked2, stackedChart);
+  var stackedChart = new Highcharts.Chart(stackedChart);
+</script>

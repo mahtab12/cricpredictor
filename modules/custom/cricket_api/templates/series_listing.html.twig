@@ -1,0 +1,48 @@
+<div class="series-tiles">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#inprogress">Inprogress and Upcoming</a></li>
+    <li><a data-toggle="tab" href="#completed">Completed</a></li>
+  </ul>
+  <div class="match-score">
+    <div class="tab-content">
+      <div id="inprogress" class="tab-pane fade in active pad-top-15">
+        <div class="row">
+          {% for items in data.seriesList.series %}
+            {% if items.status|lower == "completed" %}
+            {% else %}
+              <div class="col-sm-4 col-xs-12">
+                <a href="/matches/{{ items.id }}" class="series-tiles-container">
+                  <img src="{{ items.shieldImageUrl }}" class="img-responsive" alt="">
+                  <div class="series-tiles-overlay">
+                    <p class="series">{{ items.name }}</p>
+                    <p>{{ items.startDateTime | date('M d') }}-{{ items.endDateTime | date('M d') }}</p>
+                  </div>
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div id="completed" class="tab-pane fade pad-top-15">
+        <div class="row">
+          {% for items in data.seriesList.series %}
+            {% if items.status|lower == "completed" %}
+              <div class="col-sm-4 col-xs-12">
+                <a href="/matches/{{ items.id }}" class="series-tiles-container">
+                  <img src="{{ items.shieldImageUrl }}" class="img-responsive" alt="">
+                  <div class="series-tiles-overlay">
+                    <p class="series">{{ items.name }}</p>
+                    <p>{{ items.startDateTime | date('M d') }}-{{ items.endDateTime | date('M d') }}</p>
+                  </div>
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="full text-center">
+  <a href="/cricket-match/live-scores" class="btn btn-success">View Fixtures</a>
+</div>

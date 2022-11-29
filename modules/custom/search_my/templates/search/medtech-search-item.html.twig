@@ -1,0 +1,84 @@
+{#{{ kint(content) }}
+#}<article class="search-result-new {%if content.report_type == 'report-library'%}{{ content.report_type }}{% else %}non-report-library{%endif%}" id="searchTour1">
+<h1 class="result-title">
+    {%if content.report_type == 'report-library'%}
+              <a href="javascript:void(0);"  style="font-size:22px;font-weight:500;margin-bottom:7px;" data-id="{{content.nid}}" data-nid="{{content.nid}}" class="report-library" data-url="{{ content.url }}" data-sku="{{ content.sku[0] }}" data-title="{% if(highliteddocdata['title'] | length > 0) %}{{ highliteddocdata['title'] | raw }}{%else%}{{ content.title | raw }}{% endif %}">{% if(highliteddocdata['title'] | length > 0) %}{{ highliteddocdata['title'] | raw }}{%else%}{{ content.title | raw }}{% endif %}</a>
+    {% else %}
+     <a style="font-size:22px;font-weight:500;margin-bottom:7px;" href="{{ content.url }}">{% if(highliteddocdata['title'] | length > 0) %}    
+{{ highliteddocdata['title'] | raw }}{%else%}{{ content.title | raw }}{% endif %}
+              </a>
+    {%endif%}
+</h1>
+<p class="result-description">
+{{ highliteddocdata['description'] | raw }}   
+</p>
+<div class="result-meta" id="searchTour2">
+{% if  'Commercial Targeting'  in content.chapter_title or 'Brand Tracking'  in content.chapter_title  or (content.is_tableau | length >0 and content.is_tableau !=1)%}
+{%else%}  
+<span id="searchTour3" class="matches clicked collapsed" data-report="container" data-toggle="collapse" data-target="#result-{{content.nid}}" data-id="{{content.nid}}" aria-expanded="false"><i class="fa fa-plus-square"></i> Show Matches</span>
+{% endif %}
+
+{% if content.hasAccess == 1 %}
+<span class="owned-tag">Owned</span> 
+{%else%}
+<span class="not-owned-tag">Not Owned</span> 
+{%endif%}
+
+
+  <span class="pub-date"><i class="fa fa-calendar"></i> {{ content.publish_date|date("j M Y") }}</span> 
+ {% if(content.file_attachments_url | length > 0) %}   
+  <span class="btn-group">
+    <a href="#" class="dropdown-toggle btn btn-link" data-toggle="dropdown" aria-expanded="false">
+     <span class="fa fa-arrow-circle-down"></span> Download <span class="caret"></span></a>
+    <ul class="dropdown-menu search-downloads" role="menu">
+      {% for key,attachment in content.file_attachments_url  %}
+        
+          {% set ext_type =  attachment |split('.')|last %}
+          {% if(ext_type == 'pdf') %}
+          {%  set ext_type_class =  'icon-pdf' %}
+          {% elseif(ext_type == 'xlxm') %}
+          {%  set ext_type_class =  'icon-excel' %}
+          {% elseif(ext_type == 'xls') %}
+          {%  set ext_type_class =  'icon-excel' %}
+          {% elseif(ext_type == 'pptx') %}
+          {%  set ext_type_class =  'icon-powerpoint' %}
+          {%endif%}          
+       {# <li><a href="/download/files?download_url={{ attachment }}&amp;filename={{ content.file_attachments_name[key] }}" data-csg-nid="{{content.nid}}" data-file-name="A-R-Type-2-Diabetes-(US)-(2).pptx.pptx" data-file-type="attachments" data-sku="COMING_SOON" data-url="{{ content.url }}">
+                <span class="icon {{ ext_type_class }}"></span> 
+                {{ content.file_attachments_name[key] }}
+            </a>
+        </li>#}
+        
+        {% if content.hasAccess == 1 %}
+        <li><a href="{{ attachment }}" target="_blank" data-file-name="{{ content.file_attachments_name[key] }}" data-file-type="attachments" data-sku="COMING_SOON" data-url="{{ content.url }}">
+                <span class="icon {{ ext_type_class }}"></span> 
+                {{ content.file_attachments_name[key] }}
+            </a>
+        </li>        
+        {%else%}
+          <li><a href="javascript:void(0);" data-csg-nid="{{content.nid}}" data-file-name="{{ content.file_attachments_name[key] }}" data-file-type="attachments" data-sku="COMING_SOON" data-url="">
+                <span class="icon {{ ext_type_class }}"></span> 
+                {{ content.file_attachments_name[key] }}
+            </a>
+        </li>  
+        {%endif%} 
+       
+        
+        
+      {% endfor %}
+    </ul>
+</span> 
+{% endif %}
+  
+</div> 
+
+<div class="chapter-matches collapse" id="result-{{ content.nid }}" aria-expanded="false" style="height: 0px;">
+ </div>
+
+
+{% if content.ss_plaform_url | length > 0 %}  
+<a href="{{ content.ss_plaform_url }}" class="alert alert-warning">
+<i class="fa fa-lg fa-exclamation-circle"></i> There is a newer version of this report available - <strong>Click here to learn more</strong>
+</a>
+{%endif%}   
+</article>

@@ -1,0 +1,193 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12 Feb, 2019, 3:13:20 PM
+    Author     : raktiwari
+*/
+.ui-dialog-titlebar{
+    display:none;
+}
+.ui-dialog-titlebar-close{
+    margin-right:5px;
+}
+#therapy_area_facet li.quick_search_hidden {
+    display: none;
+}
+#therapy_area_facet li.filter-show {
+    display: block;
+}
+#therapy_area_facet li.filter-hidden {
+    display: none;
+}
+.qualative-content .report-modal-description,
+.qualative-content .report-modal-questions {
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+
+.qualative-content .report-modal-companies p::first-letter,
+.qualative-content .report-modal-companies h3 + ::first-letter {
+    margin-left: -8px;
+    color: #fff;
+}
+.qualative-content .report-modal-companies p {
+    padding-left: 25px;
+    position: relative;
+    list-style: none;
+    margin-bottom: 5px;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    width: 45%;
+}
+.qualative-content .report-modal-companies p:after {
+    position: absolute;
+    background-color: #732875;
+    border-radius: 999px;
+    content: "";
+    left: 8px;
+    width: 8px;
+    height: 8px;
+    top: 9px;
+}
+#facet_filters_library .category-container .dropdown-menu {
+    max-height: none;
+}
+
+#facet_filters_library .dropdown-menu .parent-select > a,
+#facet_filters_library .dropdown-menu .parent-select .active > a,
+#facet_filters_library .dropdown-menu .parent-select .active > a:hover,
+#facet_filters_library .dropdown-menu .parent-select .active > a:focus {
+    border-left: none;
+}
+
+#facet_filters_library #ta-selector input[type=checkbox],
+#facet_filters_library #ta-selector input[type=radio] {
+    border: none;
+}
+
+#facet_filters_library .btn-link,
+#facet_filters_library .btn-link:hover,
+#facet_filters_library .btn-link:focus,
+#facet_filters_library .btn-link:active {
+    border: none;
+}
+
+
+
+.consulting-advert {
+  background: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  padding: 15px;
+  border-radius: 3px;
+  margin-left: 30px;
+  margin-top: 63px;
+}
+.consulting-advert h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.consulting-advert p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+.consulting-advert .btn {
+  margin-top: 15px;
+}
+.error-page .consulting-advert {
+  margin-top: 90px;
+  margin-left: 0;
+}
+.error-page .consulting-advert h4 {
+  font-size: 20px;
+}
+.error-page .consulting-advert p {
+  font-size: 16px;
+}
+#consultingCheckboxes .checkbox {
+  margin: 15px 0 15px 15px;
+}
+#consultingCheckboxes .checkbox input[type="checkbox"] {
+  margin-left: -25px;
+}
+
+
+/* ANALYST PANELS
+================================================== */
+.panel-analyst {
+	padding: 0;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .2);
+  border-radius: 3px;
+}
+
+.analyst-details .analyst-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+  position: absolute;
+  top: 15px;
+  right: 0;
+}
+.analyst-details .analyst-image img {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.analyst-details .nav-pills {
+  border-bottom-color: #e5e5e5;
+}
+.modal .panel-analyst .analyst-details .analyst-image {
+  width: 140px;
+  height: 140px;
+  right: 0;
+  top: 30px;
+}
+.digital-search .search-filters .shadow-box {
+    padding: 20px 20px 5px;
+    background: #f9f9f9;
+}
+.element-invisible{
+    position: absolute !important;
+    clip: rect(1px,1px,1px,1px);
+    overflow: hidden;
+    height: 1px;
+}
+.rmodal .rmodal-lg .report-result, .report-link .report-result{
+    min-height: 195px;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 30px 30px 30px 165px;
+    position: relative;
+    border-radius: 3px 3px 0 0;
+    background: #f5f5f5;
+    margin-top: 0;
+}
+/* For loader in macci search page*/
+.page-loader.loading {
+    opacity: 1;
+}
+
+.page-loader {
+   display: none;
+}
+.page-loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(245,245,245,0.9);
+    left: 0;
+    top: 0;
+    z-index: 4;
+    text-align: center;
+    padding-top: 360px;
+    color: #732875;
+    opacity: 0;
+    transition: opacity ease-in-out 0.2s;
+}

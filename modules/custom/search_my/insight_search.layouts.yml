@@ -1,0 +1,24 @@
+usma_search:
+  label: 'USMA Search Layout'
+  category: 'USMA Layouts'
+  template: templates/usma
+  default_region: content
+  regions:
+    content:
+      label: Main content
+    sidebar_left:
+      label: Left Sidebar
+    sidebar_right:
+      label: Right Sidebar
+biopharma_search:
+  label: 'Biopharma Search Layout'
+  category: 'Biopharma Layouts'
+#  template: templates/biopharma
+  default_region: content
+  regions:
+    content:
+      label: Main content
+    sidebar_left:
+      label: Left Sidebar
+    sidebar_right:
+      label: Right Sidebar

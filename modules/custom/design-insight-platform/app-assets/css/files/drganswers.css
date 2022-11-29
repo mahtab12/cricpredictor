@@ -1,0 +1,185 @@
+@media (min-width: 1200px) {
+  .drganswers-container .form-group,
+  .drganswers-container p.lead {
+    width: 910px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.drganswers-container .checkbox-list {
+  margin-left: 32px;  
+}
+.drganswers-container .checkbox-list li.radio,
+.drganswers-container .checkbox-list li.checkbox {
+  margin: 0;
+  display: inline-block;
+  width: 100%;
+}
+.drganswers-container .checkbox-list li.radio input[type=radio],
+.drganswers-container .checkbox-list li.checkbox input[type=checkbox] {
+  margin-top: 0;
+  margin-left: -24px;
+}  
+.drganswers-container .checkbox-list li.checkbox.active label,
+.drganswers-container .checkbox-list li.checkbox label:hover,
+.drganswers-container .checkbox-list li.checkbox label:focus,
+.drganswers-container .checkbox-list li.radio.active label,
+.drganswers-container .checkbox-list li.radio label:hover,
+.drganswers-container .checkbox-list li.radio label:focus {
+  background-color: #f5f5f5;
+}
+.drganswers-container .checkbox-list li.checkbox label,
+.drganswers-container .checkbox-list li.radio label {
+  padding: 8px 8px 7px;
+  color: #444;
+  display: block;
+  clear: both;
+  font-size: 14px;
+  line-height: 16px;
+  border-radius: 4px;
+  margin-bottom: 1px
+}
+.drganswers-container .checkbox-list li.checkbox label,
+.drganswers-container .checkbox-list li.radio label {
+  white-space: nowrap;
+  padding-left: 32px;
+} 
+
+.drganswers-container .checkbox-list li.radio .small,
+.drganswers-container .checkbox-list li.checkbox .small {
+  font-size: 13px;
+  display: block;
+  color: #6d6e71;
+  margin-top: 4px;
+}
+
+.drganswers-container .list-title {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  padding-left: 40px;
+  position: relative;
+}
+.drganswers-container .list-title .small {
+  font-size: 14px;
+  display: block;
+}
+.drganswers-container .validation-error .list-title,
+.drganswers-container .validation-error .list-title .small {
+  color: #f47c6c;
+}
+.drganswers-container .validation-error .list-title .number {
+  background: #f47c6c;
+}
+.drganswers-container .validation-error .form-control,
+.drganswers-container .validation-error .form-control:focus {
+  border-color: rgba(244, 124, 108, 0.6);
+  outline: none;
+  background: rgba(244, 124, 108, 0.05);
+  -webkit-box-shadow: 0 0 0 3px rgba(244, 124, 108, 0.25);
+          box-shadow: 0 0 0 3px rgba(244, 124, 108, 0.25);
+}
+
+.drganswers-container .form-group {
+  margin-bottom: 32px;
+  border-bottom: 1px dotted #e5e5e5;
+  padding-bottom: 31px;
+}
+.drganswers-container .form-group:last-child {
+  border-bottom: none;
+}
+.drganswers-container .list-title .number {
+  width: 32px;
+  height: 32px;
+  background: #722776;
+  background: linear-gradient(0deg, #3f223e 0%, #722776 100%);
+  color: #fff;
+  text-align: center;
+  line-height: 32px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 33px;
+}
+
+.drganswers-container p.lead {
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 32px;
+}
+
+.drganswers-container .text-area-wrapper,
+.drganswers-container p {
+  margin-left: 40px;  
+}
+.drganswers-container p {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+.drganswers-container p + p {
+  margin-top: 16px;
+}
+
+/* Form Elements */
+.drganswers-container input[type=checkbox], 
+.drganswers-container input[type=radio] {
+  border-width: 2px;
+}
+.drganswers-container input[type=checkbox] {
+  border-radius: 4px !important;
+}
+.drganswers-container input[type=checkbox]:checked,
+.drganswers-container input[type=radio]:checked {
+  background: #732875
+}
+
+.drganswers-container input[type=checkbox] {
+  border-radius: 0;
+}
+.drganswers-container input[type=checkbox]:checked:before {
+  color: #fff;
+  font-size: 12px;
+  margin-left: -2px;
+}
+.drganswers-container input[type=radio]:checked,
+.drganswers-container input[type=checkbox]:checked {
+  border-color: #732875;
+}
+.drganswers-container input[type=radio]:checked:before {
+  width: 6px;
+  height: 6px;
+  margin: 3px;
+  background-color: #fff;
+}
+
+
+.drganswers-container .form-control {
+  transition: box-shadow ease-in-out 0.15s;
+  background: #f5f5f5;
+  padding: 6px 8px;
+  line-height: 24px;
+  font-size: 14px;
+  border-width: 2px;
+}
+.drganswers-container textarea.form-control {
+  font-size: 18px;
+}
+.drganswers-container .form-control:focus {
+  border-color: rgba(115, 40, 117, 0.3);
+  outline: none;
+  background: rgba(115, 40, 117, 0.05);
+  -webkit-box-shadow: 0 0 0 3px rgba(115, 40, 117, 0.25);
+          box-shadow: 0 0 0 3px rgba(115, 40, 117, 0.25);
+}
+.drganswers-container .textinput-other {
+  padding: 8px 0 0 32px;
+  display: block;
+}
+
+
+.drganswers-container.thank-you-message {
+ margin-bottom: 120px; 
+}

@@ -1,0 +1,23 @@
+uuid: a1c31e7d-9aeb-4722-be9f-778f02db362d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_capacity
+    - taxonomy.vocabulary.stadium
+id: taxonomy_term.stadium.field_capacity
+field_name: field_capacity
+entity_type: taxonomy_term
+bundle: stadium
+label: Capacity
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,23 @@
+uuid: c59b7b32-afd2-4c53-9e69-44f678957b55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_percentage_of_win
+    - node.type.prediction
+id: node.prediction.field_percentage_of_win
+field_name: field_percentage_of_win
+entity_type: node
+bundle: prediction
+label: 'Percentage of win'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

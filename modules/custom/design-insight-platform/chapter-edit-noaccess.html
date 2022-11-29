@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>DRG Insight Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- DRG Bootstrap Files -->
+    <link href="assets/css/drg-bootstrap.css" rel="stylesheet" media="screen" type="text/css">
+    <link href="assets/css/fontawesome.css" rel="stylesheet" media="screen" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" media="screen" rel="text/css">
+    <link href="assets/css/toc.css" rel="stylesheet" media="screen" rel="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="assets/images/favicon.ico" rel="shortcut icon"> 
+    <script src="assets/js/drg-bootstrap.js"></script>
+
+    <!-- App-Specific Files -->
+    <link href="app-assets/css/insight.css" media="screen" rel="stylesheet">
+    <link href="app-assets/css/print.css" media="print" rel="stylesheet">
+    <script src="app-assets/js/load-content.js"></script> 
+    <script src="https://code.highcharts.com/highcharts.js"></script> 
+    <script src="app-assets/js/highcharts-theme-drg.js"></script> 
+    <script src="app-assets/js/charts.js"></script>
+    <script src="app-assets/js/responsive-tab.js"></script>
+    <script src="app-assets/js/bootstrap-tour.min.js"></script>
+    <script src="app-assets/js/insight-tours.js"></script>
+
+  </head>
+
+  <body data-spy="scroll" data-target=".current-chapter">
+
+    <div class="navbar navbar-default navbar-insights">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse"><i class="fa fa-lg fa-bars"></i></button>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-search"><i class="fa fa-lg fa-search"></i></button>
+        <a class="insight-logo" href="index.html">
+          <span class="navbar-brand drg-logo text-hide">Decision Resources Group</span>
+          <span class="insight-text">Insight Platform</span>
+        </a>
+      </div>
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <div data-partial="app-assets/components/authoring-header.html"></div>                         
+      </div>
+    </div>
+
+    <div class="container-fluid affix-top" id="sticky-page-title">
+      <ul class="breadcrumb">
+        <li><a href="#">Autoimmune &amp; Inflammation</a></li>
+        <li><a href="#">Dermatology</a></li>
+        <li><a href="#">Psoriasis</a></li>
+        <li><a href="#">Disease Landscape &amp; Forecast</a></li>
+      </ul>
+      <!--<h1 class="page-title">Psoriasis</h1>
+      <div class="pull-right contact-tab">
+        <a href="#" data-toggle="modal" class="btn btn-primary" data-target="#contactFrom"><i class="fa fa-comment hidden-xs"></i> Need Some Help?</a>
+      </div>-->
+
+      <ul class="nav nav-tabs hidden-xs hidden-sm">
+        <li class="active"><a href="#">Content</a></li>
+        <li><a href="search-docs.html">Search</a></li>
+        <li><a href="user-bin.html">Bin</a></li>
+        <li><a href="#">Custom Tables</a></li>
+        <li><a href="user-list.html">Users</a></li>
+      </ul>
+    </div>
+
+
+    <div class="mobile-toc-panel hidden-md hidden-lg">
+      <a href="#" data-toggle="modal" data-target="#tocModal"><i class="fa fa-list-ul"></i> Table of Contents</a>
+      <!--<a href="#"data-toggle="modal" data-target="#relatedModal"><i class="fa fa-share-alt"></i> Related Content</a>-->
+    </div>
+
+    <div id="content-container">
+      <div class="toc-panel related-hidden">
+
+        <div class="sticky-toc">
+          <div class="toc-toggle"><i class="fa fa-angle-double-left"></i></div>
+          <div class="toc scrollbox">
+            <div data-partial="app-assets/components/toc.html"></div> 
+          </div>
+        </div>
+
+        <div class="content-panel">
+          <div class="content-body qualative-content" id="tourDiseaseContent">
+            <div class="report-header">
+              <h1 id="chapter-top">Key Updates</h1>
+              <div class="report-information">
+                <div class="report-meta pull-left">  
+                  <span class="pub-date"><i class="fa fa-calendar"></i> 9 Apr 2016</span> 
+                  <span class="btn-group">
+                    <a href="#" class="dropdown-toggle btn btn-link" data-toggle="dropdown" aria-expanded="false"><span class="fa fa-arrow-circle-down"></span> Download <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#"><span class="icon icon-word"></span> Word</a></li>
+                      <li><a href="#"><span class="icon icon-pdf"></span> PDF</a></li>
+                    </ul>
+                  </span> 
+                  <span class="preview"><i class="fas fa-eye"></i> <a href="report-preview.html" class="btn-link">Preview</a></span> 
+                </div> 
+              </div>
+              <div class="clearfix"></div>
+            </div>
+
+
+            <div class="col-md-12 background-white padd0 mt20" id="folder_heading">
+              <div class="background-orange"> </div>
+              <div class="mt10 paddlf5"> </div>
+
+              <div class="col-md-6 ft10 mt10">
+                <!--<label class="checkbox-inline">    <input type="checkbox" checked data-toggle="toggle" data-size="mini" data-on="Checked In" data-off="Checked Out" data-with="160">
+                </label>-->
+                <i class="fas fa-lock text-warning"></i> <b>Last Modified :</b> October 30,2018 - 1:12 PM
+              </div>
+              <div class="col-md-6 padd10 text-right">
+                <!--<span class="fieldset_font">Saved 10 Sec ago</span>
+                <button type="button" class="btn btn-primary btn-sm">Save</button>
+                <button type="button" class="btn btn-primary btn-sm" id="edit1">Edit</button>-->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-link dropdown-toggle download-tooltip padd0" data-toggle="dropdown">
+                    <i class="fas fa-chevron-circle-down"></i></button>
+                  <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li><a href="#" data-toggle="modal" data-target="#folder_heading_popup">View Node</a></li>
+                    <li><a href="editreport_preview.html">Preview</a></li>
+                    <!--<li><a href="#">Send for Approval</a></li>-->
+                    <li class="divider"></li>
+                    <li><a href="#" data-toggle="modal" data-target="#version">Version History</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <form class="form-horizontal">
+                <div class="form-group padd10">
+                  <label class="col-sm-1 text-right labl_green">Title:</label>
+                  <div class="col-sm-11">
+                    <input type="text" class="form-control inputDisabled1" disabled value="Key Updates">
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="col-md-12 background-white padd0 mt20" id="text_heading">
+              <div class="background-orange"></div>
+              <div class="col-md-6 ft10 mt10">
+                <!--<label class="checkbox-inline">    
+                  <input type="checkbox"  data-toggle="toggle" data-size="mini" data-on="Checked In" data-off="Checked Out" data-with="180" disabled>
+                </label>-->
+                <i class="fas fa-lock text-warning"></i> <b>Last Modified :</b> October 30,2018 - 1:12 PM
+              </div>
+              <div class="col-md-6 padd10 text-right">
+                <!--<span class="fieldset_font">Saved 10 days ago</span>
+                <button type="button" class="btn btn-primary btn-sm disabled">Save</button>
+                <button type="button" class="btn btn-primary btn-sm disabled" id="edit3">Edit</button>-->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-link dropdown-toggle download-tooltip padd0" data-toggle="dropdown">
+                    <i class="fas fa-chevron-circle-down"></i></button>
+                  <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li><a href="#" data-toggle="modal" data-target="#text_heading_popup">View Node</a></li>
+                    <li><a href="editreport_preview.html">Preview</a></li>
+                    <!--<li><a href="#">Send for Approval</a></li>-->
+                    <li class="divider"></li>
+                    <li><a href="#" data-toggle="modal" data-target="#version">Version History</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <form class="form-horizontal">
+                <div class="form-group padd10">
+                  <label class="col-sm-1 text-right labl_green">Title:</label>
+                  <div class="col-sm-11">
+                    <input type="text" class="form-control inputDisabled3" disabled value="Text">
+                  </div>
+                </div>
+                <div class="form-group padd10">
+                  <label class="col-sm-1 text-right labl_green">Body:</label>
+                  <div class="col-sm-11">
+                    <textarea class="form-control inputDisabled3" rows="6" disabled></textarea>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="col-md-12 background-white padd0 mt20" id="image_heading">
+              <div class="background-orange"></div>
+              <div class="col-md-6 ft10 mt10">
+                <!--<label class="checkbox-inline">    
+                  <input type="checkbox"  data-toggle="toggle" data-size="mini" data-on="Checked In" data-off="Checked Out" data-with="180" disabled>
+                </label>-->
+                <i class="fas fa-lock text-warning"></i> <b>Last Modified :</b> October 30,2018 - 1:12 PM
+              </div>
+              <div class="col-md-6 padd10 text-right">
+                <!--<span class="fieldset_font">Saved 10 days ago</span>
+                <button type="button" class="btn btn-primary btn-sm disabled">Save</button>
+                <button type="button" class="btn btn-primary btn-sm disabled" id="edit2">Edit</button>-->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-link dropdown-toggle download-tooltip padd0" data-toggle="dropdown">
+                    <i class="fas fa-chevron-circle-down"></i></button>
+                  <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li><a href="#" data-toggle="modal" data-target="#image_heading_popup">View Node</a></li>
+                    <li><a href="editreport_preview.html">Preview</a></li>
+                    <!--<li><a href="#">Send for Approval</a></li>-->
+                    <li class="divider"></li>
+                    <li><a href="#" data-toggle="modal" data-target="#version">Version History</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-sm-1 text-right labl_green">Title:</label>
+                  <div class="col-sm-11">
+                    <input type="text" class="form-control inputDisabled2" disabled value="Image">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-1 text-right labl_green">Upload:</label>
+                  <div class="col-sm-11">
+                    <input type="file" class="form-control inputDisabled2" disabled>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="col-md-12 background-white padd0 mt20" id="table_heading">
+              <div class="background-orange"></div>
+              <div class="col-md-6 ft10 mt10">
+                <!--<label class="checkbox-inline">    
+                  <input type="checkbox"  data-toggle="toggle" data-size="mini" data-on="Checked In" data-off="Checked Out" data-with="180">
+                </label>-->
+                <i class="fas fa-lock text-warning"></i> <b>Last Modified :</b> October 30,2018 - 1:12 PM
+              </div>
+              <div class="col-md-6 padd10 text-right">
+                <!--<span class="fieldset_font">Saved 10 days ago</span>
+                <button type="button" class="btn btn-primary btn-sm">Save</button>
+                <button type="button" class="btn btn-primary btn-sm" id="edit">Edit</button>-->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-link dropdown-toggle download-tooltip padd0" data-toggle="dropdown">
+                    <i class="fas fa-chevron-circle-down"></i></button>
+                  <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li><a href="#" data-toggle="modal" data-target="#table_heading_popup">View Node</a></li>
+                    <li><a href="editreport_preview.html">Preview</a></li>
+                    <!--<li><a href="#">Send for Approval</a></li>-->
+                    <li class="divider"></li>
+                    <li><a href="#" data-toggle="modal" data-target="#version">Version History</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <form class="form-horizontal">
+                <div class="form-group padd10">
+                  <label class="col-sm-1 text-right labl_green">Title:</label>
+                  <div class="col-sm-11">
+                    <input type="text" class="form-control inputDisabled" disabled value="Table">
+                  </div>
+                </div>
+                <div class="form-group padd10">
+                  <label class="col-sm-1 text-right labl_green">Body:</label>
+                  <div class="col-sm-11">
+                    <textarea class="form-control inputDisabled" rows="6" disabled></textarea>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="col-md-12 background-white padd0 mt20" id="attachment_heading">
+              <div class="background-orange"></div>
+              <div class="col-md-6 ft10 mt10">
+                <!--<label class="checkbox-inline">    
+                  <input type="checkbox"  data-toggle="toggle" data-size="mini" data-on="Checked In" data-off="Checked Out" data-with="180">
+                </label>-->
+                <i class="fas fa-lock text-warning"></i> <b>Last Modified :</b> October 30,2018 - 1:12 PM
+              </div>
+              <div class="col-md-6 padd10 text-right">
+                <!--<span class="fieldset_font">Saved 10 days ago</span>
+                <button type="button" class="btn btn-primary btn-sm">Save</button>
+                <button type="button" class="btn btn-primary btn-sm" id="edit5">Edit</button>-->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-link dropdown-toggle download-tooltip padd0" data-toggle="dropdown">
+                    <i class="fas fa-chevron-circle-down"></i></button>
+                  <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li><a href="#" data-toggle="modal" data-target="#image_heading_popup">View Node</a></li>
+                    <li><a href="editreport_preview.html">Preview</a></li>
+                    <!--<li><a href="#">Send for Approval</a></li>-->
+                    <li class="divider"></li>
+                    <li><a href="#" data-toggle="modal" data-target="#version">Version History</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <form class="form-horizontal">
+                <div class="form-group padd10">
+                  <label class="col-sm-1 text-right labl_green">Title:</label>
+                  <div class="col-sm-11">
+                    <input type="text" class="form-control inputDisabled5" disabled value="Attachment">
+                  </div>
+                </div>
+                <div class="form-group padd10">
+                  <label class="col-sm-1 text-right labl_green">Attachment:</label>
+                  <div class="col-sm-11">
+                    <input type="file" class="form-control inputDisabled5" disabled>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="container-fluid">
+      <div class="row">
+        <p class="col-sm-6">© 2015 DR/Decision Resources, LLC. All rights reserved.</p>
+        <ul class="col-sm-6">
+          <li><a href="http://www.decisionresources.com/Privacy-Policy.aspx" target="_blank" class="">Privacy Policy</a></li>
+          <li><a href="http://www.decisionresources.com/Terms-of-Use.aspx" target="_blank" class="">Terms of Use</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <div data-partial="app-assets/components/modals.html"></div>         
+    <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="tocModal" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-toc">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="relatedModal" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="content-related">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      // MODALS FOR RESPONSIVE DESIGN
+      $(document).ready(function () {
+        $('#tocModal').on('show.bs.modal', function (e) {
+          $($('.sticky-toc').contents()).appendTo('#tocModal .modal-toc')
+        });
+        $('#tocModal').on('hide.bs.modal', function (e) {
+          $($('#tocModal .modal-toc').contents()).appendTo('.sticky-toc')
+        });
+        $('#relatedModal').on('show.bs.modal', function (e) {
+          $($('.content-related').contents()).appendTo('#relatedModal .content-related')
+        });
+        $('#relatedModal').on('hide.bs.modal', function (e) {
+          $($('#relatedModal .content-related').contents()).appendTo('.toc-panel .content-related')
+        });
+        $('.mobile-toc-panel').affix({
+          offset: 152
+        });
+      });
+
+    </script> 
+
+    <script type="text/javascript">
+      $('.btn-alert').click(function () {
+        if ($(this).hasClass("alerts-off")) {
+          $(this).addClass('alerts-on');
+          $(this).removeClass('alerts-off');
+          $('.btn-alert .fa-bell').addClass('faa-ring animated faa-slow');
+          setTimeout(function () {
+            $('.btn-alert .fa-bell').removeClass('faa-ring animated faa-slow');
+          }, 1000);
+        } else {
+          $(this).removeClass('alerts-on');
+          $(this).addClass('alerts-off');
+        }
+      });
+    </script>
+
+  </body>
+
+</html>

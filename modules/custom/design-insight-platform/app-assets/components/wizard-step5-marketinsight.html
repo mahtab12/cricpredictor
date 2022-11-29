@@ -1,0 +1,208 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h3><span class="number">5</span> What rows do you want to include?</h3>
+</div>
+
+<div class="modal-body">
+  <div class="row double-padding">
+    <div class="col-sm-6 col-sm-divider-right">
+      <h4>Choose Rows</h4>
+        <ul class="dropdown-menu nondropdown available-fields">
+          <li class="checkbox active"><label><input type="checkbox" value="Therapy Area" checked="checked">Therapy Area</label></li>
+          <li class="checkbox active"><label><input type="checkbox" value="Device Series" checked="checked">Device Series</label></li>
+          <li class="checkbox active"><label><input type="checkbox" value="Geograhpy" checked="checked">Geography</label></li>
+          <li class="checkbox has-dropdown">
+            <ul class="segment-buttons list-unstyled">
+              <li class="hide">
+                <div class="btn-group">
+                  <label><input type="checkbox" disabled="disabled"></label>
+                  <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="">
+                    <span class="small" style="">Segment Level 1</span>
+                    <span class="btn-label">Choose Segment</span> <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="radio"><label><input type="radio" name="segment1" value="Parallel Segment 1.1">Parallel Segment 1.1</label></li>
+                    <li class="radio"><label><input type="radio" name="segment1" value="Parallel Segment 1.2">Parallel Segment 1.2</label></li>
+                    <li class="radio"><label><input type="radio" name="segment1" value="Parallel Segment 1.3">Parallel Segment 1.3</label></li>
+                  </ul>
+                  <span class="fa fa-times-circle"></span>
+                </div>
+              </li>
+              <li class="hide">
+                <div class="btn-group">
+                  <label><input type="checkbox" checked="checked"></label>
+                  <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                    <span class="small" style="">Segment Level 2</span>
+                    <span class="btn-label">3 Segments</span> <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu dataviewer-dropdown" role="menu">
+                    <li class="checkbox active"><label><input type="checkbox" name="segment2" value="Segment 2.1" checked="checked">Segment 2.1</label></li>
+                    <li class="checkbox active"><label><input type="checkbox" name="segment2" value="Segment 2.2" checked="checked">Segment 2.2</label></li>
+                    <li class="checkbox active"><label><input type="checkbox" name="segment2" value="Segment 2.3" checked="checked">Segment 2.3</label></li>
+                  </ul>
+                  <span class="fa fa-times-circle"></span>
+                </div>
+              </li>
+              <li class="hide">
+                <div class="btn-group">
+                  <label><input type="checkbox" disabled="disabled"></label>
+                  <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="">
+                    <span class="small" style="">Segment Level 3</span>
+                    <span class="btn-label">Choose Segment</span> <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="radio"><label><input type="radio" name="segment3" value="Parallel Segment 3.1">Parallel Segment 3.1</label></li>
+                    <li class="radio"><label><input type="radio" name="segment3" value="Parallel Segment 3.2">Parallel Segment 3.2</label></li>
+                    <li class="radio"><label><input type="radio" name="segment3" value="Parallel Segment 3.3">Parallel Segment 3.3</label></li>
+                  </ul>
+                  <span class="fa fa-times-circle"></span>
+                </div>
+              </li>
+              <li class="hide">
+                <div class="btn-group">
+                  <label><input type="checkbox" checked="checked"></label>
+                  <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                    <span class="small" style="">Segment Level 4</span>
+                    <span class="btn-label">3 Segments</span> <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu dataviewer-dropdown" role="menu">
+                    <li class="checkbox active"><label><input type="checkbox" name="segment4" value="Segment 4.1" checked="checked">Segment 4.1</label></li>
+                    <li class="checkbox active"><label><input type="checkbox" name="segment4" value="Segment 4.2" checked="checked">Segment 4.2</label></li>
+                    <li class="checkbox active"><label><input type="checkbox" name="segment4" value="Segment 4.3" checked="checked">Segment 4.3</label></li>
+                  </ul>
+                  <span class="fa fa-times-circle"></span>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <div class="clearfix"></div>      
+        <div class="segment-controls">
+          <a href="#" class="add-segment"><i class="fa fa-lg fa-plus-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Add Segmentation"></i> Add Level of Segmentation</a>
+        </div>
+        <ul id="segmentButton" class="hide">
+
+        </ul>
+    </div>
+    
+    <div class="col-sm-6 col-sm-divider-left">
+      <h4>Reorder Rows</h4>
+      <ul class="dropdown-menu nondropdown list-group-sortable selected-fields">
+        <li class="draggable-item" draggable="true" data-field-name="Therapy Area">Therapy Area <span class="fa fa-times-circle"></span></li>
+        <li class="draggable-item" draggable="true" data-field-name="Device Series">Device Series <span class="fa fa-times-circle"></span></li>
+        <li class="draggable-item" draggable="true" data-field-name="Geograhpy">Geography <span class="fa fa-times-circle"></span></li>
+        <li class="draggable-item segments-draggable hide" draggable="true" data-field-name="Segments"><span class="segment-total">Levels of Segmentation</span><span class="fa fa-times-circle"></span></li>
+      </ul> 
+    </div>      
+  </div>
+</div>
+
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-lg btn-primary pull-left goto-step4"><i class="fa fa-arrow-left" aria-hidden="true"></i> Previous</button>
+  <button type="button" class="btn btn-lg btn-primary pull-right create-table">Finish</button>
+</div>
+  
+
+<script type="text/javascript">
+// SEGMENTATION
+
+// Select a Segmentation
+$(document).on('click', '.segment-buttons .dropdown-menu li input', function (e) {
+  var text = $(this).val();
+  if ($(this).closest('li').hasClass('radio')) {
+    $(this).closest('.btn-group').find('.btn .btn-label').text(text);
+    $(this).closest('.btn-group').find(' > label input').val(text);
+    $(this).closest('.btn-group').find('li').removeClass('active');
+    $(this).closest('li').addClass('active');
+    $(this).closest('.btn-group').parent().find('input[type="checkbox"]').prop('checked',true);
+    $(this).closest('.btn-group').parent().find('input[type="checkbox"]').attr('disabled',false);
+    $(this).closest('.btn-group').parent().nextAll('li').addClass('hide');
+  }
+  if ($(this).closest('li').hasClass('checkbox')) {
+    var number = $(this).closest('.dropdown-menu').find('input:checked').length;
+    if (number == 0) {
+      $(this).closest('.btn-group').find('.btn .btn-label').text('Choose Segments');
+      $(this).closest('.btn-group').parent().find('.btn-group > label > input[type="checkbox"]').prop('checked',false);
+      $(this).closest('.btn-group').parent().find('.btn-group > label > input[type="checkbox"]').attr('disabled',true);
+    } else {
+      $(this).closest('.btn-group').find('.btn .btn-label').text(number + ' Segments');
+      $(this).closest('.btn-group').parent().find('.btn-group > label > input[type="checkbox"]').prop('checked',true);
+      $(this).closest('.btn-group').parent().find('.btn-group > label > input[type="checkbox"]').attr('disabled',false);      
+    }
+  }
+  
+  
+  updateOrderList();
+  disableAddButton()
+});
+
+
+function updateOrderList() {
+  var selected = $('.checkbox.has-dropdown').find('li:not(.hide) > .btn-group > label > input[type="checkbox"]:checked').length;
+  if (selected !== 0) {
+    $('.segments-draggable').removeClass('hide');
+    $('.checkbox.has-dropdown').addClass('active')
+  } else {
+    $('.segments-draggable').addClass('hide');
+    $('.checkbox.has-dropdown').removeClass('active')
+  }
+  if (selected == 1) {
+    $('.segment-total').text(selected+' Level of Segmentation');
+  } else {
+    $('.segment-total').text(selected+' Levels of Segmentation');
+  }
+
+}
+function disableAddButton() {
+  var latestCheckbox = $('.segment-buttons > li:not(.hide):last').find('input[type=checkbox]');
+  var hidden = $('.segment-buttons > li.hide').length;
+  if (latestCheckbox.prop('checked')) {
+    $('.segment-controls .add-segment').removeClass('disabled');    
+  } else {
+    $('.segment-controls .add-segment').addClass('disabled');    
+  }
+  if (hidden < 1) {
+    $('.segment-controls .add-segment').addClass('hide');
+  } else {
+    $('.segment-controls .add-segment').removeClass('hide');    
+  }
+  if (hidden == 4) {
+    $('.segment-controls .add-segment').removeClass('disabled');        
+  }
+}
+
+// Check a Segmentation
+$(document).on('click', '.segment-buttons .btn-group > label > input[type="checkbox"]', function (e) {
+  if ($(this).prop('checked')) {
+    $(this).closest('li').prevAll('li').find('input[type=checkbox]').prop('checked', true);
+  } else {
+    $(this).closest('li').nextAll('li').find('input[type=checkbox]').prop('checked', false);
+  }
+  updateOrderList();
+  disableAddButton();
+});
+
+// Add a Segmentation
+$(document).on('click', '.segment-controls  .add-segment:not(.disabled)', function (e) {
+  $('.segment-buttons > li.hide:first').removeClass('hide');
+  updateOrderList();
+  disableAddButton();
+}); 
+
+$(document).on('click', '.segment-buttons  .fa-times-circle', function (e) {
+  $(this).closest('li').addClass('hide');
+  $(this).closest('li').nextAll('li').addClass('hide');
+  $(this).closest('li').find('input').prop('checked', false);
+  $(this).closest('li').find('li').removeClass('active');
+  $(this).closest('li').find('.btn .btn-label').text('Choose Segment');
+
+  $(this).closest('li').nextAll('li').find('input').prop('checked', false);
+  $(this).closest('li').nextAll('li').find('li').removeClass('active');
+  $(this).closest('li').nextAll('li').find('.btn .btn-label').text('Choose Segment');
+
+
+  updateOrderList();
+  disableAddButton();
+});  
+</script>

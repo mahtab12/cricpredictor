@@ -1,0 +1,42 @@
+uuid: 77de864c-8e27-4611-a243-210c9559f737
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - twitter_block
+  theme:
+    - bartik
+id: bartik_twitterblock
+theme: bartik
+region: header
+weight: -15
+provider: null
+plugin: twitter_block
+settings:
+  id: twitter_block
+  label: 'Twitter Page'
+  provider: twitter_block
+  label_display: '0'
+  username: PredictorCric
+  theme: ''
+  link_color: ea2d49
+  width: '350'
+  height: '320'
+  chrome:
+    nofooter: nofooter
+    noborders: noborders
+    transparent: transparent
+    noheader: '0'
+    noscrollbar: '0'
+  border_color: ea2d49
+  language: ''
+  tweet_limit: ''
+  related: ''
+  polite: assertive
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

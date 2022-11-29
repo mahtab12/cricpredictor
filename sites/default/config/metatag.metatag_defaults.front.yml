@@ -1,0 +1,29 @@
+uuid: 757096e8-49e5-420c-b9c1-beb795758ef2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: 'Front page'
+tags:
+  standout: 'cricket match prediction'
+  shortlink: '[site:url]'
+  description: 'We provide 100% sure shot prediction. Live Cricket Score, Ball by ball update, BBL 2018-19, IPL 2019, Cricket Prediction - Cricket Predictor - Cricket Betting Tips - Match Prediction - Today Match Prediction - Cricket Match Prediction Tips - Who Will Win Today Match'
+  news_keywords: 'cricket prediction,who will win, predictions, latest cricket news'
+  keywords: 'cricket prediction, cricket predictor, todays match prediction, who will win, predictions, live cricket score'
+  title: '[site:name] | Cricket Prediction'
+  abstract: 'We provide free betting tips to the user and we also provide the latest news in the cricket world. We are about 100% accurate for our predictions. '
+  canonical_url: '[site:url]'
+  og_image_url: 'https://cricpredictor.com//sites/default/files/cricket_1.png'
+  og_image_secure_url: 'https://cricpredictor.com//sites/default/files/cricket_1.png'
+  og_site_name: CricPredictor
+  og_description: '[current-page:title]'
+  og_url: '[current-page:url]'
+  og_image: '[node:field_image:article_image]'
+  og_title: '[current-page:title]'
+  twitter_cards_description: '[current-page:title]'
+  twitter_cards_site: '@PredictorCric'
+  twitter_cards_image_alt: '[node:field_image:alt]'
+  twitter_cards_page_url: '[current-page:url]'
+  twitter_cards_title: '[current-page:title]'

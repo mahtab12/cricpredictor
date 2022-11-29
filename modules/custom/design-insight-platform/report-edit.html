@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>DRG Insight Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- DRG Bootstrap Files -->
+    <link href="assets/css/drg-bootstrap.css" rel="stylesheet" media="screen" type="text/css">
+    <link href="assets/css/fontawesome.css" rel="stylesheet" media="screen" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" media="screen" rel="text/css">
+    <link href="assets/css/toc.css" rel="stylesheet" media="screen" rel="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="assets/images/favicon.ico" rel="shortcut icon"> 
+    <script src="assets/js/drg-bootstrap.js"></script>
+
+    <!-- App-Specific Files -->
+    <link href="app-assets/css/insight.css" media="screen" rel="stylesheet">
+    <link href="app-assets/css/print.css" media="print" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="app-assets/js/load-content.js"></script> 
+    <script src="https://code.highcharts.com/highcharts.js"></script> 
+    <script src="app-assets/js/highcharts-theme-drg.js"></script> 
+    <script src="app-assets/js/charts.js"></script>
+    <script src="app-assets/js/responsive-tab.js"></script>
+    <script src="app-assets/js/bootstrap-tour.min.js"></script>
+    <script src="app-assets/js/insight-tours.js"></script>
+
+  </head>
+
+  <body data-spy="scroll" data-target=".current-chapter">
+
+    <div class="navbar navbar-default navbar-insights">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse"><i class="fa fa-lg fa-bars"></i></button>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-search"><i class="fa fa-lg fa-search"></i></button>
+        <a class="insight-logo" href="index.html">
+          <span class="navbar-brand drg-logo text-hide">Decision Resources Group</span>
+          <span class="insight-text">Insight Platform</span>
+        </a>
+      </div>
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <div data-partial="app-assets/components/authoring-header.html"></div>                         
+      </div>
+    </div>
+
+    <div class="container-fluid affix-top" id="sticky-page-title">
+      <ul class="breadcrumb">
+        <li><a href="#">Autoimmune &amp; Inflammation</a></li>
+        <li><a href="#">Dermatology</a></li>
+        <li><a href="#">Psoriasis</a></li>
+      </ul>
+      <!--<h1 class="page-title">Psoriasis</h1>
+      <div class="pull-right contact-tab">
+        <a href="#" data-toggle="modal" class="btn btn-primary" data-target="#contactFrom"><i class="fa fa-comment hidden-xs"></i> Need Some Help?</a>
+      </div>-->
+
+      <ul class="nav nav-tabs hidden-xs hidden-sm">
+        <li class="active"><a href="#">Content</a></li>
+        <li><a href="search-docs.html">Search</a></li>
+        <li><a href="user-bin.html">Bin</a></li>
+        <li><a href="#">Custom Tables</a></li>
+        <li><a href="user-list.html">Users</a></li>
+      </ul>
+    </div>
+
+
+    <div class="mobile-toc-panel hidden-md hidden-lg">
+      <a href="#" data-toggle="modal" data-target="#tocModal"><i class="fa fa-list-ul"></i> Table of Contents</a>
+      <!--<a href="#"data-toggle="modal" data-target="#relatedModal"><i class="fa fa-share-alt"></i> Related Content</a>-->
+    </div>
+    <div id="context-menu" style="display:none">
+      <!-- The actual menu that will be displayed-->
+      <ul class="dropdown-menu">
+        <div class="dropdown">
+          <button class="dropbtn"><i class="fas fa-file-alt"></i> New</button>
+          <div class="dropdown-content">
+            <a href="#" id="modal1"><i class="fas fa-folder"></i> Folder</a>
+            <a href="#" id="modal2"><i class="fas fa-file-alt"></i> Text</a>
+            <a href="#" id="modal3"><i class="fas fa-image"></i> Image</a>
+            <a href="#" id="modal4"><i class="fas fa-table"></i> Table</a>
+            <a href="#" id="modal5"><i class="fas fa-upload"></i> Attachment</a>
+            <a href="#" id="modal6"><i class="fas fa-credit-card"></i> Landing Card</a>
+          </div>
+        </div>
+        <li><a href="#" id="modal7"><i class="fas fa-edit"></i> Edit</a></li>
+        <li><a href="#"><i class="fas fa-times-circle"></i> Delete</a></li>
+        <li><a href="#" id="cut"><i class="fas fa-cut"></i> Cut</a></li>
+        <li><a href="#"><i class="fas fa-copy"></i> Copy</a></li>
+        <li><a href="#" id="paste" class="list-group-item disabled"><i class="fas fa-paste"></i> Paste</a></li>
+        <!--<li><a href="#"><i class="fas fa-arrows-alt"></i> Move</a></li>-->
+        <li><a href="#"><i class="fas fa-sync-alt"></i> Refresh</a></li>
+      </ul>
+    </div>
+
+    <div id="context-menu1" style="display:none">
+      <!-- The actual menu that will be displayed-->
+      <ul class="dropdown-menu">
+        <li><a href="#" id="modal8"><i class="fas fa-edit"></i> Edit</a></li>
+        <li><a href="#"><i class="fas fa-times-circle"></i> Delete</a></li>
+        <li><a href="#"><i class="fas fa-cut"></i> Cut</a></li>
+        <li><a href="#"><i class="fas fa-copy"></i> Copy</a></li>
+        <li><a href="#"><i class="fas fa-paste"></i> Paste</a></li>
+        <!--<li><a href="#"><i class="fas fa-arrows-alt"></i> Move</a></li>-->
+        <li><a href="#"><i class="fas fa-sync-alt"></i> Refresh</a></li>
+      </ul>
+    </div>
+
+    <div id="context-menu2" style="display:none">
+      <!-- The actual menu that will be displayed-->
+      <ul class="dropdown-menu">
+        <div class="dropdown">
+          <button class="dropbtn"><i class="fas fa-file-alt"></i> New</button>
+          <div class="dropdown-content">
+            <a href="#" id="modal9"><i class="fas fa-file-alt"></i> Report</a>
+          </div>
+          <li><a href="#" id="modal7"><i class="fas fa-edit"></i> Edit</a></li>
+          <li><a href="#"><i class="fas fa-times-circle"></i> Delete</a></li>
+          <li><a href="#" id="cut"><i class="fas fa-cut"></i> Cut</a></li>
+          <li><a href="#"><i class="fas fa-copy"></i> Copy</a></li>
+          <li><a href="#" id="paste" class="list-group-item disabled"><i class="fas fa-paste"></i> Paste</a></li>
+          <!--<li><a href="#"><i class="fas fa-arrows-alt"></i> Move</a></li>-->
+          <li><a href="#"><i class="fas fa-sync-alt"></i> Refresh</a></li>
+        </div>
+      </ul>
+    </div>
+    <div id="content-container">
+      <div class="toc-panel related-hidden">
+
+        <div class="sticky-toc">
+          <div class="toc-toggle"><i class="fa fa-angle-double-left"></i></div>
+          <div class="toc scrollbox">
+            <div data-partial="app-assets/components/toc.html"></div>
+          </div>
+        </div>
+
+        <div class="content-panel">          
+
+          <div class="content-body qualative-content" id="tourDiseaseContent">
+            <div class="report-header">
+              <h1 id="chapter-top">Disease Landscape &amp; Forecast</h1>
+              <div class="report-information">
+                <div data-partial="app-assets/components/report-links.html"></div> 
+              </div>
+              <div class="clearfix"></div>
+            </div>
+
+            <div class="col-md-12 form-horizontal form-spacing">
+
+              <div>
+              <div class="background-green"> </div>
+              <div class="mt10 paddlf5"> </div>
+              <div class="col-md-6 ft10">
+                <label class="checkbox-inline">
+                  <button type="button" class="btn btn-primary btn-checkout">Checkout</button>
+                </label>
+                <span class="mt10" style="position: absolute;"><i class="fas fa-unlock text-primary"></i> <b>Last Modified :</b> October 30,2018 - 1:12 PM</span>
+              </div>
+              <div class="col-md-6 padd10 text-right">
+                <span class="fieldset_font">Saved 10 Sec ago</span>
+                <button type="button" class="btn btn-primary btn-sm">Save</button>
+              </div>
+              </div>
+              <div class="clearfix"></div>
+
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Report Title – Client Facing:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" value="Disease Landscape & Forecast">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Salesforce.com Name:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" value="Disease Landscape & Forecast">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Product Code:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" value="DLF2018">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Last Update:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" value="MM/DD/YYYY" id="datepicker">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Alert Headline (Customer Facing):</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" value="Disease Landscape & Forecast">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Abstract:</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" rows="6"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Primary Author:</label>
+                <div class="col-sm-10">
+                  <select multiple id="author" class="form-control">
+                    <option>Analyst1</option>
+                    <option>Analyst2</option>
+                    <option>Analyst3</option>
+                    <option>Analyst4</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Secondary Author:</label>
+                <div class="col-sm-10">
+                  <select multiple id="authors" class="form-control">
+                    <option>Author1</option>
+                    <option>Author2</option>
+                    <option>Author3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Subpopulation (optional,expanded Content only):</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" rows="6"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Covered Indications (multi-indication projects only):</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" rows="6"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Internal Comments:</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" rows="6"></textarea>
+                </div>
+              </div>
+              <!--<div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Numbered:</label>
+                <div class="col-sm-10">
+                  <label><input type="checkbox" value="" checked></label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Visible in Navigation:</label>
+                <div class="col-sm-10">
+                  <label><input type="checkbox" value=""></label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Page Orientation:</label>
+                <div class="col-sm-10">
+                  <select class="form-control">
+                    <option>Auto</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 text-right labl_green">Exclude form Publication:</label>
+                <div class="col-sm-10">
+                  <select class="form-control">
+                    <option>Never</option>
+                  </select>
+                </div>
+              </div>-->
+              <div class="mt10 pull-right">
+                <button type="button" class="btn btn-primary" data-toggle="dropdown">Save Report</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="container-fluid">
+      <div class="row">
+        <p class="col-sm-6">© 2015 DR/Decision Resources, LLC. All rights reserved.</p>
+        <ul class="col-sm-6">
+          <li><a href="http://www.decisionresources.com/Privacy-Policy.aspx" target="_blank" class="">Privacy Policy</a></li>
+          <li><a href="http://www.decisionresources.com/Terms-of-Use.aspx" target="_blank" class="">Terms of Use</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <div data-partial="app-assets/components/modals.html"></div>         
+    <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="tocModal" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-toc">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="relatedModal" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="content-related">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="report_preview" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Choose from List</h4>
+          </div>
+          <div class="modal-body">
+            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <form class="form-horizontal mt10">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <div class="span3">
+                    <div class="brdrnone">
+                      <div class="sticky-toc-overlay">
+                        <div data-partial="app-assets/components/toc-select.html"></div> 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#thankyou_message" id="popupclose">Publish </button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="thankyou_message" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Success Message</h4>
+          </div>
+          <div class="modal-body">
+            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      // MODALS FOR RESPONSIVE DESIGN
+      $(document).ready(function () {
+        $('#tocModal').on('show.bs.modal', function (e) {
+          $($('.sticky-toc').contents()).appendTo('#tocModal .modal-toc')
+        });
+        $('#tocModal').on('hide.bs.modal', function (e) {
+          $($('#tocModal .modal-toc').contents()).appendTo('.sticky-toc')
+        });
+        $('#relatedModal').on('show.bs.modal', function (e) {
+          $($('.content-related').contents()).appendTo('#relatedModal .content-related')
+        });
+        $('#relatedModal').on('hide.bs.modal', function (e) {
+          $($('#relatedModal .content-related').contents()).appendTo('.toc-panel .content-related')
+        });
+        $('.mobile-toc-panel').affix({
+          offset: 152
+        });
+          $("#text_heading1").click(function() {
+              $('.rightnbar').animate({
+                  scrollTop: $("#text_heading").offset().top
+              }, 1000);
+          });
+          $("#text_heading2").click(function() {
+              $('.rightnbar').animate({
+                  scrollTop: $("#text_heading").offset().top
+              }, 1000);
+          });
+          $("#folder_heading1").click(function() {
+              $('.rightnbar').animate({
+                  scrollTop: $("#folder_heading").offset().top
+              }, 1000);
+          });
+          $("#table_heading1").click(function() {
+              $('.rightnbar').animate({
+                  scrollTop: $("#table_heading").offset().top
+              }, 1000);
+          });
+          $("#image_heading1").click(function() {
+              $('.rightnbar').animate({
+                  scrollTop: $("#image_heading").offset().top
+              }, 1000);
+          });
+          $("#landscape_heading1").click(function() {
+              $('.rightnbar').animate({
+                  scrollTop: $("#landscape_heading").offset().top
+              }, 1000);
+          });
+          $("#attachment_heading1").click(function() {
+              $('.rightnbar').animate({
+                  scrollTop: $("#attachment_heading").offset().top
+              }, 1000);
+          });
+          $('.scrollbox').contextmenu({
+              target: "#context-menu"
+          });
+          $('.submenu').contextmenu({
+              target: "#context-menu1"
+          });
+          $('#landscape_heading1').contextmenu({
+              target: "#context-menu2"
+          });
+          $(".draggable-left").sortable({
+              connectWith: ".connected-sortable",
+              stack: ".connected-sortable ul"
+          }).disableSelection();
+      });
+
+    </script> 
+
+    <script type="text/javascript">
+      $('.btn-alert').click(function () {
+        if ($(this).hasClass("alerts-off")) {
+          $(this).addClass('alerts-on');
+          $(this).removeClass('alerts-off');
+          $('.btn-alert .fa-bell').addClass('faa-ring animated faa-slow');
+          setTimeout(function () {
+            $('.btn-alert .fa-bell').removeClass('faa-ring animated faa-slow');
+          }, 1000);
+        } else {
+          $(this).removeClass('alerts-on');
+          $(this).addClass('alerts-off');
+        }
+      });
+      $( function() {
+          $( "#datepicker" ).datepicker();
+      } );
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,19 @@
+uuid: b4ab91bd-21ad-4f3c-b446-9f43a896b3b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_city
+    - taxonomy.vocabulary.stadium
+id: taxonomy_term.stadium.field_city
+field_name: field_city
+entity_type: taxonomy_term
+bundle: stadium
+label: City
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

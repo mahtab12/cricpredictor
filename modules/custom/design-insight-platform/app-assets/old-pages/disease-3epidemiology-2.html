@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <title>DRG Insight Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- DRG Bootstrap Files -->
+  <link href="assets/css/drg-bootstrap.css" rel="stylesheet" media="all" type="text/css">
+  <link href="assets/css/fontawesome.css" rel="stylesheet" media="all" type="text/css">
+  <link href="assets/images/favicon.ico" rel="shortcut icon"> 
+  <script src="assets/js/drg-bootstrap.js"></script>
+
+  <!-- App-Specific Files -->
+  <link href="app-assets/css/insight.css" media="all" rel="stylesheet">
+  <script src="app-assets/js/load-content.js"></script> 
+  
+</head>
+
+<body data-spy="scroll" data-target=".current-chapter">
+	
+  <div class="navbar navbar-default navbar-insights">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse"><i class="fa fa-bars"></i> Menu</button>
+      <a class="insight-logo" href="index.html">
+        <span class="navbar-brand drg-logo text-hide">Decision Resources Group</span>
+        <span class="insight-text">Insight Platform</span>
+      </a>
+      <form class="navbar-form navbar-left has-feedback no-label">
+        <input type="text" class="form-control hasclear nav-search-box" placeholder="Type your interest area or question" value="" id="search-box" autocomplete="off">
+        <span class="clearer fa fa-times-circle form-control-feedback" style="display: block;"></span>
+        <button class="btn btn-primary nav-search-button" type="button" onclick="window.location = 'search-disease1.html';"><i class="fa fa-search fa-lg"></i></button>
+        <div data-partial="app-assets/components/searchbox.html"></div>             
+      </form>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <div data-partial="app-assets/components/navigation-ta.html"></div>                         
+    </div>
+  </div>
+    
+  <div class="container-fluid affix-top" id="sticky-page-title">
+    <ul class="breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="browse-therapy.html">Diseases</a></li>
+    </ul>
+    
+    <div class="btn-group pull-right">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span> <span class="hidden-xs">Download </span><span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li class="dropdown-header">Market Overview <span class="formerly">(formerly Pharmacor)</span></li>
+        <li><a href="#"><span class="icon icon-pdf"></span> Type 2 Diabetes - Market Overview</a></li>
+        <li><a href="#"><span class="icon icon-excel"></span> Type 2 Diabetes - Market Forecast Assumptions</a></li>
+        <li class="divider"></li>
+        <li class="dropdown-header">Epidemiology <span class="formerly">(formerly Patientbase)</span></li>
+        <li><a href="#"><span class="icon icon-pdf"></span>Type 2 Diabetes - Epidemiology</a></li>
+      </ul>
+    </div>
+    
+    <h1 class="page-title">Type 2 Diabetes</h1>
+
+    <ul class="nav nav-pills hidden-xs">
+      <li><a href="disease-1dashboard.html">Dashboard</a></li>
+      <li><a href="disease-2overview-1.html">Overview &amp; Forecast</a></li>
+      <li class="active"><a href="disease-3epidemiology-1.html">Epidemiology</a></li>
+      <li><a href="disease-4current-1.html">Current Treatment</a></li>
+      <li><a href="disease-5unmetneed-1.html">Unmet Need</a></li>
+      <li><a href="disease-6emerging-1.html">Emerging Treatment</a></li>
+      <li><a href="disease-7marketaccess-1.html">Market Access</a></li>      
+      <li><a href="disease-9analysts.html">Meet the Team</a></li>
+    </ul>
+    <div class="btn-group hidden-sm hidden-md hidden-lg mobile-menu">
+      <button type="button" class="btn btn-link btn-lg dropdown-toggle" data-toggle="dropdown"> Epidemiology <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="disease-1dashboard.html">Dashboard</a></li>
+        <li><a href="disease-2overview-1.html">Overview &amp; Forecast</a></li>
+        <li class="active"><a href="disease-3epidemiology-1.html">Epidemiology</a></li>
+        <li><a href="disease-4current-1.html">Current Treatment</a></li>
+        <li><a href="disease-5unmetneed-1.html">Unmet Need</a></li>
+        <li><a href="disease-6emerging-1.html">Emerging Treatment</a></li>
+        <li><a href="disease-7marketaccess-1.html">Market Access</a></li>        
+        <li><a href="disease-9analysts.html">Meet the Team</a></li>
+      </ul>
+    </div> 
+    <hr class="hidden-sm hidden-md hidden-lg">
+  </div>
+  
+  <div class="container-fluid" id="content-container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-9">
+        <div class="panel panel-default toc-panel">
+          <div class="row no-padding">
+            <div class="col-md-3 hidden-sm hidden-xs" id="sticky-toc">
+              <div class="toc">
+                <div class="toc-search">
+                  <div class="form-group has-icon has-feedback no-label">
+                    <input type="text" class="form-control hasclear" placeholder="Search Unmet Need">
+                    <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span>
+                    <span class="fa fa-search fa-lg input-icon"></span>
+                  </div>
+                </div>
+                <ul id="toc-menu" class="toc-menu nav">
+                  <li class="toc-divider">Epidemiology Overview</li>
+                  <li class="panel"><a href="#">Prevalence <span class="fa fa-lg fa-chevron-circle-down collapsed" data-toggle="collapse" data-parent="#toc-menu" href="#chapter1"></span></a>
+                    <ul class="nav collapse" id="chapter1">
+                      <li><a href="#">by Sub Population</a></li>
+                    </ul>
+                  </li>
+                  <li class="panel"><a href="#">Incidence <span class="fa fa-lg fa-chevron-circle-down collapsed" data-toggle="collapse" data-parent="#toc-menu" href="#chapter2"></span></a>
+                    <ul class="nav collapse" id="chapter2">
+                      <li><a href="#">by Sub Population</a></li>
+                    </ul>
+                  </li>                      
+                  <li class="panel"><a href="#">Drug Treated Population <span class="fa fa-lg fa-chevron-circle-down collapsed" data-toggle="collapse" data-parent="#toc-menu" href="#chapter3"></span></a>
+                    <ul class="nav collapse" id="chapter3">
+                      <li><a href="#">by Sub Population</a></li>
+                    </ul>
+                  </li>
+                  <li class="toc-divider">Global Patient Population Tool </li>
+                  <li class="panel current-chapter"><a href="#">Mature Markets <span class="fa fa-lg fa-chevron-circle-down" data-toggle="collapse" data-parent="#toc-menu" href="#chapter4"></span></a>
+                    <ul class="nav collapse in active" id="chapter4">
+                      <li class="active"><a href="#">Total Prevalent Cases </a></li>
+                      <li><a href="#">Diagnosed Prevalent Cases</a></li>
+                      <li><a href="#">Undiagnosed Prevalent Cases</a></li>
+                      <li><a href="#">Drug-Treated Prevalent Cases</a></li>
+                      <li><a href="#">Non-Drug-Treated Prevalent Cases</a></li>
+                      <li><a href="#">Total Prevalent Cases - Normal (BMI 18.5-24.9)</a></li>
+                      <li><a href="#">Total Prevalent Cases - Overweight (BMI 25-29.9)</a></li>
+                      <li><a href="#">Total Prevalent Cases - Obese Class 1 (BMI 30-34.9)</a></li>
+                      <li><a href="#">Total Prevalent Cases - Obese Class 2 (35-39.9)</a></li>
+                      <li><a href="#">Total Prevalent Cases - Obese Class 3 (BMI &gt;=40)</a></li>
+                      <li><a href="#">Total Prevalent Cases - Normal Renal Function</a></li>
+                      <li><a href="#">Total Prevalent Cases - Impaired Renal Function</a></li>
+                      <li><a href="#">Total Prevalent Cases - Impaired Glucose Tolerance</a></li>
+                    </ul>
+                  </li>
+                  <li class="not-owned"><a href="#">Emerging Markets</a></li>
+                  <li class="not-owned"><a href="#">Rest of World</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-9 col-md-divider-left content-panel">
+              <div class="panel-body" style="padding: 30px;">
+                <div class="qualative-content">
+                <h1 id="chapter-top">Mature Markets</h1>
+                <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 26 May 2015</p>
+                <hr>
+                <h2>Total Prevalent Cases</h2>
+                </div>
+        <ul class="nav nav-tabs hidden-xs" style="margin-bottom: 30px;margin-top:30px;">
+          <li class="active"><a href="#tab1" data-toggle="tab">Full Detail</a></li>
+          <li><a href="#tab2" data-toggle="tab">Geography Summary</a></li>
+          <li><a href="#tab3" data-toggle="tab">Age Cohort Summary</a></li>
+          <li><a href="#tab4" data-toggle="tab">Gender Summary</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade active in" id="tab1">
+            <iframe style="border: 0px;" src="https://analytics-stg90.decisionresourcesgroup.com/#/site/Sandbox/views/PBTest/FullDetailCasesDash?:embed=yes&:tabs=no&:toolbar=no" scrolling="no" width="100%" height="2000px"></iframe>
+          </div>
+          <div class="tab-pane fade" id="tab2">
+            <iframe style="border: 0px;" src="https://analytics-stg90.decisionresourcesgroup.com/#/site/Sandbox/views/PBTest/GeographicCasesDash?:embed=yes&:tabs=no&:toolbar=no" scrolling="no" width="100%" height="2000px"></iframe>
+          </div>
+          <div class="tab-pane fade" id="tab3">
+            <iframe style="border: 0px;" src="https://analytics-stg90.decisionresourcesgroup.com/#/site/Sandbox/views/PBTest/AgeCohortCasesDash?:embed=yes&:tabs=no&:toolbar=no" scrolling="no" width="100%" height="2000px"></iframe>
+          </div>
+          <div class="tab-pane fade" id="tab4">
+            <iframe style="border: 0px;" src="https://analytics-stg90.decisionresourcesgroup.com/#/site/Sandbox/views/PBTest/GenderCasesDash?:embed=yes&:tabs=no&:toolbar=no" scrolling="no" width="100%" height="2000px"></iframe>
+          </div>
+        </div>
+           
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-lg-3 hidden-xs">
+        
+        <div data-partial="app-assets/components/panels/analysts.html"></div>
+        
+        <div data-partial="app-assets/components/panels/drugs.html"></div>         
+
+        <div data-partial="app-assets/components/panels/companies.html"></div>         
+
+      </div>
+    </div>
+  </div>
+  
+  <footer class="container-fluid">
+    <div class="row">
+      <p class="col-sm-6">© 2015 DR/Decision Resources, LLC. All rights reserved.</p>
+      <ul class="col-sm-6">
+        <li><a href="http://www.decisionresources.com/Privacy-Policy.aspx" target="_blank" class="">Privacy Policy</a></li>
+        <li><a href="http://www.decisionresources.com/Terms-of-Use.aspx" target="_blank" class="">Terms of Use</a></li>
+      </ul>
+    </div>
+  </footer>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="panel-analyst">
+        <div class="analyst-details">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> 
+          <img alt="Andrea Merseth" src="app-assets/images/analysts/andrea.jpg">
+          <p class="analyst-name">Andrea Merseth</p>
+          <p class="analyst-title">Lead Analyst, Metabolic</p>
+          <ul class="nav nav-pills" style="position: absolute;bottom: -1px;">
+            <li class="active"><a href="#andrea-bio" data-toggle="tab">Biography</a></li>
+            <li><a href="#andrea-contact" data-toggle="tab">Ask the Expert</a></li>
+          </ul>  
+        </div>
+        <div class="tab-content analyst-bio qualative-content">
+          <div class="tab-pane fade active in" id="andrea-bio">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque arcu eu fermentum tincidunt. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent a neque fermentum, ultricies sapien sit amet, lacinia sapien. Aliquam nec ipsum non augue suscipit sodales in euismod purus. Fusce placerat vitae quam et lobortis. Nulla accumsan aliquet faucibus. In sit amet massa nec dolor egestas accumsan id vel nisl. Sed sodales, est sed aliquet faucibus, nisi felis tincidunt turpis, a euismod risus massa et est. Integer porta, tortor sit amet faucibus interdum, turpis nisi commodo tortor, eu eleifend nibh enim.</p>
+            <p>Pellentesque aliquet viverra leo, non sollicitudin mi vehicula rutrum. Etiam hendrerit libero vitae sodales consectetur. Praesent massa purus, pretium ac elit ac, maximus dictum nulla. Sed eu mollis sem. Aenean tellus dolor, rutrum et efficitur eu, luctus et eros. Curabitur sodales lacus purus. Donec eget euismod risus. In ornare nisi sed feugiat venenatis. Maecenas feugiat libero a viverra blandit.</p>
+            <p>Vestibulum non lorem ornare, lacinia nisi sed, tristique purus. Etiam accumsan nisi id aliquet malesuada. Curabitur vestibulum augue lacus, vel vehicula dui rutrum eu. Suspendisse lacus purus, tempor ac ornare vel, posuere at velit. Praesent malesuada risus vitae nunc congue, in gravida nulla vestibulum. Pellentesque non lacus sed nibh sodales consequat at eget nisl. Nunc ultricies risus justo, ut mattis mauris vehicula sed.</p>
+          </div>
+          <div class="tab-pane fade" id="andrea-contact">
+            <p style="margin-bottom: 15px;">Hi Steve! As part of your service, you can ask me any questions you have about our research. I'll aim to respond within two working days. </p>
+            <div class="form-group">
+              <textarea id="textareaV" class="form-control input-lg" rows="6" placeholder="Type your question in here."></textarea>
+            </div>
+            <div class="form-group" style="overflow:hidden;">
+              <button type="submit" class="btn btn-primary btn-lg pull-right">Send your Question</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="chapter">
+
+</div>
+</body>
+
+</html>

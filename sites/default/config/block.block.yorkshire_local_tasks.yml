@@ -1,0 +1,22 @@
+uuid: 7913c549-293e-49f7-9f22-6a8ed191d015
+langcode: en
+status: true
+dependencies:
+  theme:
+    - yorkshire
+_core:
+  default_config_hash: wBmXgbX50U12zT5kzFYXAjifr9Srf61kXRLWuPnJYdQ
+id: yorkshire_local_tasks
+theme: yorkshire
+region: content
+weight: -14
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

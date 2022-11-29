@@ -1,0 +1,29 @@
+uuid: d0694db6-5b77-4ccf-99bb-f05b267e8b27
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ef91c014-cace-468d-a7f2-51ce01afa257'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - newsplus_lite
+third_party_settings:
+  block_class:
+    classes: 'centered text-center'
+id: betwaydown
+theme: newsplus_lite
+region: footer_top
+weight: -23
+provider: null
+plugin: 'block_content:ef91c014-cace-468d-a7f2-51ce01afa257'
+settings:
+  id: 'block_content:ef91c014-cace-468d-a7f2-51ce01afa257'
+  label: 'Betway Down'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

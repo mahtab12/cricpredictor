@@ -1,0 +1,65 @@
+insight_search.search:
+  path: '/search'
+  defaults:
+    _controller: '\Drupal\insight_search\Controller\Report::getReportLibrary'
+    _title: 'Insight Platform - Search Insights'
+  requirements:
+    _permission: 'access content'
+  options:
+     no_cache: TRUE  
+
+insight_search.search_result:
+  path: '/search/getresult/{nid}'
+  defaults:
+    _controller: '\Drupal\insight_search\Controller\Report::getSingleResult'
+    _title: 'Insight Platform - Search Insights Test'
+  requirements:
+    _permission: 'access content'
+
+insight_search.download_attachment:
+  path: '/download/{filename}'
+  defaults:
+    _controller: '\Drupal\insight_search\Controller\Report::download'
+    _title: 'Insight Platform - Search Insights Download'
+  requirements:
+    _permission: 'access content'
+    
+insight_search.search_more_result:
+  path: '/insight-search-more-result'
+  defaults:
+    _controller: '\Drupal\insight_search\Controller\BiopharmaSearchController::searchMoreResult'
+    _title: 'Insight Platform - Search more result'
+  requirements:
+    _permission: 'access content'
+    
+insight_search.search_more_result_medtech:
+  path: '/insight-search-more-result-medtech'
+  defaults:
+    _controller: '\Drupal\insight_search\Controller\MedtechSearchController::searchMoreResult'
+    _title: 'Insight Platform - Search more result'
+  requirements:
+    _permission: 'access content'
+    
+insight_search.autosearch:
+  path: '/autosearch'
+  defaults:
+    _controller: '\Drupal\insight_search\Controller\Autosearch::getSearchedTaxonomies'
+  requirements:
+    _permission: 'access content'
+
+insight.toc.search:
+  path: '/toc-search'
+  defaults:
+    _controller: '\Drupal\insight_search\Controller\SearchController::tocSearch'
+    _title: 'Insight Platform - Search Insights'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE
+
+insight_search.auto_suggesstion:
+  path: '/insight-auto-suggesstion'
+  defaults:
+    _controller: '\Drupal\insight_search\Controller\SearchController::insightAutoSuggesstion'
+  requirements:
+    _permission: 'access content'

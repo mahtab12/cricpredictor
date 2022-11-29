@@ -1,0 +1,56 @@
+<div class="panel panel-default landing-page-panel">
+  
+  <div class="panel-body">
+    <div class="chart-title">
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class=" text-hide">Downloads</span><span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+          <li><a href="#"><span class="icon icon-excel"></span> Data to Excel</a></li>
+        </ul>
+      </div>
+      <h2>Market Trends</h2>
+      <h3>Total Sales from 2013 to 2023</h3>
+    </div> 
+    <div id="columnchart" style="height:220px; margin-top:30px;"></div>
+  </div>
+  <div class="panel-footer text-right">
+    <a href="#">Go to Market Trends <i class="fa fa-caret-right fa-lg"></i></a>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var stackedChart = {
+    chart: {
+        renderTo: 'columnchart',
+        type: 'column'
+    },
+    xAxis: {
+        categories: ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+        labels: {
+            rotation: 270
+        },
+    },
+    yAxis: {
+        reversedStacks: true,
+        title: {
+            text: 'Sales ($M)'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="color:{point.color}">● </span> <b>{series.name}</b><br>',
+        pointFormat: '{point.category} Sales = ${point.y}m',
+    },
+    series: [{
+        name: 'Glucose Monitoring Devices',
+        data: [3490, 3490, 3490, 3490, 3660, 3840, 4030, 4230, 4430, 4630, 4810]
+    }, {
+        name: 'Insulin Delivery Devices',
+        data: [10170, 11250, 12480, 13850, 15470, 17060, 18780, 20770, 23020, 25600, 28280]
+    }]
+};
+stackedChart = jQuery.extend(true, {}, BarChartStacked2, stackedChart);
+var stackedChart = new Highcharts.Chart(stackedChart);
+
+</script>

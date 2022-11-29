@@ -1,0 +1,97 @@
+<?php
+
+
+use Drupal\views\Views;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function social_shares_theme($existing, $type, $theme, $path) {
+  $themes['social_shares'] = array(
+    'variables' => array(
+      'facebook' => NULL,
+      'twitter' => NULL,
+      'pininterest' => NULL,
+      'google' => NULL,
+      'linkedin' => NULL,
+      'stumbleupon' => NULL
+      ),
+    'template' => 'social-shares',
+  );
+
+  $themes['nav_pager'] = [
+    'variables' => [
+      'previous_link' => NULL,
+      'previous_title' => NULL,
+      'next_link' => NULL,
+      'next_title' => NULL
+    ],
+    'template' => 'nav_pager'
+  ];
+
+  $themes['viral_news'] = array(
+    'template' => 'viral_news',
+    'variables' => array(
+      'data' => [],
+    ),
+  );
+  $themes['stats_and_analysis'] = array(
+    'template' => 'stats_and_analysis',
+    'variables' => array(
+      'data' => [],
+    ),
+  );
+  $themes['spotlight'] = array(
+    'template' => 'spotlight',
+    'variables' => array(
+      'data' => [],
+    ),
+  );
+  $themes['adslot'] = array(
+    'template' => 'adslot',
+    'variables' => array(
+      'data' => [],
+    ),
+  );
+  $themes['adslot_sidebar'] = array(
+    'template' => 'adslot_sidebar',
+    'variables' => array(
+      'data' => [],
+    ),
+  );
+  $themes['amazon_sidebar'] = array(
+    'template' => 'amazon_sidebar',
+    'variables' => array(
+      'data' => [],
+    ),
+  );
+  $themes['amazon_main'] = array(
+    'template' => 'amazon_main',
+    'variables' => array(
+      'data' => [],
+    ),
+  );
+  $themes['mobile_header'] = array(
+    'template' => 'mobile_header',
+    'variables' => array(
+      'data' => [],
+    ),
+  );
+  return $themes;
+}
+
+
+
+
+//function social_shares_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+////  print_r($entity->bundle()); die;
+//  switch ($entity->bundle()) {
+//    // Here you modify only your day content type
+//    case 'schedule':
+//      // Setting the title with the value of field_date.
+//      $time = \Drupal::time()->getCurrentTime();
+//      $entity->setTitle($time);
+//      break;
+//  }
+//}

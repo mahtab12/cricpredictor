@@ -1,0 +1,69 @@
+
+{% for key, item in singlereport %}
+    <div  class="rmodal fade in"  style="display:block;">
+        <div class=" rmodal-lg">
+            <div class="">
+                <article class="search-result report-result"> 
+                    <button type="button" class="ui-dialog-titlebar-close"><span aria-hidden="true">×</span></button>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> -->
+                    <div class="report-cover"><div><span class="report-type">{{item.sm_field_destination_category_name.0}}</span><span class="report-title">{{ item.tf_report_title}}</span></div></div>
+                    <h1 class="result-title" style="margin-top: 15px;margin-bottom: 7px;">{{ item.tf_report_title}}</h1>
+                    <p class="result-meta"><span class="{% if  item.access_check == 1 %}  owned-tag {% else %} not-owned-result  {% endif %}">{% if  item.access_check == 1 %}  owned {% else %} not owned  {% endif %}</span><span class="pub-date" style="margin-left:15px;padding-left: 15px;border-left: 1px solid #e5e5e5;"><i style="color: #444;" class="fa fa-calendar" aria-hidden="true"></i> {{ item.ds_field_publish_date |date("d M Y") }} </span></p>
+                    <div class="result-description">
+                        {% if  item.access_check == 1 %}
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="fa fa-arrow-circle-down fa-lg"></span> Download <span class="caret"></span> </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    {% for  i, url in item.sm_field_file_attachment_url %}
+
+                                        <li><a data-sku="{{ item.sm_field_sku[0] }}" data-nid="{{ item.path_alias }}" data-title="{{ item.sm_field_file_attachment_name[i] }}" href="/download/{{ item.sm_field_file_attachment_name[i] }}"><span class="icon {{ item.icon_type[i] }}"></span>{{ item.sm_field_file_attachment_name[i] }}</a></li>
+                                            {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                        <input id="copy-me" value="{{ item.path_alias }}" type="text" style="display:none">
+                        <a href="javascript:void(0);" class="btn btn-default copyLink" id="copy-btn"> 
+                            <i class="fa fa-link fa-lg" aria-hidden="true"></i>
+                        </a>
+                        <span class="copySuccess hide"> Link copied to clipboard</span> 
+                    </div>
+                </article>
+
+                <div class="panel-body qualative-content">
+                    <div class="report-modal-description">
+                        <!-- Metadata Introduction --> 
+
+                        {% if item.tf_body_html_field %}
+                            {{ item.tf_body_html_field.0|raw }}
+                        {% endif %}
+
+                        <!-- Metadata Scope --> 
+                        {% if item.tf_field_3rd_party_metadata_scope %}
+                            <div class="report-modal-scope">  
+                                <h3>Scope</h3>
+                                {{ item.tf_field_3rd_party_metadata_scope.0|raw }}
+                            </div>
+                        {% endif %}
+
+                        <!-- Metadata Company --> 
+                        {% if item.tf_field_3rd_party_metadata_compani %}
+                            <div class="report-modal-companies">        
+                                <h3>Companies Mentioned</h3>
+                                {{  item.tf_field_3rd_party_metadata_compani.0|raw }}
+                            </div>
+                        {% endif %}
+
+                        <!-- Metadata Question --> 
+                        {% if item.tf_field_3rd_party_metadata_questio %}
+                            <div class="report-modal-questions">        
+                                <h3>Questions answered in this report</h3>
+                                {{ item.tf_field_3rd_party_metadata_questio.0|raw }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+{% endfor %}

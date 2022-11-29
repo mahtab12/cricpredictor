@@ -1,0 +1,34 @@
+uuid: eb9b40ee-deb9-4d38-92bf-e037cc8f3c33
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recommended_videos
+  module:
+    - block_class
+    - system
+    - views
+  theme:
+    - newsplus_lite
+third_party_settings:
+  block_class:
+    classes: trd-blk
+id: views_block__recommended_videos_block_1
+theme: newsplus_lite
+region: sidebar_second
+weight: -21
+provider: null
+plugin: 'views_block:recommended_videos-block_1'
+settings:
+  id: 'views_block:recommended_videos-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/cricket-prediction\r\n/articles/*\r\n/blogs\r\n/prediction/*\r\n/cricket-spotlight\r\n/cricket-statistics\r\n/cricket-viral-news\r\n/cricket-match/live-scores\r\n/stadium/*"
+    negate: false
+    context_mapping: {  }

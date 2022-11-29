@@ -1,0 +1,92 @@
+<div class="panel panel-default landing-page-panel">
+  <div class="panel-body"> 
+    <div class="chart-title">
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class="hide">Download</span> <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+        </ul>
+      </div>
+      <h2 class="landingcard-type red">Brand Tracking</h2>  
+      <h3>Average Selling Price by Segment</h3>
+    </div> 
+    <div id="lineChart2" style="height:220px; margin-top:30px;"></div>
+  </div>
+  <div class="panel-footer text-right">
+    <a href="#" class="landingcard-popover-link6">Go to Commercial Targeting <i class="fa fa-caret-right fa-lg"></i></a>
+  </div>
+</div>
+
+
+<div class="hide" id="landingcard-popover6">
+  <ul class="dropdown-menu nondropdown landingcard-popover-menu">
+    <li><a href="devicecat-4.html"><span class="owned-tag">Heart Valves</span></a></li>                       
+    <li><a href="devicecat-4-notowned.html"><span class="free-tag">About Brand Tracking</span></a></li>         
+  </ul>
+  <div class="clearfix"></div>
+</div>  
+  
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.landingcard-popover-link6').popover({ 
+    placement: 'top',
+    html : true,
+    content: function() {
+      return $('#landingcard-popover6').html();
+    }
+  });
+  $('a.landingcard-popover-link6').click(function(e) {
+    e.preventDefault();
+  });
+});
+</script>
+<script type="text/javascript">
+	// Donut 1
+	var lineChart2 = {
+		chart: {
+            renderTo: 'lineChart2',
+        },
+		xAxis: {
+            categories: ['2010','2011','2012','2013','2014','2015','2016']
+    },    
+    yAxis: {
+            title: {
+                text: 'US$M'
+            },
+            tickAmount: 2
+
+        },
+  tooltip: { 
+    enabled: false 
+  },
+		series: [{
+            name: 'Segment 1',
+            data: [21930,21380,21190,21890,21110,21110],
+            color: '#924a41',
+            marker: { symbol: 'circle'}
+        },{
+            name: 'Segment 2',
+            data: [26930,26380,23190,24890,25110,25110],
+            color: '#c36356',
+            marker: { symbol: 'circle'}
+        },{
+            name: 'Segment 3',
+            data: [14930,14380,14190,15890,15110,15110],
+            color: '#f47c6c',
+            marker: { symbol: 'circle'}
+        },{
+            name: 'Segment 4',
+            data: [1930,1380,1190,1890,1110,1110],
+            color: '#f69689',
+            marker: { symbol: 'circle'}
+        },{
+            name: 'Segment 5',
+            data: [4930,4380,4190,5890,5110,5110],
+            color: '#f8b0a7',
+            marker: { symbol: 'circle'}
+        }
+        ]
+  };
+	lineChart2 = jQuery.extend(true, {}, lineChart, lineChart2);
+  var lineChart2 = new Highcharts.Chart(lineChart2);
+</script>

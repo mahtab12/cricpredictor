@@ -1,0 +1,32 @@
+{#{{ dump(content) }}#}
+
+{% if content|length > 0 %}
+
+{% set count =  ((content|length) / 2)|round  %}
+{% set fr_first_col = content|slice(0,count) %}
+{% set fr_second_col = content|slice(count) %}
+
+{% set topic_nid  = content[0].fields['is_field_topic_nid'] %}
+{% set topic_title  = content[0].fields['tf_field_topic_title'][0] %}
+{% set topic_url  = content[0].fields['ss_field_topic_url'] %}
+
+<article class="search-result special-result shadow-box">
+    <p class="suggested-result-text">Most Recent Content</p>
+    <h1 class="result-title-big"><a href="{{ topic_url }}"><span class="search-highlight">{{ topic_title }}</span></a></h1>
+    <div class="row">
+        <ul class="col-sm-6 sitemap-list">
+            <li>- <a href="{{ topic_url }}">At a Glance</a></li>
+            {% for data in fr_first_col %}
+                <li>- <a href="{{ data.fields['ss_url'] }}">{{ data.fields['tf_field_chapter_title'][0] }}</a></li>
+            {% endfor %}
+        </ul>
+        <ul class="col-sm-6 sitemap-list">
+            {% for data in fr_second_col %}
+                <li>- <a href="{{ data.fields['ss_url'] }}">{{ data.fields['tf_field_chapter_title'][0] }}</a></li>
+            {% endfor %}
+            <li>- <a href="meet-the-team{{path('entity.node.canonical', {'node': topic_nid})}}">Meet the Team</a></li>
+        </ul>
+    </div>
+</article>
+
+{% endif %}

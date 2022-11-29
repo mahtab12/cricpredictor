@@ -1,0 +1,44 @@
+.procedurefinder-filters {
+  background: #fff;
+  padding: 15px 30px;
+  position: relative;
+  margin-bottom: -4px;
+  margin-left:-30px;
+  margin-right: -30px;
+}
+.procedurefinder-filters .filters {
+  margin-bottom: 0;
+}
+#sticky-page-title.container-fluid .procedurefinder-filters .strike-line {
+  margin-top: 0;
+  color: #444;
+}
+#sticky-page-title.container-fluid .procedurefinder-filters .strike-line:after {
+  border-color: #e5e5e5;
+}
+
+
+/* TABLE FILTERS
+================================================== */
+.table-filters {
+  margin-bottom: 30px;
+}
+.table-filters p {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px; 
+}
+.table-download {
+  text-align: right;
+  position: relative;
+  height: 64px;
+}
+.table-download .btn-toolbar {
+  display: inline-block;
+  margin-top: 34px;
+  margin-right: -10px;
+}
+.table-download .btn-lg {
+  padding: 5px 15px;
+  height: 30px;
+}

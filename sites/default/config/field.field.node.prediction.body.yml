@@ -1,0 +1,23 @@
+uuid: c5d69505-b2c1-4d66-b05b-02cf66c5d71d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.prediction
+  module:
+    - text
+id: node.prediction.body
+field_name: body
+entity_type: node
+bundle: prediction
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

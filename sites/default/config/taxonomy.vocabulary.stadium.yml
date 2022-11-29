@@ -1,0 +1,8 @@
+uuid: 4c9b99e7-cb68-428a-8ec8-ff0f4e39dba6
+langcode: en
+status: true
+dependencies: {  }
+name: Stadium
+vid: stadium
+description: Stadium
+weight: 0

@@ -1,0 +1,15 @@
+uuid: 4c80c68f-b65d-4bf6-8432-51712eef7723
+langcode: en
+status: true
+dependencies: {  }
+name: prediction_full
+label: prediction-full
+effects:
+  f31eef34-94da-4189-b3aa-7871472782fe:
+    uuid: f31eef34-94da-4189-b3aa-7871472782fe
+    id: image_scale
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      upscale: false

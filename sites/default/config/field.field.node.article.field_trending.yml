@@ -1,0 +1,21 @@
+uuid: 8f1aae64-d80c-459a-ac29-e6dc23046761
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_trending
+    - node.type.article
+  module:
+    - options
+id: node.article.field_trending
+field_name: field_trending
+entity_type: node
+bundle: article
+label: Trending
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

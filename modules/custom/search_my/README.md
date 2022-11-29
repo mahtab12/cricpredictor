@@ -1,0 +1,1 @@
+# insights-platform-generic-module

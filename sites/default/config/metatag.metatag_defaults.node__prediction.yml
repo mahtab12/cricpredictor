@@ -1,0 +1,24 @@
+uuid: 9cd98ece-3eb6-4aa8-b55b-0b2535b47bdf
+langcode: en
+status: true
+dependencies: {  }
+id: node__prediction
+label: 'Content: Prediction'
+tags:
+  keywords: '[node:title], [node:field_series],[node:field_team_1],[node:field_team_2],[node:field_tournament],PSL 2020 Full prediction'
+  abstract: '[node:summary]'
+  content_language: en
+  description: '[node:field_why_win_point_1],[node:field_why_win_point_2],,[node:field_why_win_point_3] Todays match prediction, live cricket score, cricket prediction, who will win, PSL 2020 Full prediction'
+  title: '[node:title] | [site:name]'
+  canonical_url: '[current-page:url]'
+  schema_article_aggregate_rating: 'a:5:{s:5:"@type";s:6:"Rating";s:11:"ratingValue";s:3:"4.3";s:11:"ratingCount";s:1:"5";s:10:"bestRating";s:1:"5";s:11:"worstRating";s:1:"3";}'
+  schema_article_date_published: '[node:created:html_date]'
+  schema_article_about: '[node:field_team_1] vs [node:field_team_2],[node:field_tournament],[node:field_venue_match]'
+  schema_article_image: "a:5:{s:5:\"@type\";s:11:\"ImageObject\";s:20:\"representativeOfPage\";s:4:\"True\";s:3:\"url\";s:43:\"[node:field_team_1:entity:field_team_logo]\t\";s:5:\"width\";s:3:\"200\";s:6:\"height\";s:3:\"200\";}"
+  schema_article_name: '[node:title]'
+  schema_article_date_modified: '[node:changed:html_date]'
+  schema_article_author: 'a:4:{s:5:"@type";s:6:"Person";s:3:"@id";s:18:"[node:author:name]";s:4:"name";s:26:"[node:author:account-name]";s:6:"sameAs";s:38:"https://www.facebook.com/cricpredicto/";}'
+  schema_article_is_accessible_for_free: 'True'
+  schema_article_type: Report
+  schema_article_description: '[node:summary]'
+  schema_article_headline: '[node:title]'

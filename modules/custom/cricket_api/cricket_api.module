@@ -1,0 +1,82 @@
+<?php
+
+
+use Drupal\user\Entity\Role;
+use Drupal\user\UserInterface;
+use Drupal\views\Views;
+
+/**
+ * Implements hook_theme().
+ */
+function cricket_api_theme($existing, $type, $theme, $path) {
+  $themes['cricket_match'] = array(
+    'template' => 'cricket_match',
+    'variables' => array(
+      'data' => null,
+    ),
+  );
+  $themes['match_details'] = array(
+    'template' => 'match_details',
+    'variables' => array(
+      'data' => null,
+      'summary' => null,
+      'currentBowler' =>null,
+      'details' => null,
+      'comments' => null,
+    ),
+  );
+  $themes['cricket_topbar'] = array(
+    'template' => 'cricket_topbar',
+    'variables' => array(
+      'data' => null,
+    ),
+  );
+  $themes['around_ground'] = array(
+    'template' => 'around_ground',
+    'variables' => array(
+      'data' => null,
+    ),
+  );
+  $themes['series_listing'] = array(
+    'template' => 'series_listing',
+    'variables' => array(
+      'data' => null,
+    ),
+  );
+  $themes['series_match_listing'] = array(
+    'template' => 'series_match_listing',
+    'variables' => array(
+      'data' => null,
+    ),
+  );
+  $themes['player_details'] = array(
+    'template' => 'player_details',
+    'variables' => array(
+      'data' => null,
+    ),
+  );
+  return $themes;
+}
+
+function cricket_api_preprocess_page(&$variables) {
+//  if (\Drupal::service('path.matcher')->isFrontPage() == 1) {
+//    $variables['#attached']['library'][] = 'cricket_api/cric_slick';
+//  }
+}
+
+function cricket_api_user_presave(UserInterface $user) {
+  if ($user->isNew() && !$user->hasRole('author')) {
+    $admin = FALSE;
+    foreach ($user->getRoles(TRUE) as $id) {
+      $role = Role::load($id);
+      if ($role->isAdmin()) {
+        $admin = TRUE;
+        break;
+      }
+    }
+
+    if (!$admin) {
+      $user->addRole('author');
+    }
+  }
+}

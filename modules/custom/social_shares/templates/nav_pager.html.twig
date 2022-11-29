@@ -1,0 +1,22 @@
+<div class="nav-pager">
+  {% if previous_title %}
+    <div class="col-xs-6 nav-previous">
+      <a href="{{ previous_link }}">
+        <div class="next-prev">
+          <div><span class="glyphicon glyphicon-menu-left"></span>PREV</div>
+        </div>
+        <div class="previous pager-link">{{ previous_title }}</div>
+      </a>
+    </div>
+  {% endif %}
+  {% if next_title %}
+    <div class="col-xs-6 nav-next text-right">
+      <a href="{{ next_link }}">
+        <div class="next-prev">
+          <div>NEXT<span class="glyphicon glyphicon-menu-right"></span></div>
+        </div>
+        <div class="next pager-link">{{ next_title }}</div>
+      </a>
+    </div>
+  {% endif %}
+</div>

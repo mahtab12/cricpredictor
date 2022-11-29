@@ -1,0 +1,19 @@
+uuid: 6f8c529a-3e4a-41e9-b684-1fc9963cbffc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_team_to_win
+    - node.type.prediction
+id: node.prediction.field_team_to_win
+field_name: field_team_to_win
+entity_type: node
+bundle: prediction
+label: 'Team to Win'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

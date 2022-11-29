@@ -1,0 +1,15 @@
+uuid: 58462028-7cf6-4515-8642-263b7d90991f
+langcode: en
+status: true
+dependencies: {  }
+name: pred_image
+label: pred-image
+effects:
+  1c017027-5312-4d44-a9e8-6f4481e5b69b:
+    uuid: 1c017027-5312-4d44-a9e8-6f4481e5b69b
+    id: image_scale
+    weight: 1
+    data:
+      width: 40
+      height: 40
+      upscale: false

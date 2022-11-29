@@ -1,0 +1,25 @@
+<div id="around_theground">
+  <div class="slick-around">
+    {% for items in data %}
+      <div class="match-data">
+        {% if items.status == "UPCOMING" %}
+          <div class="upcoming">
+            <div class="row">
+              <a href="/match/{{ items.id }}/{{ items.series.id }}/{{ items.homeTeam.shortName | lower }}-vs-{{ items.awayTeam.shortName | lower  }}/scorecard" target="_self">
+                <div class="items"><span class="match-status">{{ items.status }}</span> {{ items.homeTeam.shortName }} {{ items.scores.homeScore }} vs {{ items.awayTeam.shortName }} {{ items.scores.awayScore }}</div>
+              </a>
+            </div>
+          </div>
+        {% else %}
+          <div class="completed">
+            <div class="row">
+              <a href="/match/{{ items.id }}/{{ items.series.id }}/{{ items.homeTeam.shortName | lower }}-vs-{{ items.awayTeam.shortName | lower  }}/scorecard" target="_self">
+                <div class="items"><span class="match-status">{{ items.status }}</span> {{ items.homeTeam.shortName }} {{ items.scores.homeScore }} vs {{ items.awayTeam.shortName }} {{ items.scores.awayScore }}</div>
+              </a>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

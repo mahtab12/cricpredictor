@@ -1,0 +1,15 @@
+uuid: ca76801f-4aa9-45fb-ada8-312417ce4d2f
+name: CricPredictor
+mail: mahtab.afridi@gmail.com
+slogan: 'Official Cricket Prediction'
+page:
+  403: ''
+  404: ''
+  front: /homepage
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+mail_notification: cricpredictor2020@gmail.com

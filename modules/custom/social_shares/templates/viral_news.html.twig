@@ -1,0 +1,24 @@
+<div class="resource-sidebar">
+  <a href="{{ data.top.nid }}" class="section-card">
+    <div class="sidebar-content">
+      <img class="img-responsive" src="{{ data.top.path }}" alt="viral_news"/>
+      <div class="summary-text">{{ data.top.title }}</div>
+    </div>
+  </a>
+  <div class="item-list">
+    <ul>
+      {% for content in data.list %}
+        <li class="section-list">
+          <div class="views-field views-field-title">
+            <span class="field-content">
+              <a href={{ content.listnid }} hreflang="en">{{ content.listtitle }}</a>
+            </span>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="text-center">
+    <a href="/cricket-viral-news" class="btn btn-primary">View More</a>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+uuid: 366ed945-0eca-4a0e-9cc3-7ca62522081a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.schedule.field_date
+    - field.field.node.schedule.field_format_schedule
+    - field.field.node.schedule.field_meta_tags
+    - field.field.node.schedule.field_series
+    - field.field.node.schedule.field_series_category
+    - field.field.node.schedule.field_team_1
+    - field.field.node.schedule.field_team_2
+    - field.field.node.schedule.field_venue_match
+    - field.field.node.schedule.field_yoast_seo
+    - node.type.schedule
+  module:
+    - user
+id: node.schedule.teaser
+targetEntityType: node
+bundle: schedule
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_date: true
+  field_format_schedule: true
+  field_meta_tags: true
+  field_series: true
+  field_series_category: true
+  field_team_1: true
+  field_team_2: true
+  field_venue_match: true
+  field_yoast_seo: true

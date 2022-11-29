@@ -1,0 +1,14 @@
+
+  "name": "drupal/farmjournal_section",
+  "type": "drupal-module",
+  "description": "Farmjournal Site Sections",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/farmjournal_section",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/farmjournal_section",
+    "source": "http://cgit.drupalcode.org/farmjournal_section"
+  },
+  "require": { }
+}

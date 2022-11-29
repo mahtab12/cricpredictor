@@ -1,0 +1,6 @@
+name: Cricket Api
+description: Cricket live matches.
+package: Custom
+type: module
+version: 1.0
+core: 8.x

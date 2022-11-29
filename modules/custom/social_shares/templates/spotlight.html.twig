@@ -1,0 +1,28 @@
+<div class="resource-sidebar">
+  {% if data is not empty %}
+    <a href="{{ data.top.nid }}">
+      <div class="sidebar-content">
+        <img class="img-responsive" src="{{ data.top.path }}" alt="spotlight"/>
+        <div class="summary-text">{{ data.top.title }}</div>
+      </div>
+    </a>
+  {% endif %}
+  <div class="item-list">
+    <ul>
+      {% if data is not empty %}
+        {% for content in data.list %}
+          <li class="section-list">
+            <div class="views-field views-field-title">
+              <span class="field-content">
+                <a href={{ content.listnid }} hreflang="en">{{ content.listtitle }}</a>
+              </span>
+            </div>
+          </li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
+  <div class="text-center">
+    <a href="/cricket-spotlight" class="btn btn-primary">View More</a>
+  </div>
+</div>

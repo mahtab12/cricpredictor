@@ -1,0 +1,15 @@
+uuid: be8e850f-7e6d-4f6c-a58c-b4a35b3efa49
+langcode: en
+status: true
+dependencies: {  }
+name: user_avatar_80x80
+label: user_avatar_80x80
+effects:
+  e03f5432-b533-4e8b-922b-c016f861b1a9:
+    uuid: e03f5432-b533-4e8b-922b-c016f861b1a9
+    id: image_scale
+    weight: 1
+    data:
+      width: 80
+      height: 80
+      upscale: false

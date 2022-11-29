@@ -1,0 +1,30 @@
+uuid: dc9e7189-e69c-4dca-b642-76cbdc5d0b47
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.prediction
+  module:
+    - system
+    - views
+  theme:
+    - yorkshire
+id: yorkshire_views_block__prediction_block_1
+theme: yorkshire
+region: brand
+weight: -2
+provider: null
+plugin: 'views_block:prediction-block_1'
+settings:
+  id: 'views_block:prediction-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,26 @@
+uuid: 6b4c9e1c-a150-44f7-a05e-65ef0c5cdf51
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_shares
+    - system
+  theme:
+    - yorkshire
+id: yorkshire_adslotsidebar
+theme: yorkshire
+region: brand
+weight: -13
+provider: null
+plugin: adslot_sidebar
+settings:
+  id: adslot_sidebar
+  label: 'Adslot Sidebar'
+  provider: social_shares
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

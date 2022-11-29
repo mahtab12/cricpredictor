@@ -1,0 +1,471 @@
+<div id="content-container" class="container-fluid search-container digital-search">
+    <div class="region region-content">
+        <div id="block-system-main" class="block block-system">
+            <div class="content">
+                <div class="row double-padding">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div id="block-insight-platform-search-report-library-filters" class="block block-insight-platform-search">
+                                <div class="content">
+                                    <div class="search-title col-md-12">
+                                        <h3>Manhattan Research <span class="subtitle">Digital Physician, Patient and Payer Insights</span></h3>
+                                        <p class="pull-right digital-request"><a href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#DigitalRequestModal"><i class="fa fa-lg fa-comment" aria-hidden="true"></i> Ask an Analyst</a></p>
+                                    </div>
+                                    <div id="facet_filters_library" class="col-md-3 hidden-sm hidden-xs search-filters">
+                                        <div class="shadow-box">
+                                            <h4>Filter By <a href="/search?category=library&amp;solution=digital&amp;sort=date" class="pull-right btn-clearall">Clear all</a></h4>
+                                            <!-- Geography Facet-->
+                                            <div class="category-container" id="geography" data-name="Geography">
+                                                <div data-toggle="dropdown" class="toggle-filters" aria-expanded="false">
+                                                    <i class="fa fa-globe fa-lg fa-fw category-icon"></i>
+                                                    <h5>Geography  {% if resultselected['field_geography'].tid is not   empty %}<span class="category-count">({{ resultselected['field_geography'].tid | length }})</span>{% else %}<span class="category-count hide">(0)</span> {% endif %}</h5>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-noclose" role="menu">
+                                                    <ul class="list-unstyled facet-search">
+                                                        {% set j = 0 %}
+                                                        {% for menukey,main_menu in term.medtech_geography %}
+                                                            <li id="geography-{{j}}"
+                                                                {% if main_menu.children|length  > 0 %}
+                                                                    class="checkbox parent-checkbox dropdown-submenu"{%else%} class="checkbox single-level"
+                                                                {% endif %} ><label><input data-identifier="itm_field_geography:{{main_menu.tid}}" id="itm_field_geography:{{main_menu.tid}}" type="checkbox" class="facet-redirect" data-target="/search?category=library&amp;solution=digital&amp;sort=date&amp;f%5B0%5D=field_geography%3A6937" data-value="{{main_menu.name}}">{{main_menu.name}} <span class="category-count">({{facet[main_menu.tid] ? facet[main_menu.tid] : 0}})</span><span class="element-invisible"> {{main_menu.name}} </span></label>
+
+
+                                                                <ul class="dropdown-menu child-facets">
+                                                                    {% for child_index,child_menu in main_menu.children %}
+                                                                        <li class="geography-{{j}} checkbox"><label><input data-identifier="itm_field_geography:{{child_menu.tid}}" id="itm_field_geography:{{child_menu.tid}}" type="checkbox" class="facet-redirect mutliple-parent" data-target="/search?category=library&amp;solution=digital&amp;sort=date&amp;f%5B0%5D=field_geography%3A6965" data-value="{{child_menu.name}}">{{child_menu.name}} <span class="category-count">({{facet[child_menu.tid] ? facet[child_menu.tid] : 0}})</span><span class="element-invisible"> {{child_menu.name}} </span></label></li>
+                                                                            {% endfor %}
+                                                                </ul>
+                                                            </li>
+                                                            {% set j = j+1 %}
+                                                        {% endfor %}
+                                                    </ul>
+                                                    <div class="dropdown-footer">
+                                                        <div class="pull-left">
+                                                            <button data-parent="geography" type="button" class="btn btn-link btn-deselect">Deselect All</button>
+                                                        </div>
+                                                        <div class="dropdown-footer-buttons pull-right">
+                                                            <button type="button" class="btn btn-default">Cancel</button>
+                                                            <button type="button" class="btn btn-primary btn-update">Update</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% if resultselected['field_geography'] is   empty %}
+                                                    <ul data-parent="geography" class="list-unstyled remove-list">
+                                                        <li class="default-text">Any Geography</li>
+                                                    </ul>
+                                                {% else %}
+
+                                                    <ul data-parent="geography" class="list-unstyled remove-list">
+                                                        <li class="default-text hide">Any Geography</li>
+                                                            {%for selkey,selval in resultselected['field_geography']['name'] %}
+                                                            <li class="itm_field_geography:{{selval.tid}}">
+                                                                <a href="javascript:void(0);" data-checkboxid="itm_field_geography:{{resultselected['field_geography']['tid'][selkey]}}" class="added_onload remove-filter" data-value="{{selval}}">{{selval}}</a>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                {% endif %}
+                                            </div>
+
+
+                                            <!-- Study Name Facet-->
+
+                                            <div class="category-container" id="studyName" data-name="Study Name">
+                                                <div data-toggle="dropdown" class="toggle-filters" aria-expanded="false">
+                                                    <i class="fa fa-book fa-lg fa-fw category-icon"></i>
+                                                    <h5>Study Name {% if resultselected['selected_legacy_category'] is not   empty %}<span class="category-count">({{ resultselected['selected_legacy_category'] | length }})</span>{% else %}<span class="category-count hide">(0)</span> {% endif %}</h5>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-noclose" role="menu">
+                                                    <ul class="list-unstyled facet-search">
+                                                        {% set k = 0 %}
+                                                        {% for stdmenukey,stdmain_menu in term.study_name %}
+                                                            <li id="category-{{k}}" {% if stdmain_menu.children|length  > 0 %}
+                                                                class="checkbox parent-checkbox dropdown-submenu"{%else%} class="checkbox single-level"
+                                                                {% endif %}>
+                                                                    <label>
+                                                                        <input data-identifier="im_field_legacy_category:{{stdmain_menu.tid}}" id="im_field_legacy_category:{{stdmain_menu.tid}}" type="checkbox" class="facet-redirect" data-target="/search?category=library&amp;solution=digital&amp;sort=date&amp;f%5B0%5D=field_legacy_category%3A7902" data-value="{{stdmain_menu.name}}">{{stdmain_menu.name}}<span class="category-count">({{facet[stdmain_menu.tid] ? facet[stdmain_menu.tid] : 0}})</span><span class="element-invisible"> {{stdmain_menu.name}} </span>
+
+                                                                    </label>
+                                                                </li>
+                                                                {% set k = k+1 %}
+                                                                {% endfor %}
+                                                                </ul>
+                                                                <div class="dropdown-footer">
+                                                                    <div class="pull-left">
+                                                                        <button data-parent="studyName" type="button" class="btn btn-link btn-deselect">Deselect All</button>
+                                                                    </div>
+                                                                    <div class="dropdown-footer-buttons pull-right">
+                                                                        <button type="button" class="btn btn-default">Cancel</button>
+                                                                        <button type="button" class="btn btn-primary btn-update">Update</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            {% if resultselected['selected_legacy_category'] is   empty %}
+                                                                <ul data-parent="studyName" class="list-unstyled remove-list">
+                                                                    <li class="default-text">Any Study Name</li>
+                                                                </ul>
+                                                            {% else %}
+
+                                                                <ul data-parent="studyName" class="list-unstyled remove-list">
+
+                                                                    <li class="default-text hide">Any Study Name</li>
+                                                                        {%for selkey,selval in resultselected['selected_legacy_category'] %}
+                                                                        <li class="im_field_legacy_category:{{selval.tid}}">
+                                                                            <a href="javascript:void(0);" data-checkboxid="im_field_legacy_category:{{selval.tid}}" class="added_onload remove-filter" data-value="{{selval.name}}">{{selval.name}}</a>
+                                                                        </li>
+                                                                    {% endfor %}
+                                                                </ul>
+                                                            {% endif %}
+
+
+
+                                                        </div>
+
+                                                        <!-- Deliverable Type Facet-->
+
+                                                        <div class="category-container" id="deliverable" data-name="Deliverable Type">
+
+                                                            <div data-toggle="dropdown" class="toggle-filters" aria-expanded="false">
+                                                                <i class="fa fa-files-o fa-lg fa-fw category-icon"></i>
+                                                                <h5>Deliverable Type {% if resultselected['selected_deliverable_type'] is not   empty %}<span class="category-count">({{ resultselected['selected_deliverable_type'] | length }})</span>{% else %}<span class="category-count hide">(0)</span> {% endif %}</h5>
+                                                            </div>
+                                                            <div class="dropdown-menu dropdown-noclose" role="menu">
+                                                                <ul class="list-unstyled facet-search">
+                                                                    {% set m = 0 %}
+                                                                    {% for deliverkey,deliver_menu in term.deliverable_type %}
+                                                                        <li id="type-{{m}}" class="checkbox single-level"><label>
+                                                                                <input data-identifier="is_field_deliverable_type:{{deliver_menu.tid}}" id="is_field_deliverable_type:{{deliver_menu.tid}}" type="checkbox" class="facet-redirect" data-target="/search?category=library&amp;solution=digital&amp;sort=date&amp;f%5B0%5D=field_deliverable_type%3A12948" data-value="{{deliver_menu.name}}">{{deliver_menu.name}} <span class="category-count">({{facet[deliver_menu.tid] ? facet[deliver_menu.tid] : 0}})</span><span class="element-invisible"> {{deliver_menu.name}} </span></label>
+                                                                        </li>
+                                                                        {% set m = m+1 %}
+                                                                    {% endfor %}
+                                                                </ul>
+                                                                <div class="dropdown-footer">
+                                                                    <div class="pull-left">
+                                                                        <button data-parent="deliverable" type="button" class="btn btn-link btn-deselect">Deselect All</button>
+                                                                    </div>
+                                                                    <div class="dropdown-footer-buttons pull-right">
+                                                                        <button type="button" class="btn btn-default">Cancel</button>
+                                                                        <button type="button" class="btn btn-primary btn-update">Update</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            {% if resultselected['selected_deliverable_type'] is   empty %}
+                                                                <ul data-parent="deliverable" class="list-unstyled remove-list">
+                                                                    <li class="default-text">Any Deliverable Type</li>
+                                                                </ul>
+                                                            {% else %}
+
+                                                                <ul data-parent="deliverable" class="list-unstyled remove-list">
+
+                                                                    <li class="default-text hide">Any Deliverable Type</li>
+                                                                        {%for selkey,selval in resultselected['selected_deliverable_type'] %}
+                                                                        <li class="is_field_deliverable_type:{{selval.tid}}">
+                                                                            <a href="javascript:void(0);" data-checkboxid="is_field_deliverable_type:{{selval.tid}}" class="added_onload remove-filter" data-value="{{selval.name}}">{{selval.name}}</a>
+                                                                        </li>
+                                                                    {% endfor %}
+                                                                </ul>
+                                                            {% endif %}
+                                                        </div>
+
+                                                        <!-- Research Type Facet commented as per the wireframe-->
+                                                        <div class="category-container" id="researchType" data-name="Research Type">
+                                                            <div data-toggle="dropdown" class="toggle-filters" aria-expanded="false">
+                                                                <i class="fa fa-files-o fa-lg fa-fw category-icon"></i>
+                                                                <h5>Research Type {% if resultselected['selected_research_type'] is not   empty %}<span class="category-count">({{ resultselected['selected_research_type'] | length }})</span>{% else %}<span class="category-count hide">(0)</span> {% endif %}</h5>
+                                                            </div>
+                                                            <div class="dropdown-menu dropdown-noclose" role="menu">
+                                                                <ul class="list-unstyled facet-search">
+                                                                    {% set l = 0 %}
+                                                                    {% for rsrchkey,rsrch_menu in term.research_type %}
+                                                                        <li id="type-{{l}}" class="checkbox single-level">
+                                                                            <label>
+                                                                                <input data-identifier="is_field_report_research_type:{{rsrch_menu.tid}}" id="is_field_report_research_type:{{rsrch_menu.tid}}" type="checkbox" class="facet-redirect"  data-value="{{rsrch_menu.name}}">{{rsrch_menu.name}}
+                                                                                <span class="element-invisible"> {{rsrch_menu.name}} </span>
+                                                                            </label>
+                                                                        </li>
+
+                                                                        {% set l = l+1 %}
+                                                                    {% endfor %}
+                                                                </ul>
+                                                                <div class="clearfix"></div>
+                                                                <div class="dropdown-footer">
+                                                                    <div class="pull-left">
+                                                                        <button data-parent="researchType" type="button" class="btn btn-link btn-deselect">Deselect All</button>
+                                                                    </div>
+                                                                    <div class="dropdown-footer-buttons pull-right">
+                                                                        <button type="button" class="btn btn-default">Cancel</button>
+                                                                        <button type="button" class="btn btn-primary btn-update">Update</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            {% if resultselected['selected_research_type'] is   empty %}
+                                                                <ul data-parent="researchType" class="list-unstyled remove-list">
+                                                                    <li class="default-text">Any Deliverable Type</li>
+                                                                </ul>
+                                                            {% else %}
+
+                                                                <ul data-parent="researchType" class="list-unstyled remove-list">
+
+                                                                    <li class="default-text hide">Any Deliverable Type</li>
+                                                                        {%for selkey,selval in resultselected['selected_research_type'] %}
+                                                                        <li class="is_field_report_research_type:{{selval.tid}}">
+                                                                            <a href="javascript:void(0);" data-checkboxid="is_field_report_research_type:{{resultselected['selected_research_type']['tid'][selkey]}}" class="added_onload remove-filter" data-value="{{selval.name}}">{{selval.name}}</a>
+                                                                        </li>
+                                                                    {% endfor %}
+                                                                </ul>
+                                                            {% endif %}
+                                                        </div>
+
+                                                        <!-- Therapy Area Facet-->
+                                                        <div class="category-container" id="therapy_area_facet" data-name="Disease">
+                                                            <div data-toggle="dropdown" class="toggle-filters" aria-expanded="false">
+                                                                <span class="category-icon category-disease"></span>
+                                                                <h5>Disease {% if resultselected['therapy_area_disease'] is not   empty %}<span class="category-count">({{ resultselected['therapy_area_disease'].name | length }})</span>{% else %}<span class="category-count hide">(0)</span> {% endif %}</h5>
+                                                            </div>
+                                                            <div class="dropdown-menu two-tier-select dropdown-noclose" role="menu">
+                                                                <div class="row no-padding" id="ta">
+                                                                    <ul class="col-sm-12 list-unstyled">
+                                                                        <li class="searchbox has-feedback has-icon no-label">
+                                                                            <input id="therapy_quick_search" type="text" class="form-control hasclear" placeholder="Start Typing a Disease" autocomplete="off">
+                                                                            <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span> <span class="fa fa-lg fa-search input-icon"></span>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <ul id="ta-selector" class="col-sm-5 list-unstyled set-height parent-select">
+                                                                        {% set a = 0 %}
+                                                                        <li id="all-disease" class="active show" data-therapy-filter=""><a href="#">All Diseases</a></li>
+                                                                            {% for index,menu in term.therapy_area_diseases %}
+                                                                            <li id="disease-{{ a }}" class="checkbox">
+                                                                                <a href="#">
+                                                                                    <input data-identifier="is_field_therapy_area_disease:{{menu.tid}}" id="is_field_therapy_area_disease:{{menu.tid}}" type="checkbox" class="facet-redirect" data-target="#" data-value="{{ menu.name }}">
+                                                                                    {{ menu.name}} <span class="category-count">({{facet[menu.tid] ? facet[menu.tid] : 0}})</span> <span class="element-invisible"> {{menu.name}} </span></a>
+                                                                            </li>
+                                                                            {% set a = a+1 %}
+                                                                        {% endfor %}
+
+                                                                    </ul>
+                                                                    <ul class="facetapi-insight-platform-widget facetapi-facet-field-therapy-area-disease col-sm-7 list-unstyled set-height facet-search child-select search-ff-block" id="ta-selections">
+                                                                        {% set b = 0 %}
+                                                                        {% for index,menu in term.therapy_area_diseases %}
+                                                                            <li id="parent-disease-{{b}}" class="disease-{{b}} ta{{b}} checkbox checkbox-parent show">
+                                                                                <label>
+                                                                                    <input data-identifier="is_field_therapy_area_disease:{{menu.tid}}" id="is_field_therapy_area_disease:{{menu.tid}}" type="checkbox" class="facet-redirect" data-target="#" data-value="{{menu.name}}">{{menu.name}} <span class="category-count">({{facet[menu.tid] ? facet[menu.tid] : 0}})</span> <span class="element-invisible"> {{menu.name}} </span></label>
+                                                                            </li>
+
+                                                                            {% for child_index,child_menu in menu.children %}
+
+                                                                                <li class="disease-{{b}} checkbox show" >
+                                                                                    <label><input data-identifier="is_field_therapy_area_disease:{{child_menu.tid}}" id="is_field_therapy_area_disease:{{child_menu.tid}}" type="checkbox" class="facet-redirect" data-target="#" data-value="{{child_menu.name}}">
+                                                                                        {{child_menu.name}} <span class="category-count">({{facet[child_menu.tid] ? facet[child_menu.tid] : 0}})</span> <span class="element-invisible"> {{menu.name}} </span>
+                                                                                    </label>
+                                                                                </li>
+
+                                                                            {% endfor %}
+                                                                            {% if menu.children is not empty%}
+                                                                                <li class="show divider" data-therapy-filter=""></li>
+                                                                                {% endif %}
+                                                                                {% set b = b+1 %}
+                                                                            {% endfor %}
+
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="dropdown-footer">
+                                                                    <div class="pull-left">
+                                                                        <button data-parent="therapy_area_facet" type="button" class="btn btn-link btn-deselect">Deselect All</button>
+                                                                    </div>
+                                                                    <div class="dropdown-footer-buttons pull-right">
+                                                                        <button type="button" class="btn btn-default">Cancel</button>
+                                                                        <button type="button" class="btn btn-primary btn-update">Update</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            {% if resultselected['therapy_area_disease'] is   empty %}
+                                                                <ul data-parent="therapy_area_facet" class="list-unstyled remove-list">
+                                                                    <li class="default-text">Any Geography</li>
+                                                                </ul>
+                                                            {% else %}
+
+                                                                <ul data-parent="therapy_area_facet" class="list-unstyled remove-list">
+                                                                    <li class="default-text hide">Any Geography</li>
+                                                                        {%for selkey,selval in resultselected['therapy_area_disease']['name'] %}
+                                                                        <li class="is_field_therapy_area_disease:{{selval.tid}}">
+                                                                            <a href="javascript:void(0);" data-checkboxid="is_field_therapy_area_disease:{{resultselected['therapy_area_disease']['tid'][selkey]}}" class="added_onload remove-filter" data-value="{{selval}}">{{selval}}</a>
+                                                                        </li>
+                                                                    {% endfor %}
+                                                                </ul>
+                                                            {% endif %}
+                                                        </div>
+
+                                                        <!-- Publication Date Filter-->
+
+                                                        <div class="category-container" id="publicationDate" data-name="Publication Date">
+                                                            <div data-toggle="dropdown" class="toggle-filters" aria-expanded="false">
+                                                                <i class="fa fa-calendar fa-lg fa-fw category-icon"></i>
+                                                                <h5>Publication Date</h5>
+                                                            </div>
+                                                            <div class="dropdown-menu">
+                                                                <ul class="list-unstyled">
+                                                                    {% for pub_id,pub_value in pub_date_filter %}
+
+                                                                        <li class="checkbox">
+                                                                            {% if current_pubdate_filter == NULL  and  pub_id == 'any_date' %}
+                                                                                <label><input data-pubdate-href="/search?{{ pub_value.url }}" type="radio" value="{{ pub_value.url }}"  checked="checked" name="pubDate" id="anyDate">{{ pub_value.value }}</label>
+                                                                                {% elseif current_pubdate_filter == pub_id %}
+                                                                                <label><input data-pubdate-href="/search?{{ pub_value.url }}" type="radio" value="{{ pub_value.url }}" {% if current_pubdate_filter == pub_id %}checked="checked" {% endif %} name="pubDate" id="{{pub_id}}">{{ pub_value.value }}</label>
+                                                                                {% else %}
+                                                                                <label><input data-pubdate-href="/search?{{ pub_value.url }}" type="radio" value="{{ pub_value.url }}" {% if current_pubdate_filter == pub_id %} checked="checked" {% endif %} name="pubDate" id="{{pub_id}}">{{ pub_value.value }}</label>
+                                                                                {% endif %}
+                                                                        </li>
+                                                                    {% endfor %}
+                                                                </ul>
+                                                            </div>
+                                                            <ul class="list-unstyled remove-list">
+                                                                {% if current_pubdate_filter == NULL %}
+
+                                                                    <li>
+                                                                        {{ pub_date_filter.any_date.value}}
+                                                                    </li>
+                                                                {% else %}
+
+                                                                    <li><a href='/search?{{pub_date_filter[current_pubdate_filter]["url"]}}' class="remove-filter"> {{pub_date_filter[current_pubdate_filter]['value']}}</a></li>
+                                                                    {% endif %}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            {% if report_count!= 0 %}
+                                                <div class="col-xs-12 col-md-9 search-main-results">
+
+                                                    <div class="shadow-box" id="searchResults">
+
+                                                        <div class="loader text-center" style="height:1512px"></div>
+                                                        <div class="tab-content">
+
+                                                            <div class="tab-pane fade active in" id="reports">
+
+                                                                <div class="search-details">
+                                                                    <div class="sort-btn2">
+                                                                        <span class="btn-label"><b>{{report_count}}</b> <b>Matching Results</b></span>
+                                                                    </div>
+                                                                    <div class="checkbox pull-right">
+                                                                        <ul>
+                                                                            <li class="checkbox" id="popoverAlert">
+                                                                                <label>
+                                                                                    <input type="checkbox" id="showOnlyOwned" onchange="window.location.href = '/search?{{showownedres}}'" checked="1">Only Show Owned Research
+
+                                                                                </label>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="lazyloader-search">
+                                                                    <div class="jscroll-inner">
+                                                                        {% for key, item in report %}
+                                                                            <article id="searchTour1" class="report-result search-result   {% if  item.access_check == 1 %}  owned-result {% else %} not-owned-result  {% endif %}">
+                                                                                <div class="report-cover" data-toggle="modal" data-target="#reportModal">
+                                                                                    <div>
+                                                                                        <span class="report-type">{{item.sm_field_destination_category_name.0}}</span>
+                                                                                        <span class="report-title">{{ item.tf_report_title}}</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <p class="result-path">{{item.sm_field_destination_category_name.0}}</p>
+                                                                                <h1 class="result-title digital-reports-modal" data-id="{{ item.item_id}}" data-clipboard-text="{{ item.path_alias }}">
+                                                                                    <a href="/search/getresult/{{ item.is_nid }}?solution=digital" class='use-ajax'>{{ item.tf_report_title}}</a>
+                                                                                </h1>
+
+                                                                                <p class="result-meta">
+                                                                                    {% if  item.access_check == 1 %}
+                                                                                        <span class="owned-tag">In Your Subscription</span>
+                                                                                    {% else %}
+                                                                                        <span class="not-owned-tag">Not In Your Subscription</span>
+                                                                                    {% endif %}
+
+                                                                                    • Published <span class="pub-date">{{ item.ds_field_publish_date |date("d M Y") }}</span>
+                                                                                </p>
+
+                                                                                <div class="result-description">
+                                                                                    <div class="btn-toolbar">
+                                                                                        <div class="btn-group">
+                                                                                            {% if  item.access_check == 1 %}
+                                                                                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                                                    <span class="fa fa-arrow-circle-down fa-lg"></span> Download <span class="caret"></span>
+                                                                                                </button>
+                                                                                                <ul class="dropdown-menu" role="menu">
+
+
+                                                                                                    {% for  i, url in item.sm_field_file_attachment_url %}
+
+                                                                                                        <li>
+                                                                                                            <a data-sku="{{ item.sm_field_sku[0] }}" data-nid="{{ url }}" data-title="{{ item.sm_field_file_attachment_name[i] }}" href="/download/{{ item.sm_field_file_attachment_name[i]|raw }}"><span class="icon {{ item.icon_type[i] }}"></span>{{ item.sm_field_file_attachment_name[i] }}
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                    {% endfor %}
+                                                                                                </ul>
+                                                                                            {% else %}
+                                                                                                <p class="marketing-buttons"><a class="btn btn-lg btn-primary" data-sku="{{ item.sm_field_sku[0] }}" data-nid="{{ item.path_alias }}" data-title="{{ item.tf_report_title}}" data-toggle="modal" data-target="#requestAccess" id="requestAccessButton">Request Pricing</a></p>
+                                                                                            {% endif %}
+
+
+                                                                                        </div>
+                                                                                        <div class="btn-group result-title" data-toggle="modal" data-target="#reportModal">
+                                                                                            <a href="/search/getresult/{{ item.is_nid }}?solution=digital" class="use-ajax btn btn-sm btn-default digital-reports-modal" data-id="{{ item.is_nid }}"><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> More info</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </article>
+                                                                        {% endfor %}
+                                                                        {% if next_page_url != false %}
+                                                                            <div class="next"><a href="{{next_page_url}}" class="jscroll-next">next</a></div>
+                                                                        {% endif %}
+                                                                        <div class="jscroll-added">
+                                                                            <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="requestAccess" style="display: none;">
+                                                                                <div class="modal-dialog">
+                                                                                    <div class="modal-content">
+                                                                                        <div class="modal-body double-padding">
+                                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                                                            <div class="contact-success-message">
+                                                                                                <h3 class="text-center">Thanks for your interest in this content.</h3>
+                                                                                                <p class="text-center">One of our customer support colleagues will contact you shortly to understand your needs and determine how we can best assist you.</p>
+                                                                                                <p class="text-center"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></p>
+                                                                                            </div>
+                                                                                            <p class="contact-error-message" style="display:none">There was a problem sending your message. Please try again or alternatively email your message to <strong><a href="mailto:questions@teamdrg.com">questions@teamdrg.com</a></strong></p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="next jscroll-next-parent" style="display: none;"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% else %}
+                                                <div class="col-xs-12 col-md-9 search-main-results">
+                                                    <div class="shadow-box" id="searchResults">
+                                                        <div class="loader text-center" style="height:1512px"></div>
+                                                        <div class="error-page">
+                                                            <h1>Sorry, we couldn't find any results for <strong><br></strong></h1>
+                                                            <h2>Please check your spelling or try a more general search term</h2>
+                                                        </div>
+                                                        <div class="consulting-advert">
+                                                            <h4>Can't find what you're looking for?</h4>
+                                                            <p>Our experts can provide Real World Data and custom analysis on your area of interest.</p>
+                                                            <p class="request-information"><a href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#consultingAdvert">Request More Information</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endif%}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {# empty Twig template #}

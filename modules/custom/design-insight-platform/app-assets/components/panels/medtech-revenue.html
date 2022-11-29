@@ -1,0 +1,137 @@
+<div class="panel panel-default landing-page-panel">
+  <div class="panel-body">
+    <div class="chart-title">
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class="hide">Download</span> <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+        </ul>
+      </div>
+      <h2 class="landingcard-type blue">Market Insight</h2>
+      <h3>Revenue Forecast for 
+        <div class="btn-group title-button">
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"> All Markets <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu" style="padding: 5px;">
+            <li class="checkbox active"><label><input type="checkbox" name="geography" value="United States" checked="">United States </label></li>
+            <li class="checkbox active"><label><input type="checkbox" name="geography" value="Europe" checked="">Europe </label></li>
+            <li class="checkbox active"><label><input type="checkbox" name="geography" value="Asia Pacific" checked="">Asia Pacific </label></li>
+          </ul>
+        </div>
+      </h3>
+    </div>
+    <div id="container2" style="height: 220px;margin: 30px 0 0;"></div>
+    
+  </div>
+  <div class="panel-footer text-right">
+    <a href="#" class="landingcard-popover-link1">Go to Market Insight <i class="fa fa-caret-right fa-lg"></i></a>
+  </div>
+</div>
+
+<div class="hide" id="landingcard-popover1">
+  <ul class="dropdown-menu nondropdown landingcard-popover-menu">
+    <li><a href="#"><span class="owned-tag">Global Market Trends</span></a></li>         
+    <li><a href="devicecat-2.html"><span class="owned-tag">United States</span></a></li>         
+    <li><a href="#"><span class="owned-tag">Europe</span></a></li>         
+    <li><a href="#"><span class="owned-tag">Europe (Supplementary)</span></a></li>          
+    <li><a href="devicecat-2a-notowned.html"><span class="free-tag">About Market Insight</span></a></li>          
+  </ul>
+  <div class="clearfix"></div>
+</div>  
+  
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.landingcard-popover-link1').popover({ 
+    placement: 'top',
+    html : true,
+    content: function() {
+      return $('#landingcard-popover1').html();
+    }
+  });
+  $('a.landingcard-popover-link1').click(function(e) {
+    e.preventDefault();
+  });
+});
+</script>
+
+<script type="text/javascript">
+Highcharts.chart('container2', {
+    chart: {
+        zoomType: 'xy'
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal'
+        }
+    },
+    colors: ["#275379", "#346ea1", "#418ac9", "#67a1d4", "#8db9df","#b3d0e9","#1a3750"],
+    xAxis: [{
+        categories: ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+        labels: {
+            rotation: 270
+        },
+        crosshair: true
+    }],
+    yAxis: [{ // Primary yAxis
+        title: {
+            text: 'US$M',
+        },
+        min: 0,
+        tickAmount: 2,
+        reversedStacks: false
+    }, { // Secondary yAxis
+        title: {
+            text: '% Growth',
+        },
+        opposite: true,
+        min: 0,
+        tickAmount: 2
+    }],
+    tooltip: { 
+      enabled: false 
+    },
+    series: [{
+        name: 'Segment 1',
+        type: 'column',
+        data: [7, 7, 7, 7, 7, 8, 8, 8, 9, 9, 10],
+    }, {
+        name: 'Segment 2',
+        type: 'column',
+        data: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+    }, {
+        name: 'Segment 3',
+        type: 'column',
+        data: [4, 5, 5, 5, 5, 6, 6, 5, 6, 6, 6],
+    }, {
+        name: 'Segment 4',
+        type: 'column',
+        data: [4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5],
+    }, {
+        name: 'Segment 5',
+        type: 'column',
+        data: [3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4],
+    }, {
+        name: 'Other',
+        type: 'column',
+        data: [5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+    },  {
+        name: '% Growth',
+        type: 'spline',
+        yAxis: 1,
+        data: [1, 1.2, 1.3, 1.3, 1.3, 1.4, 1.2, 1.2, 1.1, 1.2, 1],
+    }]
+});
+$('.marketinsights1-popover').click(function(e){
+  e.preventDefault();
+}); 
+$(document).ready(function(){
+  $('.marketinsights1-popover').popover({ 
+    html : true,
+    container: 'body',
+    placement: 'top',
+    content: function() {
+      return $('#marketinsights1-links').html();
+    }
+  })  
+});
+
+</script>

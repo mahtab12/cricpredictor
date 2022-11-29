@@ -1,0 +1,33 @@
+{% if content %}
+  <div {{ attributes.addClass('row') }}>
+    {% if content.sidebar_left %}
+      <div {{ region_attributes.sidebar_left.addClass('col-md-3 hidden-sm hidden-xs search-filters') }}>
+        {{ content.sidebar_left }}
+      </div>
+    {% endif %}
+
+    {% if content.content %}
+      <div class="col-xs-12 col-md-6 search-main-results" id="searchResults">
+        <div {{ region_attributes.content.addClass('row') }}>
+          <div class="col-md-12 col-xs-12">
+            <div class="loader text-center" style="height: 1019px;">
+              <p><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></p>
+              <h2>Loading</h2>
+            </div>
+            <div id="search-result-data">
+              {{ content.content }}
+            </div>
+          </div>
+            
+            
+            
+        </div>
+      </div>
+    {% endif %}
+    {% if content.sidebar_right %}
+      <div {{ region_attributes.sidebar_right.addClass('col-md-3') }}>
+        {{ content.sidebar_right }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

@@ -1,0 +1,12 @@
+uuid: 6d0666e4-a1b5-42c5-b1d9-9b660b2cc665
+langcode: en
+status: true
+dependencies: {  }
+id: node__video
+label: 'Content: Video'
+tags:
+  keywords: '[node:title] , latest cricket videos, cricket match hilights, live cricket stream'
+  abstract: '[node:summary]'
+  description: '[node:summary], PSL 2020 Full prediction'
+  title: '[node:title] | [site:name]'
+  canonical_url: '[current-page:url]'

@@ -1,0 +1,26 @@
+uuid: ce062a4c-cffa-4311-a279-c2cae9523f0d
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_shares
+    - system
+  theme:
+    - bartik
+id: bartik_adslotsidebar
+theme: bartik
+region: sidebar_second
+weight: -18
+provider: null
+plugin: adslot_sidebar
+settings:
+  id: adslot_sidebar
+  label: 'Adslot Sidebar'
+  provider: social_shares
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

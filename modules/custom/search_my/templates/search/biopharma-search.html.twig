@@ -1,0 +1,177 @@
+<div class="col-md-3 hidden-sm hidden-xs search-filters">
+        <div class="search-filter-inner">
+          <form name="biopharma-search-filter-form" id="biopharma-search-filter-form" xaction="/search">
+          <input type="hidden" name="query" value="{{ content.query }}">
+          <input type="hidden" name="sort" value="{{ content.sort }}">
+          <input type="hidden" name="tabs" value="{{ content.tabs }}">
+<h4 id="searchTour4">Filters <span class="beta-tag">Beta</span><a href="/search" class="pull-right btn-clearall">Reset all</a></h4>
+          <div class="category-container" id="owenership" data-name="Ownership">
+            <i class="category-icon category-ownership"></i>
+            <h5>By Ownership</h5>
+            <ul class="list-unstyled radio-list">
+              <li class="radio">
+                <label><input type="radio" class="search_filter" value="all" name="ownership" {%if( content.ownership == 'all' )%}checked{%endif%} id="AllContent"> All Content</label>
+              </li>
+              <li class="radio">
+                <label><input type="radio" class="search_filter" value="owned" name="ownership" {%if( content.ownership == 'owned' )%}checked{%endif%} id="Owned"> Owned</label>
+              </li>
+              <li class="radio">
+                <label><input type="radio" class="search_filter" value="un-owned" name="ownership" {%if( content.ownership == 'un-owned' )%}checked{%endif%}  id="NotOwned"> Not Owned</label>
+              </li>
+                            <li class="radio active">
+                <label><input type="radio" class="search_filter" value="information" name="ownership" {%if( content.ownership == 'information' )%}checked{%endif%} id="Information"> Information</label>
+              </li>
+                          </ul>
+          </div>
+                    <div class="category-container hide" id="productType" data-name="Product Type">
+            <i class="fa fa-files-o fa-lg fa-fw category-icon"></i>
+            <h5>By Product Type</h5>
+            <ul class="list-unstyled radio-list">
+                <li class="checkbox  ">
+                <label><input class="search_filter" type="checkbox" value="market_insight" name="product_type[]">Market Insights</label>
+              </li>
+              <li class="checkbox  ">
+                  <label><input class="search_filter" type="checkbox" value="commercial_targeting" name="product_type[]"> Commmercial Targeting</label>
+              </li>
+              <li class="checkbox ">
+                <label><input class="search_filter" type="checkbox" value="brand_tracking" name="product_type[]"> Brand Tracking</label>
+              </li>
+            </ul>
+          </div>
+          <div class="category-container" id="researchType" data-name="Research Type">
+            <i class="fa fa-files-o fa-lg fa-fw category-icon"></i>
+            <h5>By Research Type</h5>
+            <ul class="list-unstyled radio-list">
+              <li class="radio  active ">
+                <label><input class="search_filter" type="radio" value="all" name="research_type" {%if( content.research_type == 'all' )%}checked{%endif%}> All Research Types</label>
+              </li>
+              <li class="radio ">
+                <label><input class="search_filter" type="radio" value="syndicated" name="research_type" {%if( content.research_type == 'syndicated' )%}checked{%endif%}> Syndicated</label>
+              </li>
+              <li class="radio ">
+                <label><input class="search_filter proprietary" type="radio" value="proprietary research" name="research_type" {%if( content.research_type == 'proprietary research' )%}checked{%endif%}> Proprietary</label>
+              </li>
+            </ul>
+          </div>
+
+          <div class="category-container" id="publicationDate" data-name="Publication Date">
+            <i class="fa fa-calendar fa-lg fa-fw category-icon"></i>
+            <h5>Publication Date</h5>
+            <ul class="list-unstyled radio-list">
+              <li class=" radio active">
+                <label><input class="search_filter" type="radio" value="any" checked="checked" name="pubdate" {%if( content.pubdate == 'all' )%}checked{%endif%}> All Publication Dates</label>
+              </li>
+              <li class=" radio">
+                <label><input class="search_filter" type="radio" value="6months" name="pubdate" {%if( content.pubdate == '6months' )%}checked{%endif%}> Last 6 months</label>
+              </li>
+              <li class=" radio">
+                <label><input class="search_filter" type="radio" value="1year" name="pubdate" {%if( content.pubdate == '1years' )%}checked{%endif%}> Last year</label>
+              </li>
+              <li class=" radio">
+                <label><input class="search_filter" type="radio" value="2years" name="pubdate" {%if( content.pubdate == '2years' )%}checked{%endif%}> Last 2 years</label>
+              </li>
+            </ul>
+          </div>
+          </form>
+        </div>
+      </div>
+
+
+{% if content.items is empty %}
+<div class="col-xs-12 col-md-9 search-main-results" search-type="biopharmasearch">
+
+  <div class="shadow-box">
+    <div class="error-page">
+      <h1>Sorry, we couldn't find any results for <br> <strong>{{ content.query }}</strong></h1>
+      <h2>Please check your spelling or try a more general search term</h2>
+    </div>
+    <div class="consulting-advert">
+      <h4>Can't find what you're looking for?</h4>
+      <p>Our experts can provide Real World Data and custom analysis on your area of interest.</p>
+      <p class="request-information"><a href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#consultingAdvert">Request More Information</a></p>
+    </div>
+  </div>
+  </div>
+{% else %}
+
+<div class="col-xs-12 col-md-9 search-main-results" search-type="biopharmasearch">
+
+
+        {%  if content.suggestions %}
+        <div class="search-info">
+          <p class="search-notice">Showing results for <a href="search?query={{ content.query }}" class="active">{{ content.query | title }}</a>.</p>
+          <p class="search-notice-small">Do you want results only for <a href="search?query={{ content.suggestions }}&spellcheck=0" class="active">{{ content.suggestions | title }}</a>?</p>
+        </div>
+        {% endif %}
+
+        {{ drupal_block('insight_search_feature_result_block') }}
+
+        <ul class="nav nav-tabs hidden-xs search-tabs-shadow">
+          <li class="{% if content.tabs == 'container' %}active{% endif %}"><a href="#reports" data="container" class="search_tabs" name="tabs" value="" data-toggle="tab" aria-expanded="{% if content.tabs == 'container' %}true{% else %}false{% endif %}"><i class="fa fa-file-text-o"></i> Reports </a></li>
+          <li class="{% if content.tabs == 'chart' %}active{% endif %}"><a href="#figures" class="search_tabs" name="tabs" value="chart"  data="chart" data-toggle="tab" aria-expanded="{% if content.tabs == 'chart' %}true{% else %}false{% endif %}"><i class="fa fa-bar-chart"></i> Figures</a></li>
+          <li class="{% if content.tabs == 'table' %}active{% endif %}"><a href="#tables"  class="search_tabs" name="tabs" value="table"  data="table" data-toggle="tab" aria-expanded="{% if content.tabs == 'table' %}true{% else %}false{% endif %}"><i class="fa fa-table"></i> Tables</a></li>
+          <li id="searchTour6" class="{% if content.tabs == 'text' %}active{% endif %}"><a href="#text" class="search_tabs"  name="tabs" value="text"  data="text" data-toggle="tab" aria-expanded="{% if content.tabs == 'text' %}true{% else %}false{% endif %}"><i class="fa fa-align-left"></i> Text</a></li>
+          <li class="pull-right contact-tab" id="searchTour7"><a href="#" data-toggle="modal" data-target="#contactFrom"><i class="fa fa-comment hidden-xs"></i> Need Some Help?</a></li>
+        </ul> 
+        
+          
+        <div class="{% if(content.count != 0) %}shadow-box{%endif%}" id="searchResults">            
+
+          <div class="loader text-center" style="height: 1670px;">
+            <p><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></p>
+            <h2>Loading</h2>
+          </div>
+                    
+          <div class="tab-content">
+            
+              {% if(content.count != 0) %}
+                <div class="search-results-details">
+                <p class="pull-left">Matches found in <span id="biopharma-totalcount">{{ content.count }}</span> Reports</p>
+          <div class="sort-btn pull-right">
+            <span class="btn-label">Sorted by</span>
+            <div class="btn-group title-button">
+              <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> 
+                  <span id="sortBy">
+                  {% if ( content.sort == 'score' )   %}
+                      Relevance
+                  {% elseif (content.sort == 'date' ) %}  
+                      Publication Date
+                  {%endif%}    
+                  </span>
+                  <span class="caret"></span></button>
+              <ul class="dropdown-menu pull-right search_sort_tabs" role="menu">
+                <li class="{% if ( content.sort == 'score' )   %} active {%endif%}" name="sort" id="score"><a class="search_score_tabs" name="sort" value="score"  data-key="score" href="javascript:void(0);">Relevance</a></li>
+                <li class="{% if ( content.sort == 'date' )   %} active {%endif%}" name="sort" id="date"><a class="search_score_tabs" name="sort" value="date" data-key="date" href="javascript:void(0);">Publication Date</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>  
+            {% endif %}  
+              
+            <div  id="reports">
+              
+        
+                
+       {#<div id="biopharma-container-report"> #}
+{#        {% for item in content.items %}
+#}        {{ content.items }}
+        {#{% endfor %}#}
+{#       </div>         
+#}                
+           
+
+                
+         {#  <article class="search-result-new search-loading">
+                <p><i class="fa fa-circle-o-notch fa-spin"></i> &nbsp;Loading More Reports</p>
+              </article> #}
+                
+                
+            </div>
+            
+            
+            </div> 
+        </div>
+      </div>
+        
+        {% endif %}

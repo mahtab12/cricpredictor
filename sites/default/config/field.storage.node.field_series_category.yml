@@ -1,0 +1,30 @@
+uuid: a9afe5d7-d671-4a32-88e5-05c87cb1a9b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_series_category
+field_name: field_series_category
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: International
+      label: International
+    -
+      value: 'Domestic and Others'
+      label: 'Domestic and Others'
+    -
+      value: 'T20 Leagues'
+      label: 'T20 Leagues'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

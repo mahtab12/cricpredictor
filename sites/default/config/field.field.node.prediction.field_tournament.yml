@@ -1,0 +1,29 @@
+uuid: cac68a16-33f6-4186-8b6a-ba29796593fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tournament
+    - node.type.prediction
+    - taxonomy.vocabulary.tournament
+id: node.prediction.field_tournament
+field_name: field_tournament
+entity_type: node
+bundle: prediction
+label: Tournament
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tournament: tournament
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

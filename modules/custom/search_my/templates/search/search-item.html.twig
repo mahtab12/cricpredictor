@@ -1,0 +1,13 @@
+<article class="search-result-new owned-result" data-report="{{ content.report_id }}" data-code="{{ content.ss_field_report_product_code }}">
+  <h1 class="result-title"><a href="/usma{{ content.report_url }}">{{ content.report_title }}</a> {% if newContentTagFlag == 1 %} <span class="label label-primary new-content-tag">{{ contentToShow }}</span> {% endif %}</h1>
+  <div class="result-meta">
+    <span class="{{ ownership }}-tag">{{ ownership == 'owned'  ? 'Owned' : 'Not Owned' }}</span>
+    <span class="pub-date"><i class="fa fa-calendar"></i> {{ content.pub_date|date("j M Y") }}</span>
+    <span class="btn-group" id="tourDownload">
+      <a href="#" class="dropdown-toggle btn btn-link" data-toggle="dropdown" aria-expanded="false"><span class="fa fa-arrow-circle-down"></span> Download <span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#"><span class="icon icon-pdf"></span> M360HV0043.pdf</a></li>
+      </ul>
+    </span>
+  </div>
+</article>

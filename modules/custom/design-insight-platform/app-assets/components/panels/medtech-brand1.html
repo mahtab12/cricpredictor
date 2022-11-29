@@ -1,0 +1,110 @@
+<div class="panel panel-default landing-page-panel">
+  <div class="panel-body">
+    <div class="chart-title">
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class="hide">Download</span> <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+        </ul>
+      </div>
+      <h2 class="landingcard-type red">Brand Tracking</h2>
+      <h3>Market Revenue by Brand</h3>
+        </div>
+    <div id="container" style="height: 220px;margin: 30px 0 0;"></div>    
+  </div>
+  <div class="panel-footer text-right">
+    <a href="#" class="landingcard-popover-link5">Go to Commercial Targeting <i class="fa fa-caret-right fa-lg"></i></a>
+  </div>
+</div>
+
+
+<div class="hide" id="landingcard-popover5">
+  <ul class="dropdown-menu nondropdown landingcard-popover-menu">
+    <li><a href="devicecat-4.html"><span class="owned-tag">Heart Valves</span></a></li>                       
+    <li><a href="devicecat-4-notowned.html"><span class="free-tag">About Brand Tracking</span></a></li>         
+  </ul>
+  <div class="clearfix"></div>
+</div>  
+  
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.landingcard-popover-link5').popover({ 
+    placement: 'top',
+    html : true,
+    content: function() {
+      return $('#landingcard-popover5').html();
+    }
+  });
+  $('a.landingcard-popover-link5').click(function(e) {
+    e.preventDefault();
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(function () {
+    Highcharts.chart('container', {
+        chart: {
+            type: 'area'
+        },
+        xAxis: {
+            categories: ['2010', '2011', '2012', '2013', '2014', '2015', '2016'],
+            tickmarkPlacement: 'on',
+            title: {
+                enabled: false
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'US$M'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value / 1000;
+                }
+            },
+            tickAmount: 2
+        },
+        tooltip: { 
+          enabled: false 
+        },
+        plotOptions: {
+            area: {
+                stacking: 'normal',
+                lineColor: '#ffffff',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 0,
+                    lineColor: '#ffffff',
+                    symbol: 'circle'
+                }
+            }
+        },
+        series: [{
+            name: 'Brand Name 1',
+            data: [502, 635, 809, 947, 1402, 3634, 5268],
+            color: '#924a41'
+        }, {
+            name: 'Brand Name 2',
+            data: [106, 107, 111, 133, 221, 767, 1766],
+            color: '#c36356'
+        }, {
+            name: 'Brand Name 3',
+            data: [163, 203, 276, 408, 547, 729, 628],
+            color: '#f47c6c'
+        }, {
+            name: 'Brand Name 4',
+            data: [118, 311, 514, 356, 339, 400, 500],
+            color: '#f69689'
+        }, {
+            name: 'Brand Name 5',
+            data: [118, 311, 514, 356, 339, 400, 500],
+            color: '#f8b0a7'
+        }, {
+            name: 'Other',
+            data: [118, 311, 514, 356, 339, 400, 500],
+            color: '#62322b'
+        }]
+    });
+});
+</script>

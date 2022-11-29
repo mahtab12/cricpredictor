@@ -1,0 +1,7 @@
+uuid: f41e4a28-1916-4f58-865c-2d98769b93a9
+langcode: en
+status: true
+dependencies: {  }
+name: 140x140_prediction
+label: '140x140 prediction'
+effects: {  }

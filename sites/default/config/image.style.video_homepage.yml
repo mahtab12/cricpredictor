@@ -1,0 +1,15 @@
+uuid: ae0f0d28-1c21-469b-970a-07272284ba5c
+langcode: en
+status: true
+dependencies: {  }
+name: video_homepage
+label: 'video homepage'
+effects:
+  e451ada9-2b15-4cb3-b0b6-35e671915db6:
+    uuid: e451ada9-2b15-4cb3-b0b6-35e671915db6
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 240
+      height: 135
+      anchor: center-center

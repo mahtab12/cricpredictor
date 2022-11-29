@@ -1,0 +1,46 @@
+uuid: 3bc680b8-a703-45d4-a698-50ebde62c126
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rpwvgyEURXLz_JjgMCrkS1rUv-0k3L79BpO-ReN7fDI
+id: node
+label: Content
+tags:
+  news_keywords: '[node:title], cricket news, cricket prediction,match predictions, who will win'
+  keywords: 'cricket prediction, latest cricket news, predictions, match prediction,[node:field_tags]'
+  abstract: 'We provide 100% sure shot prediction. Cricket Prediction ,Cricket Predictor , Cricket Betting Tips , Match Prediction , Today Match Prediction , Cricket Match Prediction Tips , Who Will Win Today Match'
+  description: '[node:title] , cricket prediction ,who will win'
+  title: '[node:title] | [site:name]'
+  canonical_url: '[current-page:url]'
+  og_image: '[node:field_image:article_image]'
+  og_title: '[current-page:title]'
+  og_url: '[current-page:url]'
+  og_image_url: '[node:field_image:article_image]'
+  og_description: '[current-page:title]'
+  og_site_name: CricPredictor
+  twitter_cards_image_alt: '[node:field_image:alt]'
+  twitter_cards_site: '@PredictorCric'
+  twitter_cards_type: summary_large_image
+  twitter_cards_description: '[current-page:title]'
+  twitter_cards_page_url: '[current-page:url]'
+  twitter_cards_title: '[current-page:title]'
+  twitter_cards_image: '[node:field_image:article_image]'
+  schema_article_publisher: 'a:6:{s:5:"@type";s:12:"Organization";s:3:"@id";s:11:"[site:name]";s:4:"name";s:11:"[site:name]";s:3:"url";s:10:"[site:url]";s:6:"sameAs";s:38:"https://www.facebook.com/cricpredicto/";s:4:"logo";a:4:{s:5:"@type";s:11:"ImageObject";s:3:"url";s:60:"https://cricpredictor.com//sites/default/files/cricket_1.png";s:5:"width";s:2:"60";s:6:"height";s:2:"60";}}'
+  schema_article_date_published: '[node:created]'
+  schema_article_image: 'a:5:{s:5:"@type";s:11:"ImageObject";s:20:"representativeOfPage";s:4:"True";s:3:"url";s:32:"[node:field_image:article_image]";s:5:"width";s:38:"[node:field_image:article_image:width]";s:6:"height";s:39:"[node:field_image:article_image:height]";}'
+  schema_article_name: '[node:title]'
+  schema_article_date_modified: '[node:changed]'
+  schema_article_author: 'a:5:{s:5:"@type";s:6:"Person";s:3:"@id";s:18:"[node:author:name]";s:4:"name";s:26:"[node:author:account-name]";s:3:"url";s:22:"[node:author:edit-url]";s:6:"sameAs";s:38:"https://www.facebook.com/cricpredicto/";}'
+  schema_article_is_accessible_for_free: 'True'
+  schema_article_type: NewsArticle
+  schema_article_main_entity_of_page: '[current-page:url]'
+  schema_article_description: '[node:summary]'
+  schema_article_headline: '[current-page:title]'
+  schema_organization_telephone: +91-7504289838
+  schema_organization_type: Organization
+  schema_organization_id: '[site:url]'
+  schema_organization_name: '[site:name]'
+  schema_organization_url: '[site:url]'
+  schema_organization_same_as: 'https://www.facebook.com/cricpredicto,https://twitter.com/PredictorCric'
+  schema_organization_additional_type: SportsOrganization

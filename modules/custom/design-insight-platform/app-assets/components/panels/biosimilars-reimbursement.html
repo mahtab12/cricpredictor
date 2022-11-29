@@ -1,0 +1,56 @@
+<div class="panel panel-default landing-page-panel">
+  <div class="panel-body">
+    <div class="chart-title">
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class=" text-hide">Downloads</span><span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+          <li><a href="#"><span class="icon icon-excel"></span> Data to Excel</a></li>
+        </ul>
+      </div>
+      <h2>Access &amp; Reimbursement</h2>
+      <h3>US Payer Discount Expectations for Biosimilars</h3>
+    </div>
+    <div id="reimbursement-card" style="height: 220px;margin: 30px 0 0;"></div>
+    
+  </div>
+  <div class="panel-footer text-right">
+    <a href="#">Go to Payer Insights <i class="fa fa-caret-right fa-lg"></i></a>
+  </div>
+</div>
+
+<script type="text/javascript">
+	var stackedChart = {
+		chart: {
+      renderTo: 'reimbursement-card',
+      type: 'column'
+    },
+    xAxis: {
+      categories: ['Biosimilar recombinant protein', 'Biosimilar MAb']
+    },
+    yAxis: {
+			reversedStacks: true,
+			title: {
+        text: '% Discount vs. ref. brand'
+      },
+    },
+    plotOptions: {
+			series: {
+				stacking: null,
+			}
+		},
+    tooltip: {
+  		headerFormat: '<span style="color:{point.color}">● </span> <b>{series.name}</b><br>',
+  		pointFormat: '{point.category} = {point.y}%',
+  	},
+		series: [{
+            name: 'To reimburse the biosimilar',
+            data: [23,22]
+        },{
+            name: 'To reimburse the biosimilar ahead of the brand',
+            data: [29,29]
+        }]
+  };
+	stackedChart = jQuery.extend(true, {}, BarChartStacked2, stackedChart);
+  var stackedChart = new Highcharts.Chart(stackedChart);
+</script>

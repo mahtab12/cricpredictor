@@ -1,0 +1,55 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h3><span class="number">2</span> What data view would you like to see?</h3>
+</div>
+
+<div class="modal-body">
+  <ul class="dropdown-menu nondropdown big-radio-list" id="chooseView">
+    <li class="radio">
+      <label>
+        <input type="radio" name="chooseView" value="Procedure View">Procedure View
+        <span class="description">Compare Procedure Volume across your chosen markets </span>
+      </label>
+    </li>
+    <li class="radio">
+      <label>
+        <input type="radio" name="chooseView" value="Product View">Product View
+        <span class="description">Compare Product Metrics across your chosen marekts</span>
+      </label>
+    </li>
+    <li class="radio">
+      <label>
+        <input type="radio" name="chooseView" value="Manufacturer View">Manufacturer View 
+        <span class="description">Compare manufacturer Revenue and Market Share for your chosen markets</span>
+      </label>
+    </li>
+  </ul>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-lg btn-primary pull-left goto-step1"><i class="fa fa-arrow-left" aria-hidden="true"></i> Previous</button>
+  <button type="button" class="btn btn-lg btn-primary pull-right goto-step3">Next <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+</div>
+          
+<script type="text/javascript">
+$(document).on('click', '#chooseView input', function (e) {
+  $(this).closest('.wizard-pane').find('.goto-step3').removeClass('disabled');
+  var choosenView = $('#chooseView input:checked').val();
+  // Choose the Wizard Pane to show
+  if (choosenView == 'Procedure View') {
+    $('.metric-procedures').removeClass('hide');
+    $('.metric-product').addClass('hide');
+    $('.metric-manufacturer').addClass('hide');
+  } else if (choosenView == 'Product View') {
+    $('.metric-procedures').addClass('hide');
+    $('.metric-product').removeClass('hide');
+    $('.metric-manufacturer').addClass('hide');
+  } else if (choosenView == 'Manufacturer View') { 
+    $('.metric-procedures').addClass('hide');
+    $('.metric-product').addClass('hide');
+    $('.metric-manufacturer').removeClass('hide');
+  }
+
+
+}); 
+</script>

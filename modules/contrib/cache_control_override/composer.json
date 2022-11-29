@@ -1,0 +1,9 @@
+{
+    "name": "drupal/cache_control_override",
+    "description": "Override page Cache-Control header based on bubbled cacheability metadata.",
+    "type": "drupal-module",
+    "require": {
+        "php": ">=7.1",
+        "drupal/core": "^9"
+    }
+}

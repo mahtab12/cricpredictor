@@ -1,0 +1,174 @@
+/* EPI
+================================================== */
+.epi-blank-state {
+  text-align: center;
+  padding-top: 180px;
+  padding-bottom: 180px; 
+  display: block;
+}
+.qualative-content .epi-blank-state h2,
+.qualative-content .epi-blank-state h3 {
+  border-top: none;
+  margin: 0;
+  padding: 0;
+  color: #999;
+}
+.qualative-content .epi-blank-state h2 {
+  font-weight: 500;
+  font-size: 26px;
+}
+.qualative-content .epi-blank-state h3 {
+  font-weight: normal;
+  font-size: 20px;
+  margin-top: 5px;
+}
+.qualative-content .epi-blank-state p {
+  margin-bottom: 15px;
+}
+.epi-blank-state .fa-male,
+.epi-blank-state .fa-female {
+  font-size: 80px;
+  color: #ccc;
+}
+.epi-tabs {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.epi-tools .dropdown-menu {
+  padding: 5px;
+}
+.epi-tools {
+  float: right;
+}
+.epi-tools .btn {
+  line-height: 15px;
+  height: 25px;
+}
+.epi-tools .btn .fa {
+  color: #96c93d;
+}
+.epi-tools.btn-toolbar.links-divider {
+  margin-right: -10px;
+}
+.epi-tools.btn-toolbar.links-divider > .btn-group:before {
+  margin-top: 5px;
+}
+p.dropdown-label {
+  line-height: 25px;
+  margin-bottom: 0;
+  margin-right: 5px;
+  display: inline-block;
+  font-size: 12px;
+  font-family: "Avenir T_R W01", Helvetica, Arial, sans-serif;
+}
+.epi-population-dropdown.dropdown-menu {
+  padding: 5px;
+}
+.epi-population-dropdown.dropdown-menu li.searchbox {
+  margin: 5px 5px 10px;
+}
+.epi-population-dropdown.dropdown-menu li a {
+  padding-left: 15px;
+  border-radius: 3px;
+}
+.epi-population-dropdown.dropdown-menu .divider {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.epi-tabs .nav.nav-tabs {
+  background: linear-gradient(to bottom, #fff 0, #f5f5f5 100%);
+  margin-left: -60px;
+  margin-right: -60px;
+  padding-left: 60px;
+  padding-right: 60px;  
+}
+.epi-tabs .nav.nav-tabs li a,
+.epi-tabs .nav.nav-tabs li a:hover {
+  border: none;
+  padding: 15px 20px 10px 20px;
+}
+.epi-tabs  .nav.nav-tabs li.active a {
+  box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, .15), 0 1px 2px 0 rgba(0, 0, 0, .3);
+  border-top: 4px solid #732875;
+  padding-top: 11px;
+}
+.epi-tabs .nav.nav-tabs li.active > a:after {
+  width: calc(100% + 6px);
+  background: #fff;
+  height:5px;
+  content: '';
+  position: absolute;
+  left: -3px;
+  bottom: -5px;
+}
+@media (max-width: 991px) {
+ .tabs-responsive {
+    position: relative;
+    margin-left: -15px;
+    margin-right: -15px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+   .tabs-responsive.epi-tabs .nav.nav-tabs li a,
+   .tabs-responsive.epi-tabs .nav.nav-tabs li a:hover {
+     padding-left: 12px;
+     padding-right: 12px;
+   }
+  .tabs-responsive:before {
+    width: 15px;
+    background: #fff;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    z-index: 2;
+    background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+  }
+  .tabs-responsive:after {
+    width: 15px;
+    background: #fff;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: '';
+    z-index: 2;
+    background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+  }
+  .tabs-responsive.epi-tabs .nav.nav-tabs {
+    margin: 0;
+    z-index: 1;
+    border-bottom: 0;
+    overflow-x: scroll;
+    white-space: nowrap;
+    min-height: 37px;
+    position: relative;
+    width: 100%;
+    margin-bottom: -1px;
+    overflow-y: hidden;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .tabs-responsive ul::-webkit-scrollbar { 
+    display: none; 
+  }
+  .tabs-responsive li,
+  .tabs-responsive a {
+    float: none;
+    display: inline-block;
+  } 
+  .tabs-responsive li:first-child {
+    padding-left: 15px;
+  } 
+    .tabs-responsive li:last-child {
+    padding-right: 15px;
+  }  
+}

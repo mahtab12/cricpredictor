@@ -1,0 +1,81 @@
+<div class="panel panel-default landing-page-panel">
+  <div class="panel-body">
+    <div class="chart-title">
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class="hide">Download</span> <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+        </ul>
+      </div>
+      <h2 class="landingcard-type orange">Commercial Targeting</h2>      
+      <h3>Top Performing Physicians by Volume</h3>
+    </div>
+    <div id="columnchart2" style="height: 247px;margin: 15px 0 0;"></div>
+    
+  </div>
+  <div class="panel-footer text-right">
+    <a href="#" class="landingcard-popover-link4">Go to Commercial Targeting <i class="fa fa-caret-right fa-lg"></i></a>
+  </div>
+</div>
+
+
+<div class="hide" id="landingcard-popover4">
+  <ul class="dropdown-menu nondropdown landingcard-popover-menu">
+    <li><a href="devicecat-3.html"><span class="owned-tag">Heart Valves <span class="label label-default">Custom</span></span></a></li>         
+    <li><a href="devicecat-3-notowned.html"><span class="free-tag">About Commercial Targeting</span></a></li>         
+  </ul>
+  <div class="clearfix"></div>
+</div>  
+  
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.landingcard-popover-link4').popover({ 
+    placement: 'top',
+    html : true,
+    content: function() {
+      return $('#landingcard-popover4').html();
+    }
+  });
+  $('a.landingcard-popover-link4').click(function(e) {
+    e.preventDefault();
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(function () {
+    Highcharts.chart('columnchart2', {
+        chart: {
+            type: 'bar'
+        },
+        legend : {
+          enabled: false
+        },
+    yAxis: {
+            title: {
+                text: 'Procedures'
+            },
+            tickAmount: 2
+
+        },
+        xAxis: {
+            categories: ['L. James', 
+                         'D. Mooney', 
+                         'E. Omozusi', 
+                         'D. Mooney', 
+                         'E. Jakupovic',
+                         'D. Cox', 
+                         'K. Lisbie', 
+                         'R. Vincelot', 
+                         'M. Odubajo', 
+                         'S. Cuthbert'],
+
+        },
+        series: [{
+            color: '#F1AF42',
+            data: [2536,2312,2234,2154,2111,2104,2045,2019,1987,1980]
+      }]
+    });
+});  
+  
+</script>

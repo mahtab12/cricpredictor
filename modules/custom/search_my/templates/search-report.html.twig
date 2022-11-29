@@ -1,0 +1,285 @@
+{#
+/**
+ * @file
+ *
+ * Available variables:
+ * - report: The content of Report.
+* - report_count: The content of Report.
+
+ */
+#}
+
+
+<div id="content-container" class="container-fluid background-white">
+    <div class="col-xs-12 col-lg-8">
+        <div class="ownership-checkbox pull-right">
+            <ul>
+                <li class="checkbox" id="popoverAlert">
+                    <label>
+                        <input type="checkbox" id="showOnlyOwned" onchange="window.location.href = '/search?{{showownedres}}'" checked="1">Only Show Owned Research
+
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div style="clear:both;"></div>
+        <div id="block-insight-platform-search-report-library-filters" class="block block-insight-platform-search">
+
+
+            <div class="content">
+                <p class="strike-line">Filter Reports</p>
+                <div id="facet_filters_library" class="row half-padding filters">
+                    <div id="therapy_area_facet" class="col-sm-3">
+                        <div class="btn-group btn-group-block">
+                            <div aria-expanded="false" type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown"> <span class="filter_placeholder"> Any Therapy Area or Disease </span>  <span class="caret"></span><span class="fa fa-times-circle multi-select-clear"></span></div>
+                            <div class="dropdown-menu  two-tier-select" role="menu">
+                                <div class="row no-padding" id="ta">
+                                    <ul class="col-sm-12 list-unstyled">
+                                        <li class="searchbox has-feedback has-icon no-label">
+                                            <input id="therapy_quick_search" class="form-control hasclear" placeholder="Start typing a Therapy Area or Disease" type="text" autocomplete="off">
+                                            <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span>
+                                            <span class="fa fa-lg fa-search input-icon"></span> </li>
+                                    </ul>
+
+                                    <ul id="ta-selector" class="col-sm-5 list-unstyled set-height parent-select">
+                                        {% set j = 0 %}
+                                        <li id="all-disease" class="active show" data-therapy-filter=""><a href="#">All Diseases</a></li>
+                                            {% for index,menu in term.area_diseases %}
+                                            <li id="disease-{{ j }}" class="checkbox">
+                                                <a href="#">
+                                                    <input data-identifier="is_field_therapy_area_disease:{{menu.tid}}" id="is_field_therapy_area_disease:{{menu.tid}}" type="checkbox" class="facet-redirect" data-target="#" data-value="{{ menu.name }}">
+                                                    {{ menu.name}} <span class="category-count">({{facet[menu.tid] ? facet[menu.tid] : 0}})</span>  <span class="element-invisible"> {{menu.name}} </span></a>
+                                            </li>
+                                            {% set j = j+1 %}
+                                        {% endfor %}
+
+                                    </ul>
+                                    <ul class="facetapi-insight-platform-widget facetapi-facet-field-therapy-area-disease col-sm-7 list-unstyled set-height facet-search child-select search-ff-block" id="ta-selections">
+                                        {% set k = 0 %}
+                                        {% for index,menu in term.area_diseases %}
+                                            <li id="parent-disease-{{k}}" class="disease-{{k}} ta{{k}} checkbox checkbox-parent show">
+                                                <label>
+                                                    <input data-identifier="is_field_therapy_area_disease:{{menu.tid}}" id="is_field_therapy_area_disease:{{menu.tid}}" type="checkbox" class="facet-redirect" data-target="#" data-value="{{menu.name}}">{{menu.name}} 
+                                                    <span class="category-count">({{facet[menu.tid] ? facet[menu.tid]:0}})</span>
+                                                    <span class="element-invisible"> {{menu.name}} </span>
+                                                </label>
+                                            </li>
+
+
+                                            {% for child_index,child_menu in menu.children %}
+
+                                                <li class="disease-{{k}} checkbox show">
+                                                    <label>
+                                                        <input data-identifier="is_field_therapy_area_disease:{{child_menu.tid}}" id="is_field_therapy_area_disease:{{child_menu.tid}}" type="checkbox" class="facet-redirect" data-target="#" data-value="{{child_menu.name}}">
+                                                        {{child_menu.name}} 
+                                                        <span class="category-count">({{facet[child_menu.tid] ? facet[child_menu.tid]:0}})</span>
+                                                        <span class="element-invisible"> {{child_menu.name}} </span>
+                                                    </label>
+                                                </li>
+
+                                            {% endfor %}
+                                            {% if menu.children is not empty%}
+                                                <li class="show divider" data-therapy-filter=""></li>
+                                                {% endif %}
+                                                {% set k = k+1 %}
+                                            {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="destination_category_facet" class="col-sm-3">
+                        <div class="btn-group btn-group-block">
+                            <div aria-expanded="false" type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown">  <span class="filter_placeholder">Any Solution</span> <span class="caret"></span><span data-clear-target="search?category=library&amp;query=gegg&amp;origin=ggg" class="fa fa-times-circle multi-select-clear"></span></div>
+                            <div class="dropdown-menu set-height">
+                                <ul class="list-unstyled facet-search">
+                                    {% set val = 0 %}
+                                    {% for index_solution,menu in term.product_line %}
+                                        <li id="category-{{val}}" class="checkbox single-level">
+                                            <label>
+                                                <input data-identifier="im_field_destination_category:{{menu.tid}}" id="im_field_destination_category:{{menu.tid}}" type="checkbox" class="facet-redirect" data-target="#" data-value="{{ menu.name }}">{{ menu.name}}
+                                                <span class="category-count">({{facet[menu.tid] ? facet[menu.tid]:0}})</span>
+                                                <span class="element-invisible"> {{menu.name}} </span>
+                                            </label>
+                                        </li>
+                                        {% set val = val+1 %}
+                                    {% endfor %}
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="research_type_facet" class="col-sm-3">
+                        <div class="btn-group btn-group-block">
+                            <div aria-expanded="false" type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown"> <span class="filter_placeholder">Any Research Type</span><span class="caret"></span><span class="fa fa-times-circle multi-select-clear"></span></div>
+                            <div class="dropdown-menu">
+                                <ul class="list-unstyled facet-search">
+                                    {% set rep = 0 %}
+                                    {% for index_research,research in term.research_type %}
+                                        <li id="type-{{rep}}" class="checkbox single-level"><label><input data-identifier="is_field_report_research_type:{{research.tid}}" id="is_field_report_research_type:{{research.tid}}" type="checkbox" class="facet-redirect" data-target="/search?category=library" data-value="{{research.name}}">{{research.name}}</label></li>
+                                                {% set rep = rep+1 %}
+                                            {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="publication_date_facet" class="col-sm-3">
+                        <div class="btn-group btn-group-block">
+                            <div aria-expanded="false" type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown">  <span class="filter_placeholder">Any Publication Date</span> <span class="caret"></span></div>
+                            <ul class="dropdown-menu">
+                                <li class="any-date"><a href="javascript:void(0)">Any Date</a></li>
+                                <li data-pub-date="6months"><a href="javascript:void(0)">Past 6 Months</a></li>
+                                <li data-pub-date="1year"><a href="javascript:void(0)">Past Year</a></li>
+                                <li data-pub-date="2years"><a href="javascript:void(0)">Past 2 Years</a></li>
+                                <li data-pub-date="3years"><a href="javascript:void(0)">Past 3 Years</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="apply-facet-filter col-sm-3">
+                        <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><span class="fa fa-lg"></span> Apply </button>
+                    </div>
+                </div>
+                <hr class="dotted">
+            </div>
+        </div>
+        <div class="panel-search-results">
+
+            {% if report_count!=0 %}
+                <div class="shadow-box-insights" id="searchResults">
+
+                    <div class="loader text-center" style="height:1512px"></div>
+
+                    <div class="tab-content">
+
+                        <div class="tab-pane fade active in" id="reports">
+                            <div class="search-details">
+                                <div class="sort-btn2">
+                                    <span class="btn-label"><b>{{report_count}}</b> <b>Matching Results</b></span>
+                                </div>
+                            </div>
+                            <div class="lazyloader-search"><div class="jscroll-inner">
+
+                                    {% for key, item in report %}
+
+                                        {#{{ kint(item) }}
+                                        #}                                        <article id="searchTour1" class="report-result search-result   {% if  item.access_check == 1 %}  owned-result {% else %} not-owned-result  {% endif %}">
+                                            <div class="report-cover" >
+                                                <div>
+
+
+                                                    <span class="report-type">{{item.sm_field_destination_category_name.0}}</span>
+                                                    <span class="report-title">{{ item.tf_report_title}}</span>
+                                                </div>
+                                            </div>
+                                            <p class="result-path">{{item.sm_field_destination_category_name.0}}</p>
+                                            <h1 class="result-title digital-reports-modal" data-id="{{ item.item_id}}" data-clipboard-text="{{ item.path_alias }}">
+                                                <a href="/search/getresult/{{ item.is_nid }}" class='use-ajax'>{{ item.tf_report_title}}</a>
+                                            </h1>
+
+                                            <p class="result-meta">
+                                                {% if content.hasAccess == 1 %}
+                                                    <span class="owned-tag">In Your Subscription</span> 
+                                                {%else%}
+                                                    <span class="not-owned-tag">Not In Your Subscription</span> 
+                                                {%endif%}  
+
+                                                • Published <span class="pub-date">{{ item.ds_field_publish_date |date("d M Y") }}</span>
+                                            </p>
+
+                                            <div class="result-description">
+                                                <div class="btn-toolbar">
+                                                    <div class="btn-group">
+                                                        {% if content.hasAccess == 1 %}
+                                                            <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                <span class="fa fa-arrow-circle-down fa-lg"></span> Download <span class="caret"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu" role="menu">
+
+
+                                                                {% for  i, url in item.sm_field_file_attachment_url %}
+
+                                                                    <li><a data-sku="{{ item.sm_field_sku[0] }}" data-nid="{{ url }}" data-title="{{ item.sm_field_file_attachment_name[i] }}" href="/download/{{ item.sm_field_file_attachment_name[i]|raw }}"><span class="icon {{ item.icon_type[i] }}"></span>{{ item.sm_field_file_attachment_name[i] }}</a></li>
+                                                                        {% endfor %}
+                                                            </ul>
+                                                        {% else %}
+                                                            <p class="marketing-buttons"><a class="btn btn-lg btn-primary" data-sku="{{ item.sm_field_sku[0] }}" data-nid="{{ item.path_alias }}" data-title="{{ item.tf_report_title}}" data-toggle="modal" data-target="#requestAccess" id="requestAccessButton">Request Pricing</a></p>
+                                                        {% endif %}
+
+
+                                                    </div>
+                                                    <div class="btn-group result-title" data-toggle="modal" data-target="#reportModal">
+                                                        <a href="/search/getresult/{{ item.is_nid }}" class="use-ajax btn btn-sm btn-default digital-reports-modal" data-id="{{ item.is_nid }}"><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> More info</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </article>
+
+                                    {% endfor %}
+
+
+                                    {% if next_page_url != false%}
+                                        <div class="next"><a href="{{next_page_url}}" class="jscroll-next">next</a></div>
+                                    {% endif %}
+                                    <div class="jscroll-added">
+                                        <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="requestAccess" style="display: none;">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body double-padding">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                        <div class="contact-success-message">
+                                                            <h3 class="text-center">Thanks for your interest in this content.</h3>
+                                                            <p class="text-center">One of our customer support colleagues will contact you shortly to understand your needs and determine how we can best assist you.</p>
+                                                            <p class="text-center"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></p>
+                                                        </div>
+                                                        <p class="contact-error-message" style="display:none">There was a problem sending your message. Please try again or alternatively email your message to <strong><a href="mailto:questions@teamdrg.com">questions@teamdrg.com</a></strong></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="next jscroll-next-parent" style="display: none;"></div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+
+                <div class="shadow-box-insights" id="searchResults">
+                    <div class="loader text-center" style="height:1512px"></div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="reports">
+                            <div class="error-page">
+                                <h1>Sorry, we couldn't find any results for <strong><br></strong></h1>
+                                <h2>Please check your spelling or try a more general search term</h2>
+                            </div>
+                            <div class="consulting-advert">
+                                <h4>Can't find what you're looking for?</h4>
+                                <p>Our experts can provide Real World Data and custom analysis on your area of interest.</p>
+                                <p class="request-information"><a href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#consultingAdvert">Request More Information</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endif %}
+
+        </div>
+    </div>
+    <div class="col-lg-4 hidden-xs hidden-sm hidden-md">
+        <div class="consulting-advert">
+            <h4>Looking for more data?</h4>
+            <p>Our claims and EHR Real World Data repository contains the most granularity in the industry. See what insights 36M linked patients can reveal about your business question.</p>
+            <p class="request-information"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#consultingAdvert">Request More Information</a></p>
+        </div>
+    </div>
+
+
+</div>

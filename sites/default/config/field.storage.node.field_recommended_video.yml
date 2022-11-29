@@ -1,0 +1,27 @@
+uuid: b7d39a6d-93b7-43e2-b3d0-0d0b1c85e699
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_recommended_video
+field_name: field_recommended_video
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Yes'
+      label: 'Yes'
+    -
+      value: 'No'
+      label: 'No'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

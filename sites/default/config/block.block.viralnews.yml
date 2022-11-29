@@ -1,0 +1,26 @@
+uuid: 8cf8a8f3-4d7c-4982-826e-c86064a2f708
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_shares
+    - system
+  theme:
+    - newsplus_lite
+id: viralnews
+theme: newsplus_lite
+region: viral_news
+weight: 0
+provider: null
+plugin: viral_news_block
+settings:
+  id: viral_news_block
+  label: 'Viral News'
+  provider: social_shares
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

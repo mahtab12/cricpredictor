@@ -1,0 +1,45 @@
+uuid: 9ffa65a9-74d8-4875-a4e9-c557866cb6ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_article_type
+field_name: field_article_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Viral Story'
+      label: 'Viral Story'
+    -
+      value: 'Latest News'
+      label: 'Latest News'
+    -
+      value: 'Recent Updates'
+      label: 'Recent Updates'
+    -
+      value: SpotLight
+      label: SpotLight
+    -
+      value: Interviews
+      label: Interviews
+    -
+      value: 'Stats and Analysis'
+      label: 'Stats and Analysis'
+    -
+      value: 'Live Blog'
+      label: 'Live Blog'
+    -
+      value: Featured
+      label: Featured
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

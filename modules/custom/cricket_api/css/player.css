@@ -1,0 +1,416 @@
+.player-stats {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+.player-stats .nav-tabs {
+  border-bottom: none
+}
+
+.player-stats .nav-tabs>li {
+  margin-bottom: 0
+}
+
+.player-stats .nav-tabs>li.mobile {
+  display: none
+}
+
+.player-stats .nav-tabs>li a {
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  color: #b7b7b7;
+  font-family: Arial;
+  font-size: 1.1em;
+  margin: 0;
+  padding: .25em 2.2em
+}
+
+.player-stats .nav-tabs>li.active>a {
+  background-color: #a5a29b;
+  border: none;
+  color: #fff
+}
+
+.player-stats .player-physical-bio {
+  padding-right: .5em
+}
+
+.player-stats .player-cricket-bio .col-padding-right,.player-stats .player-physical-bio .col-padding-right {
+  padding: .5em
+}
+
+.player-stats .player-cricket-bio .stats-header,.player-stats .player-physical-bio .stats-header {
+  background-color: #363636;
+  color: #fff;
+  font-size: .9em;
+  height: 25px;
+  padding: 4px 0 0 10px
+}
+
+.player-stats .player-cricket-bio .stats-header.tab,.player-stats .player-physical-bio .stats-header.tab {
+  padding-left: 10px
+}
+
+.player-stats .player-cricket-bio .stats-header p,.player-stats .player-physical-bio .stats-header p {
+  color: #fff
+}
+
+.player-stats .player-cricket-bio .stats-container,.player-stats .player-physical-bio .stats-container {
+  background-color: rgba(255,255,255,.6);
+  color: #363636;
+  font-family: bebas_neuebold;
+  font-size: 2em;
+  height: 50px;
+  padding-left: 10px;
+  padding-top: 5px
+}
+
+.player-stats .player-cricket-bio .stats-container span,.player-stats .player-physical-bio .stats-container span {
+  font-size: .5em
+}
+
+.player-stats .player-cricket-bio .stats-container span.superscript,.player-stats .player-physical-bio .stats-container span.superscript {
+  vertical-align: text-top
+}
+
+.player-stats .player-cricket-bio .stats-container .location-text,.player-stats .player-physical-bio .stats-container .location-text {
+  height: 3.3em
+}
+
+.player-stats .player-cricket-bio .stats-container .location-text p,.player-stats .player-physical-bio .stats-container .location-text p {
+  font-family: bebas_neuebold
+}
+
+.player-stats .player-cricket-bio .player-sharing,.player-stats .player-physical-bio .player-sharing {
+  height: 89px;
+  line-height: 89px;
+  vertical-align: middle
+}
+
+.player-stats .player-cricket-bio .player-sharing a:hover,.player-stats .player-physical-bio .player-sharing a:hover {
+  text-decoration: none
+}
+
+.player-stats .player-cricket-bio .player-sharing a:hover .fa-twitter,.player-stats .player-physical-bio .player-sharing a:hover .fa-twitter {
+  color: #0896e8
+}
+
+.player-stats .player-cricket-bio .local-club-col,.player-stats .player-physical-bio .local-club-col {
+  display: inline-block;
+  float: left;
+  width: 48%
+}
+
+.player-stats .player-cricket-bio .local-club-col p,.player-stats .player-physical-bio .local-club-col p {
+  font-family: bebas_neuebold;
+  text-align: center
+}
+
+.player-stats .player-cricket-bio .local-club-col .location-text,.player-stats .player-physical-bio .local-club-col .location-text {
+  height: 3.3em
+}
+
+.player-stats .player-cricket-bio .local-club-col .img-centered,.player-stats .player-physical-bio .local-club-col .img-centered {
+  margin: 0 auto;
+  width: 69px
+}
+
+.player-stats .player-cricket-bio .local-club-col .my-cricket-logo-link,.player-stats .player-physical-bio .local-club-col .my-cricket-logo-link {
+  display: block;
+  padding-top: 8px;
+  text-align: center
+}
+
+.player-stats .player-cricket-bio .stats-container {
+  font-size: .9em;
+  height: 103px;
+  padding-bottom: 1em;
+  padding-right: 15px;
+  padding-top: .5em
+}
+
+.player-stats .player-cricket-bio .stats-container img {
+  width: initial
+}
+
+.player-stats .tab-content {
+  margin: 0
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper {
+  background-size: cover;
+  display: block;
+  height: 400px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper .player-img {
+  right: 117px;
+  position: absolute;
+  width: 240px;
+  bottom: 0
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper .shield-player-name {
+  display: inline-block;
+  margin: 2em 2em 2em 1.5em;
+  vertical-align: top
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper .shield-player-name img {
+  margin-right: 1em;
+  padding-top: .25em;
+  vertical-align: top;
+  width: 70px
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper .shield-player-name .player-name {
+  display: inline-block;
+  font-family: tablet-gothic-narrow,serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+  vertical-align: middle
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper .shield-player-name .player-name span {
+  display: block
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper .shield-player-name .player-name span:nth-of-type(1) {
+  font-size: 2em;
+  line-height: .9em
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper .shield-player-name .player-name span:nth-of-type(2) {
+  font-size: 2.8em;
+  line-height: .9em
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper .stats-tiles-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper .stats-tiles-wrapper .stats-tiles.second {
+  margin-top: 1em
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper .stats-tiles-wrapper .stats-tiles .stats-header {
+  background-color: #363636;
+  color: #fff;
+  font-size: 1em;
+  height: 25px;
+  padding: 3px 0 0 15px
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper .stats-tiles-wrapper .stats-tiles .stats-header.tab {
+  padding-left: 10px
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper .stats-tiles-wrapper .stats-tiles .stats-header p {
+  color: #fff
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper .stats-tiles-wrapper .stats-tiles .stats-container.tab {
+  background-color: rgba(255,255,255,.4);
+  color: #007c38;
+  font-family: bebas_neuebold;
+  font-size: 5em;
+  line-height: 1em;
+  padding-left: 10px
+}
+
+.player-stats .tab-content .tab-pane .tab-content-wrapper .stats-tiles-wrapper .stats-tiles .stats-container.strike-rate-average {
+  background-color: rgba(255,255,255,.4);
+  font-family: bebas_neuebold;
+  font-size: 2em;
+  padding-left: 10px
+}
+
+.player-stats .tab-content .tab-pane .player-type-wrapper {
+  width: 250px
+}
+
+.player-stats .tab-content .tab-pane .player-facts-wrapper {
+  background-color: rgba(255,255,255,.4);
+  width: 250px
+}
+
+.player-stats .tab-content .tab-pane .player-facts-wrapper,.player-stats .tab-content .tab-pane .player-type-wrapper {
+  padding: .7em 1.5em;
+  position: relative;
+  z-index: 3
+}
+
+.player-stats .tab-content .tab-pane .player-facts-wrapper p,.player-stats .tab-content .tab-pane .player-type-wrapper p {
+  margin: 0;
+  padding: 0
+}
+
+.player-stats .tab-content .tab-pane .player-facts-wrapper p.player-type,.player-stats .tab-content .tab-pane .player-type-wrapper p.player-type {
+  font-family: tablet-gothic-narrow,serif;
+  font-size: 1.2em;
+  margin-bottom: .1em
+}
+
+.player-stats .stats-wrapper .stats-header {
+  background-color: #363636;
+  color: #fff;
+  font-size: .9em;
+  height: 25px;
+  padding: 4px 0 0 10px
+}
+
+.player-stats .stats-wrapper .stats-header.tab {
+  padding-left: 10px
+}
+
+.player-stats .stats-wrapper .stats-header p {
+  color: #fff
+}
+
+.player-stats .stats-wrapper .stats-container {
+  background-color: rgba(255,255,255,.6);
+  color: #363636;
+  font-family: bebas_neuebold;
+  font-size: 2em;
+  padding-left: 10px
+}
+
+.player-stats .stats-wrapper .stats-container span {
+  font-size: .5em
+}
+
+.player-stats .stats-wrapper .stats-container span.superscript {
+  vertical-align: super
+}
+
+.player-stats .stats-wrapper .stats-container p {
+  font-family: bebas_neuebold;
+  font-size: 1em;
+  margin: 0
+}
+
+.player-info-mobile .player-type-wrapper p.player-type,.row.secondary .heading-secondary,.series-h2h a span.series-result,.series-page-header .series-name p {
+  font-family: tablet-gothic-narrow,serif
+}
+
+.player-stats .stats-wrapper .stats-container.icons .icon-controller {
+  border: 1px solid #363636;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  display: inline-block;
+  font-size: .8em;
+  height: 35px;
+  text-align: center;
+  width: 35px
+}
+
+.player-stats .stats-wrapper .stats-container.icons .icon-controller .fa {
+  color: #363636;
+  padding-top: .3em
+}
+
+.player-stats .stats-wrapper .stats-container.icons .stats-inner-wrapper {
+  float: left;
+  margin: -.1em 0 -.3em
+}
+
+.player-stats .stats-wrapper .stats-container.icons .stats-inner-wrapper div:nth-child(1) {
+  float: left;
+  margin: -.1em 0 -.4em;
+  width: 50%
+}
+
+.player-stats .stats-wrapper .stats-container.icons .stats-inner-wrapper .vs {
+  float: left;
+  font-size: .5em
+}
+
+.player-stats .stats-wrapper .stats-container.icons .match-report {
+  float: right;
+  padding-right: .3em
+}
+
+.player-stats .general-stats {
+  padding-top: 2em
+}
+
+.player-stats .general-stats .icon-ca-CA-Icon-Like-Default:before,.player-stats .general-stats .icon-ca-CA-Icon-Share-Default:before {
+  background-color: #fff;
+  border-radius: 50px
+}
+
+.player-stats .general-stats .player-sharing .share-pop-up {
+  line-height: 1.4;
+  top: -1.8em
+}
+
+.player-stats .general-stats .share {
+  height: 89px;
+  padding-top: .5em
+}
+
+.player-stats .general-stats .share .btn {
+  background-color: transparent!important
+}
+
+.player-stats .row {
+  margin: 0 0 2em
+}
+
+.player-stats .video-players .row {
+  margin: 0 -15px
+}
+
+.player-stats .row.row-background-color.player-cricket-bio p,.player-stats .video-players .row-exclusive {
+  margin: 0
+}
+
+.player-stats .row-background-color {
+  background-color: #eee
+}
+
+.player-stats .row.row-background-color.player-cricket-bio {
+  margin-bottom: 0
+}
+
+.player-stats .player-share-column {
+  color: #363636;
+  font-size: 1.4em;
+  vertical-align: middle
+}
+
+.player-stats .player-share-column .fa-twitter {
+  color: #c8c4c0
+}
+
+.player-stats .player-share-column:hover {
+  color: #000
+}
+
+.player-stats .col-no-padding {
+  padding: 0
+}
+
+.player-stats .recent-matches table>tbody>tr>td:nth-last-child(1) {
+  text-align: center
+}
+
+.player-stats .recent-matches table>tbody>tr>td:nth-last-child(1) span {
+  border: 1px solid #363636;
+  border-radius: 65%;
+  color: #363636;
+  font-size: 1.5em;
+  padding: 4px
+}

@@ -1,0 +1,7 @@
+administer onesignal:
+  title: 'Administer OneSignal settings'
+  description: 'Perform administration tasks for OneSignal.'
+
+access onesignal:
+  title: 'Access OneSignal'
+  description: 'Access to OneSignal and its scripts.'

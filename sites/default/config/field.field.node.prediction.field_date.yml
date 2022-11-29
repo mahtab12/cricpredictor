@@ -1,0 +1,21 @@
+uuid: 62c56772-dbe9-4dd0-8487-3957dc39446e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date
+    - node.type.prediction
+  module:
+    - datetime
+id: node.prediction.field_date
+field_name: field_date
+entity_type: node
+bundle: prediction
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

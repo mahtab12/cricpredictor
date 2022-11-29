@@ -1,0 +1,26 @@
+uuid: 829c9fbf-1dae-4913-b047-795d7054a0ae
+langcode: en
+status: false
+dependencies:
+  module:
+    - social_shares
+    - system
+  theme:
+    - newsplus_lite
+id: amazonmain
+theme: newsplus_lite
+region: adslot_5
+weight: 0
+provider: null
+plugin: amazon_main
+settings:
+  id: amazon_main
+  label: 'Amazon Main'
+  provider: social_shares
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

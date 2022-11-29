@@ -1,0 +1,581 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h3><span class="number">2</span> What procedures do you want to compare?</h3>
+</div>
+
+<div class="modal-body">
+
+  <div class="row">
+    <div class="col-sm-9">
+      <h6>Quick Search</h6>
+      <div class="searchbox has-feedback has-icon no-label">
+        <input type="text" class="form-control input-lg hasclear two-tier-search" placeholder="Start typing" onkeyup="filter(this)">
+        <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span> 
+        <span class="fa fa-lg fa-search input-icon"></span>
+      </div>
+    </div>   
+    <div class="col-sm-3 pull-right"  style="width:auto" id="ctNotOwnedToggle">
+      <h6><span class="not-owned-tag">Not Owned</span></h6>
+      <div class="btn-group ownership-toggle">
+        <button type="button" class="btn btn-lg btn-default active show-notowned">Show</button>
+        <button type="button" class="btn btn-lg btn-default hide-notowned">Hide</button>
+      </div>
+    </div>
+  </div>
+
+<div class="collapsable-tree-controls">
+  <ul class="nav nav-tabs alert-tabs">
+    <li class="active"><a href="#byDevice" data-toggle="tab">Group by Device</a></li>
+    <li><a href="#byRegion" data-toggle="tab">Group by Region</a></li>
+  </ul>
+  <div class="expand-collapse-links">
+    <a href="#" class="expand-all">Expand All</a>
+    <a href="#" class="collapse-all">Collapse All</a>
+  </div>  
+</div>  
+
+  
+
+  <div class="dropdown-menu two-tier-select nondropdown tab-content">
+    <div class="row no-padding tab-pane fade active in" id="byDevice">
+      <ul class="col-sm-4 list-unstyled set-height two-tier-select-parent">
+        <li class="active"><a href="#show-all" data-toggle="tab" id="tabAll">All Markets</a></li>
+        <li class="divider"></li>  
+        <li><a href="#ct-ta-1" data-toggle="tab">Aesthetics <span class="count hide"></span></a></li>  
+        <li><a href="#ct-ta-2" data-toggle="tab">Cardiovascular <span class="count hide"></span></a></li>  
+
+      </ul>
+
+      <div class="tab-content col-sm-8 set-height has-searchbox two-tier-select-child">
+        
+        <div class="tab-pane active in" id="ct-ta-1">
+
+          <ul class="collapsable-tree">
+            <li>
+              <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#aesthetics"></span>
+              <div class="checkbox">
+                <label><input type="checkbox" name="ct-ta1-checkboxes">Aesthetics</label>
+              </div>
+              <ul class="collapse" id="aesthetics">
+                <li>
+                  <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#BreastImplantsandReconstructiveDevices"></span>
+                  <div class="checkbox">
+                    <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="Breast Implants and Reconstructive Devices">Breast Implants and Reconstructive Devices</label>
+                  </div>
+                  <ul class="collapse" id="BreastImplantsandReconstructiveDevices">
+                    <li>
+                    <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#BreastImplant"></span>
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="Breast Implants">Breast Implants</label>
+                      </div>
+                      <ul class="collapse" id="BreastImplant">
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#NorthAmerica"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="North America">North America</label>
+                          </div>
+                          <ul class="collapse" id="NorthAmerica">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="United States">United States</label>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#Europe"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="Europe">Europe</label>
+                          </div>
+                          <ul class="collapse" id="Europe">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="France">France</label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="Germany">Germany</label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="Spain">Spain</label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="United Kingdom">United Kingdom</label>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tab-pane active in" id="ct-ta-2">
+
+          <ul class="collapsable-tree">
+            <li>
+              <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#Cardiovascular"></span>
+              <div class="checkbox">
+                <label><input type="checkbox" name="ct-ta1-checkboxes">Cardiovascular</label>
+              </div>
+              <ul class="collapse" id="Cardiovascular">
+                <li>
+                  <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#AorticRepairDevices"></span>
+                  <div class="checkbox">
+                    <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="Aortic Repair Devices">Aortic Repair Devices</label>
+                  </div>
+                  <ul class="collapse" id="AorticRepairDevices">
+                    <li>
+                    <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#AAA"></span>
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="AAA">AAA</label>
+                      </div>
+                      <ul class="collapse" id="AAA">
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#NorthAmerica2"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="North America">North America</label>
+                          </div>
+                          <ul class="collapse" id="NorthAmerica2">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="United States">United States</label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="United States">United States <span class="label label-default">Custom</span></label>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#Europe2"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="Europe">Europe</label>
+                          </div>
+                          <ul class="collapse" id="Europe2">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="France">France</label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="Germany">Germany</label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="checkbox disabled not-owned">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="Spain" disabled="disabled"><span class="not-owned-tag"></span>Spain</label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="United Kingdom">United Kingdom</label>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#EVAR"></span>
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="EVAR">EVAR</label>
+                      </div>
+                      <ul class="collapse" id="EVAR">
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#NorthAmerica3"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="North America">North America</label>
+                          </div>
+                          <ul class="collapse" id="NorthAmerica3">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="United States">United States</label>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#Europe3"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="Europe">Europe</label>
+                          </div>
+                          <ul class="collapse" id="Europe3">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="France">France</label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="Germany">Germany</label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="Spain">Spain</label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-1-checkboxes" value="United Kingdom">United Kingdom</label>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>                  
+        
+      </div>
+      
+    </div>
+    <div class="row no-padding tab-pane fade" id="byRegion">
+
+
+      <ul class="col-sm-4 list-unstyled set-height two-tier-select-parent">
+        <li class="active"><a href="#show-all" data-toggle="tab" id="tabAll">All Markets</a></li>
+        <li class="divider"></li>  
+        <li><a href="#ct-re-1" data-toggle="tab">North America <span class="count hide"></span></a></li>  
+        <li><a href="#ct-re-2" data-toggle="tab">Europe <span class="count hide"></span></a></li>  
+      </ul>
+
+      <div class="tab-content col-sm-8 set-height has-searchbox two-tier-select-child">
+        
+        <div class="tab-pane active in" id="ct-re-1">
+
+          <ul class="collapsable-tree">
+            <li>
+              <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionNorthAmerica"></span>
+              <div class="checkbox">
+                <label><input type="checkbox" name="ct-ta1-checkboxes">North America</label>
+              </div>
+              <ul class="collapse" id="byRegionNorthAmerica">
+                <li>
+                  <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionUS"></span>
+                  <div class="checkbox">
+                    <label><input type="checkbox" name="ct-ta1-checkboxes">United States</label>
+                  </div>
+                  <ul class="collapse" id="byRegionUS">
+                    <li>
+                      <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionUSAesthetics"></span>
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="ct-ta1-checkboxes">Aesthetics</label>
+                      </div>
+                      <ul class="collapse" id="byRegionUSAesthetics">
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionUSAestheticsBreastImplantsandReconstructiveDevices"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-checkboxes">Breast Implants and Reconstructive Devices</label>
+                          </div>
+                          <ul class="collapse" id="byRegionUSAestheticsBreastImplantsandReconstructiveDevices">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">Breast Implants</label>
+                              </div>                            
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>                  
+                    </li>
+                    <li>
+                      <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionUSCardiovascular"></span>
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="ct-ta1-checkboxes">Cardiovascular</label>
+                      </div>
+                      <ul class="collapse" id="byRegionUSCardiovascular">
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionUSCardiovascularAorticRepairDevices"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-checkboxes">Aortic Repair Devices</label>
+                          </div>
+                          <ul class="collapse" id="byRegionUSCardiovascularAorticRepairDevices">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">AAA</label>
+                              </div>                            
+                            </li>
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">EVAR</label>
+                              </div>                            
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>                  
+                    </li>
+                  </ul>
+                </li>                
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tab-pane active in" id="ct-re-2">
+
+          <ul class="collapsable-tree">
+            <li>
+              <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionEurope"></span>
+              <div class="checkbox">
+                <label><input type="checkbox" name="ct-ta1-checkboxes">Europe</label>
+              </div>
+              <ul class="collapse" id="byRegionEurope">
+                <li>
+                  <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionFrance"></span>
+                  <div class="checkbox">
+                    <label><input type="checkbox" name="ct-ta1-checkboxes">France</label>
+                  </div>
+                  <ul class="collapse" id="byRegionFrance">
+                    <li>
+                      <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionFranceAesthetics"></span>
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="ct-ta1-checkboxes">Aesthetics</label>
+                      </div>
+                      <ul class="collapse" id="byRegionFranceAesthetics">
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionFranceAestheticsBreastImplantsandReconstructiveDevices"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-checkboxes">Breast Implants and Reconstructive Devices</label>
+                          </div>
+                          <ul class="collapse" id="byRegionFranceAestheticsBreastImplantsandReconstructiveDevices">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">Breast Implants</label>
+                              </div>                            
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>                  
+                    </li>
+                    <li>
+                      <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionFranceCardiovascular"></span>
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="ct-ta1-checkboxes">Cardiovascular</label>
+                      </div>
+                      <ul class="collapse" id="byRegionFranceCardiovascular">
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionFranceCardiovascularAorticRepairDevices"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-checkboxes">Aortic Repair Devices</label>
+                          </div>
+                          <ul class="collapse" id="byRegionFranceCardiovascularAorticRepairDevices">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">AAA</label>
+                              </div>                            
+                            </li>
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">EVAR</label>
+                              </div>                            
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>                  
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionGermany"></span>
+                  <div class="checkbox">
+                    <label><input type="checkbox" name="ct-ta1-checkboxes">Germany</label>
+                  </div>
+                  <ul class="collapse" id="byRegionGermany">
+                    <li>
+                      <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionGermanyAesthetics"></span>
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="ct-ta1-checkboxes">Aesthetics</label>
+                      </div>
+                      <ul class="collapse" id="byRegionGermanyAesthetics">
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionGermanyBreastImplantsandReconstructiveDevices"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-checkboxes">Breast Implants and Reconstructive Devices</label>
+                          </div>
+                          <ul class="collapse" id="byRegionGermanyBreastImplantsandReconstructiveDevices">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">Breast Implants</label>
+                              </div>                            
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>                  
+                    </li>
+                    <li>
+                      <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionGermanyCardiovascular"></span>
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="ct-ta1-checkboxes">Cardiovascular</label>
+                      </div>
+                      <ul class="collapse" id="byRegionGermanyCardiovascular">
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionGermanyCardiovascularAorticRepairDevices"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-checkboxes">Aortic Repair Devices</label>
+                          </div>
+                          <ul class="collapse" id="byRegionGermanyCardiovascularAorticRepairDevices">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">AAA</label>
+                              </div>                            
+                            </li>
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">EVAR</label>
+                              </div>                            
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>                  
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionSpain"></span>
+                  <div class="checkbox">
+                    <label><input type="checkbox" name="ct-ta1-checkboxes">Spain</label>
+                  </div>
+                  <ul class="collapse" id="byRegionSpain">
+                    <li>
+                      <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionSpainAesthetics"></span>
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="ct-ta1-checkboxes">Aesthetics</label>
+                      </div>
+                      <ul class="collapse" id="byRegionSpainAesthetics">
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionSpainBreastImplantsandReconstructiveDevices"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-checkboxes">Breast Implants and Reconstructive Devices</label>
+                          </div>
+                          <ul class="collapse" id="byRegionSpainBreastImplantsandReconstructiveDevices">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">Breast Implants</label>
+                              </div>                            
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>                  
+                    </li>
+                    <li>
+                      <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionSpainCardiovascular"></span>
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="ct-ta1-checkboxes">Cardiovascular</label>
+                      </div>
+                      <ul class="collapse" id="byRegionSpainCardiovascular">
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionSpainCardiovascularAorticRepairDevices"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-checkboxes">Aortic Repair Devices</label>
+                          </div>
+                          <ul class="collapse" id="byRegionSpainCardiovascularAorticRepairDevices">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">AAA</label>
+                              </div>                            
+                            </li>
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">EVAR</label>
+                              </div>                            
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>                  
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionUK"></span>
+                  <div class="checkbox">
+                    <label><input type="checkbox" name="ct-ta1-checkboxes">United Kingdom</label>
+                  </div>
+                  <ul class="collapse" id="byRegionUK">
+                    <li>
+                      <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionUKAesthetics"></span>
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="ct-ta1-checkboxes">Aesthetics</label>
+                      </div>
+                      <ul class="collapse" id="byRegionUKAesthetics">
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionUKBreastImplantsandReconstructiveDevices"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-checkboxes">Breast Implants and Reconstructive Devices</label>
+                          </div>
+                          <ul class="collapse" id="byRegionUKBreastImplantsandReconstructiveDevices">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">Breast Implants</label>
+                              </div>                            
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>                  
+                    </li>
+                    <li>
+                      <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionUKCardiovascular"></span>
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="ct-ta1-checkboxes">Cardiovascular</label>
+                      </div>
+                      <ul class="collapse" id="byRegionUKCardiovascular">
+                        <li>
+                          <span class="fa fa-minus-circle collapsed" data-toggle="collapse" href="#byRegionUKCardiovascularAorticRepairDevices"></span>
+                          <div class="checkbox">
+                            <label><input type="checkbox" name="ct-ta1-checkboxes">Aortic Repair Devices</label>
+                          </div>
+                          <ul class="collapse" id="byRegionUKCardiovascularAorticRepairDevices">
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">AAA</label>
+                              </div>                            
+                            </li>
+                            <li>
+                              <div class="checkbox checkbox-lowest-level">
+                                <label><input type="checkbox" name="ct-ta1-checkboxes">EVAR</label>
+                              </div>                            
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>                  
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>                  
+        
+      </div>
+      
+
+    </div>
+  </div>	            
+</div> 
+<div class="clearfix"></div> 
+<div class="modal-footer">
+  <button type="button" class="btn btn-lg btn-primary pull-left goto-step1"><i class="fa fa-arrow-left" aria-hidden="true"></i> Previous</button>
+  <button type="button" class="btn btn-lg btn-primary pull-right goto-step3 disabled">Next <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+  <div class="device-counts text-center">
+    <p><span class="total-count">0</span> Selected</p>
+    <p>
+      <button type="button" class="btn btn-link disabled deselect-all">Deselect All</button>
+    </p>
+  </div>
+</div>

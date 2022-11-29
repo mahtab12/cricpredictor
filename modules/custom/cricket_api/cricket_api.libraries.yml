@@ -1,0 +1,32 @@
+cricket_api:
+  version: 1.x
+  css:
+    theme:
+      css/match.css: {}
+      css/commentry.css: {}
+  js:
+    js/accord.js: {}
+
+cric_slick:
+  css:
+    theme:
+      css/slick.css: {}
+      css/slick-theme.css: {}
+      css/custom.css: {}
+  js:
+    js/slick.min.js: {}
+    js/custom.js: {}
+    js/aroundground.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal.dialog.ajax
+
+
+player_details:
+  css:
+    theme:
+      css/player.css: {}

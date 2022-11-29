@@ -1,0 +1,76 @@
+{# empty Twig template #}
+{% if content.items is empty %}
+  <div class="shadow-box">
+    <div class="error-page">
+      <h1>Sorry, we couldn't find any results for <br> <strong>{{ content.query }}</strong></h1>
+      <h2>Please check your spelling or try a more general search term</h2>
+    </div>
+    <div class="consulting-advert">
+      <h4>Can't find what you're looking for?</h4>
+      <p>Our experts can provide Real World Data and custom analysis on your area of interest.</p>
+      <p class="request-information"><a href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#consultingAdvert">Request More Information</a></p>
+    </div>
+  </div>
+{% else %}
+  {% if content.paged %}
+
+
+    {% for item in content.items %}
+      {{ item }}
+    {% endfor %}
+  {% else %}
+    {% if content.facets %}
+      <article class="search-result special-result shadow-box" id="stateSummaryBox">
+        <h1 class="result-title-big">What information are you looking for about {{ content.facetState['name'] }}?</h1>
+        <div class="row">
+          {% for facet in content.facets %}
+            <ul class="col-sm-6 sitemap-list">
+              <li><a href="{{ path('insight_search.search',{('type['~facet['type_id']~']'):(facet['type_id']),('geo['~content.selectedGeo~']'):(content.selectedGeo)}) }}" data-type={{ facet['type_id'] }}>{{ facet['type_name'] }} <span class="count">({{ facet['count'] }})</span></a></li>
+            </ul>
+          {% endfor %}
+        </div>
+      </article>
+    {% endif %}
+
+    <div class="shadow-box usma-search-items-list">            
+
+      {#    <div>#}
+      <div class="search-results-details">
+        <p class="pull-left">
+          {% trans %}
+
+            1 Item found
+
+            {% plural content.count %}
+
+            {{ content.count }} Items Found
+          {% endtrans %}
+        </p>
+        <div class="sort-btn pull-right"> 
+          <span class="btn-label">Sorted by</span> 
+          <div class="btn-group title-button">
+            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <span id="sortBy">{{ content.sortOptions[content.sort] }}</span> <span class="caret"></span></button>
+            <ul class="dropdown-menu pull-right" role="menu">
+              {% for sortKey,sortItem in content.sortOptions %}
+                <li class="{{ sortKey == content.sort?'active':'' }}"><a href="JavaScript:void(0);" data-key="{{ sortKey }}">{{ sortItem }}</a></li>
+                {% endfor %}
+            </ul>
+          </div>
+        </div> 
+        <div class="clearfix"></div>         
+      </div>
+
+
+      {% for item in content.items %}
+        {{ item }}
+      {% endfor %}
+      {#    </div>#}
+
+    </div>
+
+  {% endif %}
+{% endif %}
+
+<div class="page-loader">
+    <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+</div>

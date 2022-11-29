@@ -1,0 +1,18 @@
+uuid: 96a6407d-22c9-4fa8-83a0-71495615837f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Photo Gallery'
+type: photo_gallery
+description: 'For adding photo with description'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

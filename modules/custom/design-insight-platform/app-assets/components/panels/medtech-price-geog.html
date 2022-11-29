@@ -1,0 +1,85 @@
+<div class="panel panel-default landing-page-panel">
+  
+  <div class="panel-body"> 
+    <div class="chart-title">
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class="hide-xs"> Download </span><span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+          <li><a href="#"><span class="icon icon-excel"></span> Data to Excel</a></li>
+        </ul>
+      </div>
+      <h2>Average Selling Price</h2>
+      <h3>  
+        <div class="btn-group title-button">
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"> All Segments <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">VADs</label></li>
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">IABP Disposables</label></li>
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">TAHs</label></li>
+          </ul>
+        </div>
+        in
+        <div class="btn-group title-button">
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"> All Markets <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">United States</label></li>
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">Europe</label></li>
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">Europe (Supplementary)</label></li>
+
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">Asia Pacific</label></li>
+            <li class="checkbox"><label><input type="checkbox" checked name="group-checkboxes">Asia Pacific (Supplementary)</label></li>
+
+          </ul>
+        </div>
+      </h3> 
+    </div> 
+    <div id="lineChart3" style="height:220px; margin-top:30px;"></div>
+  </div>
+  <div class="panel-footer text-right">
+    <a href="#" class="pull-left methodology" data-target="#ModalMethod2" data-toggle="modal"><i class="fa fa-lg fa-question-circle"></i> Methodology</a>
+    <a href="#">Go to Name of Section <i class="fa fa-caret-right fa-lg"></i></a>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+	// Donut 1
+	var lineChart2 = {
+		chart: {
+            renderTo: 'lineChart3',
+        },
+		xAxis: {
+            categories: ['2014','2015','2016','2017','2018','2019','2020','2021','2022','2023']
+    },    
+    yAxis: {
+            title: {
+                text: 'ASP (USD)'
+            }
+        },
+		series: [{
+            name: 'US',
+            data: [21930,21380,21190,21890,21110,21110,21930,21380,21190,21890],
+            marker: { symbol: 'circle'}
+        },{
+            name: 'EU',
+            data: [14930,14380,14190,15890,15110,15110,14930,14380,14190,15890],
+            marker: { symbol: 'circle'}
+        },{
+            name: 'EU (Sup)',
+            data: [15930,15380,12190,13890,14110,14110,15930,15380,12190,13890],
+            marker: { symbol: 'circle'}
+        },{
+            name: 'AP',
+            data: [3930,3320,3140,5490,4110,4180,3930,3320,3140,5490],
+            marker: { symbol: 'circle'}
+        },{
+            name: 'AP (Sup)',
+            data: [9930,9380,9190,10890,10110,10110,10930,10380,10190,10890],
+            marker: { symbol: 'circle'}
+        }
+        ]
+  };
+	lineChart2 = jQuery.extend(true, {}, lineChart, lineChart2);
+  var lineChart2 = new Highcharts.Chart(lineChart2);
+</script>

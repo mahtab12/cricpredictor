@@ -1,0 +1,4 @@
+services:
+  cricket_api.fetchScore:
+    class: Drupal\cricket_api\Services\DataFetchService
+    arguments: ['@http_client']

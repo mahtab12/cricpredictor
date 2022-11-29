@@ -1,0 +1,31 @@
+{
+    "name": "drupal/onesignal",
+    "type": "drupal-module",
+    "description": "Integrates OneSignal, a push notification service.",
+    "keywords": [
+        "Drupal",
+        "OneSignal",
+        "Notifications",
+        "Push Notifications"
+    ],
+    "license": "GPL-2.0+",
+    "homepage": "https://www.drupal.org/project/onesignal",
+    "authors": [
+        {
+            "name": "George Anderson (geoanders)",
+            "homepage": "https://www.drupal.org/u/geoanders",
+            "role": "Maintainer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/onesignal",
+        "source": "https://git.drupalcode.org/project/onesignal"
+    },
+    "require": {
+        "drupal/core": "^9 || ^10",
+        "norkunas/onesignal-php-api": "^2.9",
+        "nyholm/psr7": "^1.5",
+        "symfony/http-client": "^5.4"
+    }
+}

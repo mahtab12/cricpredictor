@@ -1,0 +1,20 @@
+uuid: ee41cca6-b2b6-4c96-a43a-05a4c32302c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_format_schedule
+field_name: field_format_schedule
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

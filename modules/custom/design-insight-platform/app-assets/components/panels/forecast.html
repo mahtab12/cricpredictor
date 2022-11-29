@@ -1,0 +1,53 @@
+<div class="panel-body">
+  <div class="chart-title">
+    <div class="btn-group pull-right">
+      <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class=" text-hide">Downloads</span><span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+        <li><a href="#"><span class="icon icon-excel"></span> Data to Excel</a></li>
+      </ul>
+    </div>
+    <h2 class="hide">Forecast</h2>
+    <h3>Market Size in Major Markets</h3>  
+  </div>
+  <div id="forecast" style="height: 180px;"></div>
+</div>
+<div class="panel-footer text-right">
+  <a href="disease-2overview-1.html">Read More <i class="fa fa-caret-right fa-lg"></i></a>
+</div>
+
+<script type="text/javascript">
+var	forecastChartStackedData = {
+	chart: {
+		renderTo: 'forecast',
+	},
+	yAxis: {
+	},
+	xAxis: {
+		categories: 
+		['2013', '2023'] 
+	},	
+	series: [{
+		dataLabels: {
+             enabled: true,
+             overflow: 'none',
+             crop: false,
+             formatter: function() {
+                  return '$' + this.total + ' MM';
+              },
+              y: -25,
+              style: {
+	              fontSize: "12px", 
+	              fontWeight: "bold"
+              }
+        },
+		name: 'Japan', data: [2012,4123]
+	},{
+		name: 'EU5', data: [8000,13000]
+	},{
+		name: 'US', data: [13000,22000]
+	}]
+};
+forecastChartStackedData = jQuery.extend(true, {}, BarChartStacked, forecastChartStackedData);
+var forecastChartStackedData = new Highcharts.Chart(forecastChartStackedData);
+</script>

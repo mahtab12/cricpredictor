@@ -1,0 +1,41 @@
+From 800bfccc6708621431740a5cf33da3cadf403b0a Mon Sep 17 00:00:00 2001
+From: sunapusiddharth3 <ssiddharth@teamdrg.com>
+Date: Tue, 27 Nov 2018 00:14:39 +0530
+Subject: [PATCH] Added patch for getting signed url from AWS
+
+---
+ src/TextExtractorPluginBase.php | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/src/TextExtractorPluginBase.php b/src/TextExtractorPluginBase.php
+index 90ffcec..45e67c7 100644
+--- a/src/TextExtractorPluginBase.php
++++ b/src/TextExtractorPluginBase.php
+@@ -108,7 +108,7 @@ abstract class TextExtractorPluginBase extends PluginBase implements TextExtract
+    * {@inheritdoc}
+    */
+   public function validateConfigurationForm(array &$form, FormStateInterface $form_state) {
+-    
++
+   }
+ 
+   /**
+@@ -135,7 +135,14 @@ abstract class TextExtractorPluginBase extends PluginBase implements TextExtract
+       return $wrapper->realpath();
+     }
+     else {
+-      return $wrapper->getExternalUrl();
++      if (substr($uri, 0, 5) == 's3://') {
++         $filename = basename($uri);
++         $insight_search_service = \Drupal::service('insight_search.ReportLibraryGetSignedUrl');
++         return $insight_search_service->getSignedUrl($filename);
++      }
++      else {
++        return $wrapper->getExternalUrl();
++      }
+     }
+   }
+ 
+-- 
+2.17.2 (Apple Git-113)
+

@@ -1,0 +1,29 @@
+uuid: 58239576-351d-419a-9d1d-298dc5b51794
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_venue_match
+    - node.type.prediction
+    - taxonomy.vocabulary.stadium
+id: node.prediction.field_venue_match
+field_name: field_venue_match
+entity_type: node
+bundle: prediction
+label: Venue
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      stadium: stadium
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

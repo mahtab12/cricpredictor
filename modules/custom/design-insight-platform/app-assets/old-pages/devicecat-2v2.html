@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <title>DRG Insight Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- DRG Bootstrap Files -->
+  <link href="assets/css/drg-bootstrap.css" rel="stylesheet" media="screen" type="text/css">
+  <link href="assets/css/fontawesome.css" rel="stylesheet" media="screen" type="text/css">
+  <link href="assets/images/favicon.ico" rel="shortcut icon"> 
+  <script src="assets/js/drg-bootstrap.js"></script>
+
+  <!-- App-Specific Files -->
+  <link href="app-assets/css/insight.css" media="screen" rel="stylesheet">
+  <link href="app-assets/css/print.css" media="print" rel="stylesheet">
+  <script src="app-assets/js/load-content.js"></script> 
+  <script src="https://code.highcharts.com/highcharts.js"></script> 
+  <script src="app-assets/js/highcharts-theme-drg.js"></script> 
+  <script src="app-assets/js/charts.js"></script>
+
+</head>
+
+<body data-spy="scroll" data-target=".current-chapter">
+	
+  <div class="navbar navbar-default navbar-insights">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse"><i class="fa fa-lg fa-bars"></i></button>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-search"><i class="fa fa-lg fa-search"></i></button>
+      <a class="insight-logo" href="index.html">
+        <span class="navbar-brand drg-logo text-hide">Decision Resources Group</span>
+        <span class="insight-text">Insight Platform</span>
+      </a>
+      <form class="navbar-form navbar-left has-feedback no-label navbar-collapse collapse navbar-responsive-search">
+        <input type="text" class="form-control hasclear nav-search-box" placeholder="Type your interest area or question" value="" id="search-box" autocomplete="off">
+        
+        <span class="clearer fa fa-times-circle form-control-feedback" style="display: block;"></span>
+        <button class="btn btn-primary nav-search-button" type="button"><i class="fa fa-search fa-lg"></i></button>
+        <div class="scope-tag">Cardiac Assist Devices</div>             
+        <div data-partial="app-assets/components/searchbox.html"></div>             
+      </form>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <div data-partial="app-assets/components/navigation.html"></div>                         
+    </div>
+  </div>
+    
+  <div class="container-fluid affix-top" id="sticky-page-title">
+    <ul class="breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="browse-device.html">Devices</a></li>
+    </ul>
+    <h1 class="page-title">Cardiac Assist Devices</h1>
+    <ul class="nav nav-tabs hidden-xs hidden-sm">
+      <li><a href="devicecat-1.html"><span class="owned-tag">At a Glance</span></a></li>
+      <li class="active"><a href="devicecat-2.html"><span class="owned-tag">Market Analysis</span></a></li>
+      <li><a href="devicecat-3.html"><span class="owned-tag">Commercial Targeting</span></a></li>
+      <li><a href="#"><span class="owned-tag">Brand Tracking</span></a></li>
+      <li><a href="#"><span class="owned-tag">Data Digger</span></a></li>
+      <li><a href="#">Meet the Team</a></li>
+    </ul>
+    <div class="procedurefinder-filters">
+              <p class="strike-line"><strong>Filter Analysis</strong></p>      
+
+    <div class="row half-padding filters">
+      
+      <div class="col-md-4 col-sm-4">
+      <div class="btn-group btn-group-block">
+        <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="color: #444;"></span> <span class="hidden-xs">All Cardiac Assist Devices </span><span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li class="active"><a href="devicecat-2overview-1.html">All Cardiac Assist Devices</a></li>
+          <li><a href="device-2overview-1.html">Ventricular Assist Devices</a></li>
+          <li><a href="#">Intra-Aortic Balloon Pump Systems</a></li>
+          <li><a href="#">Total Artificial Hearts</a></li>
+          <li><a href="#">Remote Hemodynamic Monitoring Systems</a></li>
+          <li><a href="#">Cardiac Assist Pipelines</a></li> 
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  
+  </div>
+  
+  <div class="mobile-toc-panel hidden-md hidden-lg">
+    <a href="#" data-toggle="modal" data-target="#tocModal"><i class="fa fa-list-ul"></i> Table of Contents</a>
+    <a href="#"data-toggle="modal" data-target="#relatedModal"><i class="fa fa-share-alt"></i> Related Content</a>
+  </div>
+    
+  <div id="content-container">
+    <div class="toc-panel">
+      
+      <div class="sticky-toc">
+        <div class="toc">         
+          <p class="toc-title" id="tourDiseaseToc">Table of contents <a href="#" id="toc-expand">Expand all</a><a href="#" class="hide" id="toc-collapse">Collapse all</a></p>
+
+          <ul class="toc-menu nav">
+            <li class="panel"><span data-toggle="collapse" class="toc-divider collapsed" href="#csg0"><span class="owned-tag">Introduction</span><span class="owned-label">In Your Subscription</span></span>
+              <ul class="nav collapse" id="csg0">            
+                <li><a href="#">Product Descriptions</a></li>
+                <li><a href="#">Clinical Trials</a></li>
+                <li><a href="#">Clinical Landscape</a></li>
+              </ul>
+            </li>
+          </ul> 
+          
+          <ul class="toc-menu nav active">
+            <li class="panel"><span data-toggle="collapse" class="toc-divider" href="#csg1"><span class="owned-tag">United States</span><span class="owned-label">In Your Subscription</span></span>
+              <ul class="nav collapse in" id="csg1">            
+                <li class="current-chapter active"><a href="#">Market Highlights</a></li>
+                <li><a href="#">Market Definitions</a></li>
+                <li><a href="#">Market Forecast Data</a></li>
+                <li><a href="#">General Market Trends</a></li>
+                <li><a href="#">Competitive Highlights</a></li>
+                <li><a href="#">Market Shares</a></li>
+                <li><a href="#">Market Factors and Developments</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="toc-menu nav">
+            <li class="panel"><span data-toggle="collapse" class="toc-divider collapsed" href="#csg2"><span class="owned-tag">Europe</span><span class="owned-label">In Your Subscription</span></span>
+              <ul class="nav collapse" id="csg2">            
+                <li><a href="#">Market Definitions</a></li>
+                <li><a href="#">Market Highlights</a></li>
+                <li><a href="#">Factors & Development</a></li>
+              </ul>
+            </li>
+          </ul> 
+
+          <ul class="toc-menu nav">
+            <li class="panel"><span data-toggle="collapse" class="toc-divider collapsed" href="#csg3"><span class="not-owned-tag">Asia Pacific</span><span class="not-owned-label">Not In Your Subscription</span></span>
+              <ul class="nav collapse" id="csg3">            
+                <li><a href="#">Market Definitions</a></li>
+                <li><a href="#">Market Highlights</a></li>
+                <li><a href="#">Factors & Development</a></li>
+              </ul>
+            </li>
+          </ul>        
+        </div>
+      </div>
+           
+      <div class="content-panel">          
+        
+        <div class="content-body qualative-content" id="tourDiseaseContent">
+          <div class="report-header">
+          <p class="parent-name">United States</p>
+            <h1 id="chapter-top">Market Highlights</h1>
+            <p class="pub-date"><i class="fa fa-clock-o"></i> Last updated 26 May 2015</p>
+            <h2>Market Definitions</h2>
+            <p>The US market for cardiac assist devices includes VADs, IABP systems, TAHs, and remote hemodynamic monitoring systems. These devices are explained in detail in Cardiac Assist Device Descriptions.</p>
+            <h2>Market Highlights</h2>
+            <ul class="round-bullets">
+              <li>The increasing prevalence of advanced heart failure and cardiogenic shock in the US as well as the increasing number of high-risk PCI procedures will result in increasing use of most cardiac assist devices in the US, with the exception of IAB catheters, where volumes will decline slightly.</li>             
+              <li>The strong adoption of pVADs, such as the Impella device from Abiomed, will result in temporary VAD revenues surpassing durable VAD revenues in 2016 to become the largest segment in the US cardiac assist device market. Rapid growth in the temporary VAD segment will be supported by increasing product introductions, and new indications for their use.</li>              
+              <li>Blood pressure monitoring in heart failure patients is important because of device-related and physiological complications associated with elevated blood pressure (Bennett M, 2015). As a result, companies are developing durable VADs that incorporate blood monitoring capabilities—like the HeartAssist5 from ReliantHeart—and are investigating further the effect of blood pressure monitoring on device-associated stroke rates in clinical trials, such as in the ENDURANCE II trial from HeartWare.</li>              
+              <li>Targeting the larger yet less-sick NYHA Class III patient population remains difficult for most competitors in the US cardiac assist device market. Although CardioMEMS showed impressive uptake soon after introduction in 2014, unfavorable reimbursement decisions in 2015 and early 2016 by Medicare Administrative Contractors—due to their lack of confidence in the clinical benefit of CardioMEMS—have restrained further adoption in the US. Additionally, physicians and NYHA Class III patients remain skeptical about the benefits of durable VADs when weighed against the increased risk of adverse events like pump thrombosis and bleeding. As a result, several trials have been halted because of a lack of patient enrollment and safety concerns. However, percutaneous devices are in development that may address the concerns associated with implanting current generation VADs in less-sick patients.</li>              
+              <li>Several new durable and temporary VAD devices will enter the US market in the first half of the forecast period. The HeartMate 3, MVAD, and CardiacAssist5 are all eagerly awaited by physicians due to their smaller sizes and improved pump designs, which may lead to decreased rates of device-related adverse events. Longevity and reliability of durable VADs will be paramount if they are to be increasingly used for DT. In addition to the HeartMate 3, St. Jude Medical will launch the first expandable pVAD in 2017, the HeartMate PHP, which will facilitate vascular access with its low-profile while supporting increased blood flow rates in its expanded state.</li>             
+              <li>The increasing adoption of premium devices in both the IABP and temporary VAD segments, such as larger diameter IAB catheters and the Impella CP, will result in increasing aggregate ASPs in these segments of the US cardiac assist market, while other devices like durable VADs will experience pricing pressure due to their elevated ASPs.</li>
+            </ul>
+            <h2>Factors &amp; Development</h2>
+            
+          </div>
+
+        </div>
+
+        <div class="content-related" id="tourDiseaseRelated">                    
+          <div class="content-related-inner">            
+            <div class="related-toggle"><i class="fa fa-angle-double-right"></i></div>
+
+            <div class="panel panel-default related-downloads">
+              <div class="panel-heading" id="downloads2"> 
+                <h4>Downloads</h4>
+              </div>
+              <ul class="panel-body related-links list-unstyled">
+                <li><a href="#"><span class="icon icon-pdf"></span> Market Highlights</a></li>
+                <li><a href="#"><span class="icon icon-powerpoint"></span> Market Highlights (All Figures)</a></li>
+                <li><a href="#"><span class="icon icon-excel"></span> Market Highlights (All Tables)</a></li>
+              </ul>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>Meet the Team</h4>
+              </div>
+              <div class="analyst-details"> <img alt="Andrea Merseth" src="app-assets/images/analysts/andrea.jpg">
+                <p class="analyst-name">Andrea Merseth</p>
+                <p class="analyst-title">Lead Analyst, Metabolic Disorders</p>
+                <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Ask the Expert</a> <a href="#" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal">View Bio</a>
+              </div>
+              <div class="panel-footer related-footer">
+                <p><a href="disease-9analysts.html">View all Experts</a></p>
+            	</div>
+            </div>        
+                                  
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>Related Device Categories <span class="count">(7)</span></h4>
+              </div>
+              <ul class="panel-body related-links">
+                <li><a href="#">Cardiac Assist Devices</a></li>
+                <li><a href="#">Cardiac Rhythm Management Devices</a></li>
+                <li><a href="#">Clot Management Devices</a></li>   
+                <li><a href="#">Coronary Artery Bypass Graft Devices</a></li>
+                <li><a href="#">Heart Valve Devices</a></li>                
+              </ul>
+              <div class="panel-footer related-footer">
+                <p><a href="#" data-toggle="modal" data-target="#related-provider">View all Device Categories</a></p>
+            	</div>
+            </div> 
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>Related Diseases <span class="count">(5)</span></h4>
+              </div>
+              <ul class="panel-body related-links">
+                <li><a href="#">Acute Coronary Syndrome</a></li>
+                <li><a href="#">Acute Heart Failure</a></li>
+                <li><a href="#">Peripheral Arterial Disease</a></li>   
+                <li><a href="#">Pulmonary Hypertension</a></li>
+                <li><a href="#">Venous Thromboembolism</a></li>                
+              </ul>
+            </div>        
+            
+            <div class="panel panel-default">
+              <div class="panel-heading"> 
+                <h4>Related Drugs <span class="count">(12)</span></h4>
+              </div>
+              <ul class="panel-body related-links">
+                <li><a href="#">Dulaglutide</a></li>
+                <li><a href="drug-1dashboard.html">Humira</a></li>
+                <li><a href="#">Insulindegludec/liraglutide</a> </li>
+                <li><a href="#">Omarigliptin</a></li>
+                <li><a href="#">Semaglutide</a></li>
+              </ul>
+              <div class="panel-footer related-footer">
+                <p><a href="#" data-toggle="modal" data-target="#related-provider">View all Drugs</a></p>
+            	</div>
+            </div>        
+            
+          </div>         
+        </div>                
+      
+      </div>
+    </div>
+      
+  </div>
+  
+  <footer class="container-fluid background-white">
+    <div class="row">
+      <p class="col-sm-6">© 2015 DR/Decision Resources, LLC. All rights reserved.</p>
+      <ul class="col-sm-6">
+        <li><a href="http://www.decisionresources.com/Privacy-Policy.aspx" target="_blank" class="">Privacy Policy</a></li>
+        <li><a href="http://www.decisionresources.com/Terms-of-Use.aspx" target="_blank" class="">Terms of Use</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div data-partial="app-assets/components/modals.html"></div>         
+  <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="tocModal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-toc">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="relatedModal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="content-related">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+    // MODALS FOR RESPONSIVE DESIGN
+    $(document).ready(function () {
+      $('#tocModal').on('show.bs.modal', function(e) {
+        $($('.sticky-toc').contents()).appendTo('#tocModal .modal-toc')
+      });
+      $('#tocModal').on('hide.bs.modal', function(e) {
+        $($('#tocModal .modal-toc').contents()).appendTo('.sticky-toc')
+      });
+      $('#relatedModal').on('show.bs.modal', function(e) {
+        $($('.content-related').contents()).appendTo('#relatedModal .content-related')
+      });
+      $('#relatedModal').on('hide.bs.modal', function(e) {
+        $($('#relatedModal .content-related').contents()).appendTo('.toc-panel .content-related')
+      });
+      $('.mobile-toc-panel').affix({
+        offset: 152
+      });
+    });
+
+    // FIX THE DOWNLAODS ON THE RIGHT HAND SIDE
+    $(window).bind("load", function() {
+      // The Variables
+      var titleHeight = $("#sticky-page-title").height(),      
+          innerOffset = $(".content-related-inner").offset(),
+          innerHeight = $(".content-related-inner").outerHeight(),
+          whereToFix  = innerOffset.top + innerHeight - titleHeight;      
+      // If the Realted block is not taller than the window, fix the whole related block    
+      if($(window).height() > innerHeight) {
+        $('.content-related-inner').addClass('related-affix')      
+      // Else, clone the related items to be fixed, add to bottom of list and affix
+      } else {        
+        $('.related-downloads').clone(true).addClass('related-affix').appendTo('.content-related-inner');
+        $('.related-affix').affix({
+          offset: {
+            top: whereToFix
+          }
+        });
+      }      
+    });
+  </script>
+
+</body>
+
+</html>

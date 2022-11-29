@@ -1,0 +1,11 @@
+social_shares:
+  version: 1.x
+  css:
+    theme:
+      css/socialsharing.css: {}
+  js:
+    js/socialsharing.js: {}
+social_shares.views:
+  version: 1.x
+  js:
+    js/views_filter.js: {}

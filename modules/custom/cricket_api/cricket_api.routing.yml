@@ -1,0 +1,58 @@
+cricket_api:
+  path: '/cricket-match/live-scores'
+  defaults:
+    _title: Live Cricket Score
+    _controller: '\Drupal\cricket_api\Controller\MatchController::getMatches'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+cricket_api.match_details:
+  path: '/match/{series_id}/{match_id}/{team_name}/scorecard'
+  defaults:
+    _controller: '\Drupal\cricket_api\Controller\MatchDetailsController::getScores'
+    _title_callback: '\Drupal\cricket_api\Controller\MatchDetailsController::getTitle'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+cricket_api.series_lisiting:
+  path: '/series'
+  defaults:
+    _controller: '\Drupal\cricket_api\Controller\SeriesController::getList'
+    _title_callback: '\Drupal\cricket_api\Controller\SeriesController::getTitle'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+cricket_api.series_match_lisiting:
+  path: '/matches/{seriesId}'
+  defaults:
+    _controller: '\Drupal\cricket_api\Controller\SeriesController::getMatchBySeries'
+    _title_callback: '\Drupal\cricket_api\Controller\SeriesController::getSeriesTitle'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+cricket_api.player_details:
+  path: '/players/{playerId}/stats'
+  defaults:
+    _controller: '\Drupal\cricket_api\Controller\PlayerDetailsController::getPlayerDetails'
+    _title_callback: '\Drupal\cricket_api\Controller\PlayerDetailsController::getPlayerName'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+cricket_api.fetchDetails:
+  path: '/live/matches/fetch'
+  defaults:
+    _controller: '\Drupal\cricket_api\Controller\MatchController::fetchApiScore'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'

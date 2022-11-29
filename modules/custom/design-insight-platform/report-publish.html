@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <title>DRG Insight Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- DRG Bootstrap Files -->
+  <link href="assets/css/drg-bootstrap.css" rel="stylesheet" media="screen" type="text/css">
+  <link href="assets/css/fontawesome.css" rel="stylesheet" media="screen" type="text/css">
+  <link href="assets/images/favicon.ico" rel="shortcut icon"> 
+  <script src="assets/js/drg-bootstrap.js"></script>
+
+  <!-- App-Specific Files -->
+  <link href="app-assets/css/insight.css" media="screen" rel="stylesheet">
+  <link href="app-assets/css/print.css" media="print" rel="stylesheet">
+  <script src="app-assets/js/load-content.js"></script> 
+  <script src="https://code.highcharts.com/highcharts.js"></script> 
+  <script src="app-assets/js/highcharts-theme-drg.js"></script> 
+  <script src="app-assets/js/charts.js"></script>
+  <script src="app-assets/js/responsive-tab.js"></script>
+  <script src="app-assets/js/bootstrap-tour.min.js"></script>
+  <script src="app-assets/js/insight-tours.js"></script>
+
+</head>
+
+<body data-spy="scroll" data-target=".current-chapter">
+	
+  <div class="navbar navbar-default navbar-insights">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse"><i class="fa fa-lg fa-bars"></i></button>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-search"><i class="fa fa-lg fa-search"></i></button>
+      <a class="insight-logo" href="index.html">
+        <span class="navbar-brand drg-logo text-hide">Decision Resources Group</span>
+        <span class="insight-text">Insight Platform</span>
+      </a>
+      <form class="navbar-form navbar-left has-feedback no-label navbar-collapse collapse navbar-responsive-search">
+        <input type="text" class="form-control hasclear nav-search-box" placeholder="Type your interest area or question" value="" id="search-box" autocomplete="off">
+        
+        <span class="clearer fa fa-times-circle form-control-feedback" style="display: block;"></span>
+        <button class="btn btn-primary nav-search-button" type="button"><i class="fa fa-search fa-lg"></i></button>
+        <div data-partial="app-assets/components/searchbox.html"></div>             
+      </form>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <div data-partial="app-assets/components/navigation.html"></div>                         
+    </div>
+  </div>
+    
+  <div class="container-fluid affix-top" id="sticky-page-title">
+    <ul class="breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="browse-therapy.html">Diseases</a></li>
+    </ul>
+    
+    <h1 class="page-title">
+      Psoriasis<div class="btn-group" id="downloads">
+        <button type="button" class="btn btn-link btn-alert alerts-off">
+          <span class="fa fa-bell-o"></span>
+          <span class="fa fa-bell"></span>
+          <span class="hidden-xs">
+            <span class="off-text">Sign up for</span>
+            <span class="on-text">Signed up for</span> Notifications
+          </span>
+        </button>
+      </div>
+      <div class="pull-right contact-tab">
+        <a href="#" data-toggle="modal" class="btn btn-primary" data-target="#contactFrom"><i class="fa fa-comment hidden-xs"></i> Need Some Help?</a>
+      </div>
+    </h1>
+    
+    <ul class="nav nav-tabs hidden-xs hidden-sm">
+      <li><a href="disease-1dashboard.html">At a Glance</a></li>
+      <li class="dropdown active">
+        <a href="disease-2overview-1.html"  data-toggle="dropdown" aria-expanded="true">Landscape &amp; Forecast <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><span class="free-tag">Overview</span></a></li>         
+          <li><a href="disease-2overview-1.html"><span class="owned-tag">Disease Landscape &amp; Forecast</span></a></li>         
+        </ul>  
+      </li>
+      <li class="dropdown">
+       <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Epidemiology <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><span class="free-tag">Overview</span></a></li>         
+          <li><a href="disease-3epidemiology-1.html"><span class="owned-tag">Mature Markets</span></a></li>
+          <li><a href="#"><span class="not-owned-tag">Emerging Markets</span></a></li>          
+          <li><a href="#"><span class="not-owned-tag">Americas</span></a></li>          
+          <li><a href="#"><span class="owned-tag">BMS Global Data  <span class="label label-default">Custom</span></span></a></li>         
+        </ul>
+      </li>
+      <li class="dropdown">
+       <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Unmet Need <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><span class="free-tag">Overview</span></a></li>          
+          <li><a href="disease-5unmetneed-1.html"><span class="not-owned-tag">Unmet Need</span></a></li>
+          <li><a href="#"><span class="owned-tag">Unmet Need (2016)</span></a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+       <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Access &amp; Reimbursement <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="disease-7marketaccess-1-overview.html"><span class="free-tag">Overview</span></a></li>          
+          <li><a href="disease-7marketaccess-1.html"><span class="owned-tag">Access & Reimbursement (US)</span></a></li>          
+          <li><a href="disease-7marketaccess-1-L1.html"><span class="owned-tag">Access & Reimbursement (EU5)</span></a></li>         
+        </ul>
+      </li>
+      <li><a href="disease-9analysts.html">Meet the Team</a></li>
+      <li class="dropdown more-dropdown" style="display: none;">
+       <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="true">More <span class="caret"></span></a>
+        <ul class="dropdown-menu pull-right" aria-labelledby="myTabDrop1" id="myTabDrop1-contents"></ul>
+      </li>
+    </ul>
+    <div class="btn-group hidden-md hidden-lg mobile-menu">
+      <button type="button" class="btn btn-link btn-lg dropdown-toggle" data-toggle="dropdown"> Landscape &amp; Forecast <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="disease-1dashboard.html"><span class="owned-tag">At a Glance</span></a></li>
+        <li class="active"><a href="disease-2overview-1.html"><span class="owned-tag">Landscape &amp; Forecast</span></a></li>
+        <li><a href="disease-3epidemiology-1.html"><span class="owned-tag">Epidemiology</span></a></li>
+        <li><a href="disease-4current-1.html"><span class="owned-tag">Current Treatment</span></a></li>
+        <li><a href="disease-5unmetneed-1.html"><span class="owned-tag">Unmet Need</span></a></li>
+        <li><a href="disease-6emerging-1.html"><span class="owned-tag">Emerging Therapies</span></a></li>
+        <li><a href="disease-7marketaccess-1.html"><span class="owned-tag">Access &amp; Reimbursement</span></a></li> 
+        <li><a href="disease-9analysts.html"><span class="owned-tag">Meet the Team</span></a></li>
+      </ul>
+    </div>  
+  </div>
+  
+  <div class="mobile-toc-panel hidden-md hidden-lg">
+    <a href="#" data-toggle="modal" data-target="#tocModal"><i class="fa fa-list-ul"></i> Table of Contents</a>
+    <a href="#"data-toggle="modal" data-target="#relatedModal"><i class="fa fa-share-alt"></i> Related Content</a>
+  </div>
+    
+  <div id="content-container">
+    <div class="toc-panel">
+      
+      <div class="sticky-toc">
+        <div class="toc">
+          
+          <p class="toc-title" id="tourDiseaseToc">Table of contents <a href="#" id="toc-expand">Expand all</a><a href="#" class="hide" id="toc-collapse">Collapse all</a></p>          
+          <ul class="toc-menu nav">
+            <li class="panel"><span data-toggle="collapse" class="toc-divider collapsed" href="#csg1a"><span class="free-tag">Overview</span></span>                    
+              <ul class="nav collapse" id="csg1a">
+                <li><a href="#">Introduction</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="toc-menu nav active">
+            <li class="panel"><span data-toggle="collapse" class="toc-divider" href="#csg1"><span class="owned-tag">Disease Landscape &amp; Forecast</span></span>
+              <ul class="nav collapse in" id="csg1">            
+                <li class="current-chapter active panel"><a href="#">Executive Summary <span class="fa fa-lg fa-chevron-circle-down" data-toggle="collapse" href="#chapter1" aria-expanded="true"></span></a>
+                  <ul class="nav collapse in" id="chapter1">
+                    <li><a href="#">Key Findings</a></li>
+                    <li><a href="#">Market Events</a></li>
+                    <li><a href="#">Key Market Challenges and Opportunities</a></li>
+                    <li><a href="#">What Do the Experts Say?</a></li>
+                  </ul>
+                </li>
+                <li class="panel"><a href="#">Market Outlook <span class="fa fa-lg fa-chevron-circle-down collapsed" data-toggle="collapse" href="#chapter3" aria-expanded="true"></span></a>
+                  <ul class="nav collapse" id="chapter3">
+                    <li><a href="#">Key Findings</a></li>
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Market Drivers and Constraints</a></li>
+                    <li><a href="#">Drug-Class-Specific Trends</a></li>
+                  </ul>
+                </li>                
+                
+                <li class="panel"><a href="#">Etiology & Pathophysiology <span class="fa fa-lg fa-chevron-circle-down collapsed" data-toggle="collapse" href="#chapter2" aria-expanded="true"></span></a>
+                  <ul class="nav collapse" id="chapter2">
+                    <li><a href="#">Key Findings</a></li>
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Etiology</a></li>
+                    <li><a href="#">Pathophysiology</a></li>
+                    <li><a href="#">Diabetes Complications</a></li>
+                  </ul>
+                </li>
+
+                <li class="panel"><a href="#">Epidemiology <span class="fa fa-lg fa-chevron-circle-down collapsed" data-toggle="collapse" href="#chapter4" aria-expanded="true"></span></a>
+                  <ul class="nav collapse" id="chapter4">
+                    <li class="panel folder">
+                      <a class="c-section title-link active" href="#">Introduction <span href="#chapter4-1" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                      <ul id="chapter4-1" class="nav child-section collapse">  
+                        <li><a class="c-section title-link" href="#">Key Findings</a></li>
+                        <li><a class="c-section title-link" href="#">Expert Insight</a></li>
+                        <li><a class="c-section title-link" href="#">Overview</a></li>
+                      </ul>
+                    </li>  
+                    <li class="panel folder">
+                      <a class="c-section title-link" href="#">Epidemiology Populations <span href="#chapter4-2" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                      <ul id="chapter4-2" class="nav child-section collapse">  
+                        <li><a class="c-section title-link" href="#">Total Prevalent Cases</a></li>    
+                        <li><a class="c-section title-link" href="#">Diagnosed Prevalent Cases of Type 2 Diabetes</a></li>    
+                        <li><a class="c-section title-link" href="#">Drug-Treated Cases of Type 2 Diabetes</a></li>                                                        
+                      </ul>
+                    </li>  
+                  </ul>  
+                </li>
+
+                <li class="panel"><a href="#">Current Treatment <span class="fa fa-lg fa-chevron-circle-down collapsed" data-toggle="collapse" href="#chapter5" aria-expanded="true"></span></a>
+                  <ul class="nav collapse" id="chapter5">
+                    <li class="panel folder">
+                      <a class="c-section title-link active" href="#">Introduction <span href="#chapter5-1" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                      <ul id="chapter5-1" class="nav child-section collapse">  
+                        <li><a class="c-section title-link" href="#">Key Findings</a></li>
+                        <li><a class="c-section title-link" href="#">Expert Insight</a></li>
+                        <li><a class="c-section title-link" href="#">Treatment Overview</a></li>
+                      </ul>
+                    </li>  
+                    <li class="panel folder">
+                      <a class="c-section title-link active" href="#">Treatment Goals <span href="#chapter5-2" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                      <ul id="chapter5-2" class="nav child-section collapse">  
+                        <li><a class="c-section title-link" href="#">Key Physician Insights on Clinical End Points</a></li>
+                      </ul>
+                    </li>  
+                    <li class="panel folder">
+                      <a class="c-section title-link active" href="#">Key Current Therapies <span href="#chapter5-3" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                      <ul id="chapter5-3" class="nav child-section collapse">  
+                        <li><a class="c-section title-link" href="#">Overview</a></li>
+                        <li><a class="c-section title-link" href="#">DPP-IV Inhibitors</a></li>
+                        <li><a class="c-section title-link" href="#">GLP-1 Receptor Agonists</a></li>
+                        <li><a class="c-section title-link" href="#">SGLT-2 Inhibitors</a></li>
+                        <li><a class="c-section title-link" href="#">Biguanides</a></li>
+                        <li><a class="c-section title-link" href="#">Sulfonylureas</a></li>
+                        <li><a class="c-section title-link" href="#">Thiazolidinediones</a></li>
+                        <li><a class="c-section title-link" href="#">Long-Acting Insulins</a></li>
+                        <li><a class="c-section title-link" href="#">Short- and Intermediate-Acting Insulins</a></li>
+                        <li><a class="c-section title-link" href="#">Rapid-Acting Insulins</a></li>
+                      </ul>
+                    </li>
+                    <li class="panel folder">
+                      <a class="c-section title-link active" href="#">Medical Practice <span href="#chapter5-4" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                      <ul id="chapter5-4" class="nav child-section collapse">  
+                        <li><a class="c-section title-link" href="#">Overview</a></li>
+                        <li><a class="c-section title-link" href="#">Drug Selection</a></li>
+                        <li><a class="c-section title-link" href="#">Region-Specific Treatment</a></li>
+                      </ul>
+                    </li>
+                  </ul>  
+                </li>
+
+                <li class="panel"><a href="#">Unmet Need <span class="fa fa-lg fa-chevron-circle-down collapsed" data-toggle="collapse" href="#chapter6" aria-expanded="true"></span></a>
+                  <ul class="nav collapse" id="chapter6">
+                    <li class="panel folder">
+                      <a class="c-section title-link active" href="#">Introduction <span href="#chapter6-1" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                      <ul id="chapter6-1" class="nav child-section collapse">  
+                        <li><a class="c-section title-link" href="#">Key Findings</a></li>
+                        <li><a class="c-section title-link" href="#">Expert Insight</a></li>
+                      </ul>
+                    </li>  
+                    <li class="panel folder">
+                      <a class="c-section title-link active" href="#">Attainment of Unmet Needs <span href="#chapter6-2" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                      <ul id="chapter6-2" class="nav child-section collapse">  
+                        <li><a class="c-section title-link" href="#">Currrent Attainment of Unmet Needs in Type 2 Diabetes</a></li>
+                        <li><a class="c-section title-link" href="#">Future Attainment of Unmet Needs in Type 2 Diabetes</a></li>
+                      </ul>
+                    </li>  
+                  </ul>  
+                </li>
+
+                <li class="panel"><a href="#">Emerging Therapies <span class="fa fa-lg fa-chevron-circle-down collapsed" data-toggle="collapse" href="#chapter7" aria-expanded="true"></span></a>
+                  <ul class="nav collapse" id="chapter7">
+                    <li class="panel folder">
+                      <a class="c-section title-link active" href="#">Introduction <span href="#chapter7-1" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                      <ul id="chapter7-1" class="nav child-section collapse">  
+                        <li><a class="c-section title-link" href="#">Key Findings</a></li>
+                        <li><a class="c-section title-link" href="#">Expert Insight</a></li>
+                        <li><a class="c-section title-link" href="#">Pipeline Overview</a></li>
+                      </ul>
+                    </li>  
+                    <li class="panel folder">
+                      <a class="c-section title-link active" href="#">Late-Phase Pipeline Analysis <span href="#chapter7-2" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                      <ul id="chapter7-2" class="nav child-section collapse">  
+                        <li><a class="c-section title-link" href="#">Notable Developments in the Late-Phase Pipeline for Type 2 Diabetes</a></li>
+                      </ul>
+                    </li>  
+                    <li class="panel folder">
+                      <a class="c-section title-link active" href="#">Key Emerging Therapies <span href="#chapter7-3" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                      <ul id="chapter7-3" class="nav child-section collapse">  
+                        <li><a class="c-section title-link" href="#">SGLT-2 Inhibitors</a></li>
+                        <li><a class="c-section title-link" href="#">DPP-IV/SGLT-2 Inhibitor Fixed-Dose Combinations</a></li>
+                        <li><a class="c-section title-link" href="#">GLP-1 Receptor Agonists</a></li>
+                        <li><a class="c-section title-link" href="#">Long-Acting Insulin Analogues</a></li>
+                        <li><a class="c-section title-link" href="#">Rapid-Acting Insulin Analogues</a></li>
+                        <li><a class="c-section title-link" href="#">Premixed Insulins</a></li>
+                        <li><a class="c-section title-link" href="#">Long-Acting Insulin/GLP-1 Receptor Agonist Fixed-Dose Combinations</a></li>
+                      </ul>
+                    </li>
+                    <li class="panel folder">
+                      <a class="c-section title-link active" href="#">Early-Phase Pipeline Analysis <span href="#chapter7-4" data-toggle="collapse" class="fa fa-lg fa-chevron-circle-down collapsed"></span></a>
+                      <ul id="chapter7-4" class="nav child-section collapse">  
+                        <li><a class="c-section title-link" href="#">Notable Developments in the Early-Phase Pipeline for Type 2 Diabetes</a></li>
+                      </ul>
+                    </li>
+                  </ul>  
+                </li>
+                                
+                <li class="panel"><a href="#">Methods  <span class="fa fa-lg fa-chevron-circle-down collapsed" data-toggle="collapse" href="#chapter8" aria-expanded="true"></span></a>
+                  <ul class="nav collapse" id="chapter8">
+                    <li><a href="#">Market Forecast Methodology</a></li>
+                    <li><a href="#">General Sources of Data</a></li>
+                    <li><a href="#">Agents Included in Our Market Analysis</a></li>
+                    <li><a href="#">Bottom-Up Forecasting Overview</a></li>
+                    <li><a href="#">Pricing, Dosing, Days of Therapy, and Compliance Assumptions</a></li>
+                  </ul>
+                </li>
+                
+                <li class="panel"><a href="#">Appendix <span class="fa fa-lg fa-chevron-circle-down collapsed" data-toggle="collapse" href="#chapter9" aria-expanded="true"></span></a>
+                  <ul class="nav collapse" id="chapter9">
+                    <li><a href="#">Experts Interviewed</a></li>
+                    <li><a href="#">Bibliography</a></li>
+                  </ul>
+                </li>
+                
+              </ul>
+            </li>
+          </ul>
+        
+        </div>
+      </div>
+           
+      <div class="content-panel">          
+        
+        <div class="content-body qualative-content" id="tourDiseaseContent">
+          <div class="report-header">
+            <h1 id="chapter-top">Executive Summary</h1>
+            <div class="report-information">
+              <div class="report-meta pull-left">  
+                <span class="pub-date"><i class="fa fa-calendar"></i> 9 Apr 2016</span> 
+                <span class="btn-group">
+                  <a href="#" class="dropdown-toggle btn btn-link" data-toggle="dropdown" aria-expanded="false"><span class="fa fa-arrow-circle-down"></span> Download <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header">This Chapter</li>
+                    <li><a href="#"><span class="icon icon-pdf"></span> All Content</a></li>
+                    <li><a href="#"><span class="icon icon-excel"></span> All Tables</a></li>
+                    <li><a href="#"><span class="icon icon-powerpoint"></span> All Charts</a></li>
+                  </ul>
+                </span> 
+              </div>            
+              <div class="chapter-nav pull-right">
+                <span class="btn-label">Display</span>
+                <ul class="nav nav-pills">
+                  <li class="active"><a href="#" role="tab" data-toggle="tab"><i class="fa fa-list" aria-hidden="true"></i> All</a></li>
+                  <li><a href="#" role="tab" data-toggle="tab"><i class="fa fa-bar-chart" aria-hidden="true"></i> 12</a></li>
+                  <li class="disabled"><a href="#"><i class="fa fa-table" aria-hidden="true"></i> 0</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <h2 id="section1">Key Findings</h2>
+          <ul class="round-bullets">
+            <li>The type 2 diabetes (T2D) therapy market will experience strong growth over the 2013-2023 forecast period as sales increase from $26.3 billion to more than $47 billion. The main factors fueling growth are an increasing drug-treated patient population and a large pipeline of products expected to launch during this period.</li>
+            <li>The sodium glucose cotransporter (SGLT)-2 inhibitors will have the most significant impact on the T2D market. Based on their weight-loss efficacy, versatility, and low risk of hypoglycemia, we forecast the SGLT-2 inhibitors, along with their combination products, to generate sales of more than $6 billion in 2023 following their market entry in 2012.</li>
+            <li>The dipeptidyl peptidase (DPP)-IV inhibitor class held a 29% market share in 2013 and will continue to experience robust growth, given the increasing use of agents in this class in the second-line setting. Merck &amp; Co.&rsquo;s (hereafter referred to as Merck) first-in-class DPP-IV inhibitor, sitagliptin (Januvia/Xelevia), will remain the sales-leading agent until its 2022 U.S. patent expiry triggers generic decline of the overall class as well as of the T2D market.</li>
+            <li>The glucagon-like peptide (GLP)-1 receptor agonist class will also experience strong growth. Although these agents are expensive and require injections, they have a strong efficacy profile and can elicit weight loss. Several once-weekly agents are forecast to reach the market during the forecast period, helping to drive major-market sales of this class to more than $9 billion in 2023.</li>
+            <li>Sales of the long-acting insulin analogues are also expected to increase over the forecast period. Sales are expected to be driven by the launch of several novel analogues, including Sanofi&rsquo;s insulin glargine U-300 (Toujeo), and Eli Lilly&rsquo;s insulin peglispro, in addition to increased uptake of Novo Nordisk&rsquo;s insulin degludec (Tresiba). Sales of this drug class are expected to reach more than $8 billion in 2023, although overall growth will be tempered somewhat by the emergence of biosimilar versions of insulin glargine, in particular Eli Lilly/Boehringer Ingelheim&rsquo;s LY-2963016 (Basaglar/Abasaglar).</li>
+          </ul>
+          <p class="chart-table-title">Market Share of Type 2 Diabetes Drug Classes in 2013 and 2023</p>
+          <div class="btn-toolbar links-divider chart-table-downloads">
+            <div class="btn-group">
+              <a href="#" class="btn btn-link"><span class="icon icon-powerpoint"></span> Download Figure</a>
+            </div>
+            <div class="btn-group">
+              <a href="#" class="btn btn-link"><span class="icon icon-excel"></span> Download Data</a>
+            </div>
+          </div>
+          <h4 class="text-center">2013 Total = $26.3 B</h4>
+          <div id="donutChart1" style="height: 200px;" class="chart"></div>
+          <h4 class="text-center">2023 Total = $47.2 B</h4>
+          <div id="donutChart2" style="height: 200px;" class="chart"></div>
+          <script type="text/javascript">
+            var donutData1 = {
+              chart: {
+                renderTo: 'donutChart1',
+              },
+              legend: {
+                  align: 'right',
+                  verticalAlign: 'middle',
+                  layout: 'vertical',
+              },
+            	series: [{
+            	  showInLegend:true,
+            	  type: 'pie',
+            	  data: [['DPP-IV inhibitors', 29],
+            	  	     ['Long-acting insulins', 24],
+            	         ['Rapid-acting insulins', 17],
+            	         ['GLP-1 receptor agonists', 9],
+            	         ['Other insulin formulations', 9],
+            	         ['Other noninsulin antidiabetic agents', 5],
+            	         ['Metformin', 4],
+            	         ['Sulfonylureas', 2],
+            	         ['SGLT-2 inhibitors', 1],
+            	        ]
+              }]
+            };  
+            donutChart1 = jQuery.extend(true, {}, donut, donutData1);
+            var donutChart1 = new Highcharts.Chart(donutChart1);
+            
+            var donutData2 = {
+              chart: {
+                renderTo: 'donutChart2',
+              },
+          		legend: {
+                  align: 'right',
+                  verticalAlign: 'middle',
+                  layout: 'vertical',
+              },
+            	series: [{
+            	  type: 'pie',
+            	  showInLegend:true,
+            	  data: [['DPP-IV inhibitors', 18],
+            	         ['Long-acting insulins', 18],
+            	         ['Rapid-acting insulins', 13],
+            	         ['GLP-1 receptor agonists', 20],
+            	         ['Other insulin formulations', 7],
+            	         ['Other noninsulin antidiabetic agents', 4],
+            	         ['Metformin', 3],
+            	         ['Sulfonylureas', 1],
+            	         ['SGLT-2 inhibitors', 13],
+            	         ['Insulin/GLP-1 receptor agonist FDCs', 7],
+            	        ]
+            	}]
+            };  
+            donutChart2 = jQuery.extend(true, {}, donut, donutData2);
+            var donutChart2 = new Highcharts.Chart(donutChart2);
+                        
+          </script>
+          <p class="footnotes">Note: “Other noninsulin antidiabetic agents” include DPP-IV/SGLT-2 inhibitor FDCs, thiazolidinediones, meglitinides, alpha- glucosidase inhibitors, bile acid sequestrants, dopamine D2 receptor agonists, and amylin analogues. “Other insulin formulations” include short-acting insulins, intermediate-acting insulins, and premixed insulins.</p>
+          <p class="footnotes">Source: Decision Resources Group</p>
+          <h2 id="section2">Market Events</h2>
+          <h3>The approval of novel long-acting GLP-1 receptor agonists</h3>
+          <ul class="round-bullets">
+            <li><strong>Event summary: </strong> Following its FDA approval in September 2014, Eli Lilly&rsquo;s once-weekly GLP-1 receptor agonist dulaglutide (Trulicity) launched in the United States in November 2014. The EMA also granted approval to dulaglutide in November 2014. Following the EMA and FDA approval of albiglutide (GlaxoSmithKline&rsquo;s Tanzeum/Eperzan) and its U.S. launch, the GLP-1 receptor agonist market has rapidly become highly competitive.</li>
+            <li><strong>What it means for the type 2 diabetes market: </strong> The launch of these novel long-acting agents will contribute to growth in the uptake of the GLP-1 receptor agonist drug class. Due to the high price these agents command, this will result in overall growth of the type 2 diabetes market.</li>
+          </ul>
+          <h3>Johnson &amp; Johnson withdraws canagliflozin from Germany</h3>
+          <ul class="round-bullets">
+            <li><strong>Event summary: </strong> In September 2014, Johnson &amp; Johnson decided to withdraw its SGLT-2 inhibitor canagliflozin (Invokana) from the German market after failing to negotiate a suitable reimbursement price following a negative IQWiG review. As of October 15, 2014, canagliflozin is no longer available as a monotherapy in Germany. While the fixed-dose combination canagliflozin/metformin (Vokanamet) is still available, a similar negative IQWiG review in November 2014 casts significant doubt over the future of this product on the market. The SGLT-2 inhibitors&rsquo; struggles in Germany extend to empagliflozin (Boehringer Ingelheim/Eli Lilly&rsquo;s Jardiance), which IQWiG has also concluded offers no additional benefit over existing treatments.</li>
+            <li><strong>What it means for the type 2 diabetes market: </strong> The withdrawal of canagliflozin in Germany means that AstraZeneca&rsquo;s dapagliflozin (Farxiga/Forxiga), the first SGLT-2 inhibitor to launch in Europe, will continue to lead the SGLT-2 inhibitor market there. Furthermore, the SGLT-2 inhibitor class is unlikely to form a major part of the treatment algorithm in Germany, despite popularity among physicians.</li>
+          </ul>
+          <h3>Servier licenses the GLP-1 receptor agonist ITCA-650 in Europe</h3>
+          <ul class="round-bullets">
+            <li><strong>Event summary: </strong> Intarcia Therapeutics has signed a licensing agreement with Servier for its GLP-1 receptor agonist implant ITCA-650. Intarcia retains the rights to ITCA-650 in the United States and Japan, with Servier gaining commercialization rights to the drug in the European markets. Intarcia has stated its intention to seek a licensing partner for ITCA-650 in Japan, which leads us to forecast the launch of this agent in this market for the first time.</li>
+            <li><strong>What it means for the type 2 diabetes market: </strong> The agreement between Servier and Intarcia should see greater market penetration of ITCA-650 in the European markets, in which Intarcia may have struggled to establish an individual presence. Servier&rsquo;s market strength should allow for greater use of ITCA-650 throughout the major markets.</li>
+          </ul>
+          <h3>Novartis files the vildagliptin/metformin FDC for approval in Japan</h3>
+          <ul class="round-bullets">
+            <li><strong>Event summary: </strong> Following the withdrawal of vildagliptin (Galvus) and vildagliptin/metformin (Eucreas) from the German market in July 2014, Novartis has sought to boost the franchise&rsquo;s prospects by filing vildagliptin/metformin for approval in Japan in November 2014. Should the MHLW approve this agent for use in Japan, it would become the first DPP-IV inhibitor/metformin FDC to launch in that market.</li>
+            <li><strong>What it means for the type 2 diabetes market: </strong> Should vildagliptin/metformin experience rapid uptake in Japan, it could see other oral FDCs try to enter the Japanese market, which would dramatically alter the treatment landscape for type 2 diabetes in Japan.</li>
+          </ul>
+          <h2 id="section3">Key Market Challenges and Opportunities</h2>
+          <ul class="round-bullets">
+            <li><strong>Therapies offering long-term efficacy.</strong> There is great opportunity for novel antidiabetic agents that provide long-term efficacy. All current agents, apart from the insulins, lose efficacy in most patients over time, resulting in the need for regular monitoring and polypharmacy to maintain glycemic control.</li>
+            <li><strong>Therapies with a reduced risk of hypoglycemia.</strong> The risk of hypoglycemia is a major concern for both diabetic patients and their physicians. Drugs that can effectively lower blood glucose with a minimal risk of hypoglycemia, such as the DPP-IV and SGLT-2 inhibitors, allow physicians to treat T2D more aggressively, thereby helping more patients achieve HbA1c1c targets.</li>
+            <li><strong>T2D therapies offering weight loss.</strong> Many T2D patients are obese and cannot tolerate the weight gain induced by potent antidiabetic agents such as the sulfonylureas and insulins. Physicians cite the need for more drugs that either lead to weight loss or at least do not cause weight gain. The GLP-1 receptor agonists have demonstrated efficacy in weight loss, increasing their appeal for use in this patient group.</li>
+            <li><strong>Therapies demonstrating clinical cardiovascular benefits.</strong> While the list of drugs available to treat T2D is long and rapidly expanding, very few drugs have demonstrated the ability to reduce cardiovascular events. Interviewed experts cite the need for drugs that not only manage patients&rsquo; glucose levels but also reduce the risk of major adverse cardiovascular events. Several large cardiovascular outcomes trials (CVOTs) are ongoing in T2D, and their results could be highly beneficial to specific agents.</li>
+            <li><strong>A lack of T2D disease-modifying agents.</strong> Despite a fairly extensive pharmacopeia for T2D, no genuine disease-modifying drug is yet available, leaving reversal of insulin resistance and maintenance of beta-cell function a highly prized goal.</li>
+            <li><strong>Reimbursement barriers to uptake of novel agents.</strong> Payers are increasingly restricting access to the more-expensive, branded T2D therapies in the face of continued price increases for therapies such as the GLP-1 receptor agonists and long-acting insulin analogues. Such restrictions are preserving the position of cheaper therapies such as sulfonylureas within the treatment algorithm, despite associated health concerns such as weight gain and hypoglycemia.</li>
+          </ul>
+          <h2 id="section4">What Do the Experts Say?</h2>
+          <ul class="round-bullets">
+            <li>Increased consideration is being given to patients&rsquo; overall physical well-being and the need to address comorbidities in the treatment of T2D rather than the traditional singular approach of aggressive glycemic control. Physicians increasingly acknowledge the need to address the patient&rsquo;s weight, age, blood pressure, and lipid profile in deciding on a course of action for the treatment of T2D, as well as the potential impact of a T2D-specific therapy on these parameters.</li>
+            <li>Interviewed physicians highlight the SGLT-2 inhibitors as a drug class that can play a prominent role in the treatment of T2D. One U.K. physician comments, &ldquo;I think as the SGLT-2 inhibitors become more accepted and the price differential is not huge from the DPP-IV inhibitors, I think they&rsquo;ll begin to move into the second and third lines in dual and triple therapy, predominantly for patients for whom weight loss is going to be a beneficial add on. The difficulty is that we are going to see the EGFR cutoff set relatively high, which limits their use in elderly patients.&rdquo;</li>
+            <li>Thought leaders increasingly highlight the requirement for all new drugs to demonstrate an acceptable safety profile, particularly in regard to cardiovascular events. Additionally, concerns over the DPP-IV inhibitor and GLP-1 receptor agonist drug classes&rsquo; potential links with pancreatitis, cancer, and hemorrhagic events are increasingly being considered in physicians&rsquo; decision making. The requirement for CVOTs, either pre- or post-marketing approval, is increasing the development costs for new therapies.</li>
+            <li>Owing to the emergence of new, oral therapies such as the DPP-IV and SGLT-2 inhibitors, which offer superior safety profiles compared with traditional therapies such as the sulfonylureas or thiazolidinediones, physicians are increasingly favoring dual and triple oral therapy before considering injectable options such as the GLP-1 receptor agonists or insulins. The option of triple oral therapy over insulin use is highlighted as particularly attractive in light of the weight gain associated with the latter, particularly in obese patients.</li>
+            <li>One downside raised by physicians regarding the wide range of drugs available for the treatment of T2D is a measure of uncertainty in which therapy to use as a second- and third-line option following metformin. One U.S. thought leader comments, &ldquo;I think the challenge for primary care physicians is what drug do they add on to metformin when metformin alone is not adequate? The guidelines give you options, but they don&rsquo;t provide you with a process, as it were, to help you choose which one of the drugs that you should be adding onto metformin.&rdquo;</li>
+            <li>Physicians consistently highlight the increasing difficulty in prescribing certain therapies due to payer restrictions. The low price and availability of generic therapies such as metformin and sulfonylureas often dictates physicians&rsquo; initial approach to therapy. However, access to certain therapies with proven efficacy, such as Novo Nordisk&rsquo;s liraglutide (Victoza), is often limited, with many formularies requiring step therapy for AstraZeneca&rsquo;s exenatide (Byetta), while Express Scripts no longer covers liraglutide in the United States. The situation is similar in Europe, where government authorities are increasingly seeking demonstrated benefit of new therapies over existing options when entering into pricing negotiations.</li>
+          </ul>
+          <hr>
+          <div class="row">
+            <div class="col-xs-6"> </div>
+            <div class="col-xs-6"> <a href="disease-2overview-2.html#chapter-top" class="nextprev nextprev-right"> <span class="nextprev-title">Next section</span> <span class="nextprev-link">Market Outlook </span> </a> </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-related">                    
+        <div class="content-related-inner">            
+          <div class="related-toggle"><i class="fa fa-angle-double-right"></i></div>
+
+          <div class="panel panel-default shadow-panel related-downloads">
+            <div class="panel-heading"> 
+              <h4>Downloads</h4>
+            </div>
+            <ul class="panel-body related-links list-unstyled">
+              <li class="download-title">Main Content</li>
+              <li><a href="#"><span class="icon icon-pdf"></span> Landscape &amp; Forecast.pdf <span class="description">All Content</span></a></li>
+              <li class="download-title">Additional Files</li>
+              <li><a href="#"><span class="icon icon-pdf"></span> Table of Contents</span></a></li>
+              <li><a href="#"><span class="icon icon-powerpoint"></span> All Figures</a></li>
+              <li><a href="#"><span class="icon icon-excel"></span> All Tables</a></li>
+
+            </ul>
+          </div>
+
+          <div class="panel shadow-panel panel-default">
+            <div class="panel-heading">
+              <h4>Meet the Team</h4>
+            </div>
+            <div class="analyst-details">
+              <div class="analyst-image"><img alt="Andrea Merseth" src="app-assets/images/analysts/andrea.jpg"></div>
+              <p class="analyst-name">Andrea Merseth</p>
+              <p class="analyst-title">Lead Analyst, Metabolic Disorders</p>
+              <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Ask the Expert</a> <a href="#" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal">View Bio</a>
+            </div>
+            <div class="panel-footer related-footer">
+              <p><a href="disease-9analysts.html">View all Experts</a></p>
+          	</div>
+          </div>        
+                                
+          <div class="panel shadow-panel panel-default">
+            <div class="panel-body related-advert">
+              <h4>Advert Headline Goes in here</h4>
+              <img src="https://decisionresourcesgroup.com/wp-content/uploads/2015/07/research-data.jpg">
+              <p>This is the body text that you can include in an advert. You can also include an optional image. </p>
+              <p><a href="#" class="btn btn-primary btn">Call to Action</a></p>
+            </div>
+          </div> 
+
+          <div class="panel shadow-panel panel-default">
+            <div class="panel-body related-advert">
+              <h4>Extend Your Research</h4>
+              <p>Our experts can provide Real World Data and custom analysis on your area of interest.</p>
+              <p><a href="#" class="btn btn-primary btn" data-toggle="modal" data-target="#consultingAdvert">Request More Information</a></p>
+            </div>
+          </div> 
+
+          <div class="panel shadow-panel panel-default">
+            <div class="panel-heading">
+              <h4>Related Diseases <span class="count">(2)</span></h4>
+            </div>
+            <ul class="panel-body related-links">
+              <li><a href="#">Hypertension</a></li>
+              <li><a href="#">Obesity</a></li>
+            </ul>
+          </div>        
+          
+          <div class="panel shadow-panel panel-default">
+            <div class="panel-heading"> 
+              <h4>Related Drugs <span class="count">(12)</span></h4>
+            </div>
+            <ul class="panel-body related-links">
+              <li><a href="#">Dulaglutide</a></li>
+              <li><a href="drug-1dashboard.html">Humira</a></li>
+              <li><a href="#">Insulindegludec/liraglutide</a> </li>
+              <li><a href="#">Omarigliptin</a></li>
+              <li><a href="#">Semaglutide</a></li>
+            </ul>
+            <div class="panel-footer related-footer">
+              <p><a href="#" data-toggle="modal" data-target="#related-provider">View all Drugs</a></p>
+          	</div>
+          </div>        
+          
+          <div class="panel shadow-panel panel-default">
+            <div class="panel-heading">
+              <h4>Related Companies <span class="count">(5)</span></h4>
+            </div>
+              <ul class="panel-body related-links">
+                <li><a href="#">AstraZeneca</a></li>
+                <li><a href="#">Bristol Myers Squibb</a></li>
+                <li><a href="#">Marck &amp; Co.</a></li>
+                <li><a href="#">Novo Nordisk</a></li>
+                <li><a href="company-1dashboard.html">Novartis</a></li>
+              </ul>
+          </div>
+          
+          
+        </div>         
+      </div>                
+      
+    </div>
+      
+  </div>
+  
+  <footer class="container-fluid">
+    <div class="row">
+      <p class="col-sm-6">© 2015 DR/Decision Resources, LLC. All rights reserved.</p>
+      <ul class="col-sm-6">
+        <li><a href="http://www.decisionresources.com/Privacy-Policy.aspx" target="_blank" class="">Privacy Policy</a></li>
+        <li><a href="http://www.decisionresources.com/Terms-of-Use.aspx" target="_blank" class="">Terms of Use</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div data-partial="app-assets/components/modals.html"></div>         
+  <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="tocModal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-toc">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="relatedModal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="content-related">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+    // MODALS FOR RESPONSIVE DESIGN
+    $(document).ready(function () {
+      $('#tocModal').on('show.bs.modal', function(e) {
+        $($('.sticky-toc').contents()).appendTo('#tocModal .modal-toc')
+      });
+      $('#tocModal').on('hide.bs.modal', function(e) {
+        $($('#tocModal .modal-toc').contents()).appendTo('.sticky-toc')
+      });
+      $('#relatedModal').on('show.bs.modal', function(e) {
+        $($('.content-related').contents()).appendTo('#relatedModal .content-related')
+      });
+      $('#relatedModal').on('hide.bs.modal', function(e) {
+        $($('#relatedModal .content-related').contents()).appendTo('.toc-panel .content-related')
+      });
+      $('.mobile-toc-panel').affix({
+        offset: 152
+      });
+    });
+
+  </script> 
+
+  <script type="text/javascript">
+    $('.btn-alert').click(function () {	 
+      if ($(this).hasClass("alerts-off")) {
+        $(this).addClass('alerts-on');
+        $(this).removeClass('alerts-off');
+        $('.btn-alert .fa-bell').addClass('faa-ring animated faa-slow');
+        setTimeout(function(){ $('.btn-alert .fa-bell').removeClass('faa-ring animated faa-slow'); },1000);
+      } else {
+        $(this).removeClass('alerts-on');       
+        $(this).addClass('alerts-off');
+      }
+   });
+  </script>
+
+</body>
+
+</html>

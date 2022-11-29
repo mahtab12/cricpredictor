@@ -1,0 +1,43 @@
+<div class="panel panel-default landing-page-panel">
+  <div class="panel-body">
+    <div class="chart-title">
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class=" text-hide">Downloads</span><span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+          <li><a href="#"><span class="icon icon-excel"></span> Data to Excel</a></li>
+        </ul>
+      </div>
+      <h2>Market Size</h2>
+    </div>
+    <div id="forecast" style="height: 286px;margin-bottom: 15px;"></div>
+    
+  </div>
+</div>
+
+<script type="text/javascript">
+	var lineChart1 = {
+		chart: {
+            renderTo: 'forecast',
+        },
+		        xAxis: {
+            categories: ['2010', '2011', '2012', '2013', '2014', '2015','2016', '2017', '2018', '2019', '2020', '2021'],
+                  labels: {rotation: 270},
+
+        },
+    tooltip: {
+  		headerFormat: '<span style="color:{point.color}">● </span> <b>{point.x}</b><br>',
+  		pointFormat: '${point.y}m',
+  	},
+    legend: {
+        enabled: false
+    },
+		series: [{
+            name: 'Sales',
+            data: [45678,50738,54269,57789,61898,65763,70550,74954,79338,83206,86593,89930],
+            marker: { symbol: 'circle'}
+        }]
+  };
+	lineChart1 = jQuery.extend(true, {}, lineChart, lineChart1);
+  var lineChart1 = new Highcharts.Chart(lineChart1);
+</script>

@@ -1,0 +1,25 @@
+uuid: be2756b2-f679-4554-b685-3e4e535e71f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - yorkshire
+_core:
+  default_config_hash: aNdnwqyt-k0AdGaG6L12hq8ltUO1zEGo4uj34PndtS8
+id: yorkshire_branding
+theme: yorkshire
+region: brand
+weight: -1
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

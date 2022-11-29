@@ -1,0 +1,24 @@
+uuid: e7016212-33ca-42bf-803c-52bf67e374c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - social_shares
+  theme:
+    - bartik
+third_party_settings:
+  block_class:
+    classes: hidden-xs
+id: bartik_adslot1
+theme: bartik
+region: header
+weight: 0
+provider: null
+plugin: adslot_1
+settings:
+  id: adslot_1
+  label: Adslot1
+  provider: social_shares
+  label_display: '0'
+visibility: {  }

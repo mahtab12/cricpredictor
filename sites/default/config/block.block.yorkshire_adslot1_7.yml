@@ -1,0 +1,24 @@
+uuid: 1759cce9-5b57-438c-91d0-26398be291cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - social_shares
+  theme:
+    - yorkshire
+third_party_settings:
+  block_class:
+    classes: 'text-center col-xs-12'
+id: yorkshire_adslot1_7
+theme: yorkshire
+region: brand
+weight: -20
+provider: null
+plugin: adslot_1
+settings:
+  id: adslot_1
+  label: Adslot1
+  provider: social_shares
+  label_display: '0'
+visibility: {  }

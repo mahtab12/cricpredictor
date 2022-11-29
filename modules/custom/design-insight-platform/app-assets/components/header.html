@@ -1,0 +1,120 @@
+      <form class="navbar-form navbar-left has-feedback has-icon no-label">
+        <input type="text" class="form-control hasclear nav-search-box" placeholder="Type your interest area or question" id="search-box" autocomplete="off">
+        <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span>
+        <span class="fa fa-search fa-lg input-icon"></span>
+        <button class="btn btn-primary nav-search-button" type="button" onclick="window.location = 'search.html';">Go</button>
+        <ul class="list-unstyled search-suggestions dropdown-menu" id="search-suggestions">
+          <li class="dropdown-header">My Recent Searches</li>
+          <li><a href="search-disease.html">Type 2 Diabetes</a></li>
+          <li><a href="search-company.html">Novo Nordisk</a></li>
+          <li><a href="search-drug.html">Glactiv/Januvia</a></li>
+          <li><a href="search-therapy.html">Metabolic Disorders</a></li>
+          <li><a href="#">Obesity</a></li>
+          <li><a href="#">Type 2 Diabetes - Unmet Need</a></li>
+          <li><a href="search-disease1.html">Type 2 Diabetes - Overview &amp; Forecast</a></li>
+          <li><a href="#">Eli Lily</a></li>
+        </ul> 
+        <ul class="list-unstyled search-suggestions dropdown-menu" id="search-suggestions-t">
+          <li><a href="search-disease.html">T<strong>ype 2 Diabetes</strong></a></li>
+          <li><a href="#">T<strong>aisho</strong></a></li>
+           <li><a href="#">T<strong>emazepam</strong></a></li>
+           <li><a href="#">T<strong>akeda</strong></a></li>
+           <li><a href="#">T<strong>eva</strong></a></li>
+           <li><a href="#">T<strong>ramadol</strong></a></li>
+           <li><a href="#">T<strong>razodone</strong></a></li>
+           <li><a href="#">Ty<strong>bost</strong></a></li>
+
+        </ul> 
+        <ul class="list-unstyled search-suggestions dropdown-menu" id="search-suggestions-ty">
+          <li><a href="search-disease.html">Ty<strong>pe 2 Diabetes</strong></a></li>
+          <li><a href="#">Ty<strong>bost</strong></a></li>
+          <li><a href="#">Ty<strong>gacil</strong></a></li>
+          <li><a href="#">Ty<strong>kerb / Tyverb</strong></a></li>
+          <li><a href="#">Ty<strong>risa</strong></a></li>
+          <li><a href="#">Ty<strong>sabri</strong></a></li>
+          <li><a href="#">Ty<strong>vaso</strong></a></li>
+          <li><a href="#">Ty<strong>zeka / Sebivo</strong></a></li>
+        </ul> 
+        <ul class="list-unstyled search-suggestions dropdown-menu" id="search-suggestions-typ">
+          <li><a href="search-disease.html">Typ<strong>e 2 Diabetes</strong></a></li>
+          <li><a href="search-disease1.html">Typ<strong>e 2 Diabetes - Overview &amp; Forecast</strong></a></li>
+          <li><a href="#">Typ<strong>e 2 Diabetes - Epidemiology</strong></a></li>
+          <li><a href="#">Typ<strong>e 2 Diabetes - Current Treatment</strong></a></li>
+          <li><a href="#">Typ<strong>e 2 Diabetes - Unmet Need</strong></a></li>
+          <li><a href="#">Typ<strong>e 2 Diabetes - Emerging Treatment</strong></a></li>
+          <li><a href="#">Typ<strong>e 2 Diabetes - Market Access</strong></a></li>
+        </ul>          
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown"> 
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sitemap fa-lg"></i> Browse Insights <b class="caret"></b></a></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Therapy Areas &amp; Diseases</a></li>
+            <li><a href="#">Drugs</a></li>
+            <li><a href="#">Companies</a></li>
+            <li><a href="#">Devices</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right navbar-toplinks">
+        <li><a href="http://www.decisionresourcesgroup.com" target="blank">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="https://authentication.decisionresourcesgroup.com/login/Solutions" class="dropdown-toggle">My Products</a>
+        </li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Steve Clark <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://authentication.decisionresourcesgroup.com/login/MyProfile">Edit Profile</a></li>
+            <li><a href="https://authentication.decisionresourcesgroup.com/login/Password/ChangePassword">Change Password</a></li>
+            <li><a href="https://authentication.decisionresourcesgroup.com/login/Logout">Logout</a></li>
+          </ul>
+        </li>
+      </ul> 
+      <script type="text/javascript">
+        $(function() {
+          $('#search-suggestions').hide(); 
+          $('#search-box').focus(function(){ // onfocus
+            event.stopPropagation();
+           if($('#search-box').attr('placeholder')) { // if value is default value
+              $('#search-suggestions').show();
+              $('#search-suggestions-t').hide();
+              $('#search-suggestions-ty').hide(); 
+              $('#search-suggestions-typ').hide();
+            }
+          });    
+          $('#search-box').keyup(function(){
+            if($('#search-box').val() == ('')) {
+              $('#search-suggestions').show();
+              $('#search-suggestions-t').hide();
+              $('#search-suggestions-ty').hide(); 
+              $('#search-suggestions-typ').hide(); 
+            }
+            if($('#search-box').val() == ('t')) {
+              $('#search-suggestions').hide();
+              $('#search-suggestions-t').show();
+              $('#search-suggestions-ty').hide(); 
+              $('#search-suggestions-typ').hide(); 
+            }
+            if($('#search-box').val() == ('ty')) {
+              $('#search-suggestions').hide();
+              $('#search-suggestions-t').hide(); 
+              $('#search-suggestions-ty').show();
+              $('#search-suggestions-typ').hide(); 
+            }
+            if($('#search-box').val() == ('typ')) {
+              $('#search-suggestions').hide();
+              $('#search-suggestions-t').hide(); 
+              $('#search-suggestions-ty').hide();
+              $('#search-suggestions-typ').show(); 
+            } 
+          });
+          $('#search-box').click( function(event){
+            event.stopPropagation();
+          });
+          $(document).click( function(){
+            $('#search-suggestions').hide();
+            $('#search-suggestions-t').hide();
+            $('#search-suggestions-ty').hide(); 
+            $('#search-suggestions-typ').hide();
+          });
+        });
+      </script>

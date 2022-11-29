@@ -1,0 +1,1099 @@
+/* DATAVIEWER TITLE PANEL
+================================================== */
+.dataviewer-details {
+  position: relative;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.dataviewer-details .fa-table {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  font-size: 20px;
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+  background: #732875;
+  border-radius: 40px;
+  text-align: center;
+  width: 40px;
+}
+.dataviewer-title {
+  font-size: 0;
+  margin-bottom: 5px;
+  margin-left: 55px;
+  vertical-align: middle;
+}
+.dataviewer-title h2 {
+  font-size: 24px;
+  display: inline-block;
+  line-height: 40px;
+  margin-bottom: 0;
+  vertical-align: middle;
+
+}
+.dataviewer-title h2 ~ .btn-group {
+  display: inline-block;
+  margin-left: 15px;
+  vertical-align: middle;
+
+}
+.dataviewer-title .dropdown-menu {
+  padding: 15px;
+  width: 240px;  
+}
+.dataviewer-title .dropdown-menu .dropdown-footer {
+  margin: 15px -15px 0; 
+  padding: 15px 15px 0; 
+}
+
+
+.table-meta {
+  font-size: 0;
+  margin-bottom: 15px;
+}
+.table-meta li {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+.table-meta li +li {
+  border-left: 1px solid rgba(255,255,255,0.2);
+  margin-left: 15px;
+  padding-left: 15px;
+}
+.table-meta li a {
+  font-size: 14px;
+  margin-left: 3px;
+  font-weight: bold;
+  color: #fff;
+}
+.table-option {
+  width: auto !important;
+}
+.dataviewer-details p {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.dataviewer-details .btn-group {
+  margin-top: 10px;
+}
+
+.dataviewer-details .btn-default.filtered:focus, 
+.dataviewer-details .btn-default.filtered.focus, 
+.dataviewer-details .btn-default.filtered:active, 
+.dataviewer-details .btn-default.filtered.active, 
+.open > .btn-default.filtered.dropdown-toggle {
+  padding-right: 30px;
+  color: #444;
+  font-weight: normal;
+}
+
+
+.global-filters {
+  font-size: 0;
+}
+.global-filters .filter-group {
+  margin-right: 7px;
+  display: inline-block;
+}
+.no-global-filters {
+  line-height: 30px;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 7px;
+  color: #999;
+  font-weight: bold;
+}
+.global-filters-title {
+  font-size: 0;
+}
+.global-filters-title p,
+.global-filters-title .btn-group {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0;
+}
+.global-filters-title .btn-group {
+  margin-left: 7px;  
+}
+.global-filters-title .btn-default {
+  vertical-align: top;
+  margin-top: -3px;
+}
+
+.dataviewer-details .dropdown-menu {
+  padding: 5px;
+  max-width: 240px;
+  width: 240px;
+}
+.dataviewer-details .dropdown-menu li.searchbox {
+  margin: 5px 5px 10px;
+}
+.dataviewer-details .dropdown-menu a {
+  border-radius: 3px !important;
+}
+
+.dataviewer-details .dropdown-menu .checkbox label {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.filter-title {
+  font-weight: bold;
+}
+.filter-value {
+  max-width: 120px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+}
+.caret + .filter-clear {
+  border-left: 1px solid #ccc;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+.filter-group .btn-group:first-child:not(:last-child) > .btn-default {
+  border-radius: 3px 0 0 3px;
+}
+
+.filter-group .btn-group:last-child:not(:first-child) > .btn-default {
+  border-radius: 0 3px 3px 0;
+  margin-left: -1px;
+}
+
+.btn-default:hover .filter-clear {
+  color: #f47c6c
+}
+
+
+/* DATAVIEWER MODAL - GENERAL STYLES
+================================================== */
+/* Intro */
+.dataviewer-welcome-message {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);  
+}
+.dataviewer-welcome-message h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.dataviewer-welcome-message h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+.dataviewer-welcome-message p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+/* Header */
+.dataviewer-modal .modal-header {
+  padding: 30px;
+  padding-bottom: 0;
+  border-bottom: none;
+  position: relative;
+}
+.dataviewer-modal .modal-header .close {
+  margin-right: -20px;
+  margin-top: -25px
+}
+.dataviewer-modal .modal-header h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  line-height: 30px;
+  margin-bottom: 0;
+  border-bottom: 1px dotted #e5e5e5;
+  padding-bottom: 15px;
+}
+.dataviewer-modal .modal-header h3 .number {
+  font-size: 20px;
+  display: inline-block;
+  line-height: 30px;
+  border-radius: 30px;
+  width: 30px;
+  text-align: center;
+  background: #732875;
+  color: #fff;
+  margin-right: 5px;
+}
+/* Body */
+.dataviewer-modal .modal-body {
+  padding: 30px;
+  min-height: 525px;
+}
+/* Footer */
+.dataviewer-modal .modal-footer {
+  text-align: left; 
+  padding: 30px;
+  padding-top: 0;
+  border-top: 0;
+  position: relative;
+}
+.dataviewer-modal .modal-footer .btn {
+  position: relative;
+  z-index: 2;
+} 
+.dataviewer-modal .modal-footer .device-counts {
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+.dataviewer-modal .modal-footer .device-counts p {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 5px 0 0;
+}
+.dataviewer-modal .modal-footer .device-counts .btn-link {
+  padding: 0 10px;
+  height: auto;
+  line-height: 14px;
+  font-weight: normal;
+}
+.dataviewer-modal .modal-footer .device-counts .btn-link.disabled {
+  color: #999;
+}
+.modal-footer .device-counts .btn.btn-link + .btn.btn-link {
+  border-left: 1px solid #e5e5e5;
+  margin-left: 0;
+}
+/* Misc */
+.dataviewer-modal h6 {
+  margin-bottom: 5px;
+}
+.dropdown-menu li:first-child,
+.dropdown-menu li:last-child {
+  overflow: visible;
+}
+.dataviewer-modal .col-sm-divider-right + .col-sm-divider-left {
+  margin-left: -1px; 
+}
+.dataviewer-modal .col-sm-divider-right {
+  border-right: 1px dotted #e5e5e5;
+}
+.dataviewer-modal .col-sm-divider-left {
+  border-left: 1px dotted #e5e5e5;
+}
+
+
+/* DATAVIEWER MODAL - STANDARD CHECKBOX AND RADIO LIST
+================================================= */
+.dataviewer-modal li.checkbox.disabled label {
+  display: block;
+}
+.dataviewer-modal .dropdown-menu li a, 
+.dataviewer-modal .dropdown-menu li.checkbox label,
+.dataviewer-modal .dropdown-menu li.radio label {
+  margin-bottom: 1px;  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dataviewer-modal .dropdown-menu li.checkbox.active > label,
+.dataviewer-modal .dropdown-menu li.radio.active > label {
+  background: #f5f5f5;
+  color: #444;
+  font-weight: normal;
+}
+.dataviewer-modal .dropdown-menu .checkbox.disabled:not(.draggable-item) label {
+  color: #999;
+}
+.dropdown-menu.big-radio-list li.radio label {
+  font-size: 16px;
+  font-weight: bold !important;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 15px;
+}
+.big-radio-list .description {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  white-space: normal;
+}
+
+
+/* DATAVIEWER MODAL - SORTABLE CHECKBOX LIST
+================================================== */
+.selected-fields {
+  margin-top: 10px !important;
+}
+/* Sortable Checkboxes */
+li.draggable-item {
+  border-radius: 3px !important;
+  margin-bottom: 1px;
+  padding: 5px 10px;
+  border: 1px solid #e5e5e5;
+  background: #f5f5f5;
+  position: relative;  
+	cursor: move;
+	font-size: 12px;
+	line-height: 20px;
+	transition: background 0.2s;
+}
+li.draggable-item:hover {
+  background: #f1f1f1;
+}
+.sortable-placeholder {
+  border: 1px dotted #e5e5e5;
+  padding: 9px 14px;
+  background: #fff;
+  height: 32px;
+  border-radius: 3px !important;
+  margin-bottom: 1px;
+}
+/* Disabled Soratable Checkboxes */
+li.draggable-item.disabled label:after {
+  content: 'Compulsory';
+  text-transform: uppercase;
+  float: right;
+  font-size: 10px;
+  line-height: 20px;
+}
+.segment-buttons .btn-group {
+  width: 100%;
+}
+.segment-buttons .fa-times-circle,
+li.draggable-item .fa-times-circle {
+  color: #ccc;
+	transition: color 0.2s;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 32px;
+	line-height: 32px;
+	width: 32px;
+	font-size: 16px;
+	text-align:center;
+	cursor: pointer;
+}
+.segment-buttons .fa-times-circle {
+  height: 44px;
+  line-height: 44px;
+}
+.segment-buttons .fa-times-circle:hover,
+li.draggable-item .fa-times-circle:hover {
+  color: #f47c6c;	
+}
+/* Segmentation Checkbox */
+li.checkbox.has-dropdown .btn-group > label {
+  float: left;
+  padding-right: 0;
+}
+li.checkbox.has-dropdown .btn-group > label:hover {
+  background: none;
+}
+li.checkbox.has-dropdown .btn-link {
+  font-weight: normal;
+  color: #444;
+  padding-left: 0;
+  font-size: 12px;
+  min-height: 44px;
+}
+li.checkbox.has-dropdown .dropdown-menu {
+  padding: 5px;
+  margin-left: 35px;
+}
+/* Segment List */
+.active > .segment-buttons {
+  background: #f5f5f5;
+  border-radius: 3px;
+}
+.segment-buttons {
+  clear: both;
+  width: 100%;
+  z-index: 1;
+}
+.segment-buttons > li {
+  position: relative;
+}
+.segment-buttons > li + li:after {
+  content: '';
+  width: 1px;
+  height: 28px;
+  background: #e5e5e5;
+  position: absolute;
+  left: 17px;
+  top: -21px;
+}
+.segment-buttons > li .btn {
+  padding-top:0;
+  padding-bottom: 0;
+  min-height: auto;
+}
+.segment-buttons > li .btn .small {
+  display: block;
+  width: 100%;
+  text-align: left;
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-size: 9px;
+  color: #732875;
+}
+.segment-buttons > li .btn .btn-label {
+}
+/* Segment Controls */
+.segment-controls a {
+  font-size: 12px;
+  display: inline-block;
+  font-weight: normal;
+  margin-top: 10px;
+  margin-right: 7px;
+}
+.segment-controls a.disabled {
+  color: #999;
+  cursor: not-allowed;
+}
+.segment-controls .fa {
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.segment-controls .fa.disabled,
+.segment-controls .fa.disabled:hover {
+  color: #ccc;
+  cursor:not-allowed;
+}
+
+
+/* DATAVIEWER MODAL - TWO TIER SELECT
+================================================== */
+.dataviewer-modal .searchbox .form-control {
+  background: #f5f5f5;
+}
+input.input-has-value {
+  border-color: #999;
+  background: #f5f5f5;
+}
+.ownership-toggle .btn,
+.region-toggle .btn {
+  padding: 10px;
+  font-size: 14px;
+}
+.dataviewer-modal .dropdown-menu.two-tier-select {
+  width: 100%;
+  margin: 15px 0;
+  overflow: hidden;
+}
+.dataviewer-modal .set-height-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.dataviewer-modal .set-height-wrapper .set-height {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 440px;
+  max-height: 440px;
+}
+.dataviewer-modal .set-height-wrapper .set-height .dropdown-header:first-child {
+  padding-top: 0;
+}
+.dataviewer-modal .dropdown-menu.two-tier-select:before,
+.dataviewer-modal .dropdown-menu.two-tier-select:after,
+.dataviewer-modal .set-height-wrapper:before,
+.dataviewer-modal .set-height-wrapper:after {
+  content: "";
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  display: block;
+  left: 0;
+  z-index: 10
+}
+.dataviewer-modal .dropdown-menu.two-tier-select:before,
+.dataviewer-modal .set-height-wrapper:before {
+  top: 0;
+  background: #fff;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0) 0, #fff 100%);
+}
+.dataviewer-modal .dropdown-menu.two-tier-select:after,
+.dataviewer-modal .set-height-wrapper:after {
+  bottom: 0;
+  background: #fff;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
+}
+.dataviewer-modal .two-tier-select-parent {
+  background: linear-gradient(to right, #fff 0%,#f9f9f9 100%);
+
+}
+.dataviewer-modal .two-tier-select-child {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+}
+.dataviewer-modal .two-tier-select-parent,
+.dataviewer-modal .two-tier-select-child {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  z-index: 1;
+}
+.dataviewer-modal .two-tier-select-parent li {
+  margin-left: 0;
+}
+.dataviewer-modal .two-tier-select-parent li a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dataviewer-modal .two-tier-select-parent a:after {
+  right: 5px;
+  z-index: 1;
+}
+.dataviewer-modal .two-tier-select-parent li .count {
+  margin-right: 0;
+  font-weight: bold;
+  background: #732875;
+  border-radius: 3px;
+  line-height: 14px;
+  min-width: 16px;
+  font-size: 10px;
+  color: #fff;
+  text-align: center;
+  padding-left: 3px;
+  padding-right: 3px;
+  z-index: 2;
+  position: absolute;
+  border: 1px solid transparent;
+  top: 7px;
+  right: 10px;
+}
+.dataviewer-modal .two-tier-select-parent li.active .count {
+  border-color: rgba(255,255,255,0.4)
+}
+.dataviewer-modal .set-height {
+  height: 400px;
+  max-height: 400px;
+}
+.dataviewer-modal .dropdown-menu .two-tier-select-child li.checkbox.grandparent-checkbox label {
+  padding-left: 35px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.dataviewer-modal .dropdown-menu .two-tier-select-child li.checkbox label {
+  padding-left: 85px;
+}
+.dataviewer-modal .dropdown-menu .two-tier-select-child li.checkbox.parent-checkbox label {
+  padding-left: 60px;
+  font-weight: bold;
+}
+.dataviewer-modal .dropdown-menu .two-tier-select-child li.checkbox.child-checkbox label {
+  padding-left: 110px;
+}
+.dataviewer-modal .two-tier-select-child .checkbox label .owned-tag,
+.dataviewer-modal .two-tier-select-child .checkbox label .not-owned-tag,
+.dataviewer-modal .two-tier-select-child .checkbox label .fa-lock {
+  position: absolute;
+  left: 62px;
+  top: 6px;
+  font-size: 14px;
+  color: #bbb;
+}
+.dataviewer-modal .two-tier-select-child .parent-checkbox {
+  border-top: 1px dotted #e5e5e5;
+  padding-top: 5px;
+  margin-top: 5px !important;
+}
+.dataviewer-modal .two-tier-select-child .tab-pane.active:not(.hide) ~ .tab-pane.active:not(.hide):before {
+  content: '';
+  height: 1px;
+  border-bottom: 1px solid #e5e5e5;
+  display: block;
+  margin: 15px 0 15px 20px;
+}
+.dataviewer-modal .two-tier-select-child li {
+  margin-left: 20px !important;
+  margin-right: 0  !important;
+}
+.dataviewer-modal .two-tier-select-parent li.divider {
+  margin: 5px 0;
+}
+.dataviewer-modal .parent-checkbox label {
+  font-weight: bold !important;
+}
+
+.dataviewer-modal .dropdown-menu.nondropdown li.divider {
+  margin: 5px 0;
+  border-top: 1px dotted #e5e5e5;
+  background: none;
+}
+.dataviewer-modal .dropdown-header {
+  color: #444;
+  padding-left: 0;
+}
+.dataviewer-modal .dropdown-header[data-toggle="modal"] {
+  cursor: pointer;
+}
+.dataviewer-modal .dropdown-header .not-owned-label {
+  padding-left: 15px;
+  font-size: 11px;
+}
+.dataviewer-modal h4 {
+  margin-bottom: 5px;
+}
+
+
+/* LOADING TRANSITIONS 
+================================================== */
+.nodata .panel-table,
+.nodata footer {
+  display: none;
+}
+.panel-table,
+footer {
+  display: block;
+}
+.loading-data .dataviewer-loader {
+  opacity: 1;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+.dataviewer-loader {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+}     
+.loading-data .dataviewer-loader {
+  z-index: 10;
+  display: block;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  font-size: 32px;
+  text-align: center;
+  padding-top: 250px;
+  height: calc(100% - 65px);
+  background: rgba(255,255,255,0.9);
+}
+.loading-data .dataviewer-loader .fa {
+  color: #732875;
+}   
+
+
+/* TABLE STYLES
+================================================== */
+.table-wrapper {
+  border-radius: 3px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, .05), 0 1px 2px 0 rgba(0, 0, 0, .2);
+  padding: 5px;
+  overflow: hidden;
+}
+.table-wrapper table.table-dataviewer {
+  border-collapse: collapse;
+  width: 100%;
+  overflow-x: scroll;
+  display: block;
+  background: linear-gradient(90deg, white 20%, rgba(255, 255, 255, 0)), 
+              linear-gradient(270deg, white 20%, rgba(255, 255, 255, 0)) 100% 0, 
+              linear-gradient(90deg, rgba(0, 0, 0, .1) 10%, rgba(255, 255, 255, 0)), 
+              linear-gradient(270deg, rgba(0, 0, 0, .1) 10%, rgba(255, 255, 255, 0)) 100% 0;
+  background-repeat: no-repeat;
+  background-size: 30px 100%, 30px 100%, 10px 100%, 10px 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+.table-wrapper table.table-dataviewer thead, 
+.table-wrapper table.table-dataviewer tbody {
+  display: block;
+}
+.table-wrapper table.table-dataviewer tbody {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: auto;
+}
+.table-wrapper  .table.table-dataviewer > tbody > tr > td {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: none;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 16px !important;
+  border-left: 1px solid #e5e5e5;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.table.table-dataviewer  > thead > tr > th {
+  border-bottom: 1px solid #444;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.80);
+  padding: 10px;
+  font-size: 14px;
+  line-height: 16px !important;
+  border-left: 1px solid #555;
+}
+.table.table-dataviewer > tbody > tr > td.border-left-thick,
+.table.table-dataviewer  > thead > tr > th.border-left-thick {
+  border-left-width: 2px;
+}
+.table.table-dataviewer > tbody > tr > td.border-left-thick {
+  border-left-color: #ccc;
+}
+.table.table-dataviewer  > thead > tr > th.border-left-thick {
+  border-left-color: #999;
+}
+.table.table-dataviewer  > thead > tr > th:first-child,
+.table.table-dataviewer  > tbody > tr > td:first-child {
+  border-left: 0px;
+}
+.table.table-dataviewer  > thead > tr > th:last-child,
+.table.table-dataviewer  > tbody > tr > td:last-child {
+  padding-right: 30px;
+}
+.no-vertical-scroll .table.table-dataviewer  > thead > tr > th:last-child,
+.no-vertical-scroll .table.table-dataviewer  > tbody > tr > td:last-child {
+  padding-right: 10px;
+}
+.table.table-dataviewer > tbody > tr > td.fake-rowspan,
+.table.table-dataviewer > tbody > tr.shaded-row > td.fake-rowspan {
+  border-top-color: transparent;
+  color: transparent;
+  background: none;
+}
+.table.table-dataviewer > tbody > tr.row-total > td:empty {
+  border-left: none !important; 
+}
+.table.table-dataviewer > tbody > tr.row-total > td:not(.fake-rowspan) {
+  border-top: 3px double #ddd;
+  font-weight: bold;
+}
+.table.table-dataviewer > tbody > tr:hover > td.fake-rowspan {
+  color: #999;
+  font-weight: normal !important;
+}
+.table-wrapper table.table-dataviewer td.column-number, 
+.table-wrapper table.table-dataviewer th.column-number {
+  min-width: 130px;
+  max-width: 130px;
+}
+.table-wrapper table.table-dataviewer td.column-text, 
+.table-wrapper table.table-dataviewer th.column-text {
+  min-width: 200px;
+  max-width: 200px;
+}
+.table-wrapper.no-horizontal-scroll {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+}
+.table.table-dataviewer > tbody > tr > td, 
+.table.table-dataviewer > tfoot > tr > td {
+   background: transparent;  
+}
+.table.table-dataviewer > tbody > tr > td.shaded-cell,
+.table.table-dataviewer > tfoot > tr > td.shaded-cell,
+.table.table-dataviewer > tbody > tr.shaded-row > td,
+.table.table-dataviewer > tfoot > tr.shaded-row > td {
+  background-color: rgba(50,50,50,0.05);
+}
+.table.table-dataviewer.table-hover > tbody > tr:hover,
+.table.table-dataviewer > tbody > tr.shaded-row:hover > td {
+  background-color: rgba(171,42,175,0.08);
+}
+
+/* Table Header Option */
+.table.table-dataviewer th .btn-group {
+  display: block;
+  height: 18px;  
+}
+.table.table-dataviewer th .fieldheader {
+  position: relative;
+  display: block;
+}
+.table.table-dataviewer th .fa-sort {
+  color: #999;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.table.table-dataviewer th .fa-sort:hover {
+  color: #fff;
+}
+.table.table-dataviewer th .col-title {
+  padding: 10px 30px 3px 10px;
+  display: inline-block;
+  position: relative;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+.table.table-dataviewer th.draggable .col-title {
+  cursor: move;  
+}
+.table.table-dataviewer th.draggable .col-title:hover {
+  color: #e5e5e5;
+}
+.table.table-dataviewer th .btn-link {
+  padding: 0;
+  color: #999;
+  font-size: 12px;
+  line-height: 18px;
+  height: auto;
+  font-weight: normal;
+}
+.table.table-dataviewer th .btn-link .fa-filter {
+  background: #999;
+  color: #f5f5f5;
+  border-radius: 14px;
+  line-height: 14px;
+  font-size: 8px;
+  width: 14px;
+  text-align: center;
+}
+.table.table-dataviewer th .btn-link ~ .dropdown-menu {
+  padding: 5px;
+  margin-top: 10px;
+  margin-left: -6px;
+  width: 200px;
+}
+.table.table-dataviewer th .btn-link ~.dropdown-menu .fa-times-circle {
+  font-size: 14px;
+}
+.table.table-dataviewer th .btn-link ~.dropdown-menu.set-height,
+.table.table-dataviewer th .btn-link ~.dropdown-menu .set-height {
+  height: 260px;
+  max-height: 260px;
+}
+.table.table-dataviewer th .btn-link ~ .dropdown-menu .checkbox label {
+  font-weight: normal;
+  font-size: 12px;
+  font-family: "Avenir T_R W01", Helvetica, Arial, sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 200px;
+  max-width: 200px;
+}
+  
+.table.table-dataviewer th .btn-link ~ .dropdown-menu li.searchbox {
+  margin: 0 0 5px;
+}
+
+.table.table-dataviewer th .open .btn-link .fa-filter,
+.table.table-dataviewer th .btn-link:hover .fa-filter {
+  background: #888;
+  color: #f5f5f5;
+}
+
+/* Dragable Colum Styles */
+.dragtable-sortable { 
+  list-style-type: none; margin: ; padding: 0; -moz-user-select: none;
+}
+.dragtable-sortable li {
+  margin: 0; padding: 0; float: left; background: white; 
+  margin-top: -0.5px;
+}
+.ui-sortable-helper {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+.ui-sortable-placeholder { 
+  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.4) inset;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4) inset;
+  visibility: visible !important;
+  background: #f5f5f5 !important; 
+}
+.ui-sortable-placeholder * { 
+  opacity: 0.0; 
+  visibility: hidden;
+}
+.dragtable-sortable + .table-dataviewer th .fa,
+.dragtable-sortable + .table-dataviewer th .btn-group,
+.dragtable-sortable + .table-dataviewer th .col-title {
+  opacity: 0.0; 
+  visibility: hidden;
+}
+.dragtable-sortable li .table th { 
+  border-left: 1px solid #555 !important;
+  height: 60px !important;
+  overflow: hidden;
+}
+.dragtable-sortable li .table td { 
+  border-left: 1px solid #e5e5e5 !important;
+}
+.dragtable-sortable li:first-child .table th,
+.dragtable-sortable li:first-child .table td { 
+  border-left: 0px solid #e5e5e5 !important;
+}
+.dragtable-sortable {
+  overflow: hidden !important;
+}
+
+/* MISC
+================================================== */
+.alert.alert-warning.alert-dismissible {
+  padding: 10px 30px 10px 10px;
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+.alert-dismissable .close, .alert-dismissible .close {
+  position: relative;
+  top: -8px;
+  right: -20px;
+  opacity: 0.8;
+}
+.alert-dismissable .close, .alert-dismissible .close:hover {
+  opacity: 1;
+  color: #fff;
+}
+.container-fluid.container-dataviewer {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.container-fluid.container-dataviewer ~ footer.container-fluid {
+  margin-top: 30px;
+}
+
+
+.collapsable-tree {
+  margin-left: 20px;
+}
+.collapsable-tree,
+.collapsable-tree ul {
+  list-style: none;
+  position: relative;
+}
+.collapsable-tree .radio,
+.collapsable-tree .checkbox {
+  margin: 0;
+  padding-top: 0;
+}
+.collapsable-tree .radio label,
+.collapsable-tree .checkbox label {
+  padding: 5px 5px 5px 30px;
+  border-radius: 3px;
+  display: block;
+}
+
+.collapsable-tree .checkbox label input[type=checkbox], 
+.collapsable-tree .radio label input[type=radio] {
+  margin-top: 0;
+  margin-left: -25px;
+}
+.collapsable-tree .checkbox label:hover,
+.collapsable-tree .radio label:hover {
+  background: #f5f5f5;
+}
+.collapsable-tree li {
+  margin-left: 20px;
+  padding-left: 0;
+  position: relative;
+
+}
+.collapsable-tree li [data-toggle="collapse"] {
+  position: absolute;
+  left: -21px;
+  top: 3px;
+  line-height: 20px;
+  width: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+  cursor: pointer;
+  z-index: 2;
+}
+.collapsable-tree li [data-toggle="collapse"]:before {
+  background: #fff;
+  border-left: 1px solid #fff;
+}
+.collapsable-tree li [data-toggle="collapse"]:hover {
+  color: #666;
+}
+.collapsable-tree li .collapsed[data-toggle="collapse"]:before {
+  content: '\f055';
+}
+.dataviewer-modal .two-tier-select-child .collapsable-tree .checkbox label .not-owned-tag {
+  position: absolute;
+  left: 6px;
+  top: 4px;
+}
+
+.collapsable-tree ul li:before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  left: -30px;
+  top: 13px;
+  background: #e9e9e9;
+  z-index: 1;   
+}
+.collapsable-tree ul li:last-child:after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: calc(100% - 14px);
+  left: -31px;
+  top: 14px;
+  background: white;
+  z-index: 2;
+  display: block !important; 
+}
+.collapsable-tree ul:before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  left: -11px;
+  top: -13px;
+  background: #e9e9e9;
+  z-index: 1;   
+  display: block !important;
+}
+
+
+
+.collapsable-tree .label.label-default {
+  background: #999;
+  margin-left: 2px;
+  font-size: 70%;
+  vertical-align: 20%;
+}
+
+.indeterminate {
+  font-weight: bold;
+}
+
+
+.collapsable-tree-controls {
+  margin-top: 30px;
+  margin-bottom: -5px;
+  position: relative;
+}
+.dataviewer-modal .nav-tabs.alert-tabs {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.expand-collapse-links {
+  position: absolute;
+  font-size: 0;
+  top: 15px;
+  right: 0;
+}
+.expand-collapse-links a {
+  font-size: 12px;
+}
+.expand-collapse-links a + a {
+  padding-left: 10px;
+  margin-left: 10px;
+  border-left: 1px solid #e5e5e5;
+}

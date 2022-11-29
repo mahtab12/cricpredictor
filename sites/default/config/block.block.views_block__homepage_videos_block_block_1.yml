@@ -1,0 +1,30 @@
+uuid: 7802de76-ba73-416f-a9f6-53ccb5ef86d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.homepage_videos_block
+  module:
+    - system
+    - views
+  theme:
+    - newsplus_lite
+id: views_block__homepage_videos_block_block_1
+theme: newsplus_lite
+region: homepage_video
+weight: 0
+provider: null
+plugin: 'views_block:homepage_videos_block-block_1'
+settings:
+  id: 'views_block:homepage_videos_block-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

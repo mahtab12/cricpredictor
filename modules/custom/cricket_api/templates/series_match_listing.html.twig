@@ -1,0 +1,70 @@
+{% for item in data  %}
+    <div class="live-match-panel upcoming">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="col-xs-12 col-md-8 up-match-date">
+            <p class="match-date">{{ item.startDateTime | date("D, d M, h:i a", "Asia/Calcutta") }} IST</p>
+          </div>
+          <div class="col-md-4 hidden-xs">
+            <p class="live-now-soon soon">{{ item.status }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="match-details">
+              <p class="text-center series-name">{{ item.series.name }} <span>,</span>{{ item.name }}</p>
+              <p class="text-center venue-name">{{ item.venue.name }}</p>
+            </div>
+          </div>
+          <div class="match-wrapper row">
+            <div class="team n01 col-md-5" style="color: #006f3b">
+              <div class="team-wrapper left ">
+                <div class="team-name">
+                  <span class="teamLogo">
+                    <img src="{{ item.homeTeam.logoUrl }}">
+                  </span>
+                  <span class="teamName" style="color:{{ item.homeTeam.teamColour }}">{{ item.homeTeam.shortName }}</span>
+                </div>
+                <hr class="row-style" style="border-bottom: 3px solid {{ item.homeTeam.teamColour }}">
+                <p class="score-win" style="color:{{ item.homeTeam.teamColour }} ">
+                  {{ item.scores.homeScore }}
+                  <span class="overs">{{ item.scores.homeOvers }}</span>
+                </p>
+              </div>
+            </div>
+            <div class="fix-logo col-md-2">
+              <img src="{{ item.series.shieldImageUrl }}" class="matchType">
+            </div>
+            <div class="team n02 col-md-5">
+              <div class="team-wrapper right">
+                <div class="team-name">
+                  <span class="teamName" style="color:{{ item.awayTeam.teamColour }}">{{ item.awayTeam.shortName }}</span>
+                  <span class="teamLogo">
+                    <img src="{{ item.awayTeam.logoUrl }}">
+                  </span>
+                </div>
+                <hr class="row-style" style="border-bottom: 3px solid {{ item.awayTeam.teamColour }}">
+                <p class="score-win" style="color: {{ item.awayTeam.teamColour }}">
+                  {{ item.scores.awayScore }}
+                  <span class="overs">{{ item.scores.awayScore }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <p class="text-center summary-text">{{ item.matchSummaryText }}</p>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 text-center pad-10">
+              <a href="/match/{{ item.id }}/{{ item.series.id }}/{{ item.homeTeam.shortName | lower }}-vs-{{ item.awayTeam.shortName | lower }}/scorecard" target="_self" class="btn btn-primary">Match Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+<div class="full text-center">
+  <a href="/cricket-match/live-scores" class="btn btn-success">View Full Fixtures</a>
+</div>

@@ -1,0 +1,259 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\insight_search\SearchReportDocumentCreation;
+use Drupal\insight_search\SearchReportLibraryDocumentCreation;
+use Drupal\Core\Url;
+use Drupal\Core\Template\Attribute;
+
+const MACCI_UNIT_NAME = 'usma';
+const SCMS_UNIT_NAME = 'scms';
+
+function insight_search_search_api_solr_documents_alter(&$documents, \Drupal\search_api\IndexInterface $index, array &$items) {
+  $unit = \Drupal\Core\Site\Settings::get('product_source_index');
+  if($unit == 'scms'){
+    //helper fns
+    //$document->getFields() - gives the fields set for indexing.
+    $report_service = \Drupal::service('content_tree.ReportService');
+    $entity_manager_service = \Drupal::service('entity_type.manager');
+    $chapter_service = \Drupal::service('content_tree.chapterService');
+    $folder_service = \Drupal::service('content_tree.FolderService');
+    $search_document_creation_service = \Drupal::service('insight_search.SearchDocumentCreation');
+    foreach ($documents as $document) {
+      $document_nid = $document->its_nid;
+      $document_type = $document->ss_type;
+      if($document_type == 'digital_content_library'){
+        //$searchDigitalReportLibraryDocumentCreation = new SearchReportLibraryDocumentCreation($report_service,$entity_manager_service,$chapter_service,$folder_service);
+        $searchDigitalReportLibraryDocumentCreation = new SearchReportLibraryDocumentCreation($entity_manager_service);
+        $searchDigitalReportLibraryDocumentCreation->setContentTreeService($report_service, $chapter_service, $folder_service);
+        //$searchDigitalReportLibraryDocumentCreation = new SearchReportLibraryDocumentCreation($report_service,$entity_manager_service,$chapter_service,$folder_service);
+        $document = $searchDigitalReportLibraryDocumentCreation->createDocument($document,'digital');
+      }elseif($document_type == 'report_library'){
+        //$searchReportLibraryDocumentCreation = new SearchReportLibraryDocumentCreation($report_service,$entity_manager_service,$chapter_service,$folder_service);
+        $searchReportLibraryDocumentCreation = new SearchReportLibraryDocumentCreation($entity_manager_service);
+        $searchReportLibraryDocumentCreation->setContentTreeService($report_service, $chapter_service, $folder_service);
+        $document = $searchReportLibraryDocumentCreation->createDocument($document,'report_library');
+      }elseif($document_type == 'report'){
+        // return;
+        // $searchReportDocumentCreation = new SearchReportDocumentCreation($report_service,$entity_manager_service,$chapter_service,$folder_service);
+        $searchReportDocumentCreation = new SearchReportDocumentCreation($entity_manager_service);
+        $searchReportDocumentCreation->setContentTreeService($report_service, $chapter_service, $folder_service);
+
+        $is_document_valid = $searchReportDocumentCreation->createDocument($document);
+
+        //      $is_document_valid =  $search_document_creation_service->createReportNodeDocument($document);
+        if(!$is_document_valid){
+          unset($documents);
+        }else{
+          $document = $is_document_valid;
+        }
+      }elseif(isset($document->ss_chapter_type)){ //add one more condition so that it only comes inside for medtech chapters.
+        return;
+        $searchReportDocumentCreation = new SearchReportDocumentCreation($report_service,$entity_manager_service,$chapter_service,$folder_service);
+        $is_document_device_chapter =  $searchReportDocumentCreation->createDeviceChapterDocument($document);
+        if(!$is_document_device_chapter){
+          unset($document);
+        }else{
+          $document = $is_document_device_chapter;
+        }
+      }
+    }
+  }elseif($unit == MACCI_UNIT_NAME){
+    foreach ($documents as $document) {
+      if($document->tf_report_title){
+        $document->setField('tf_title',$document->tf_report_title);
+      }
+    }
+  }
+  //    echo "<pre>";print_r($document);exit;
+}
+
+function insight_search_search_api_solr_field_mapping_alter(\Drupal\search_api\IndexInterface $index, array &$fields) {
+  $unit = \Drupal\Core\Site\Settings::get('product_source_index');
+  if($unit == 'scms'){
+    $fields['field_digital_abstract'] = 'tf_body_html_field';
+    $fields['field_report_library_abstract'] = 'tf_body_html_field';
+    $fields['field_digital_product_code'] = 'sm_field_sku';
+    $fields['title'] = 'tf_report_title';
+    $fields['tf_title'] = 'tf_report_title';
+    $fields['sort_title'] = 'tf_report_title_sort';
+    $fields['url'] = 'ss_url';
+    $fields['field_deliverable_type'] = 'im_field_deliverable_type';
+    $fields['field_destination_category'] = 'im_field_destination_category';
+    $fields['field_legacy_category'] = 'im_field_legacy_category';
+    $fields['field_report_research_type'] = 'im_field_report_research_type';
+    $fields['field_geography'] = 'im_field_geography'; // not needed
+    $fields['field_sku'] = 'sm_field_sku';
+    $fields['nid'] = 'is_nid';
+    $fields['field_therapy_area_disease'] = 'im_field_therapy_area_disease';
+    $fields['im_field_medtech_geography_tid'] = 'im_field_geography';
+    $fields['im_field_geography_tid'] = 'im_field_geography';
+    //medtech:
+    $fields['field_library_trpy_ara_dseries_names'] = 'tf_field_library_trpy_ara_dseries_names';
+    $fields['field_library_trpy_ara_dseries'] = 'im_field_library_trpy_ara_dseries';
+    $fields['field_library_trpy_ara_dseries_parent'] = 'im_field_library_trpy_ara_dseries_parent';
+    $fields['field_library_trpy_ara_dseries_parent_name'] = 'tf_field_library_trpy_ara_dseries_parent_name';
+    $fields['field_solution_group'] = 'is_field_solution_group';
+    $fields['field_platform_content_sku'] = 'sm_field_platform_sku';
+    $fields['field_file_attachment'] = 'tf_field_file_attachment';
+    // For SKU things 
+    $fields['ss_field_report_sku'] = 'sm_field_sku';
+    $fields['sm_field_disable_platform_related_d'] = 'ss_field_disable_platform_related_d';
+    $fields['sm_field_product_type_value'] = 'ss_field_product_type_value';
+
+    //device chapters:
+    $fields['chapter_changed'] = 'ds_changed';
+  }elseif($unit == MACCI_UNIT_NAME){
+    $fields['report_title'] = 'tf_report_title';
+    $fields['sort_title'] = 'tf_report_title_sort';
+    $fields['url'] = 'ss_url';
+    //    $fields['field_report_geography'] = 'im_field_geography';
+    $fields['product_description'] = 'tf_body_field';
+  }
+  //  echo "<pre>";print_r($fields);exit;
+}
+
+/**
+ * Implements hook_theme()
+ * @return array
+ */
+function insight_search_theme() {
+  return [
+
+    'biopharma_search' => [
+      'template' => 'search/biopharma-search',
+      'variables' => ['content' => null],
+    ],
+    'biopharma_search_item' => [
+      'template' => 'search/biopharma-search-item',
+      'variables' => ['content' => null, 'highliteddocdata'=>null, 'tabs' => null],
+    ],
+
+    'biopharma_search_item_chart' => [
+      'template' => 'search/biopharma-search-item-chart',
+      'variables' => ['content' => null, 'highliteddocdata'=>null, 'tabs' => null],
+    ],
+    'biopharma_search_item_table' => [
+      'template' => 'search/biopharma-search-item-table',
+      'variables' => ['content' => null, 'highliteddocdata'=>null, 'tabs' => null],
+    ],
+    'biopharma_search_item_text' => [
+      'template' => 'search/biopharma-search-item-text',
+      'variables' => ['content' => null, 'highliteddocdata'=>null, 'tabs' => null],
+    ],
+
+    'biopharma_search_no_result' => [
+      'template' => 'search/biopharma-search-no-result',
+      'variables' => ['content' => null],
+    ],
+
+    'medtech_search_no_result' => [
+      'template' => 'search/medtech-search-no-result',
+      'variables' => ['content' => null],
+    ],
+    'insight_search_more_result' => [
+      'template' => 'search/insight-search-more-result',
+      'variables' => ['content' => null],
+    ],
+    'medtech_search' => [
+      'template' => 'search/medtech-search',
+      'variables' => ['content' => null],
+    ],
+    'medtech_search_item' => [
+      'template' => 'search/medtech-search-item',
+      'variables' => ['content' => null, 'highliteddocdata'=>null, 'tabs' => null,'research_type'=> null, 'product_type'=>null],
+    ],
+    'usma_search' => [
+      'template' => 'search/search',
+      'variables' => ['content' => null],
+    ],
+    'usma_search_item' => [
+      'template' => 'search/search-item',
+      'variables' => ['content' => null, 'ownership' => null, 'contentToShow' => null, 'newContentTagFlag' => null],
+    ],
+    'page__usma__search' => [
+      'template' => 'page--usma--search'
+    ],
+    'insight_search_form' => [
+      'render element' => 'form',
+    ],
+    'search_report' => [
+      'variables' => [
+        'report_count' => [],
+        'report' => [],
+        'term' => [],
+        'next_page_url' => [],
+        'facet' => [],
+        'showownedres' => [],
+
+      ],
+    ],
+    'digital_report' => [
+      'variables' => [
+        'report_count' => [],
+        'report' => [],
+        'term' => [],
+        'next_page_url' => [],
+        'facet' => [],
+        'pub_date_filter' => [],
+        'current_pubdate_filter'=> [],
+        'showownedres' => [],
+        'resultselected' => [],
+      ],
+    ],
+    'search_report_result' => [
+      'variables' => [
+        'singlereport' => [],
+      ],
+    ],
+    'more_results' => [
+      'variables' => [
+        'morereport' => [],
+        'next_page_url' => [],
+      ],
+    ],
+    'insight_search_feature_result' => [
+      'template' => 'insight-search-feature-result',
+      'variables' => ['content' => null],
+    ]
+  ];
+}
+
+
+
+
+
+function insight_search_search_api_field_type_mapping_alter(&$mappings){
+  $mappings['children'] = 'array';
+  $mappings['insightfile'] = 'array';
+}
+
+function insight_search_theme_suggestions_alter(array &$suggestions, array $variables, $hook)
+{
+  $routeObj = \Drupal::routeMatch();
+  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  if ($user instanceof \Drupal\user\UserInterface) {
+    if($user->hasField('field_last_visited_business_unit')){
+      if($user instanceof Drupal\user\Entity\User && $user->hasField('field_last_visited_business_unit')){
+        $cookie = $user->get('field_last_visited_business_unit')->value;
+        if($routeObj->getRouteName() == 'insight_search.search' && $hook == 'page' && $cookie == MACCI_UNIT_NAME){
+          $suggestions = ['page__usma__search'];
+        }
+        if($routeObj->getRouteName() == 'insight_search.search' && $hook == 'page' && $cookie == SCMS_UNIT_NAME){
+          $suggestions = ['page__scms__search'];
+        }
+      }
+    }
+  }
+}
+
+
+/**
+ * @param \Drupal\search_api_solr\Solarium\Autocomplete\Query $solarium_query
+ * @param \Drupal\search_api\Query\QueryInterface $query
+ */
+function insight_search_search_api_solr_suggester_autocomplete_query_alter(\Drupal\search_api_solr\Solarium\Autocomplete\Query $solarium_query, \Drupal\search_api\Query\QueryInterface $query) {
+  $solarium_query->getSuggester()->setDictionary(['mySuggester']);
+  $solarium_query->getSuggester()->setContextFilterQuery('biopharma');
+}

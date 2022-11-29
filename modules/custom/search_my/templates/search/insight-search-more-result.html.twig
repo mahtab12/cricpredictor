@@ -1,0 +1,87 @@
+
+{% set report_type = content[0].report_type %}
+{% set user_access = content[0].hasAccess %}
+{% set report_url = content[0].url %}
+{% set report_sku = content[0].sku %}
+<ul class="list-unstyled list-chapters">
+        {% for rowcontent in content %}
+{% if(rowcontent.ss_type!='container') %}
+<li>
+{% set randomKey = [] %}{% set alpha = 'abcdefghijklmnopqrstuvwxyz' %}{% set numbers = '0123456789' %}{% for i in 1..10 %}
+{% set randomCharacter = random(alpha ~ alpha|upper ~ numbers ~ '-_') %}
+{% set randomKey = randomKey|merge([randomCharacter]) %}{% endfor %}{% set randomKey = randomKey|join %}
+               {% if rowcontent._childDocuments_ is defined %}
+                              <span class="matches count collapsed" data-toggle="collapse" data-target="#result-{{ rowcontent.nid }}-{{ rowcontent.is_field_embed_slide_no }}{{ randomKey }}" aria-expanded="false"><i class="fa fa-plus-square"></i> {{ rowcontent._childDocuments_|length  }} Matches</span>
+                              {% endif %}  
+                              <a href="{{ rowcontent.url }}" class="container-level">{{ rowcontent.title }}</a>
+               {% if rowcontent._childDocuments_ is defined %}
+                <ul class="list-unstyled collapse" id="result-{{ rowcontent.nid }}-{{ rowcontent.is_field_embed_slide_no }}{{ randomKey }}" aria-expanded="false" style="height: 0px;">
+               {% if(rowcontent._childDocuments_|length > 0) %} 
+                {% for innerdata in  rowcontent._childDocuments_%}  
+                <li>
+                  <a id="embed_search" href="{{innerdata.ss_url}}" class="content_section" target="ip-embed-{{innerdata.is_field_embed_cs_id}}" data-embed-slide-number="{{innerdata.is_field_embed_cs_id}}" data-link="694259-{{innerdata.is_field_embed_cs_id}}">
+                   
+                     {% set file_icon = "" %}
+                     {% if (innerdata.ss_node_type == 'embed')%}
+                     {% set file_icon = "fa-file-powerpoint-o" %}
+                     {% elseif (innerdata.ss_node_type == 'figure')%}
+                     {% set file_icon = "fa-bar-chart" %}
+                     {% elseif (innerdata.ss_node_type == 'text')%}
+                     {% set file_icon = "fa-align-left" %}
+                     {% elseif (innerdata.ss_node_type == 'table')%}
+                     {% set file_icon = "fa-table" %}
+                     {% elseif (innerdata.ss_node_type == 'data')%}
+                     {% set file_icon = "fa-align-left" %}
+                     {% elseif (innerdata.ss_node_type == 'folder')%}
+                     {% set file_icon = "fa-folder" %}
+                     {% else %}
+                     {% set file_icon = "fa-align-left" %}
+                     {%endif%}
+                     
+                      <i class="fa fa-fw {{ file_icon }}"></i>
+                    {{innerdata.tf_title | raw }}
+                  </a>
+                </li>  
+                {% endfor %}
+                {% endif %}                 
+
+                </ul>
+                {% endif %}                 
+              </li>
+{% endif %}                
+        {%endfor%}
+          
+        
+
+{% if(content[0].file_attachments_name | length > 0 ) %}
+  <li><span class="count">{{ content[0].match_count }}  Matches</span><strong>Files</strong></li>
+  {% for attachment_key, attachment_chunk in content[0].file_attachments_name  %}
+    <li>
+        
+         {% set ext_type =  attachment_chunk |split('.')|last %}
+          {% if(ext_type == 'pdf') %}
+          {%  set ext_type_class =  'icon-pdf' %}
+          {% elseif(ext_type == 'xlxm') %}
+          {%  set ext_type_class =  'icon-excel' %}
+          {% elseif(ext_type == 'xls') %}
+          {%  set ext_type_class =  'icon-excel' %}
+          {% elseif(ext_type == 'pptx') %}
+          {%  set ext_type_class =  'icon-powerpoint' %}
+          {%endif%} 
+     <span class="icon {{ ext_type_class }}>"></span>
+     
+     {% if(report_type != 'report-library' ) %}
+        {%  set report_download_action_url =  '/download_url' %}
+        {%else%}
+        {%  set report_download_action_url =  '/url_rl' %}
+        {%endif%} 
+       {% if(user_access!=0) %}
+{#        <a href="{{ report_download_action_url }}?download_url={{ content[0].file_attachments_url[attachment_key] }}&amp;filename={{ attachment_chunk }}" data-file-type="{% if report_type != 'report-library' %}attachments{%else%}report-library{%endif%}" data-sku='{{report_sku[0]}}' data-csg-nid="{{content[0]['nid']}}" data-file-name="{{ attachment_chunk }}" data-url="{{ report_url }}" class="download">{{ attachment_chunk }}</a>
+#}             <a target="_blank" href="{{content[0].file_attachments_url[attachment_key]}}" data-file-type="{% if report_type != 'report-library' %}attachments{%else%}report-library{%endif%}" data-sku='{{report_sku[0]}}' data-csg-nid="{{content[0]['nid']}}" data-file-name="{{ attachment_chunk }}" data-url="{{ report_url }}" class="download">{{ attachment_chunk }}</a>
+       {% else %}
+       {{ attachment_chunk  }}
+      {% endif %}
+    </li>
+{% endfor %}
+{% endif %} 
+</ul>

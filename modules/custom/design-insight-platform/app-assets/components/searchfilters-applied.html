@@ -1,0 +1,359 @@
+<div class="container-fluid search-filters collapse in" id="searchFilters">
+  <div class="row half-padding search-filters">
+
+      <div class="col-md-2 col-sm-4">
+        <div class="btn-group btn-group-block">
+          <button type="button" class="btn btn-default btn-block dropdown-toggle filtered" data-toggle="dropdown"> Type 2 Daibetes <span class="caret"></span><span class="fa fa-times-circle multi-select-clear"></span></button>
+          <div class="dropdown-menu  two-tier-select" role="menu">
+            <div class="row no-padding" id="ta">
+              <ul class="col-sm-12 list-unstyled">
+                <li class="searchbox has-feedback has-icon no-label">
+                  <input type="text" class="form-control hasclear" placeholder="Start typing a Therapy Area or Disease">
+                  <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span> 
+                  <span class="fa fa-lg fa-search input-icon"></span> </li>
+              </ul>
+              <ul class="col-sm-5 list-unstyled set-height parent-select" id="ta-selector">
+                <li class="active"><a href="#">All Diseases</a></li>
+                <li id="ta1"><a href="#">Therapy Area 1 <span class="category-count">(XX)</span></a></li>
+                <li id="ta2"><a href="#">Therapy Area 2 <span class="category-count">(XX)</span></a></li>
+                <li id="ta3"><a href="#">Therapy Area 3 <span class="category-count">(XX)</span></a></li>
+                <li id="ta4"><a href="#">Therapy Area 4 <span class="category-count">(XX)</span></a></li>
+                <li id="ta5"><a href="#">Therapy Area 5 <span class="category-count">(XX)</span></a></li>
+                <li id="ta6"><a href="#">Therapy Area 6 <span class="category-count">(XX)</span></a></li>
+                <li id="ta7"><a href="#">Therapy Area 7 <span class="category-count">(XX)</span></a></li>
+                <li id="ta8"><a href="#">Therapy Area 8 <span class="category-count">(XX)</span></a></li>
+                <li id="ta9"><a href="#">Therapy Area 9 <span class="category-count">(XX)</span></a></li>
+                <li id="ta10"><a href="#">Therapy Area 10 <span class="category-count">(XX)</span></a></li>
+              </ul>
+              <ul class="col-sm-7 list-unstyled set-height child-select" id="ta-selections">
+                <li class="show ta1 checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Therapy Area 1 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 1-1 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 1-2 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 1-3 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 1-4 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 1-5 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show divider"></li>
+                <li class="show ta2 checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-ta2">Therapy Area 2 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta2">Disease 2-1  <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta2">Disease 2-2 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta2">Disease 2-3 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta2">Disease 2-4 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta2">Disease 2-5 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show divider"></li>
+                <li class="show ta3 checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-ta3">Therapy Area 3 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta3 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta3">Disease 3-1 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta3 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta3">Disease 3-2 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta3 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta3">Disease 3-3 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta3 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta3">...</span></label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4">
+        <div class="btn-group btn-group-block">
+          <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown"> Any Drug Class or Drug <span class="caret"></span><span class="fa fa-times-circle multi-select-clear"></span></button>
+          <div class="dropdown-menu  two-tier-select" role="menu">
+            <div class="row no-padding" id="dc">
+              <ul class="col-sm-12 list-unstyled">
+                <li class="searchbox has-feedback has-icon no-label">
+                  <input type="text" class="form-control hasclear" placeholder="Start typing a Drug Class or Drug">
+                  <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span> 
+                  <span class="fa fa-lg fa-search input-icon"></span> </li>
+              </ul>
+              <ul class="col-sm-5 list-unstyled set-height parent-select" id="dc-selector">
+                <li class="active"><a href="#">All Drug Names</a></li>
+                <li id="dc1"><a href="#">Drug Class 1 <span class="category-count">(XX)</span></a></li>
+                <li id="dc2"><a href="#">Drug Class 2 <span class="category-count">(XX)</span></a></li>
+                <li id="dc3"><a href="#">Drug Class 3 <span class="category-count">(XX)</span></a></li>
+                <li id="dc4"><a href="#">Drug Class 4 <span class="category-count">(XX)</span></a></li>
+                <li id="dc5"><a href="#">Drug Class 5 <span class="category-count">(XX)</span></a></li>
+                <li id="dc6"><a href="#">Drug Class 6 <span class="category-count">(XX)</span></a></li>
+                <li id="dc7"><a href="#">Drug Class 7 <span class="category-count">(XX)</span></a></li>
+                <li id="dc8"><a href="#">Drug Class 8 <span class="category-count">(XX)</span></a></li>
+                <li id="dc9"><a href="#">Drug Class 9 <span class="category-count">(XX)</span></a></li>
+                <li id="dc10"><a href="#">Drug Class 10 <span class="category-count">(XX)</span></a></li>
+                <li id="dc11"><a href="#">Drug Class 11 <span class="category-count">(XX)</span></a></li>
+                <li id="dc12"><a href="#">Drug Class 12 <span class="category-count">(XX)</span></a></li>
+                <li id="dc13"><a href="#">Drug Class 13 <span class="category-count">(XX)</span></a></li>
+                <li id="dc14"><a href="#">Drug Class 14 <span class="category-count">(XX)</span></a></li>
+                <li id="dc15"><a href="#">Drug Class 15 <span class="category-count">(XX)</span></a></li>
+                <li id="dc16"><a href="#">...</a></li>
+              </ul>
+              <ul class="col-sm-7 list-unstyled set-height child-select" id="dc-selections">
+                <li class="show dc1 checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-dc1">Drug Class 1 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show dc1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-dc1">Drug Name 1-1 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show dc1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-dc1">Drug Name 1-2 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show dc1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-dc1">Drug Name 1-3 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show dc1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-dc1">Drug Name 1-4 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show dc1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-dc1">Drug Name 1-5 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show divider"></li>
+                <li class="show dc2 checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-dc2">Drug Class 2 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show dc2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-dc2">Drug Name 2-1  <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show dc2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-dc2">Drug Name 2-2 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show dc2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-dc2">Drug Name 2-3 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show dc2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-dc2">Drug Name 2-4 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show dc2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-dc2">Drug Name 2-5 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show divider"></li>
+                <li class="show dc3 checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-dc3">Drug Class 3 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show dc3 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-dc3">Drug Name 3-1 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show dc3 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-dc3">Drug Name 3-2 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show dc3 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-dc3">Drug Name 3-3 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show dc3 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-dc3">...</span></label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-2 col-sm-4">
+        <div class="btn-group btn-group-block">
+          <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="true"> Any Company <span class="caret"></span></button>
+          <div class="dropdown-menu">
+            <ul class="list-unstyled">
+              <li class="searchbox has-feedback has-icon no-label">
+                <input type="text" class="form-control hasclear" placeholder="Start typing a Company">
+                <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span> 
+                <span class="fa fa-lg fa-search input-icon"></span>
+              </li>
+            </ul>
+            <ul class="list-unstyled set-height">       
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 1 <span class="category-count">(XX)</span></label>
+              </li> 
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 2 <span class="category-count">(XX)</span></label>
+              </li>                      
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 3 <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 4 <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 5 <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 6 <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 7 <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 8 <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 9 <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 10 <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 11 <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 12 <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 13 <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 14 <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 15 <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company 16 <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> ... </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-2 col-sm-4">
+        <div class="btn-group btn-group-block">
+          <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown"> Any Research Type <span class="caret"></span><span class="fa fa-times-circle multi-select-clear"></span></button>
+          <div class="dropdown-menu">
+            <ul class="list-unstyled">       
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Definition &amp; Forecast <span class="smalltext">Formerly Pharmacor</span></label>
+              </li> 
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Epidemiology <span class="smalltext">Formerly Pharmacor &amp; Patientbase</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Current Treatment <span class="smalltext">Formerly Pharmacor &amp; TreatmentTrends</span></label>
+              </li>                      
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Unmet Need <span class="smalltext">Formerly Pharmacor &amp; DecisionBase</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Emerging Therapies <span class="smalltext">Formerly Pharmacor &amp; LaunchTrends</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Access &amp; Reimbursment <span class="smalltext">Formerly Physician & Payer Forum</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Drug Sales <span class="smalltext">Formerly Pharmaview</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company Sales <span class="smalltext">Formerly Pharmaview</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Biosimilars <span class="smalltext">Formerly Biosimilars Advisory Service</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Digital Innovation <span class="smalltext">Formerly Manhattan Research</span></label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4">
+        <div class="btn-group btn-group-block">
+          <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown"> Any Publication Date <span class="caret"></span></button>
+          <ul class="dropdown-menu">       
+            <li class="active"><a hef="#">Any Date</a></li>
+            <li><a href="#">Past 6 Months</a></li>
+            <li><a href="#">Past Year</a></li>
+            <li><a href="#">Past 2 Years</a></li>
+            <li><a href="#">Past 3 Years</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>

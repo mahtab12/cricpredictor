@@ -1,0 +1,24 @@
+uuid: 0b5c9471-f36e-432d-ab43-65d123cf8ece
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.footer_area
+  module:
+    - views
+  theme:
+    - yorkshire
+id: yorkshire_views_block__footer_area_block_1
+theme: yorkshire
+region: brand
+weight: 2
+provider: null
+plugin: 'views_block:footer_area-block_1'
+settings:
+  id: 'views_block:footer_area-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

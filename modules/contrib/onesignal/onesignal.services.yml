@@ -1,0 +1,7 @@
+services:
+  onesignal.config_manager:
+    class: Drupal\onesignal\Config\ConfigManager
+    arguments: ['@config.factory']
+  onesignal:
+    class: Drupal\onesignal\OneSignalService
+    arguments: [ '@entity_type.manager', '@config.factory' ]

@@ -1,0 +1,37 @@
+onesignal.config:
+  type: config_object
+  label: 'OneSignal config settings'
+  mapping:
+    onesignal_app_id:
+      type: string
+      label: 'App Id'
+    onesignal_safari_web_id:
+      type: string
+      label: 'Safari Web Id'
+    onesignal_rest_api_key:
+      type: string
+      label: 'REST API Key'
+    onesignal_action_message:
+      type: string
+      label: 'Action Message'
+    onesignal_accept_button:
+      type: string
+      label: 'Accept Button'
+    onesignal_cancel_button:
+      type: string
+      label: 'Cancel Button'
+    onesignal_welcome_title:
+      type: string
+      label: 'Welcome Title'
+    onesignal_welcome_message:
+      type: string
+      label: 'Welcome Message'
+    onesignal_auto_register:
+      type: string
+      label: 'Auto Register'
+    onesignal_notify_button:
+      type: string
+      label: 'Notify Button Visibility'
+    onesignal_localhost_secure:
+      type: string
+      label: 'Localhost Secure Login'

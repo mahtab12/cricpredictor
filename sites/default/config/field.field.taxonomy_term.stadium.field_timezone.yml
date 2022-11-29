@@ -1,0 +1,19 @@
+uuid: a85dbf0e-3c2e-45db-bc13-59889cd43b75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_timezone
+    - taxonomy.vocabulary.stadium
+id: taxonomy_term.stadium.field_timezone
+field_name: field_timezone
+entity_type: taxonomy_term
+bundle: stadium
+label: Timezone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,15 @@
+uuid: 305fcab9-5b02-4fa6-b5d6-4a7255b7f1ca
+langcode: en
+status: true
+dependencies: {  }
+name: featured_image
+label: 'Featured Image'
+effects:
+  ed5fda0d-69d8-4ebe-ba2e-57478faec216:
+    uuid: ed5fda0d-69d8-4ebe-ba2e-57478faec216
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 750
+      height: 468
+      anchor: center-center

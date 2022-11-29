@@ -1,0 +1,26 @@
+uuid: 7a7e6ad7-39c2-4f02-894d-cbc432a74846
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_shares
+    - system
+  theme:
+    - yorkshire
+id: yorkshire_statusandanalytics
+theme: yorkshire
+region: brand
+weight: -14
+provider: null
+plugin: stats_analysis_block
+settings:
+  id: stats_analysis_block
+  label: 'Status and Analytics'
+  provider: social_shares
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

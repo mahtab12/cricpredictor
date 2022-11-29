@@ -1,0 +1,56 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h3><span class="number">3</span> What columns do you want to include?</h3>
+</div>
+
+<div class="modal-body">
+  <div class="row double-padding">
+    <div class="col-sm-5 col-sm-divider-right">
+      <h4>Years</h4>
+      <div class="set-height-wrapper">
+        <ul class="dropdown-menu nondropdown set-height years-select">
+          <li class="checkbox parent-checkbox active"><label><input type="checkbox" name="ct-year" checked="checked">Select All</label></li>
+          <li class="checkbox active"><label><input type="checkbox" name="ct-year" value="2013" checked="checked">2013</label></li>
+          <li class="checkbox active"><label><input type="checkbox" name="ct-year" value="2014" checked="checked">2014</label></li>
+          <li class="checkbox active"><label><input type="checkbox" name="ct-year" value="2015" checked="checked">2015</label></li>
+          <li class="checkbox active"><label><input type="checkbox" name="ct-year" value="2016" checked="checked">2016</label></li>
+          <li class="checkbox active"><label><input type="checkbox" name="ct-year" value="2017" checked="checked">2017</label></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">Group by</li>
+          <li class="radio active"><label><input type="radio" name="ct-grouping" value="Years" checked="checked">Years</label></li>
+          <li class="radio"><label><input type="radio" name="ct-grouping" value="Quarters">Quarters</label></li>
+          <li class="radio"><label><input type="radio" name="ct-grouping" value="Months">Months</label></li>
+        </ul>
+        </ul>
+      </div>
+    </div> 
+    <div class="col-sm-7 col-sm-divider-left">
+      <h4>Segmentation</h4>
+      <div class="set-height-wrapper">
+        <ul class="dropdown-menu nondropdown set-height" id="ctSegmentation">
+          <li class="radio active"><label><input type="radio" name="ct-metric" value="Total Procedure Volumes" checked="checked">Total Procedure Volumes</label></li>
+          <li class="radio"><label><input type="radio" name="ct-metric" value="Volumes by Medicare/Non-Medicare">Volumes by Medicare/Non-Medicare</label></li>
+          <li class="radio"><label><input type="radio" name="ct-metric" value="Volumes by Inpatient/Outpatient">Volumes by Inpatient/Outpatient</label></li>
+          <li class="radio"><label><input type="radio" name="ct-metric" value="Volumes by Physician">Volumes by Physician</label></li>
+        </ul>
+      </div>      
+    </div> 
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-lg btn-primary pull-left goto-step2"><i class="fa fa-arrow-left" aria-hidden="true"></i> Previous</button>
+  <button type="button" class="btn btn-lg btn-primary pull-right goto-step4">Next</button>
+</div> 
+
+<script type="text/javascript">
+$(document).on('click', '#ctSegmentation input', function (e) {
+  var choosenView = $(this).val();
+  // Choose the Wizard Pane to show
+  if (choosenView == 'Volumes by Physician') {
+    $('.physicians-row').removeClass('hide');
+  } else {
+    $('.physicians-row').addClass('hide');
+  }
+}); 
+</script>

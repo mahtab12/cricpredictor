@@ -1,0 +1,93 @@
+<div class="panel panel-default landing-page-panel">
+  
+  <div class="panel-body">
+    <div class="chart-title">
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-lg fa-arrow-circle-down"></span><span class=" text-hide">Downloads</span><span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#"><span class="icon icon-powerpoint"></span> Chart to PowerPoint</a></li>
+          <li><a href="#"><span class="icon icon-excel"></span> Data to Excel</a></li>
+        </ul>
+      </div>
+      <h2>Emerging Biosimilars</h2>
+      <h3>Global Biosimilars Pipeline by
+        <div class="btn-group title-button">
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"> Class <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li class="active"><a href="#">Class</a></li>
+            <li><a href="#">Molecule</a></li>
+          </ul>
+        </div>
+      </h3>
+    </div> 
+    <div class="donut-container" style="width:100%;">
+      <div id="donutChart2" style="height:235px;"></div>
+      <div id="donutChart2addText" class="donut-add-text"></div>
+    </div>
+  </div>
+  <div class="panel-footer text-right">
+    <a href="#">Go to Global Pipeline Analysis <i class="fa fa-caret-right fa-lg"></i></a>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+	// Donut 1
+	var donutData2 = {
+		chart: {
+      renderTo: 'donutChart2',
+    },
+    plotOptions: {
+		pie: {
+			allowPointSelect: true,
+			cursor: 'pointer',
+			dataLabels: {
+				enabled: false
+			},
+			showInLegend: true,
+			innerSize: '50%',
+		}
+	},
+	legend: {
+		layout: 'vertical',
+		align: 'right',
+		verticalAlign: 'middle',
+		useHTML: true,
+		itemStyle: { fontSize: '12px'},
+    labelFormatter: function() {
+			return ('<span style="width:120px; height: 16px; overflow:hidden; font-size: 12px; line-height: 16px; text-overflow:ellipsis; display:block; white-space:nowrap;" title="' + this.name + '">' + this.name + '</span>');
+		}
+	},
+		series: [{
+			type: 'pie',
+			data: [['Oncology MAb', 140],
+			       ['TNF-α inhibitor', 81],
+			       ['G-CSF', 25],
+			       ['ESA', 17],
+			       ['Insulin', 17],
+			       ['Other immune biologic', 13],
+			       ['Enzyme-replacement therapy', 6],
+			       ['Infertility treatments', 6],
+			       ['Interferon beta', 6],
+			       ['Others', 51]],
+		}]
+  };
+	donutChart2 = jQuery.extend(true, {}, donut, donutData2);
+  var donutChart2 = new Highcharts.Chart(donutChart2,       
+    function(donutChart2) {
+      var textX = donutChart2.plotLeft + (donutChart2.plotWidth  * 0.5);
+      var textY = donutChart2.plotTop  + (donutChart2.plotHeight * 0.5);
+
+      var span = '<span id="donutChart2Text" class="donut-text">';
+      span    += '<span style="font-size:12px;line-height:16px;display:block;">Biosimilars in R&D</span>';
+      span    += '<span style="font-size:16px;line-height:18px;display:block;font-weight: bold;">350</span>';
+      span    += '</span>';
+
+      $("#donutChart2addText").append(span);
+      span = $('#donutChart2Text');
+      span.css('left', textX + (span.width() * -0.5));
+      span.css('top', textY + (span.height() * -0.5));
+    }
+  );
+
+</script>

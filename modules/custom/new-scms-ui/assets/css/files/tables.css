@@ -1,0 +1,274 @@
+/* RESPONSIVE / FIXED COLUMNS TABLES
+================================================== */
+.table-responsive {
+  overflow-x: auto;
+  min-height: 0.01%;
+  width: 100%;
+  margin-bottom: 30px;
+  overflow-y: hidden;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  background: 
+    linear-gradient(90deg,  white 20%, rgba(255,255,255,0)),
+    linear-gradient(270deg, white 20%, rgba(255,255,255,0)) 100% 0,
+    linear-gradient(90deg,  rgba(0,0,0,.1)  10%, rgba(255,255,255,0)),
+    linear-gradient(270deg, rgba(0,0,0,.1)  10%, rgba(255,255,255,0)) 100% 0;  
+  background-repeat: no-repeat;
+  background-size: 30px 100%, 30px 100%, 10px 100%, 10px 100%;
+  background-attachment: local, local, scroll, scroll;
+} 
+.table-responsive > .table {
+  margin-bottom: 0; 
+}
+.table-responsive > .table > thead > tr > th,
+.table-responsive > .table > thead > tr > td,
+.table-responsive > .table > tbody > tr > th,
+.table-responsive > .table > tbody > tr > td,
+.table-responsive > .table > tfoot > tr > th,
+.table-responsive > .table > tfoot > tr > td {
+  white-space: nowrap;
+}
+.table-responsive.table-responsive-wrap > .table > thead > tr > th,
+.table-responsive.table-responsive-wrap > .table > thead > tr > td,
+.table-responsive.table-responsive-wrap > .table > tbody > tr > th,
+.table-responsive.table-responsive-wrap > .table > tbody > tr > td,
+.table-responsive.table-responsive-wrap > .table > tfoot > tr > th,
+.table-responsive.table-responsive-wrap > .table > tfoot > tr > td {
+  white-space: normal;
+  min-width: 150px;
+}
+.table-responsive .table > tbody > tr > td, 
+.table-responsive .table > tfoot > tr > td {
+   background: transparent;  
+}
+.table-responsive .table > tbody > tr > td.shaded-cell,
+.table-responsive .table > tfoot > tr > td.shaded-cell,
+.table-responsive .table > tbody > tr.shaded-row > td,
+.table-responsive .table > tfoot > tr.shaded-row > td {
+  background-color: rgba(50,50,50,0.05);
+}
+.table-responsive .table > tbody > tr.shaded-row > td,
+.table-responsive .table > tfoot > tr.shaded-row > td {
+  border-top-color: #ccc;
+}
+.table-responsive .table > tbody > tr > td.shaded-cell-darker,
+.table-responsive .table > tfoot > tr > td.shaded-cell-darker,
+.table-responsive .table > tbody > tr.shaded-row-darker > td,
+.table-responsive .table > tfoot > tr.shaded-row-darker > td {
+  background-color: rgba(50,50,50,0.08);
+}
+.table-responsive .table-hover > tbody > tr:hover,
+.table-responsive .table > tbody > tr.shaded-row:hover > td,
+.table-responsive .table-hover > tbody > tr:hover > td.shaded-cell-darker {
+  background-color: rgba(171,42,175,0.08);
+}
+.table-responsive .table-hover > tbody > tr:hover > td.shaded-cell-darker {
+  background-color: rgba(171,42,175,0.16);
+}
+
+/* BREAK WORDS TABLE
+================================================== */
+.table-break-words.table > thead > tr > th,
+.table-break-words.table > thead > tr > td,
+.table-break-words.table > tbody > tr > th,
+.table-break-words.table > tbody > tr > td,
+.table-break-words.table > tfoot > tr > th,
+.table-break-words.table > tfoot > tr > td {
+  white-space: normal;
+  word-break: break-word;
+  max-width: 150px;
+}
+
+/* FIXED COLUMN
+================================================== */
+.table-fixed-col .table { 
+  border-collapse:separate;
+  border-bottom: none !important; 
+}
+.table-fixed-col .table :last-child tr:last-child td { 
+  border-bottom: 1px solid #e5e5e5;
+}
+.table-fixed-col .table-responsive {  
+}
+.table-fixed-col {
+  position: relative;
+}
+.table-fixed-col tr th:first-child,
+.table-fixed-col tr td:first-child {
+  border-right: 2px solid #ccc;
+  min-width: 100px;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+}
+.table-fixed-col tr td.indent1:first-child,
+.table-fixed-col tr td.indent2:first-child,
+.table-fixed-col tr td.indent3:first-child {
+  font-weight: normal;
+}
+.table-fixed-col tr th:first-child {
+  border-right-color: #999;
+}
+.table-fixed-col tr th.first-cell,
+.table-fixed-col tr td.first-cell {
+  position: absolute; 
+  top: auto;
+}
+
+/* BORDERS & STYLING
+================================================== */
+.table>tbody>tr>td.shaded-cell,
+.table>tfoot>tr>td.shaded-cell {
+	background: #f1f1f1;
+}
+.table.table-hover>tbody>tr:hover>td.shaded-cell {
+  background: #f7e7f7;
+}
+.table>thead>tr>th.border-left-thick {
+    border-left: 2px solid #999;
+}
+.table>thead>tr>th.border-right-thick {
+    border-right: 2px solid #999;
+}
+.table>tbody>tr>td.border-left-thick,
+.table>tfoot>tr>td.border-left-thick {
+	border-left: 2px solid #ccc;
+}
+.table>tbody>tr>td.border-right-thick,
+.table>tfoot>tr>td.border-right-thick {
+	border-right: 2px solid #ccc;
+}
+.table>tfoot>tr>td.border-left {
+  border-left: 1px solid #e5e5e5;
+}
+.table>tfoot>tr>td.border-right {
+  border-right: 1px solid #e5e5e5;
+}
+.table>thead>tr+tr>th {
+	padding-top: 0;	
+}
+.table>tbody>tr.row-total>td,
+.table>tfoot>tr.row-total>td {
+	font-weight: bold;
+	border-top: 3px double #CCC;
+}
+.table-hover > tbody > tr:hover > td {
+  cursor: default;
+}
+.table>tbody>tr>td.indent1 {
+	padding-left: 20px;
+}
+.table>tbody>tr>td.indent2 {
+	padding-left: 30px;
+}
+.table>tbody>tr>td.indent3 {
+	padding-left: 40px;
+}
+.table.table-condensed>tbody>tr>td.indent1 {
+	padding-left: 10px;
+}
+.table.table-condensed>tbody>tr>td.indent2 {
+	padding-left: 15px;
+}
+.table.table-condensed>tbody>tr>td.indent3 {
+	padding-left: 20px;
+}
+.table > tbody + tbody > tr:first-child > td {
+  border-top: 2px solid #ccc;
+}
+
+/* SORTING
+================================================== */
+th.sortable {
+  cursor: pointer;
+  -webkit-transition: background .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out;
+  -o-transition: background .2s ease-in-out;
+  transition: background .2s ease-in-out;
+}
+th.sortable:hover {
+  background: #555;
+}
+.table>thead>tr+tr>th {
+  padding-top: 7px;
+}
+th.sortable:hover:after,
+th.sortable.sort-up:after, 
+th.sortable.sort-down:after {
+  font-family: 'FontAwesome';
+  margin-left: 5px;
+  font-weight: normal;
+  font-size: 10px;
+}
+th.sortable:hover:after {
+  content: '\f0dc';
+}
+th.sortable.sort-up:after {
+  content: '\f0d8';
+}
+th.sortable.sort-down:after {
+  content: '\f0d7';
+}
+
+
+
+
+/* COLLAPSIBLE TABLE
+================================================== */
+.table.table-collapsible > tbody + tbody {
+  border-top: none
+}
+.table.table-collapsible > tbody > tr > td:first-child {
+  padding-left: 30px;
+  position: relative;
+}
+.table.table-collapsible > tbody > tr.table-child > td {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.table.table-collapsible > tbody > tr.table-child > td:first-child {
+  padding-left: 40px;
+}
+.table.table-collapsible > tbody > tr.table-parent > td.has-expander:before {
+  color: #999;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-family: 'FontAwesome';
+  content: "\f147";
+  -webkit-transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+  font-weight: normal;
+}
+.table.table-collapsible > tbody > tr.table-child > td {
+  font-size: 12px;
+}
+.table.table-collapsible > tbody > tr.table-parent:hover > td {
+  cursor: pointer;  
+}
+.table.table-collapsible > tbody.closed >tr.table-parent > td.has-expander:before {
+  content: '\f196';
+}
+.table.table-collapsible > tbody > tr.table-parent:hover > td.has-expander:before {
+  color: #666;
+}
+.table.table-collapsible > tbody.closed > tr.table-child {
+  display: none;
+}
+.table.table-collapsible > tbody > tr.table-child > td {
+  border-top-style: dotted;
+}
+
+
+
+.table.table-lg > tbody > tr > td {
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.table.table-lg > tbody > tr > td:first-child {
+  font-weight: bold;
+}

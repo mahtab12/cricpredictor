@@ -1,0 +1,30 @@
+uuid: e2a46a88-42f0-4759-bfcd-a9cd148914e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recent_prediction
+  module:
+    - system
+    - views
+  theme:
+    - newsplus_lite
+id: views_block__recent_prediction_block_1
+theme: newsplus_lite
+region: sidebar_second
+weight: -22
+provider: null
+plugin: 'views_block:recent_prediction-block_1'
+settings:
+  id: 'views_block:recent_prediction-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/articles/*\r\n/blogs\r\n/videos\r\n/schedule\r\n/prediction/*\r\n/cricket-spotlight\r\n/cricket-statistics\r\n/cricket-viral-news\r\n/match/*\r\n/cricket-match/live-scores\r\n/author/*\r\n/series\r\n/matches/*"
+    negate: false
+    context_mapping: {  }

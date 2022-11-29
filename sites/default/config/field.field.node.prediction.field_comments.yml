@@ -1,0 +1,22 @@
+uuid: b2fda6b9-0c5f-450a-ad8f-0702222ceb41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_comments
+    - node.type.prediction
+  module:
+    - facebook_comments
+id: node.prediction.field_comments
+field_name: field_comments
+entity_type: node
+bundle: prediction
+label: Comments
+description: ''
+required: false
+translatable: true
+default_value:
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: facebook_comments

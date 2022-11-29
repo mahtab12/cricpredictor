@@ -1,0 +1,5 @@
+onesignal.notification_add:
+  route_name: 'onesignal.notification_add'
+  title: 'Create Notification'
+  appears_on:
+    - onesignal.notifications

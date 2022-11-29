@@ -1,0 +1,34 @@
+uuid: 0ae8727c-a0aa-42b9-8e4a-9dd2cc8d7220
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recommended_videos
+  module:
+    - block_class
+    - system
+    - views
+  theme:
+    - yorkshire
+third_party_settings:
+  block_class:
+    classes: trd-blk
+id: yorkshire_views_block__recommended_videos_block_1
+theme: yorkshire
+region: brand
+weight: -17
+provider: null
+plugin: 'views_block:recommended_videos-block_1'
+settings:
+  id: 'views_block:recommended_videos-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/cricket-prediction\r\n/articles/*\r\n/blogs\r\n/prediction/*\r\n/cricket-spotlight\r\n/cricket-statistics\r\n/cricket-viral-news\r\n/cricket-match/live-scores\r\n"
+    negate: false
+    context_mapping: {  }

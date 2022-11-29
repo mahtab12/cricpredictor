@@ -1,0 +1,26 @@
+uuid: fe2fed88-d3a5-4a44-8123-960f0b83ae44
+langcode: en
+status: false
+dependencies:
+  module:
+    - social_shares
+    - system
+  theme:
+    - yorkshire
+id: yorkshire_amazonmain_2
+theme: yorkshire
+region: brand
+weight: 6
+provider: null
+plugin: amazon_main
+settings:
+  id: amazon_main
+  label: 'Amazon Main'
+  provider: social_shares
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

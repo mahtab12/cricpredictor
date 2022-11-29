@@ -1,0 +1,219 @@
+<p class="strike-line" id="filtersPopover">Filter Reports</p>
+  <div class="row half-padding filters">
+
+      <div class="col-sm-3">
+        <div class="btn-group btn-group-block">
+          <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown"> Any Therapy Area or Disease <span class="caret"></span><span class="fa fa-times-circle multi-select-clear"></span></button>
+          <div class="dropdown-menu  two-tier-select" role="menu">
+            <div class="row no-padding" id="ta">
+              <ul class="col-sm-12 list-unstyled">
+                <li class="searchbox has-feedback has-icon no-label">
+                  <input type="text" class="form-control hasclear" placeholder="Start typing a Therapy Area or Disease">
+                  <span class="clearer fa fa-times-circle form-control-feedback" style="display: none;"></span> 
+                  <span class="fa fa-lg fa-search input-icon"></span> </li>
+              </ul>
+              <ul class="col-sm-5 list-unstyled set-height parent-select" id="ta-selector">
+                <li class="active"><a href="#">All Diseases</a></li>
+                <li id="ta1"><a href="#">Therapy Area 1 <span class="category-count">(XX)</span></a></li>
+                <li id="ta2"><a href="#">Therapy Area 2 <span class="category-count">(XX)</span></a></li>
+                <li id="ta3"><a href="#">Therapy Area 3 <span class="category-count">(XX)</span></a></li>
+                <li id="ta4"><a href="#">Therapy Area 4 <span class="category-count">(XX)</span></a></li>
+                <li id="ta5"><a href="#">Therapy Area 5 <span class="category-count">(XX)</span></a></li>
+                <li id="ta6"><a href="#">Therapy Area 6 <span class="category-count">(XX)</span></a></li>
+                <li id="ta7"><a href="#">Therapy Area 7 <span class="category-count">(XX)</span></a></li>
+                <li id="ta8"><a href="#">Therapy Area 8 <span class="category-count">(XX)</span></a></li>
+                <li id="ta9"><a href="#">Therapy Area 9 <span class="category-count">(XX)</span></a></li>
+                <li id="ta10"><a href="#">Therapy Area 10 <span class="category-count">(XX)</span></a></li>
+              </ul>
+              <ul class="col-sm-7 list-unstyled set-height child-select" id="ta-selections">
+                <li class="show ta1 checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Therapy Area 1 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 1-1 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 1-2 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 1-3 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 1-4 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta1 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta1">Disease 1-5 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show divider"></li>
+                <li class="show ta2 checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-ta2">Therapy Area 2 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta2">Disease 2-1  <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta2">Disease 2-2 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta2">Disease 2-3 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta2">Disease 2-4 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta2 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta2">Disease 2-5 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show divider"></li>
+                <li class="show ta3 checkbox checkbox-parent">
+                  <label>
+                    <input type="checkbox" name="group-ta3">Therapy Area 3 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta3 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta3">Disease 3-1 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta3 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta3">Disease 3-2 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta3 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta3">Disease 3-3 <span class="category-count">(XX)</span></label>
+                </li>
+                <li class="show ta3 checkbox">
+                  <label>
+                    <input type="checkbox" name="group-ta3">...</span></label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-sm-3">
+        <div class="btn-group btn-group-block">
+          <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown"> Any Solution <span class="caret"></span><span class="fa fa-times-circle multi-select-clear"></span></button>
+          <div class="dropdown-menu set-height">
+            <ul class="list-unstyled">       
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Disease Landscape & Forecast <span class="category-count">(XX)</span> <span class="smalltext">Formerly Pharmacor</span></label>
+              </li> 
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Epidemiology <span class="category-count">(XX)</span> <span class="smalltext">Formerly Patientbase</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Current Treatment <span class="category-count">(XX)</span></label>
+              </li>                      
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Unmet Need <span class="category-count">(XX)</span> <span class="smalltext">Formerly DecisionBase</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Emerging Therapies <span class="category-count">(XX)</span> <span class="smalltext">Formerly LaunchTrends</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Access &amp; Reimbursement <span class="category-count">(XX)</span> <span class="smalltext">Formerly Physician & Payer Forum</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Company &amp; Drug Insights <span class="category-count">(XX)</span> <span class="smalltext">Formerly Pharmaview</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Biosimilars <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Digital Patient Insights <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Digital HCP Insights <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Digital Payer Insights <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Additional Digital Insights <span class="category-count">(XX)</span></label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Other Solutions <span class="category-count">(XX)</span></label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+            <div class="col-sm-3">
+        <div class="btn-group btn-group-block">
+          <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown"> Any Research Type <span class="caret"></span><span class="fa fa-times-circle multi-select-clear"></span></button>
+          <div class="dropdown-menu">
+            <ul class="list-unstyled">       
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Syndicated Research</label>
+              </li> 
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"> Proprietary Research</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="btn-group btn-group-block">
+          <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown"> Any Publication Date <span class="caret"></span></button>
+          <ul class="dropdown-menu">       
+            <li class="active"><a hef="#">Any Date</a></li>
+            <li><a href="#">Past 6 Months</a></li>
+            <li><a href="#">Past Year</a></li>
+            <li><a href="#">Past 2 Years</a></li>
+            <li><a href="#">Past 3 Years</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="dotted">
+    
+    
+    
+  <div id="filtersPopoverContent" class="hide">
+    <button type="button" class="btn btn-link close-popover" onclick="$('#filtersPopover').popover('hide');"><i class="fa fa-times-circle"></i></button>
+    <p><i class="fa fa-lg fa-question-circle" aria-hidden="true"></i> Use the filters to refine the report list. </p>   
+  </div>
+  
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#filtersPopover').popover({
+    'html': 'true',
+    'placement':'top',
+    'container': 'body',
+    'content': function() {
+        return $('#filtersPopoverContent').html();
+      },
+    'template': '<div class="popover alert-popover"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"></div></div></div>'
+  }).popover('show');
+
+  
+});
+</script> 
