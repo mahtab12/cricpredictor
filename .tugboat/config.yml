@@ -11,7 +11,7 @@ services:
     default: true
 
     # Wait until the mysql service is done building
-    depends: mysql
+    # depends: mysql
 
     # A set of commands to run while building this service
     commands:
@@ -44,6 +44,7 @@ services:
       update:
         # Use the tugboat-specific Drupal settings.
         - cp "${TUGBOAT_ROOT}/.tugboat/settings.local.php" "${DOCROOT}/sites/default/"
+        - cp "${TUGBOAT_ROOT}/database/cric9.sql.gz" "/tmp/"
 
         # Install/update packages managed by composer, including drush.
         #- composer install --optimize-autoloader
@@ -97,4 +98,4 @@ services:
         # Copy a database dump from an external server. The public
         # SSH key found in the Tugboat Repository configuration must be
         # copied to the external server in order to use scp.
-        - cd "${DOCROOT}" && zcat /var/lib/tugboat/database/cric9.sql.gz | mysql tugboat
+        - zcat /tmp/database/cric9.sql.gz | mysql tugboat
