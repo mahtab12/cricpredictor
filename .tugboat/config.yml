@@ -87,7 +87,7 @@ services:
   mysql:
     # Use the latest available 5.x version of MySQL
     image: tugboatqa/mariadb:10.5
-    depends: mysql
+    depends: php
 
     # A set of commands to run while building this service
     commands:
