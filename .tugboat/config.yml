@@ -97,4 +97,4 @@ services:
         # Copy a database dump from an external server. The public
         # SSH key found in the Tugboat Repository configuration must be
         # copied to the external server in order to use scp.
-        - cd "${TUGBOAT_ROOT}" && zcat database/cric9.sql.gz | mysql tugboat
+        - zcat "${TUGBOAT_ROOT}/database/cric9.sql.gz" | mysql tugboat
