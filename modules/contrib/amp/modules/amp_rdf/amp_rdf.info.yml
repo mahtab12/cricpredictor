@@ -1,0 +1,13 @@
+name: AMP RDF
+type: module
+description: Required on sites that have both AMP and RDF modules enabled. Removes RDF markup on AMP pages. You can also disable the RDF module since RDF duplicates the Schema.org markup that is added by Schema.org Metatag.
+core_version_requirement: '^8.7.7 || ^9 || ^10'
+package: AMP
+dependencies:
+  - amp:amp
+  - drupal:rdf
+
+# Information added by Drupal.org packaging script on 2023-07-12
+version: '8.x-3.7'
+project: 'amp'
+datestamp: 1689175269

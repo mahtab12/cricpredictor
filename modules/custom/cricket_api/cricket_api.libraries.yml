@@ -4,6 +4,7 @@ cricket_api:
     theme:
       css/match.css: {}
       css/commentry.css: {}
+      css/news.css: {}
   js:
     js/accord.js: {}
 
@@ -25,8 +26,9 @@ cric_slick:
     - core/jquery.once
     - core/drupal.dialog.ajax
 
-
 player_details:
   css:
     theme:
       css/player.css: {}
+
+      

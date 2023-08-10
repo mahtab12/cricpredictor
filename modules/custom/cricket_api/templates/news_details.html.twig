@@ -1,0 +1,19 @@
+  <h6>{{ data.context }}</h6>
+  <div class="cover-image">
+    <img src="{{ data.coverImage.imgurl }}"/>
+  </div>
+  <div class="content-body">
+    {% for items in data.content %}
+      <p>{{ items.content.contentValue }}</p>
+    {% endfor %}
+  </div>
+  <ul class="tags">
+    {% for items in data.tags %}
+      <p>{{ items.itemName }}</p>
+    {% endfor %}
+  </ul>
+
+{#{{ data }}#}
+
+
+{#<img id="img.base-64" src="{{ 'data:image/png;base64, '~data }}" />#}

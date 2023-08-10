@@ -55,6 +55,21 @@ function cricket_api_theme($existing, $type, $theme, $path) {
       'data' => null,
     ),
   );
+  //mahtab's sir given codee
+
+    $themes['news_list'] = array(
+    'template' => 'news_list',
+    'variables' => array(
+      'data' => null,
+    ),
+  );
+  $themes['news_details'] = array(
+    'template' => 'news_details',
+    'variables' => array(
+      'data' => null,
+    ),
+  );
+  
   return $themes;
 }
 

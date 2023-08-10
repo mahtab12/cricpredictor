@@ -1,0 +1,29 @@
+
+  <div class="news-container">
+    <div class="row">
+      {% for item in data %}
+        {% if item.story %}
+          <div class="col-xs-12">
+            <div class="news-item-container">
+              <div class="row">
+                <div class="col-xl-12 col-lg-6 news-image">
+                  <img src="{{ file_url('modules/custom/cricket_api/img/05dhoni1.jpg') }}" class="img-responsive" alt="Default Image">
+                </div>
+                <div class="col-xl-12 news-details">
+                  <a href="/cricket-news/{{ item.story.id }}/cricpredictor" class="news-links">
+                    <span class="news-category">{{ item.story.storyType }}</span> </a>
+                    <span class="cp-sign">&nbsp;|&nbsp;{{ item.story.context }}</span>
+                    <a href="/cricket-news/{{ item.story.id }}/cricpredictor" class="news-links">
+                    <h2 class="news-title">{{ item.story.hline }}</h2></a>
+                    <p class="news-description">{{ item.story.intro }}</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

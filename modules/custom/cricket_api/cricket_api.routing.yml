@@ -56,3 +56,31 @@ cricket_api.fetchDetails:
     _permission: 'access content'
   options:
     no_cache: 'TRUE'
+
+cricket_api.config_form:
+  path: '/admin/api/config'
+  defaults:
+    _form: '\Drupal\cricket_api\Form\CricketApiConfigForm'
+    _title: 'Cricket API Configuration'
+  requirements:
+    _permission: 'administer site configuration'
+
+cricket_api.news:
+  path: '/cricket-news'
+  defaults:
+    _controller: '\Drupal\cricket_api\Controller\CricketNewsApiController::getNews'
+    _title_callback: '\Drupal\cricket_api\Controller\CricketNewsApiController::getTitle'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+cricket_api.news_details:
+  path: '/cricket-news/{newsId}/cricpredictor'
+  defaults:
+    _controller: '\Drupal\cricket_api\Controller\CricketNewsApiController::getNewsDetails'
+    _title_callback: '\Drupal\cricket_api\Controller\CricketNewsApiController::getNewsTitle'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'

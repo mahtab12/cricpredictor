@@ -1,0 +1,55 @@
+Reset default styles */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.news-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.news-item-container {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.row {
+  margin: 0; /* Override Bootstrap's default negative margins on rows */
+}
+
+.news-image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%; /* Adjust as needed */
+  border-radius: 10px;
+}
+
+.news-details {
+  padding: 15px;
+}
+
+/* Float the image and details on smaller screens */
+  @media (min-width: 767px) {
+  .news-title{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+} 
+@media (max-width: 767px){
+  .news-title{
+    font-size: 16px;
+  }
+  
+}
