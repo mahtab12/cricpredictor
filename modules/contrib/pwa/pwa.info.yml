@@ -1,0 +1,14 @@
+name: 'Progressive Web App'
+description: 'Make the website installable on mobile.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+type: module
+configure: pwa.config
+
+dependencies:
+  - drupal:file
+
+# Information added by Drupal.org packaging script on 2023-05-16
+version: '8.x-1.7'
+project: 'pwa'
+datestamp: 1684225567
