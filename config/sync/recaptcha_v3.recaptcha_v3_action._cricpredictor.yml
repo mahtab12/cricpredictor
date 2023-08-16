@@ -1,0 +1,8 @@
+uuid: 656f3cd6-7bc0-4594-8e3a-c9ae9537a83e
+langcode: en
+status: true
+dependencies: {  }
+id: _cricpredictor
+label: ' cricpredictor'
+threshold: !!float 1
+challenge: default

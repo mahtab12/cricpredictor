@@ -1,0 +1,35 @@
+uuid: aea1566b-ce55-4236-ba20-807936f107eb
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:c9e51451-8d63-47d5-bc11-7fde0adc64a5'
+  module:
+    - block_class
+    - block_content
+    - system
+  theme:
+    - newsplus_lite
+third_party_settings:
+  block_class:
+    classes: text-center
+id: facebookembed
+theme: newsplus_lite
+region: homepage_footer_poll
+weight: -24
+provider: null
+plugin: 'block_content:c9e51451-8d63-47d5-bc11-7fde0adc64a5'
+settings:
+  id: 'block_content:c9e51451-8d63-47d5-bc11-7fde0adc64a5'
+  label: 'Facebook Embed'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

@@ -1,0 +1,20 @@
+_core:
+  default_config_hash: 5Ba57QD7msoZrStw11sVxvzj7eFrCVkNCmOJmTKQe10
+favicon:
+  mimetype: image/png
+  path: sites/default/files/cricket_1.png
+  use_default: false
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  path: sites/default/files/cricket_1.png
+  use_default: false
+fixed_header: 1
+scrolltop_display: 1
+bootstrap_remote_type: cdn
+header: ''
+scrolltop: ''
+premium_description: ''

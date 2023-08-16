@@ -1,0 +1,31 @@
+uuid: 8733e893-8e82-42a2-94de-625126a1107c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.sidebar-navigation
+  module:
+    - block_class
+    - system
+  theme:
+    - newsplus_lite
+id: sidebarnavigation_2
+theme: newsplus_lite
+region: sidebar_first
+weight: -25
+provider: null
+plugin: 'system_menu_block:sidebar-navigation'
+settings:
+  id: 'system_menu_block:sidebar-navigation'
+  label: 'Sidebar Navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/user/*\r\n/user/dashboard"

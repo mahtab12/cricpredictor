@@ -1,0 +1,27 @@
+uuid: 15d29dff-6e3c-452f-81b4-88c649c90134
+langcode: en
+status: false
+dependencies:
+  module:
+    - block_class
+    - social_shares
+    - system
+  theme:
+    - newsplus_lite
+id: adslotsidebar_2
+theme: newsplus_lite
+region: sidebar_second
+weight: -18
+provider: null
+plugin: adslot_sidebar
+settings:
+  id: adslot_sidebar
+  label: 'Adslot Sidebar'
+  label_display: '0'
+  provider: social_shares
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '<front>'

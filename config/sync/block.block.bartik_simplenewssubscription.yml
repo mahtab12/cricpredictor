@@ -1,0 +1,30 @@
+uuid: e8c9c07a-04ac-44ae-abff-effb90d47706
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - simplenews
+  theme:
+    - bartik
+third_party_settings:
+  block_class:
+    classes: col-sm-8
+id: bartik_simplenewssubscription
+theme: bartik
+region: footer_first
+weight: -16
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Simplenews subscription'
+  label_display: '0'
+  provider: simplenews
+  newsletters: {  }
+  default_newsletters:
+    default: default
+  message: 'Stay informed - subscribe to our newsletter.'
+  show_manage: true
+  unique_id: 00ccd034-4fde-4ebb-9c8f-856065529692
+visibility: {  }

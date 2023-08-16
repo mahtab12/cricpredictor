@@ -1,0 +1,25 @@
+uuid: c20ecb50-9aad-4303-b305-1dce64e51f51
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: null
+_core:
+  default_config_hash: seJxgYrod5V2hxdSLtE80ziqvhV-cSXMTHI8PPyCg2Y
+id: newsplus_lite_amp_local_actions
+theme: newsplus_lite_amp
+region: content
+weight: -11
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,31 @@
+uuid: e2f31009-b62a-4883-bcc6-01f0ea2ba62b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news
+  module:
+    - block_class
+    - system
+    - views
+  theme:
+    - newsplus_lite
+id: views_block__news_block_1
+theme: newsplus_lite
+region: adslot_2
+weight: 0
+provider: null
+plugin: 'views_block:news-block_1'
+settings:
+  id: 'views_block:news-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

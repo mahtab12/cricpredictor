@@ -1,0 +1,30 @@
+uuid: aeeaa708-c688-4a8f-9285-0ff37a85c15d
+langcode: en
+status: false
+dependencies:
+  module:
+    - block_class
+    - social_shares
+    - system
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: null
+id: newsplus_lite_amp_adslotsidebar
+theme: newsplus_lite_amp
+region: sidebar_second
+weight: -19
+provider: null
+plugin: adslot_sidebar
+settings:
+  id: adslot_sidebar
+  label: 'Adslot Sidebar'
+  label_display: '0'
+  provider: social_shares
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '<front>'

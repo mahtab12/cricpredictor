@@ -1,0 +1,21 @@
+_core:
+  default_config_hash: WEa5Ex_IeAcm6Bm0hmQ4vU_nDwJDB8hW-vxT1qpGIbM
+smtp_on: false
+smtp_host: smtp.gmail.com
+smtp_hostbackup: ''
+smtp_port: '587'
+smtp_protocol: tls
+smtp_autotls: true
+smtp_timeout: 30
+smtp_username: cricpredictor2020@gmail.com
+smtp_password: chjzdmcpymzlcqky
+smtp_from: cricpredictor2020@gmail.com
+smtp_fromname: CricPredictor
+smtp_client_hostname: ''
+smtp_client_helo: ''
+smtp_allowhtml: '0'
+smtp_test_address: mahtabalam.afridi@gmail.com
+smtp_reroute_address: ''
+smtp_debugging: true
+prev_mail_system: php_mail
+smtp_keepalive: false

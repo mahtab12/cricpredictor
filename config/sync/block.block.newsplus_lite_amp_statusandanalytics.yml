@@ -1,0 +1,30 @@
+uuid: a7a326f4-41d4-4a7c-bb8a-9c7a2a9b2a3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - social_shares
+    - system
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: null
+id: newsplus_lite_amp_statusandanalytics
+theme: newsplus_lite_amp
+region: stats_and_analysis
+weight: -25
+provider: null
+plugin: stats_analysis_block
+settings:
+  id: stats_analysis_block
+  label: 'Status and Analytics'
+  label_display: visible
+  provider: social_shares
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

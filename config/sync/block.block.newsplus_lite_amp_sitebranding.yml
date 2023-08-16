@@ -1,0 +1,29 @@
+uuid: 316c86b2-e197-4fbb-b976-769a220a1d46
+langcode: en
+status: false
+dependencies:
+  module:
+    - block_class
+    - system
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: null
+_core:
+  default_config_hash: AzM-UAg2Uxr6hnbL6BpnFuLmLDjLvdtySJ1dEj6Zih0
+id: newsplus_lite_amp_sitebranding
+theme: newsplus_lite_amp
+region: sidebar_first
+weight: -11
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: false
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

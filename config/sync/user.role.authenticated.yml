@@ -1,0 +1,43 @@
+uuid: 17b9f45a-c111-4181-91ff-d35d00bea79a
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.mailchimp_campaign
+    - filter.format.restricted_html
+  module:
+    - comment
+    - contact
+    - disqus
+    - eu_cookie_compliance
+    - filter
+    - poll
+    - search
+    - shortcut
+    - simplenews
+    - system
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: -9
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access polls'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'access user profiles'
+  - 'display eu cookie compliance popup'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'subscribe to newsletters'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'use text format mailchimp_campaign'
+  - 'use text format restricted_html'
+  - 'view disqus comments'

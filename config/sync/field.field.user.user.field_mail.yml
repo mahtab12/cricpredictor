@@ -1,0 +1,23 @@
+uuid: 6157bc7e-5160-47e9-8fac-befe344f507b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_mail
+  module:
+    - link
+    - user
+id: user.user.field_mail
+field_name: field_mail
+entity_type: user
+bundle: user
+label: Mail
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

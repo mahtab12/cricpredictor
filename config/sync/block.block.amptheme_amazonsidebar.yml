@@ -1,0 +1,29 @@
+uuid: 5711a0f4-e53b-4e24-b3b8-5260b6da653a
+langcode: en
+status: false
+dependencies:
+  module:
+    - social_shares
+    - system
+  theme:
+    - amptheme
+third_party_settings:
+  block_class:
+    classes: null
+id: amptheme_amazonsidebar
+theme: amptheme
+region: sidebar_second
+weight: -17
+provider: null
+plugin: amazon_sidebar
+settings:
+  id: amazon_sidebar
+  label: 'Amazon Sidebar'
+  label_display: '0'
+  provider: social_shares
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '<front>'

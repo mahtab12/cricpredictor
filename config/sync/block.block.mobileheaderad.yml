@@ -1,0 +1,24 @@
+uuid: 97ba1638-366a-4ee1-9cc0-df6999d89e23
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - social_shares
+  theme:
+    - newsplus_lite
+third_party_settings:
+  block_class:
+    classes: visible-xs
+id: mobileheaderad
+theme: newsplus_lite
+region: top_content
+weight: -23
+provider: null
+plugin: mobile_header_ad
+settings:
+  id: mobile_header_ad
+  label: 'Mobile Header Ad'
+  label_display: '0'
+  provider: social_shares
+visibility: {  }

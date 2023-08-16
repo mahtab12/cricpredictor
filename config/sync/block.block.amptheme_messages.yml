@@ -1,0 +1,25 @@
+uuid: ecabce45-9b33-4473-b16b-5578cc9e3686
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - amptheme
+third_party_settings:
+  block_class:
+    classes: null
+_core:
+  default_config_hash: 8kg54uxqBFrAyIHQlGA9UWtpLaAeJaLbMIduXqvVpFY
+id: amptheme_messages
+theme: amptheme
+region: sidebar_first
+weight: -24
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

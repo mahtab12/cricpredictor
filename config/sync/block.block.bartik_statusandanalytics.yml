@@ -1,0 +1,26 @@
+uuid: 6ab535fe-996e-400d-8437-7b568c4c90ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_shares
+    - system
+  theme:
+    - bartik
+id: bartik_statusandanalytics
+theme: bartik
+region: header
+weight: -16
+provider: null
+plugin: stats_analysis_block
+settings:
+  id: stats_analysis_block
+  label: 'Status and Analytics'
+  label_display: visible
+  provider: social_shares
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'
