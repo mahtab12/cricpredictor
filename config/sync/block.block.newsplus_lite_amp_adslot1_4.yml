@@ -1,0 +1,30 @@
+uuid: de6be9db-3db2-470a-9f26-7845b3d8c3bd
+langcode: en
+status: false
+dependencies:
+  module:
+    - block_class
+    - social_shares
+    - system
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: 'text-center col-xs-12'
+id: newsplus_lite_amp_adslot1_4
+theme: newsplus_lite_amp
+region: sidebar_first
+weight: 0
+provider: null
+plugin: adslot_1
+settings:
+  id: adslot_1
+  label: Adslot1
+  label_display: '0'
+  provider: social_shares
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

@@ -1,0 +1,30 @@
+uuid: 9c5cc0f0-8470-4a8c-b41a-175b110b6cb8
+langcode: en
+status: false
+dependencies:
+  module:
+    - block_class
+    - social_shares
+    - system
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: null
+id: newsplus_lite_amp_amazonmain_2
+theme: newsplus_lite_amp
+region: sidebar_first
+weight: -22
+provider: null
+plugin: amazon_main
+settings:
+  id: amazon_main
+  label: 'Amazon Main'
+  label_display: '0'
+  provider: social_shares
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '<front>'

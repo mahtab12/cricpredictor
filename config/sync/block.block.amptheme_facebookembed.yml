@@ -1,0 +1,35 @@
+uuid: 6582bd5b-0997-494a-bcf0-ebd3e3932dd3
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:c9e51451-8d63-47d5-bc11-7fde0adc64a5'
+  module:
+    - block_class
+    - block_content
+    - system
+  theme:
+    - amptheme
+third_party_settings:
+  block_class:
+    classes: text-center
+id: amptheme_facebookembed
+theme: amptheme
+region: sidebar_first
+weight: -24
+provider: null
+plugin: 'block_content:c9e51451-8d63-47d5-bc11-7fde0adc64a5'
+settings:
+  id: 'block_content:c9e51451-8d63-47d5-bc11-7fde0adc64a5'
+  label: 'Facebook Embed'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

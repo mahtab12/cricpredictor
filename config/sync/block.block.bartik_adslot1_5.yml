@@ -1,0 +1,26 @@
+uuid: 4cff0ed0-030e-4af5-b6fc-b889b7d77d9d
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_shares
+    - system
+  theme:
+    - bartik
+id: bartik_adslot1_5
+theme: bartik
+region: header
+weight: -21
+provider: null
+plugin: adslot_1
+settings:
+  id: adslot_1
+  label: Adslot1
+  label_display: '0'
+  provider: social_shares
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

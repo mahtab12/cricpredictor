@@ -1,0 +1,30 @@
+uuid: d1540dba-d0ed-460d-bad4-4df25f9ab80d
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - simplenews
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: col-sm-8
+id: newsplus_lite_amp_simplenewssubscription
+theme: newsplus_lite_amp
+region: footer_first
+weight: -25
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Simplenews subscription'
+  label_display: '0'
+  provider: simplenews
+  newsletters: {  }
+  default_newsletters:
+    default: default
+  message: 'Stay informed - subscribe to our newsletter.'
+  show_manage: true
+  unique_id: 00ccd034-4fde-4ebb-9c8f-856065529692
+visibility: {  }

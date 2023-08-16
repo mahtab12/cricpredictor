@@ -1,0 +1,35 @@
+uuid: 645184e2-5887-41b3-8cb8-f7fad8acc0ed
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f25a0f6a-a138-40e9-a342-b16eb19a04f7'
+  module:
+    - block_class
+    - block_content
+    - system
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: text-center
+id: newsplus_lite_amp_betwayindiasidebar
+theme: newsplus_lite_amp
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'block_content:f25a0f6a-a138-40e9-a342-b16eb19a04f7'
+settings:
+  id: 'block_content:f25a0f6a-a138-40e9-a342-b16eb19a04f7'
+  label: 'Betway India Sidebar'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '<front>'

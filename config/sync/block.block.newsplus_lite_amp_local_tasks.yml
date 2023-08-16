@@ -1,0 +1,27 @@
+uuid: 49f9348d-f0b4-4351-8346-a7fe01bb27ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: null
+_core:
+  default_config_hash: wBmXgbX50U12zT5kzFYXAjifr9Srf61kXRLWuPnJYdQ
+id: newsplus_lite_amp_local_tasks
+theme: newsplus_lite_amp
+region: content
+weight: -14
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

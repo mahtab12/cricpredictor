@@ -1,0 +1,31 @@
+uuid: f002b6fb-5e07-43d2-8eb7-25fa8bfb06ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.prediction
+  module:
+    - block_class
+    - system
+    - views
+  theme:
+    - newsplus_lite
+id: views_block__prediction_block_1
+theme: newsplus_lite
+region: recent_prediction
+weight: -24
+provider: null
+plugin: 'views_block:prediction-block_1'
+settings:
+  id: 'views_block:prediction-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

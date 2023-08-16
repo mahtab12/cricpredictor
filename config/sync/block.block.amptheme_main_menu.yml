@@ -1,0 +1,30 @@
+uuid: 542ed010-481b-419a-a64b-0682a280eac8
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - amptheme
+third_party_settings:
+  block_class:
+    classes: null
+_core:
+  default_config_hash: G8vcZYAlQzD8ztZB9xhVPnfofT1fxxc51cXbBJZpSRU
+id: amptheme_main_menu
+theme: amptheme
+region: sidebar_first
+weight: -23
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

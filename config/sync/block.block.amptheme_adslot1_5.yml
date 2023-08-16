@@ -1,0 +1,29 @@
+uuid: 1b6ab90c-71d4-4762-ac18-c2cadc070b9f
+langcode: en
+status: false
+dependencies:
+  module:
+    - social_shares
+    - system
+  theme:
+    - amptheme
+third_party_settings:
+  block_class:
+    classes: null
+id: amptheme_adslot1_5
+theme: amptheme
+region: sidebar_first
+weight: -21
+provider: null
+plugin: adslot_1
+settings:
+  id: adslot_1
+  label: Adslot1
+  label_display: '0'
+  provider: social_shares
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

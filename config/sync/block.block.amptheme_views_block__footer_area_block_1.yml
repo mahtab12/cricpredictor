@@ -1,0 +1,27 @@
+uuid: 96bb991c-392e-42cd-8c1a-12e0912f359d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.footer_area
+  module:
+    - views
+  theme:
+    - amptheme
+third_party_settings:
+  block_class:
+    classes: null
+id: amptheme_views_block__footer_area_block_1
+theme: amptheme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_block:footer_area-block_1'
+settings:
+  id: 'views_block:footer_area-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

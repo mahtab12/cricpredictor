@@ -1,0 +1,24 @@
+uuid: 27c3cc43-40e8-4e48-8ec8-3ba80dd6b28e
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - social_shares
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: null
+id: newsplus_lite_amp_followus
+theme: newsplus_lite_amp
+region: footer_fourth
+weight: -25
+provider: null
+plugin: follow_us
+settings:
+  id: follow_us
+  label: 'Follow Us'
+  label_display: '0'
+  provider: social_shares
+visibility: {  }

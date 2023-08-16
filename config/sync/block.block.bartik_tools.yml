@@ -1,0 +1,27 @@
+uuid: 4480ea86-7f02-4f93-b0da-7678096677cc
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - bartik
+_core:
+  default_config_hash: hV76BQtQlY3Ppx4zj67vFofBAbUIhbOqCYI6Ron3yco
+id: bartik_tools
+theme: bartik
+region: sidebar_second
+weight: -15
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

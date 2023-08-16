@@ -1,0 +1,29 @@
+uuid: 59802cd7-70c0-4d66-8ed7-d3fdadfe944e
+langcode: en
+status: false
+dependencies:
+  module:
+    - social_shares
+    - system
+  theme:
+    - amptheme
+third_party_settings:
+  block_class:
+    classes: null
+id: amptheme_amazonmain
+theme: amptheme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: amazon_main
+settings:
+  id: amazon_main
+  label: 'Amazon Main'
+  label_display: '0'
+  provider: social_shares
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

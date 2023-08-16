@@ -1,0 +1,33 @@
+uuid: b8fc05f6-9842-417b-b8bf-0af0f28c587d
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - search
+    - system
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: null
+_core:
+  default_config_hash: RKg3870rjoj3s6S3wwAvsim78gxRdb7HMyAo2tbTh84
+id: newsplus_lite_amp_search
+theme: newsplus_lite_amp
+region: sidebar_second
+weight: -20
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  label_display: visible
+  provider: search
+  page_id: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /prediction

@@ -1,0 +1,29 @@
+uuid: d9abf7da-3e3c-452b-830e-2740fec9c9c1
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d0099075-b7fd-463d-8c1f-0f40f62c56b7'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - amptheme
+third_party_settings:
+  block_class:
+    classes: text-center
+id: amptheme_betway
+theme: amptheme
+region: sidebar_first
+weight: -22
+provider: null
+plugin: 'block_content:d0099075-b7fd-463d-8c1f-0f40f62c56b7'
+settings:
+  id: 'block_content:d0099075-b7fd-463d-8c1f-0f40f62c56b7'
+  label: Betway
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

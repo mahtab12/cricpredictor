@@ -1,0 +1,12 @@
+_core:
+  default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
+theme: current
+defaults:
+  sender: SMTPMailSystem
+  formatter: SMTPMailSystem
+modules:
+  swiftmailer: {  }
+  smtp:
+    cricpredictor:
+      sender: SMTPMailSystem
+      formatter: SMTPMailSystem

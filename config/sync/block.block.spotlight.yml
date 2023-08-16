@@ -1,0 +1,27 @@
+uuid: 884a11ca-6802-4ced-8a1c-0da4eab74369
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - social_shares
+    - system
+  theme:
+    - newsplus_lite
+id: spotlight
+theme: newsplus_lite
+region: spotlight
+weight: 0
+provider: null
+plugin: spot_light_block
+settings:
+  id: spot_light_block
+  label: SpotLight
+  label_display: visible
+  provider: social_shares
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

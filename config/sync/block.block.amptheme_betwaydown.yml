@@ -1,0 +1,29 @@
+uuid: 8d3560f7-bd4b-4435-96b3-ad426a7c28c3
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ef91c014-cace-468d-a7f2-51ce01afa257'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - amptheme
+third_party_settings:
+  block_class:
+    classes: 'centered text-center'
+id: amptheme_betwaydown
+theme: amptheme
+region: sidebar_first
+weight: -23
+provider: null
+plugin: 'block_content:ef91c014-cace-468d-a7f2-51ce01afa257'
+settings:
+  id: 'block_content:ef91c014-cace-468d-a7f2-51ce01afa257'
+  label: 'Betway Down'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

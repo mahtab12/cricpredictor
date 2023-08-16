@@ -1,0 +1,26 @@
+uuid: 77781dd5-ed11-4063-a8b1-82ec4c5e36e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: null
+_core:
+  default_config_hash: 8kg54uxqBFrAyIHQlGA9UWtpLaAeJaLbMIduXqvVpFY
+id: newsplus_lite_amp_messages
+theme: newsplus_lite_amp
+region: top_content
+weight: -25
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

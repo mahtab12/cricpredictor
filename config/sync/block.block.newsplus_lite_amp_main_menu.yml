@@ -1,0 +1,31 @@
+uuid: 477ffe36-eeae-4b12-a3fb-aaa6c816645c
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - block_class
+    - system
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: null
+_core:
+  default_config_hash: G8vcZYAlQzD8ztZB9xhVPnfofT1fxxc51cXbBJZpSRU
+id: newsplus_lite_amp_main_menu
+theme: newsplus_lite_amp
+region: sidebar_first
+weight: -23
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

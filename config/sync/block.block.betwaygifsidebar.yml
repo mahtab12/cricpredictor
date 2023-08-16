@@ -1,0 +1,35 @@
+uuid: d550f4ef-5e6b-4c32-846e-225b055d44fe
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f58b2055-55b1-46ed-bbd0-9864b199a11c'
+  module:
+    - block_class
+    - block_content
+    - system
+  theme:
+    - newsplus_lite
+third_party_settings:
+  block_class:
+    classes: text-center
+id: betwaygifsidebar
+theme: newsplus_lite
+region: sidebar_second
+weight: -24
+provider: null
+plugin: 'block_content:f58b2055-55b1-46ed-bbd0-9864b199a11c'
+settings:
+  id: 'block_content:f58b2055-55b1-46ed-bbd0-9864b199a11c'
+  label: 'Betway gif sidebar'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '<front>'

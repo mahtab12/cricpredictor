@@ -1,0 +1,31 @@
+uuid: 60122954-859d-4804-9d2a-434fc8ce5405
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: null
+_core:
+  default_config_hash: g49-4DhUBescrnECf-8F7dCpGRUdgdHI0fWYj8vnt_s
+id: newsplus_lite_amp_content
+theme: newsplus_lite_amp
+region: content
+weight: -12
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '/stadium/*'

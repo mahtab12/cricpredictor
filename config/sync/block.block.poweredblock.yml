@@ -1,0 +1,21 @@
+uuid: bf26ec8f-1153-47e5-97c1-91382bb85f2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - social_shares
+  theme:
+    - newsplus_lite
+id: poweredblock
+theme: newsplus_lite
+region: sub_footer_left
+weight: -12
+provider: null
+plugin: powered_block
+settings:
+  id: powered_block
+  label: PoweredBlock
+  label_display: '0'
+  provider: social_shares
+visibility: {  }

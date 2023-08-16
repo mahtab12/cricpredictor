@@ -1,0 +1,29 @@
+uuid: e3a49de6-47ef-4948-8ff5-943b411172ca
+langcode: en
+status: false
+dependencies:
+  module:
+    - social_shares
+    - system
+  theme:
+    - amptheme
+third_party_settings:
+  block_class:
+    classes: null
+id: amptheme_adslotsidebar_2
+theme: amptheme
+region: sidebar_second
+weight: -18
+provider: null
+plugin: adslot_sidebar
+settings:
+  id: adslot_sidebar
+  label: 'Adslot Sidebar'
+  label_display: '0'
+  provider: social_shares
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '<front>'

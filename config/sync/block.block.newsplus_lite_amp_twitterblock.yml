@@ -1,0 +1,46 @@
+uuid: de422e6a-fcc2-4563-831e-7d457c360653
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+    - twitter_block
+  theme:
+    - newsplus_lite_amp
+third_party_settings:
+  block_class:
+    classes: null
+id: newsplus_lite_amp_twitterblock
+theme: newsplus_lite_amp
+region: homepage_footer_twitter
+weight: -25
+provider: null
+plugin: twitter_block
+settings:
+  id: twitter_block
+  label: 'Twitter Page'
+  label_display: '0'
+  provider: twitter_block
+  username: PredictorCric
+  theme: ''
+  link_color: ea2d49
+  width: '350'
+  height: '320'
+  chrome:
+    noheader: '0'
+    nofooter: nofooter
+    noborders: noborders
+    noscrollbar: '0'
+    transparent: transparent
+  border_color: ea2d49
+  language: ''
+  tweet_limit: ''
+  related: ''
+  polite: assertive
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'
