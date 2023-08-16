@@ -2,6 +2,7 @@ _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
   add_to_head: 0
+  address: 0
   admin_toolbar: 0
   admin_toolbar_search: 0
   admin_toolbar_tools: 0
@@ -20,6 +21,7 @@ module:
   ckeditor: 0
   color: 0
   comment: 0
+  commerce: 0
   config: 0
   contact: 0
   contact_storage: 0
@@ -34,6 +36,7 @@ module:
   dynamic_page_cache: 0
   editor: 0
   email_registration: 0
+  entity: 0
   fb_likebox: 0
   field: 0
   field_ui: 0
@@ -42,6 +45,7 @@ module:
   help: 0
   history: 0
   image: 0
+  inline_entity_form: 0
   link: 0
   mailchimp: 0
   mailchimp_campaign: 0
