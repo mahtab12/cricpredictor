@@ -22,6 +22,16 @@ module:
   color: 0
   comment: 0
   commerce: 0
+  commerce_cart: 0
+  commerce_checkout: 0
+  commerce_number_pattern: 0
+  commerce_order: 0
+  commerce_payment: 0
+  commerce_price: 0
+  commerce_product: 0
+  commerce_promotion: 0
+  commerce_store: 0
+  commerce_tax: 0
   config: 0
   contact: 0
   contact_storage: 0
@@ -37,6 +47,7 @@ module:
   editor: 0
   email_registration: 0
   entity: 0
+  entity_reference_revisions: 0
   fb_likebox: 0
   field: 0
   field_ui: 0
@@ -48,8 +59,6 @@ module:
   inline_entity_form: 0
   link: 0
   mailchimp: 0
-  mailchimp_campaign: 0
-  mailchimp_lists: 0
   mailsystem: 0
   menu_ui: 0
   metatag: 0
@@ -63,6 +72,7 @@ module:
   path: 0
   path_alias: 0
   poll: 0
+  profile: 0
   pwa: 0
   pwa_a2hs: 0
   quickedit: 0
@@ -81,6 +91,7 @@ module:
   smtp: 0
   social_media: 0
   social_shares: 0
+  state_machine: 0
   superfish: 0
   swiftmailer: 0
   system: 0
@@ -108,7 +119,5 @@ theme:
   seven: 0
   bootstrap: 0
   newsplus_lite: 0
-  bartik: 0
-  amptheme: 0
-  newsplus_lite_amp: 0
+  claro: 0
 profile: standard

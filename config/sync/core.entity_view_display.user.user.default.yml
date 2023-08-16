@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.commerce_remote_id
     - field.field.user.user.field_bio
     - field.field.user.user.field_facebook_url
     - field.field.user.user.field_full_name
@@ -89,4 +90,6 @@ content:
     weight: 0
     region: content
 hidden:
+  commerce_remote_id: true
+  customer_profiles: true
   simplenews: true

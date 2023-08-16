@@ -15,3 +15,4 @@ offline_page: /offline
 cache_version: '1'
 cross_origin: false
 skip_waiting: false
+scope: /

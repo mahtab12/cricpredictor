@@ -1,0 +1,10 @@
+uuid: c41bc233-c3d9-4c14-b437-c6f06805d82e
+langcode: en
+status: true
+dependencies: {  }
+id: sports_items
+label: 'Sports Items'
+traits: {  }
+locked: false
+orderItemType: default
+generateTitle: null

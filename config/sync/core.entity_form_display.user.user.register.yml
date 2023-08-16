@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.register
+    - field.field.user.user.commerce_remote_id
     - field.field.user.user.field_bio
     - field.field.user.user.field_facebook_url
     - field.field.user.user.field_full_name
@@ -56,7 +57,9 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
+  commerce_remote_id: true
   contact: true
+  customer_profiles: true
   field_facebook_url: true
   field_mail: true
   field_twitter_url: true

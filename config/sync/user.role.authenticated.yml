@@ -5,10 +5,13 @@ dependencies:
   config:
     - filter.format.basic_html
     - filter.format.full_html
-    - filter.format.mailchimp_campaign
     - filter.format.restricted_html
   module:
     - comment
+    - commerce_checkout
+    - commerce_order
+    - commerce_payment
+    - commerce_product
     - contact
     - disqus
     - eu_cookie_compliance
@@ -25,6 +28,7 @@ label: 'Authenticated user'
 weight: -9
 is_admin: false
 permissions:
+  - 'access checkout'
   - 'access comments'
   - 'access content'
   - 'access polls'
@@ -32,12 +36,14 @@ permissions:
   - 'access site-wide contact form'
   - 'access user profiles'
   - 'display eu cookie compliance popup'
+  - 'manage own commerce_payment_method'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
   - 'subscribe to newsletters'
   - 'use text format basic_html'
   - 'use text format full_html'
-  - 'use text format mailchimp_campaign'
   - 'use text format restricted_html'
+  - 'view commerce_product'
   - 'view disqus comments'
+  - 'view own commerce_order'

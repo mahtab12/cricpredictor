@@ -1,0 +1,23 @@
+uuid: f86fa73c-93ab-4fc5-a55b-80dae2bad344
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.sports_items
+    - field.storage.commerce_product.body
+  module:
+    - text
+id: commerce_product.sports_items.body
+field_name: body
+entity_type: commerce_product
+bundle: sports_items
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: null
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

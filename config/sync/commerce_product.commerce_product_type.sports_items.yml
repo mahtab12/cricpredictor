@@ -1,0 +1,14 @@
+uuid: 2677137c-fdc9-493b-b5cb-66d238277973
+langcode: en
+status: true
+dependencies: {  }
+id: sports_items
+label: 'Sports Items'
+traits: {  }
+locked: false
+description: ''
+variationType: sports_items
+variationTypes:
+  - sports_items
+multipleVariations: true
+injectVariationFields: true

@@ -6,6 +6,8 @@ dependencies:
     - filter.format.restricted_html
   module:
     - comment
+    - commerce_checkout
+    - commerce_product
     - contact
     - disqus
     - filter
@@ -20,13 +22,14 @@ label: 'Anonymous user'
 weight: -10
 is_admin: false
 permissions:
+  - 'access checkout'
   - 'access comments'
   - 'access content'
   - 'access polls'
-  - 'access pwa'
   - 'access site-wide contact form'
   - 'access user profiles'
   - 'search content'
   - 'subscribe to newsletters'
   - 'use text format restricted_html'
+  - 'view commerce_product'
   - 'view disqus comments'
