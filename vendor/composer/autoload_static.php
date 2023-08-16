@@ -41,6 +41,7 @@ class ComposerStaticInit283eb8ba2e8e68e6242c146e3d5ad3d1
         '6db5533840cb1ae1bc049452845aa88e' => __DIR__ . '/../..' . '/core/includes/guzzle_php81_shim.php',
         '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
         'c9d07b32a2e02bc0fc582d4f0c1b56cc' => __DIR__ . '/..' . '/laminas/laminas-servicemanager/src/autoload.php',
+        'e9b046393eb3376a21bcc1a30bd2fe64' => __DIR__ . '/..' . '/querypath/querypath/src/qp_functions.php',
         '952683d815ff0a7bf322b93c0be7e4e4' => __DIR__ . '/..' . '/chi-teck/drupal-code-generator/src/bootstrap.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
@@ -103,10 +104,12 @@ class ComposerStaticInit283eb8ba2e8e68e6242c146e3d5ad3d1
             'Symfony\\Cmf\\Component\\Routing\\' => 30,
             'Symfony\\Bridge\\PsrHttpMessage\\' => 30,
             'SelfUpdate\\' => 11,
+            'Sabberworm\\CSS\\' => 15,
         ),
         'R' => 
         array (
             'Robo\\' => 5,
+            'ReCaptcha\\' => 10,
         ),
         'P' => 
         array (
@@ -137,6 +140,7 @@ class ComposerStaticInit283eb8ba2e8e68e6242c146e3d5ad3d1
         ),
         'L' => 
         array (
+            'Lullabot\\AMP\\' => 13,
             'League\\Container\\' => 17,
             'Laminas\\Text\\' => 13,
             'Laminas\\Stdlib\\' => 15,
@@ -157,6 +161,10 @@ class ComposerStaticInit283eb8ba2e8e68e6242c146e3d5ad3d1
             'GuzzleHttp\\' => 11,
             'Grasmash\\YamlExpander\\' => 22,
             'Grasmash\\Expander\\' => 18,
+        ),
+        'F' => 
+        array (
+            'FastImageSize\\' => 14,
         ),
         'E' => 
         array (
@@ -372,9 +380,17 @@ class ComposerStaticInit283eb8ba2e8e68e6242c146e3d5ad3d1
         array (
             0 => __DIR__ . '/..' . '/consolidation/self-update/src',
         ),
+        'Sabberworm\\CSS\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/src',
+        ),
         'Robo\\' => 
         array (
             0 => __DIR__ . '/..' . '/consolidation/robo/src',
+        ),
+        'ReCaptcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/google/recaptcha/src/ReCaptcha',
         ),
         'Psy\\' => 
         array (
@@ -437,6 +453,10 @@ class ComposerStaticInit283eb8ba2e8e68e6242c146e3d5ad3d1
         array (
             0 => __DIR__ . '/..' . '/thinkshout/mailchimp-api-php/src',
         ),
+        'Lullabot\\AMP\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lullabot/amp/src',
+        ),
         'League\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/container/src',
@@ -493,6 +513,10 @@ class ComposerStaticInit283eb8ba2e8e68e6242c146e3d5ad3d1
         'Grasmash\\Expander\\' => 
         array (
             0 => __DIR__ . '/..' . '/grasmash/expander/src',
+        ),
+        'FastImageSize\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/marc1706/fast-image-size/lib',
         ),
         'Enlightn\\SecurityChecker\\' => 
         array (
@@ -638,6 +662,13 @@ class ComposerStaticInit283eb8ba2e8e68e6242c146e3d5ad3d1
                 0 => __DIR__ . '/..' . '/stack/builder/src',
             ),
         ),
+        'Q' => 
+        array (
+            'QueryPath' => 
+            array (
+                0 => __DIR__ . '/..' . '/querypath/querypath/src',
+            ),
+        ),
         'D' => 
         array (
             'Dflydev\\DotAccessData' => 
@@ -698,9 +729,52 @@ class ComposerStaticInit283eb8ba2e8e68e6242c146e3d5ad3d1
         'Drupal\\Core\\Site\\Settings' => __DIR__ . '/../..' . '/core/lib/Drupal/Core/Site/Settings.php',
         'JSON' => __DIR__ . '/..' . '/disqus/disqus-php/disqusapi/json.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Lullabot\\AMP\\Spec\\AmpLayout' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\AmpLayoutLayout' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\AtRuleSpec' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\AtRuleSpecBlockType' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\AttrList' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\AttrSpec' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\AttrTriggerSpec' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\BlackListedCDataRegex' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\CdataSpec' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\ChildTagSpec' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\CssRuleSpec' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\CssSpec' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\ErrorCategory' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\ErrorCategoryCode' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\ErrorFormat' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\PropertySpec' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\PropertySpecList' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\TagSpec' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\UrlSpec' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\ValidationError' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\ValidationErrorCode' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\ValidationErrorSeverity' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\ValidationResult' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\ValidationResultStatus' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\ValidationRulesFactory' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\ValidatorInfo' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
+        'Lullabot\\AMP\\Spec\\ValidatorRules' => __DIR__ . '/..' . '/lullabot/amp/src/Spec/validator-generated.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
         'PEAR_Exception' => __DIR__ . '/..' . '/pear/pear_exception/PEAR/Exception.php',
         'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
+        'SebastianBergmann\\Diff\\Chunk' => __DIR__ . '/..' . '/sebastian/diff/src/Chunk.php',
+        'SebastianBergmann\\Diff\\ConfigurationException' => __DIR__ . '/..' . '/sebastian/diff/src/Exception/ConfigurationException.php',
+        'SebastianBergmann\\Diff\\Diff' => __DIR__ . '/..' . '/sebastian/diff/src/Diff.php',
+        'SebastianBergmann\\Diff\\Differ' => __DIR__ . '/..' . '/sebastian/diff/src/Differ.php',
+        'SebastianBergmann\\Diff\\Exception' => __DIR__ . '/..' . '/sebastian/diff/src/Exception/Exception.php',
+        'SebastianBergmann\\Diff\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/diff/src/Exception/InvalidArgumentException.php',
+        'SebastianBergmann\\Diff\\Line' => __DIR__ . '/..' . '/sebastian/diff/src/Line.php',
+        'SebastianBergmann\\Diff\\LongestCommonSubsequenceCalculator' => __DIR__ . '/..' . '/sebastian/diff/src/LongestCommonSubsequenceCalculator.php',
+        'SebastianBergmann\\Diff\\MemoryEfficientLongestCommonSubsequenceCalculator' => __DIR__ . '/..' . '/sebastian/diff/src/MemoryEfficientLongestCommonSubsequenceCalculator.php',
+        'SebastianBergmann\\Diff\\Output\\AbstractChunkOutputBuilder' => __DIR__ . '/..' . '/sebastian/diff/src/Output/AbstractChunkOutputBuilder.php',
+        'SebastianBergmann\\Diff\\Output\\DiffOnlyOutputBuilder' => __DIR__ . '/..' . '/sebastian/diff/src/Output/DiffOnlyOutputBuilder.php',
+        'SebastianBergmann\\Diff\\Output\\DiffOutputBuilderInterface' => __DIR__ . '/..' . '/sebastian/diff/src/Output/DiffOutputBuilderInterface.php',
+        'SebastianBergmann\\Diff\\Output\\StrictUnifiedDiffOutputBuilder' => __DIR__ . '/..' . '/sebastian/diff/src/Output/StrictUnifiedDiffOutputBuilder.php',
+        'SebastianBergmann\\Diff\\Output\\UnifiedDiffOutputBuilder' => __DIR__ . '/..' . '/sebastian/diff/src/Output/UnifiedDiffOutputBuilder.php',
+        'SebastianBergmann\\Diff\\Parser' => __DIR__ . '/..' . '/sebastian/diff/src/Parser.php',
+        'SebastianBergmann\\Diff\\TimeEfficientLongestCommonSubsequenceCalculator' => __DIR__ . '/..' . '/sebastian/diff/src/TimeEfficientLongestCommonSubsequenceCalculator.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
