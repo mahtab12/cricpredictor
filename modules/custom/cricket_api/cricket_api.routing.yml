@@ -92,5 +92,3 @@ cricket_api.ranking:
     title: 'Rankings'
   requirements:
     _permission: 'access content'
-  options:
-    no_cache: 'TRUE'
