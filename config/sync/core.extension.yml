@@ -19,7 +19,7 @@ module:
   captcha: 0
   checklistapi: 0
   ckeditor: 0
-  color: 0
+  ckeditor5: 0
   comment: 0
   commerce: 0
   commerce_cart: 0
@@ -42,7 +42,6 @@ module:
   datetime: 0
   dblog: 0
   devel: 0
-  disqus: 0
   dynamic_page_cache: 0
   editor: 0
   email_registration: 0
@@ -75,8 +74,6 @@ module:
   profile: 0
   pwa: 0
   pwa_a2hs: 0
-  quickedit: 0
-  rdf: 0
   recaptcha_v3: 0
   redirect: 0
   schema_article: 0
@@ -93,7 +90,6 @@ module:
   social_shares: 0
   state_machine: 0
   superfish: 0
-  swiftmailer: 0
   system: 0
   taxonomy: 0
   text: 0

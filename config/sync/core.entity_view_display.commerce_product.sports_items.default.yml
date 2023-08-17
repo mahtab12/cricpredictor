@@ -5,6 +5,7 @@ dependencies:
   config:
     - commerce_product.commerce_product_type.sports_items
     - field.field.commerce_product.sports_items.body
+    - field.field.commerce_product.sports_items.field_brand
     - field.field.commerce_product.sports_items.field_images
   module:
     - commerce_product
@@ -21,6 +22,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 11
+    region: content
+  field_brand:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
     region: content
   field_images:
     type: image

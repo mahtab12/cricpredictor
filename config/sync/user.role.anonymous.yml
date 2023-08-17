@@ -9,7 +9,6 @@ dependencies:
     - commerce_checkout
     - commerce_product
     - contact
-    - disqus
     - filter
     - poll
     - search
@@ -32,4 +31,3 @@ permissions:
   - 'subscribe to newsletters'
   - 'use text format restricted_html'
   - 'view commerce_product'
-  - 'view disqus comments'

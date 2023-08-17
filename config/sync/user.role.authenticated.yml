@@ -13,7 +13,6 @@ dependencies:
     - commerce_payment
     - commerce_product
     - contact
-    - disqus
     - eu_cookie_compliance
     - filter
     - poll
@@ -45,5 +44,4 @@ permissions:
   - 'use text format full_html'
   - 'use text format restricted_html'
   - 'view commerce_product'
-  - 'view disqus comments'
   - 'view own commerce_order'
