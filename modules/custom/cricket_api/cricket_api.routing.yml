@@ -84,3 +84,11 @@ cricket_api.news_details:
     _permission: 'access content'
   options:
     no_cache: 'TRUE'
+
+cricket_api.ranking:
+  path: '/cricket-ranking'
+  defaults:
+    _controller: '\Drupal\cricket_api\Controller\CricketRankingController::getRanking'
+    title: 'Rankings'
+  requirements:
+    _permission: 'access content'
